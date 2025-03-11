@@ -9,8 +9,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('', views.home_view, name='home'),
     path('login/', views.custom_login, name='login'),
-    path('terms/',TemplateView.as_view(template_name='registration/terms.html'), name='terms'),
-    path('policy/',TemplateView.as_view(template_name='registration/policy.html'), name='policy'),
+    path('policy/',TemplateView.as_view(template_name='policy/policy.html'), name='policy'),
     path('logout/', views.custom_logout, name='logout'),
     path('products/', views.product_list, name='product_list'),
     path('products/add/', views.add_product, name='add_product'),
@@ -22,7 +21,7 @@ urlpatterns = [
     path('cart/payment_detail/<int:item_id>/', views.payment_detail, name='payment_detail'),
     path("cart/delete_cart_items/", views.delete_cart_items, name="delete_cart_items"),
     path("cartupdate_cart/<int:cart_id>/", views.update_cart, name="update_cart"),
-   path('paid/', views.paid, name='paid'),
+    path('paid/', views.paid, name='paid'),
 
     path("admin-login/", admin_login, name="admin_login"),
     path("admin-dashboard/", admin_dashboard, name="admin_dashboard"),

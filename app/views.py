@@ -42,6 +42,10 @@ def home_view(request):
         return render(request, 'home.html') #Or redirect to login page.
 
 
+#-----------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------
+#Reset Password -------------------------------------------------------------------------------------------------------------------------
+
 
 def password_reset_request(request):
     if request.method == "POST":
@@ -76,9 +80,6 @@ def password_reset_request(request):
     return render(request, 'registration/reset/form_password_reset.html')
 
 
-
-
-
 def reset_password_confirm(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
@@ -110,9 +111,6 @@ def reset_password_confirm(request, uidb64, token):
         return render(request, "registration/password_reset_confirm.html", {"validlink": False})
 
 
-
-
-
 def send_reset_email(request, user):
     subject = "Reset Your Password"
     message = render_to_string('reset_password_email.html', {
@@ -126,11 +124,6 @@ def send_reset_email(request, user):
     email = EmailMessage(subject, message, to=[user.email])
     email.content_subtype = "html"  # Set email format to HTML
     email.send()
-
-
-
-
-
 
 
 
@@ -177,7 +170,6 @@ def activateEmail(request, user, to_email):
                 the received activation link to confirm and complete the registration. <b>Note:</b> Check your spam folder.')
     else:
         messages.error(request, f'Problem sending email to {to_email}, check if you typed it correctly.')
-
 
 
 
@@ -413,6 +405,10 @@ def product_detail(request, product_id):
     return render(request, 'buyer/product_detail.html', context)
 
 
+#-----------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------
+# Cart adding-----------------------------------------------------------------------------------------------------------------
 @login_required
 def add_to_cart(request):
     if request.method == 'POST':
@@ -502,7 +498,10 @@ def cart(request):
     return render(request, 'buyer/cart.html', {'cart_items': cart_items})
 
 
-
+#-----------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------
+# paying-----------------------------------------------------------------------------------------------------------------
 
 def payment_detail(request, item_id):
     # Fetch the item from the database using the passed item_id
@@ -510,8 +509,6 @@ def payment_detail(request, item_id):
 
     # Pass the item to the template for rendering
     return render(request, 'buyer/payment_detail.html', {'item': item})
-
-
 
 
 CHAPA_SECRET_KEY = "CHASECK_TEST-VPikVFcVYY4wTq4MRgonDUZujkWctaH9"
@@ -577,14 +574,6 @@ def chapa_callback(request, item_id):
 
 
 
-
-
-
-
-
-from .models import Paid, Product 
-
-
 def chapa_return(request):
     return render(request, "buyer/payment_result.html")
 
@@ -648,8 +637,6 @@ def admin_login(request):
             )
 
     return render(request, "dashboard/admin_login.html")
-
-
 
 
 
