@@ -4,11 +4,16 @@
 
 <!-- Single Page Header start -->
 <div class="container-fluid page-header py-5">
-    <h1 class="text-center text-white display-6">Product Detail</h1>
+    <h1 class="text-center text-white display-6">Payment Detail</h1>
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
         <li class="breadcrumb-item"><a href="{% url 'product_list' %}#product_list">Product List</a></li>
-        <li class="breadcrumb-item"><a href="#">Product Detail</a></li>
+        {% if user.role == 'buyer' %}
+        <li class="breadcrumb-item"><a href="#">Payment Detail</a></li>
+        {% elif user.role == 'farmer' %} 
+        <li class="breadcrumb-item"><a href="#">Order Detail</a></li>
+        {% endif %}
+        
     </ol>
 </div>
 <!-- Single Page Header End -->
@@ -18,7 +23,11 @@
     <div class="container py-5">
                 {% if item %}
                     <div class="row" style="margin: 0 10%;">
+                        {% if user.role == 'buyer' %}
                         <h3><b>Payment Detail</b></h3>
+                        {% elif user.role == 'farmer' %} 
+                        <h3><b>Order Detail</b></h3>
+                        {% endif %}
                         <div class="col-lg-6">
                             <div class="border rounded">
                                 {% if item.product_image %}
@@ -37,8 +46,11 @@
                             <p class="mb-3"><b>Location:</b> {{ item.farmer.location }}</p>
                             <p class="mb-3"><b>Date Posted:</b> {{ item.created_at|date:"Y-m-d" }}</p>
                             <p class="mb-3"><b>Time Posted:</b> {{ item.created_at|date:"H:i:s T" }}</p>
+                            <p class="mb-3"><b>Date Ordered:</b> {{ item.ordered_at|date:"Y-m-d" }}</p>
+                            <p class="mb-3"><b>Time Ordered:</b> {{ item.ordered_at|date:"H:i:s T" }}</p>
                             <p class="mb-3"><b>Price per kg:</b> {{ item.order_price }} birr/kg</p>
                             <h4 class="fw-bold mb-3">Total Price: {{ item.total_price }}</h4>
+                            {% if user.role == 'buyer' %}
                             <form method="POST" action="https://api.chapa.co/v1/hosted/pay">
                                 <!-- Chapa API Credentials -->
                                 <input type="hidden" name="public_key" value="CHAPUBK_TEST-wZhybxOtDPk4MIXdbCofuihcVWezbZN6" />
@@ -72,7 +84,7 @@
                                     <button class="btn btn-primary w-75 rounded-pill text-uppercase fw-semibold" type="button" onclick="call()">Pay</button>
                                 </div>
                             </form>
-                            
+                            {% endif %}
                         
             
 <script>

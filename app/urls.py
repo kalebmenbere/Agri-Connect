@@ -22,6 +22,8 @@ urlpatterns = [
     path("cart/delete_cart_items/", views.delete_cart_items, name="delete_cart_items"),
     path("cartupdate_cart/<int:cart_id>/", views.update_cart, name="update_cart"),
     path('paid/', views.paid, name='paid'),
+    path('cart/paid_detail/<int:item_id>/', views.paid_detail, name='paid_detail'),
+    
 
     path("admin-login/", admin_login, name="admin_login"),
     path("admin-dashboard/", admin_dashboard, name="admin_dashboard"),

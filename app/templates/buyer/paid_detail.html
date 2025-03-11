@@ -1,0 +1,71 @@
+{% extends 'include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Paid Product Detail</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'product_list' %}#product_list">Product List</a></li>
+        <li class="breadcrumb-item"><a href="#">Paid Product Detail</a></li>
+    </ol>
+</div>
+<!-- Single Page Header End -->
+
+<!-- Single Product Start -->
+<div class="container-fluid py-5 mt-5" id="product_detail"> 
+    <div class="container py-5">
+                {% if item %}
+                    <div class="row" style="margin: 0 9%;">
+                        <h3><b>Paid Product Detail</b></h3>
+                        <div class="col-lg-6">
+                            <div class="border rounded">
+                                {% if item.paid_product_image %}
+                                <img src="{{ item.paid_product_image.url }}" class="img-fluid rounded" alt="{{ item.paid_product_name }}">
+                                {% else %}
+                                <img src="{% static 'img/best-product-1.jpg' %}" class="img-fluid rounded" alt="Default Image">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-lg-6" style="width: fit-content; margin-left: 10%;">
+                            <h4 class="fw-bold mb-3">Product: {{ item.paid_product_name }}</h4>
+                            <h4 class="fw-bold mb-3">Buyer: {{ item.buyer.first_name }}</h4>
+                            <p class="mb-3"><b>Category:</b> {{ item.paid_product_category }}</p>
+                            <p class="mb-3"><b>Quantity:</b> {{ item.paid_product_quantity }} Kg</p>
+                            <p class="mb-3"><b>Farmer Name:</b> {{ item.farmer.first_name }}</p>
+                            <p class="mb-3"><b>Location:</b> {{ item.farmer.location }}</p>
+                            <p class="mb-3"><b>Date Posted:</b> {{ item.created_at|date:"Y-m-d" }}</p>
+                            <p class="mb-3"><b>Time Posted:</b> {{ item.created_at|date:"H:i:s T" }}</p>
+                            <p class="mb-3"><b>Date Ordered:</b> {{ item.ordered_at|date:"Y-m-d" }}</p>
+                            <p class="mb-3"><b>Time Ordered:</b> {{ item.ordered_at|date:"H:i:s T" }}</p>
+                            <p class="mb-3"><b>Time paid:</b> {{ item.paid_at|date:"H:i:s T" }}</p>
+                            <p class="mb-3"><b>Price per kg:</b> {{ item.paid_product_price }} birr/kg</p>
+                            <p class="mb-3"><b>Transaction Number:</b> {{ item.transaction_reference }} </p>
+                            <p><span class="badge {% if item.payment_status == 'success' %}bg-success{% elif item.payment_status == 'pending' %}bg-warning{% else %}bg-danger{% endif %}">
+                                {{ item.payment_status|title }}
+                            </span></p>
+                            <h4 class="fw-bold mb-3">Total Price: {{ item.total_price }}</h4>
+                                           
+                           {% else %}
+                           <div id="product_detail" class="col-lg-12 mt-5">
+                               <p>Please select a product to view its details.</p>
+                           </div>
+                           {% endif %}
+                    </div>
+                
+                    </div>
+         
+        </div>
+</div>
+<!-- Single Product End -->
+
+<!-- Copyright Start -->
+{% include 'include/copyright.html' %}
+<!-- Copyright End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+{% include 'include/messaging.html' %}
+{% endblock %}

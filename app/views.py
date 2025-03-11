@@ -27,7 +27,7 @@ from django.utils.encoding import force_str
 from app.models import CustomUser
 from django.db.models import Sum, F, ExpressionWrapper, DecimalField
 from django.utils.timezone import now
-from datetime import timedelta
+from datetime import timedelta, timezone
 from .models import Log
 
 
@@ -404,6 +404,7 @@ def product_detail(request, product_id):
     context = { 'selected_product': product }
     return render(request, 'buyer/product_detail.html', context)
 
+from django.utils import timezone
 
 #-----------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------
@@ -445,7 +446,6 @@ def add_to_cart(request):
         order_image = product.product_image  
         order_category = product.product_category
         created_at = product.created_at
-        
         # Update product quantity and create cart record atomically
         with transaction.atomic():
             remaining_quantity = int(product.product_quantity) - quantity
@@ -461,6 +461,7 @@ def add_to_cart(request):
                 farmer=product.farmer,
                 buyer=request.user,
                 created_at=created_at,
+                ordered_at = timezone.now(),
             )
             
             # If remaining quantity is 0, delete the product;
@@ -555,6 +556,8 @@ def chapa_callback(request, item_id):
                 paid_product_category=cart_item.order_category,  
                 total_price=cart_item.total_price,
                 created_at=cart_item.created_at, 
+                ordered_at=cart_item.ordered_at,
+                paid_at = timezone.now(),
                 farmer=cart_item.farmer,  
                 buyer=cart_item.buyer,  
                 transaction_reference=trx_ref,  # ✅ FIXED: Use `trx_ref` instead of `tx_ref`
@@ -598,6 +601,13 @@ def paid(request):
 
     return render(request, template, {'paid_items': paid_items})
 
+
+def paid_detail(request, item_id):
+    # Fetch the item from the database using the passed item_id
+    item = get_object_or_404((Paid), id=item_id)
+
+    # Pass the item to the template for rendering
+    return render(request, 'buyer/paid_detail.html', {'item': item})
 
 
 #-----------------------------------------------------------------------------------------------------------------
