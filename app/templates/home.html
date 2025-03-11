@@ -1,0 +1,409 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    {% block title %}Home - Agri Connect{% endblock %}
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- AOS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+        offset: 200, // Start the animation after scrolling 200px
+        duration: 1000, // Duration of the animation
+        once: false, // Keep triggering the animation every time the section is in view
+        });
+
+        // Ensure AOS gets refreshed on page scroll
+        window.addEventListener('scroll', function() {
+        AOS.refresh();
+        });
+    </script>
+    <style>
+        .service-item {
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-30px);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Start -->
+<section id="home">
+    <div class="container-fluid py-5 mb-5 hero-header">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-12 col-lg-7">
+                    <h4 class="mb-3 text-secondary">Sell and Buy Products </h4>
+                    <h1 class="mb-5 display-3 text-green">Bridge Between Farmers and Customers</h1>
+                    <form action="{% url 'register' %}" method="get" class="position-relative mx-auto">
+                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Email Address">
+                        <button type="submit" class="btn green border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Getting Started</button>
+                    </form>
+                </div>
+                <div class="col-md-12 col-lg-5">
+                    <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active rounded">
+                                <img src="{% static 'img/hero-img-1.png'%}" class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
+                                <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
+                            </div>
+                            <div class="carousel-item rounded">
+                                <img src="{% static 'img/hero-img-2.jpg'%}" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                <a href="#" class="btn px-4 py-2 text-white rounded">Vegitables</a>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero End -->
+
+<!-- Features Section Start -->
+<section id="features">
+    <div class="container-fluid featurs py-5">
+      <!-- Section Title -->
+      <div class="section-title text-center mb-5" data-aos="fade-up">
+        <h2 class="text-green">Features</h2>
+      </div>
+      <div class="container py-5">
+        <div class="row g-4">
+          <!-- Feature 1 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <div class="featurs-item text-center rounded bg-light p-4">
+              <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                <i class="fas fa-seedling fa-3x text-white"></i>
+              </div>
+              <div class="featurs-content text-center">
+                <h5>Direct Farm Sourcing</h5>
+                <p class="mb-0">Fresh produce directly from local farms</p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="featurs-item text-center rounded bg-light p-4">
+              <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                <i class="fas fa-hand-holding-heart fa-3x text-white"></i>
+              </div>
+              <div class="featurs-content text-center">
+                <h5>Quality Assurance</h5>
+                <p class="mb-0">Ensuring the best quality produce</p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            <div class="featurs-item text-center rounded bg-light p-4">
+              <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                <i class="fas fa-truck fa-3x text-white"></i>
+              </div>
+              <div class="featurs-content text-center">
+                <h5>Fresh Delivery</h5>
+                <p class="mb-0">Fast and reliable delivery service</p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 4 -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="featurs-item text-center rounded bg-light p-4">
+              <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                <i class="fas fa-handshake fa-3x text-white"></i>
+              </div>
+              <div class="featurs-content text-center">
+                <h5>Trusted Network</h5>
+                <p class="mb-0">Empowering farmers by linking them with investors & businesses that need fresh produce.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- Features Section End -->
+
+<!-- About Section -->
+<section id="who" class="about section bg-light py-5">
+    <div class="container py-5">
+      <!-- Section Title -->
+      <div class="section-title text-center mb-5" data-aos="fade-up">
+        <h2 class="text-green">Who We Are</h2>
+        <p class="lead">Connecting mid to high-level farmers with bulk buyers like hotels and restaurants for fresh, quality produce.</p>
+      </div>
+  
+      <!-- Content Row -->
+      <div class="row gy-4">
+        <!-- Left Content -->
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <h3 class="text-green">Our Mission</h3>
+          <p>Agri-Connect aims to bridge the gap between farmers and large-scale buyers, ensuring access to fresh, locally-sourced produce. We focus on connecting farmers with the resources they need and customers who value high-quality produce, like hotels, restaurants, and bulk buyers.</p>
+        </div>
+        <!-- Right Content -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+          <h3 class="text-green">Who We Serve</h3>
+          <p>We cater to mid and high-level farmers looking to scale their business and investors interested in supporting sustainable farming practices. Our platform also connects bulk buyers like hotels, restaurants, and large-scale buyers who require a steady supply of fresh produce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- About Section End -->
+
+
+<!-- How It Works Section Start -->
+<div id="howitworks" class="container-fluid banner bg-secondary my-5">
+    <div class="container py-4 justify-content-center">        
+        <div class="row g-4 mt-3">
+            <div class="col-12 text-center">
+                <h2 class="display-4 text-white">How It Works</h2>
+                <p class="fw-normal text-dark mb-3">Our platform connects farmers with buyers seamlessly.</p>
+            </div>
+        </div>
+        <hr class="text-white" style="border-top: 1px solid white; width: 80%; margin: 20px auto;">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <div class="py-3">
+                    <h3 class="text-white">How It Works for Farmers</h3>
+                    <p class="fw-normal text-dark mb-3">Get your produce to market quickly and easily.</p>
+                    <ul class="text-dark mb-3">
+                        <li>Farmer registers/login</li>
+                        <li>Farmer registers their product</li>
+                        <li>Farmer receives payment after the purchase of the product by the client</li>
+                    </ul>
+                    <a href="{% url 'register' %}" class="banner-btn btn border-2 border-white rounded-pill text-dark py-2 px-4">REGISTER</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="py-3">
+                    <h3 class="text-white">How It Works for Customers</h3>
+                    <p class="fw-normal text-dark mb-3">Buy fresh, locally sourced produce at your convenience.</p>
+                    <ul class="text-dark mb-3">
+                        <li>Client registers/login</li>
+                        <li>Client orders products</li>
+                        <li>Client makes payment online</li>
+                        <li>Client receives the product on the delivery date</li>
+                    </ul>
+                    <a href="{% url 'register' %}" class="banner-btn btn border-2 border-white rounded-pill text-dark py-2 px-4">BROWSE PRODUCE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- How It Works Section End -->
+
+<!-- Featurs Start -->
+<div class="container-fluid service py-5">
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-secondary rounded border border-secondary">
+                        <img src="{% static 'img/fresh.png' %}" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-primary text-center p-4 rounded">
+                                <h5 class="text-white">Directly From Farmer</h5>
+                                <h3 class="mb-0">Fresh</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-dark rounded border border-dark">
+                        <img src="{% static 'img/easy.png' %}" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-light text-center p-4 rounded">
+                                <h5 class="text-primary">Online Payment</h5>
+                                <h3 class="mb-0">Easy to Use</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-primary rounded border border-primary">
+                        <img src="{% static 'img/gurante.jpg' %}" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-secondary text-center p-4 rounded">
+                                <h5 class="text-white">Delivery Service</h5>
+                                <h3 class="mb-0">Guaranteed</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featurs End -->
+      
+<!-- Contact Start -->
+<div class="container-fluid contact py-5" id= "contact">
+    <div class="container py-5">
+        <div class="p-5 bg-light rounded">
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="text-center mx-auto" style="max-width: 700px;">
+                        <h1 class="text-primary">Get in touch</h1>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="d-flex justify-content-center">
+                        <div class="h-100 rounded">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d985.3548160423096!2d38.2954732659657!3d6.419687855249491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b0ebcda903945f%3A0x2e8298c6f28f636b!2sYemichile%20jegnoch%20adebabay%20(Mola)!5e1!3m2!1sen!2set!4v1739711807205!5m2!1sen!2set" 
+                                width="1000" height="400" style="border:0; display: block; margin: auto;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-7">
+                    <form action="" class="">
+                        <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name">
+                        <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Email">
+                        <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your Message"></textarea>
+                        <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary " type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="col-lg-5">
+                    <div class="d-flex p-4 rounded mb-4 bg-white">
+                        <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p class="mb-2">Yemichile jegnoch adebabay (Mola), Dilla</p>
+                        </div>
+                    </div>
+                    <div class="d-flex p-4 rounded mb-4 bg-white">
+                        <i class="fas fa-envelope fa-2x text-primary me-4"></i>
+                        <div>
+                            <h4>Mail Us</h4>
+                            <p class="mb-2">agriconnect@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="d-flex p-4 rounded bg-white">
+                        <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
+                        <div>
+                            <h4>Telephone</h4>
+                            <p class="mb-2">(+251) 976957649</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+    <div class="container py-5">
+        <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <a href="#">
+                        <h1 class="text-primary mb-0">Agri Connect</h1>
+                        <p class="text-secondary mb-0">Bridge Between Farmers and Customers</p>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
+                        <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="d-flex justify-content-end pt-3">
+                        <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Why People Like us!</h4>
+                    <p class="mb-4">Empowering farmers, investors, and bulk buyers to connect and transform 
+                        the agricultural market through seamless transactions and transparent processes.</p>
+                    <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-start footer-item">
+                    <h4 class="text-light mb-3">Shop Info</h4>
+                    <a class="btn-link" href="{% url 'home' %}#who">Who We Are</a>
+                    <a class="btn-link" href="">Contact Us</a>
+                    <a class="btn-link" href="{% url 'policy' %}">Privacy Policy</a>
+                    <a class="btn-link" href="{% url 'terms' %}">Terms & Condition</a>
+                    <a class="btn-link" href="{% url 'terms' %}">Return Policy</a>
+                    <a class="btn-link" href="{% url 'terms' %}">FAQs & Help</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-start footer-item">
+                    <h4 class="text-light mb-3">Account</h4>
+                    <a class="btn-link" href="">My Account</a>
+                    <a class="btn-link" href="">Shop details</a>
+                    <a class="btn-link" href="">Shopping Cart</a>
+                    <a class="btn-link" href="">Payment</a>
+                    <a class="btn-link" href="">Order History</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Contact</h4>
+                    <p>Address: Yemichile jegnoch adebabay (Mola), Dilla</p>
+                    <p>Email: agriconnect@gmail.com</p>
+                    <p>Phone: +251976957649</p>
+                    <p>Payment Accepted</p>
+                    <img src="{%static 'img/payment.png'%}" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="container-fluid copyright bg-dark py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>agriconnect.com</a>, All right reserved.</span>
+            </div>
+            <div class="col-md-6 my-auto text-center text-md-end text-white">
+                Designed By <a class="border-bottom" href="#">Kaleb</a> Distributed By <a class="border-bottom" href="#">Dilla</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a> 
+</body>
+{% endblock %}

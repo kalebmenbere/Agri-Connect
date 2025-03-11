@@ -1,0 +1,398 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- start Page Title ---------------------------------------------------------------------->
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title -->
+
+<section class="section dashboard">
+<div class="row">
+<!-------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------->  
+<!-- Left side columns ------------------------------------------------------------------------------>
+
+
+<div class="col-lg-8">
+<div class="row">
+
+
+
+<!---Products-------------------------------------------------------------------------------------------------------->
+<div class="col-xxl-4 col-md-6">
+    <div class="card info-card"  style="cursor: pointer;">
+
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#" data-filter="today" data-type="product">Today</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="month" data-type="product">This Month</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="total" data-type="product">Total</a></li>
+            </ul>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Products <span id="product-period">| Total</span></h5>
+
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-box"></i>
+                </div>
+                <div class="ps-3">
+                    <h6 id="product-value">{{ product_count }}</h6>
+                    <span class="text-muted small pt-2 ps-1">Items</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---Cart Items-------------------------------------------------------------------------------------------------------->
+<div class="col-xxl-4 col-md-6">
+    <div class="card info-card"  style="cursor: pointer;">
+
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#" data-filter="today" data-type="cart">Today</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="month" data-type="cart">This Month</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="total" data-type="cart">Total</a></li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Cart Items <span id="cart-period">| Total</span></h5>
+
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-cart"></i>
+                </div>
+                <div class="ps-3">
+                    <h6 id="cart-value">{{ cart_count }}</h6>
+                    <span class="text-muted small pt-2 ps-1">Items</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+          
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.dropdown-item[data-filter]').forEach(item => {
+            item.addEventListener('click', function(event) {
+                const filter = this.getAttribute('data-filter');
+                const type = this.getAttribute('data-type');
+                let count, period, valueElement, periodElement;
+
+                if (type === 'product') {
+                    valueElement = document.getElementById('product-value');
+                    periodElement = document.getElementById('product-period');
+                    if (filter === 'today') {
+                        count = "{{ product_count_day }}";
+                        period = "| Today";
+                    } else if (filter === 'month') {
+                        count = "{{ product_count_month }}";
+                        period = "| This Month";
+                    } else if (filter === 'total') {
+                        count = "{{ product_count }}";
+                        period = "| Total";
+                    }
+                } else if (type === 'cart') {
+                    valueElement = document.getElementById('cart-value');
+                    periodElement = document.getElementById('cart-period');
+                    if (filter === 'today') {
+                        count = "{{ cart_count_day }}";
+                        period = "| Today";
+                    } else if (filter === 'month') {
+                        count = "{{ cart_count_month }}";
+                        period = "| This Month";
+                    } else if (filter === 'total') {
+                        count = "{{ cart_count }}";
+                        period = "| Total";
+                    }
+                }
+
+                valueElement.textContent = count;
+                periodElement.textContent = period;
+            });
+        });
+    });
+</script>
+
+<!----Total Product money---------------------------------------------------------------------------->
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card">
+      <div class="card-body">
+          <h5 class="card-title">Total Product Value</h5>
+          <div class="d-flex align-items-center">
+              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-cash-coin"></i>
+              </div>
+              <div class="ps-3">
+                  <h6>${{ total_product_value }}</h6>
+                  <span class="text-muted small pt-2 ps-1">Total Value</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!----Total Cart money---------------------------------------------------------------------------->
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card">
+      <div class="card-body">
+          <h5 class="card-title">Total Cart Value</h5>
+          <div class="d-flex align-items-center">
+              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-cash-coin"></i>
+              </div>
+              <div class="ps-3">
+                  <h6>${{ total_cart_value }}</h6>
+                  <span class="text-muted small pt-2 ps-1">Total Value</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!----Total Sold money---------------------------------------------------------------------------->
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card revenue-card">
+
+    <div class="filter">
+      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+        <li class="dropdown-header text-start">
+          <h6>Filter</h6>
+        </li>
+
+        <li><a class="dropdown-item" href="#">Today</a></li>
+        <li><a class="dropdown-item" href="#">This Month</a></li>
+        <li><a class="dropdown-item" href="#">This Year</a></li>
+      </ul>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+          <i class="bi bi-currency-dollar"></i>
+        </div>
+        <div class="ps-3">
+          <h6>$3,264</h6>
+          <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Revenue Card -->
+
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!----Users------------------------------------------------------------------------------------------>
+<div class="col-xxl-4 col-xl-12">
+    <div class="card info-card buyers-card">
+        <div class="card-body">
+            <h5 class="card-title">All Users <span id="user-period">| Total Users</span></h5>
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6 id="buyer-count">{{ total_users }}</h6>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-success small pt-1 fw-bold">({{ active_users }} Email Verified)</span>
+                    <span class="text-danger small pt-1 fw-bold">({{ inactive_users }} Email Not Verified)</span>
+                    <span class="text-primary small pt-1 fw-bold">({{ verified_users }} Admin Verified)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xxl-4 col-xl-12">
+    <div class="card info-card buyers-card" onclick="buyers_list()" style="cursor: pointer;">
+        <div class="card-body">
+            <h5 class="card-title">Buyers <span id="customer-period">| Total Users</span></h5>
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6 id="buyer-count">{{ total_buyers }}</h6>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-success small pt-1 fw-bold">({{ active_buyers }} Email Verified)</span>
+                    <span class="text-danger small pt-1 fw-bold">({{ inactive_buyers }} Email Not Verified)</span>
+                    <span class="text-primary small pt-1 fw-bold">({{ verified_buyers }} Admin Verified)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xxl-4 col-xl-12">
+    <div class="card info-card buyers-card" onclick="farmer_list()" style="cursor: pointer;">
+        <div class="card-body">
+            <h5 class="card-title">Farmers <span id="farmer-period">| Total Users</span></h5>
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-person-check"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6 id="farmer-count">{{ total_farmers }}</h6>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-success small pt-1 fw-bold">({{ active_farmers }} Email Verified)</span>
+                    <span class="text-danger small pt-1 fw-bold">({{ inactive_farmers }} Email Not Verified)</span>
+                    <span class="text-primary small pt-1 fw-bold">({{ verified_farmers }} Admin Verified)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function farmer_list() {
+        window.location.href = "{% url 'farmer_list' %}";
+    }
+    function buyers_list() {
+        window.location.href = "{% url 'buyer_list' %}";
+    }
+    function product() {
+        window.location.href = "{% url 'products' %}";
+    }
+    function cart() {
+        window.location.href = "{% url 'cart_list' %}";
+    }
+</script
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+</div>
+</div><!-- End Left side columns -->
+
+
+<!-------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------->        
+<!-- Right side columns ------------------------------------------------------------------------------->
+
+<div class="col-lg-4">
+  <div class="card">
+    <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            <li class="dropdown-header text-start">
+                <h6>Filter</h6>
+            </li>
+            <li><a class="dropdown-item" href="#" data-filter="today">Today</a></li>
+            <li><a class="dropdown-item" href="#" data-filter="month">This Month</a></li>
+            <li><a class="dropdown-item" href="#" data-filter="year">This Year</a></li>
+        </ul>
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">Recent Activity <span id="activity-period">| Today</span></h5>
+
+        <div class="activity" id="activity-list">
+            {% for log in recent_logs %}
+                <div class="activity-item d-flex">
+                    <div class="activite-label">{{ log.timestamp|timesince }} ago</div>
+                    <i class='bi bi-circle-fill activity-badge text-{{ log.get_badge_color }} align-self-start'></i>
+                    <div class="activity-content">
+                        {{ log.message|safe }}
+                    </div>
+                </div>{% empty %}
+                <p>No recent activity.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.dropdown-item[data-filter]').forEach(item => {
+            item.addEventListener('click', function(event) {
+                const filter = this.getAttribute('data-filter');
+                let period;
+
+                if (filter === 'today') {
+                    period = "| Today";
+                    // Reload logs for today (you'll need to handle this in your view)
+                } else if (filter === 'month') {
+                    period = "| This Month";
+                    // Reload logs for this month
+                } else if (filter === 'year') {
+                    period = "| This Year";
+                    // Reload logs for this year
+                }
+
+                document.getElementById('activity-period').textContent = period;
+                // You'll likely need to reload the activity list via AJAX here.
+            });
+        });
+    });
+</script>
+
+
+
+
+        
+
+</div>
+<!-- End sidebar recent posts-->
+
+            </div>
+          </div><!-- End News & Updates -->
+
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+  </main>
+  <!-- End #main --------------------------------------------------------------------------->
+
+
+
+<!-- ======= Footer =============================================================================== -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Agri Connect</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+      Designed by <a href="#">Kaleb</a>
+  </div>
+</footer>
+<!-- End Footer ===================================================================================-->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+{% endblock %}

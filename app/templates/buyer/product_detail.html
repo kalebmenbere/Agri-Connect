@@ -1,0 +1,157 @@
+{% extends 'include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Product Detail</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'product_list' %}#product_list">Product List</a></li>
+        <li class="breadcrumb-item"><a href="#">Product Detail</a></li>
+    </ol>
+</div>
+<!-- Single Page Header End -->
+
+<!-- Single Product Start -->
+<div class="container-fluid py-5 mt-5" id="product_detail"> 
+    <div class="container py-5">
+                {% if selected_product %}
+                    <div class="row" style="margin: 0 10%;">
+                        <h3><b>Product Details</b></h3>
+                        <div class="col-lg-6">
+                            <div class="border rounded">
+                                {% if selected_product.product_image %}
+                                <img src="{{ selected_product.product_image.url }}" class="img-fluid rounded" alt="{{ selected_product.product_name }}">
+                                {% else %}
+                                <img src="{% static 'img/best-product-1.jpg' %}" class="img-fluid rounded" alt="Default Image">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-lg-6" style="width: fit-content; margin-left: 10%;">
+                            <h4 class="fw-bold mb-3">Product: {{ selected_product.product_name }}</h4>
+                            <p class="mb-3"><b>Category:</b> {{ selected_product.product_category }}</p>
+                            <p class="mb-3"><b>Quantity:</b> {{ selected_product.product_quantity }} Kg</p>
+                            <p class="mb-3"><b>Farmer Name:</b> {{ selected_product.farmer.first_name }}</p>
+                            <p class="mb-3"><b>Location:</b> {{ selected_product.farmer.location }}</p>
+                            <p class="mb-3"><b>Date Posted:</b> {{ selected_product.created_at|date:"Y-m-d" }}</p>
+                            <p class="mb-3"><b>Time Posted:</b> {{ selected_product.created_at|date:"H:i:s T" }}</p>
+                            <p class="mb-3"><b>Price per kg:</b> {{ selected_product.product_price }} birr/kg</p>
+                            
+                            <input 
+                            class="form-control form-control-sm text-center custom-input" type="number" id="quantity" min="100" step="100" value="100">
+                            <h5 class="fw-bold mb-3" id="total_price">
+                            <b>Total Price:</b> <span>0.00</span> Birr
+                            </h5>
+                            <!-- CSS (can be placed in your stylesheet or inside a <style> tag) -->
+                            <style>
+                            /* Custom styling for the input */
+                            .custom-input {
+                                width: 50%;
+                                border: 2px solid green; /* Blue border */
+                                border-radius: 0.25rem;
+                                padding: 0.375rem 0.75rem;
+                                transition: border-color 0.3s, box-shadow 0.3s;
+                            }
+                            
+                            .custom-input:focus {
+                                border-color: orange;
+                                box-shadow: 0 0 5px rgba(0,123,255,0.5);
+                            }
+                            
+                            /* Make sure the up and down spinner icons are visible in all browsers */
+                            /* Remove any browser-specific styling overrides that might hide them */
+                            input[type=number]::-webkit-outer-spin-button,
+                            input[type=number]::-webkit-inner-spin-button {
+                                -webkit-appearance: inner-spin-button;
+                                opacity: 1;
+                            }
+                            </style>
+                        
+                            {% if user.role == 'buyer' %}
+                            <form method="POST" action="{% url 'add_to_cart' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="product_id" value="{{ selected_product.id }}">
+                                <!-- Hidden field that should be updated by your JS when the user adjusts quantity -->
+                                <input type="hidden" name="quantity" id="form_quantity" value="100">
+                                <button type="submit" class="btn border border-secondary rounded-pill px-4 py-3 text-primary">
+                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                </button>
+                            </form>
+                            {% endif %}
+                            
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    // Retrieve unit price and maximum quantity from the server-side context.
+                                    // Fallbacks: pricePerKg defaults to 0, maxQuantity defaults to 1000.
+                                    const pricePerKg = parseFloat("{{ selected_product.product_price }}") || 0;
+                                    const maxQuantity = parseInt("{{ selected_product.product_quantity }}", 10) || 1000;
+                                
+                                    const quantityInput = document.getElementById('quantity');          // Visible number input field.
+                                    const totalPriceSpan = document.querySelector('#total_price span');   // Element to display total price.
+                                    const formQuantity = document.getElementById('form_quantity');        // Hidden input field.
+                                    
+                                    // Function to update the total price based on the quantity input.
+                                    function updateTotalPrice() {
+                                        // Ensure the value is a number and divisible by 100.
+                                        let qty = parseInt(quantityInput.value, 10);
+                                        
+                                        // If the input value is not a number, default to 100.
+                                        if (isNaN(qty)) {
+                                            qty = 100;
+                                        }
+                                        
+                                        // Force the quantity to be a multiple of 100.
+                                        // For example, if someone types 250, this rounds down to 200.
+                                        qty = Math.floor(qty / 100) * 100;
+                                        
+                                        // Enforce a minimum of 100 and maximum limit.
+                                        if (qty < 100) {
+                                            qty = 100;
+                                        } else if (qty > maxQuantity) {
+                                            qty = maxQuantity - (maxQuantity % 100); // Largest multiple of 100 not exceeding maxQuantity.
+                                        }
+                                        
+                                        // Update both the visible input and hidden form field with the validated quantity.
+                                        quantityInput.value = qty;
+                                        formQuantity.value = qty;
+                                        
+                                        // Calculate the total price.
+                                        const total = qty * pricePerKg;
+                                        // Update the total price display with 2 decimal places.
+                                        totalPriceSpan.textContent = total.toFixed(2);
+                                    }
+                                    
+                                    // Listen for changes on the input field.
+                                    quantityInput.addEventListener('input', updateTotalPrice);
+                                    
+                                    // Also validate on change (in case the browser does auto-adjust the value).
+                                    quantityInput.addEventListener('change', updateTotalPrice);
+                                    
+                                    // Initialize the display on page load.
+                                    updateTotalPrice();
+                                });
+                                </script>
+                                                              
+                           {% else %}
+                           <div id="product_detail" class="col-lg-12 mt-5">
+                               <p>Please select a product to view its details.</p>
+                           </div>
+                           {% endif %}
+                    </div>
+                
+                    </div>
+         
+        </div>
+</div>
+<!-- Single Product End -->
+
+<!-- Copyright Start -->
+{% include 'include/copyright.html' %}
+<!-- Copyright End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+{% include 'include/messaging.html' %}
+{% endblock %}

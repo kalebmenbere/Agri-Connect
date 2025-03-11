@@ -1,0 +1,298 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- start Page Title ---------------------------------------------------------------------->
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      {% if user.role == 'farmer' %}
+      <li class="breadcrumb-item active"><a href="{% url 'farmer_list' %}">Farmers</a></li>
+      {% elif user.role == 'buyer' %}
+      <li class="breadcrumb-item active"><a href="{% url 'buyer_list' %}">Buyers</a></li>
+      {% endif %}
+      <li class="breadcrumb-item active"><a href="#">User Profile</a></li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+
+
+<!--------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------->
+<!-- Profile Card ------------------------------------------------------------------------------------------>
+<div class="col-xl-4">
+  <div class="card">
+      <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+          {% if user.first_name and user.last_name %}
+              {% with initials=user.first_name|slice:":1"|upper %}
+                  <div class="rounded-circle profile-initials">{{ initials }}</div>
+              {% endwith %}
+          {% else %}
+              <img src="{% static 'img/avatar.jpg' %}" alt="Profile" class="rounded-circle">
+          {% endif %}
+          <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+          <h3>{{ user.role|capfirst }}</h3>
+          {% if user.is_activated %}
+              <span style="color: green; font-weight: bold;">✅ Activated</span>
+          {% else %}
+              <span style="color: red;">❌ Not Activated</span>
+          {% endif %}
+      </div>
+  </div>
+</div>
+
+<style>
+  .profile-initials {
+      width: 120px;
+      height: 120px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 48px; /* Increased font size for single letter */
+      font-weight: bold;
+      color: #333;
+  }
+</style>
+
+
+
+<div class="col-xl-8">
+  <div class="card">
+    <div class="card-body pt-3">
+
+
+<!--------------------------------------------------------------------------------------------------------------------------->      
+<!--Tabs overview, profile, setting and password --------------------------------------------------------------------------->
+<ul class="nav nav-tabs nav-tabs-bordered">
+
+  <li class="nav-item">
+    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+  </li>
+
+  <li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+  </li>
+
+  <li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Activate User</button>
+  </li>
+
+  <li class="nav-item">
+    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Delete User</button>
+  </li>
+
+</ul>
+
+
+
+
+<div class="tab-content pt-2">
+
+  <div class="tab-pane fade show active profile-overview" id="profile-overview">
+      <h5 class="card-title">About</h5>
+      <p class="small fst-italic">Information of the user {{ user.first_name }}</p>
+
+      <h5 class="card-title">Profile Details</h5>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-4 label">Full Name</div>
+          <div class="col-lg-9 col-md-8">{{ user.first_name }} {{ user.last_name }}</div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-4 label">Role</div>
+          <div class="col-lg-9 col-md-8">{{ user.get_role_display }}</div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-4 label">Location</div>
+          <div class="col-lg-9 col-md-8">{{ user.location }}</div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-4 label">Phone</div>
+          <div class="col-lg-9 col-md-8">{{ user.phone }}</div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-4 label">Bank Name</div>
+          <div class="col-lg-9 col-md-8">{{ user.bank_name }}</div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-4 label">Bank Number</div>
+          <div class="col-lg-9 col-md-8">{{ user.bank_number }}</div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-4 label">Email</div>
+          <div class="col-lg-9 col-md-8">{{ user.email }}</div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-3 col-md-4 label">Activated</div>
+          <div class="col-lg-9 col-md-8">
+              {% if user.is_activated %}
+                  ✅ Activated
+              {% else %}
+                  ❌ Not Activated
+              {% endif %}
+          </div>
+      </div>
+  </div>
+
+  <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+      <form method="post">
+          {% csrf_token %}
+          <div class="row mb-3">
+              <label for="firstName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
+              <div class="col-md-8 col-lg-9">
+                  <input name="first_name" type="text" class="form-control" id="firstName" value="{{ user.first_name }}">
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <label for="lastName" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
+              <div class="col-md-8 col-lg-9">
+                  <input name="last_name" type="text" class="form-control" id="lastName" value="{{ user.last_name }}">
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <label for="role" class="col-md-4 col-lg-3 col-form-label">Role</label>
+              <div class="col-md-8 col-lg-9">
+                  <input name="role" type="text" class="form-control" id="role" value="{{ user.get_role_display }}" readonly>
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <label for="location" class="col-md-4 col-lg-3 col-form-label">Location</label>
+              <div class="col-md-8 col-lg-9">
+                  <input name="location" type="text" class="form-control" id="location" value="{{ user.location }}">
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <label for="phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+              <div class="col-md-8 col-lg-9">
+                  <input name="phone" type="text" class="form-control" id="phone" value="{{ user.phone }}">
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <label for="bankName" class="col-md-4 col-lg-3 col-form-label">Bank Name</label>
+              <div class="col-md-8 col-lg-9">
+                  <input name="bank_name" type="text" class="form-control" id="bankName" value="{{ user.bank_name }}">
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <label for="bankNumber" class="col-md-4 col-lg-3 col-form-label">Bank Account Number</label>
+              <div class="col-md-8 col-lg-9">
+                  <input name="bank_number" type="text" class="form-control" id="bankNumber" value="{{ user.bank_number }}">
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+              <div class="col-md-8 col-lg-9">
+                  <input name="email" type="email" class="form-control" id="email" value="{{ user.email }}">
+              </div>
+          </div>
+
+          <div class="text-center">
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+      </form>
+  </div>
+
+  <div class="tab-pane fade pt-3" id="profile-settings">
+    <form method="post" id="activationForm">
+      {% csrf_token %}
+      <div class="row mb-3">
+          <label for="is_activated" class="col-md-4 col-lg-3 col-form-label">Account Activation</label>
+          <div class="col-md-8 col-lg-9">
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="is_activated" name="is_activated" {% if user.is_activated %}checked{% endif %} onchange="handleCheckboxChange(this)">
+                  <label class="form-check-label" for="is_activated">
+                      Activate account
+                  </label>
+              </div>
+          </div>
+      </div>
+      <div class="text-center">
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+  </form>
+  
+  <script>
+      function handleCheckboxChange(checkbox) {
+          let hiddenInput = document.getElementById('is_activated_hidden');
+          if (!checkbox.checked) {
+              if (!hiddenInput) {
+                  hiddenInput = document.createElement('input');
+                  hiddenInput.type = 'hidden';
+                  hiddenInput.name = 'is_activated';
+                  hiddenInput.id = 'is_activated_hidden';
+                  document.getElementById('activationForm').appendChild(hiddenInput);
+              }
+              hiddenInput.value = 'off';
+          } else {
+              if (hiddenInput) {
+                  hiddenInput.remove();
+              }
+          }
+      }
+  </script>
+  </div>
+</div>
+
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+<!-- Delete User ----------------------------------------------------------------------------------------------->
+<div class="tab-pane fade pt-3" id="profile-change-password">
+  <!-- Delete user -->
+  <form>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Delete User</button>
+    </div>
+  </form><!-- Delete User -->
+
+</div>
+
+
+
+
+
+      </div><!-- End Bordered Tabs -->
+
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+<!-- ======= Footer =============================================================================== -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Agri Connect</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+      Designed by <a href="#">Kaleb</a>
+  </div>
+</footer>
+<!-- End Footer ===================================================================================-->
+ 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  {% endblock %}

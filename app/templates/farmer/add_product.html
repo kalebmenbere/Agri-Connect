@@ -1,0 +1,176 @@
+{% extends 'include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Add Product</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Add Product</a></li>
+    </ol>
+</div>
+<!-- Single Page Header End -->
+
+
+<!-- Add Product Start -->
+<div class="container-fluid contact py-5" id="add-product">
+    <div class="container py-5">
+        <div class="p-5 bg-light rounded">
+            <div class="row g-4">
+                <!-- Title -->
+                <div class="col-12">
+                    <div class="text-center mx-auto" style="max-width: 700px;">
+                        <h1 class="text-primary">Add New Product</h1>
+                        <p class="text-muted">Fill in your product details step by step below.</p>
+                    </div>
+                </div>
+                <!-- Product Form -->
+                <div class="col-lg-7">
+                    <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <!-- Product Category -->
+                        <div class="mb-3">
+                            <select name="product_category" id="product_category" class="form-control border-0 py-3" required>
+                                <option value="">Select Category</option>
+                                <option value="Fruits">Fruits</option>
+                                <option value="Vegetables">Vegetables</option>
+                                <option value="Grains & Cereals">Grains & Cereals</option>
+                                <option value="Legumes & Pulses">Legumes & Pulses</option>
+                                <option value="Root & Tuber Crops">Root & Tuber Crops</option>
+                            </select>
+                        </div>
+                        <!-- Product Name (Dependent Dropdown) -->
+                        <div class="mb-3" id="product-name-container" style="display: none;">
+                            <select name="product_name" id="product_name" class="form-control border-0 py-3" required>
+                                <option value="">Select Product</option>
+                            </select>
+                        </div>
+                        <!-- Quantity in KG -->
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="number" step="100" name="product_quantity" class="form-control border-0 py-3" 
+                                       placeholder="Quantity" required min="100" oninput="validateQuantity(this)">
+                                <span class="input-group-text">kg</span>
+                            </div>
+                            <small class="text-muted">Quantity must be greater than 100 kg and in multiples of 100.</small>
+                        </div>
+                        
+                        <script>
+                        function validateQuantity(input) {
+                            let value = parseInt(input.value, 10);
+                            
+                            // Ensure value is greater than 100 and a multiple of 100
+                            if (value < 100) {
+                                input.value = 100;
+                            } else if (value % 100 !== 0) {
+                                input.value = Math.round(value / 100) * 100; // Rounds to nearest 100
+                            }
+                        }
+                        </script>
+                        <!-- Price in Birr per KG -->
+                        <div class="mb-3" >
+                            <div class="input-group">
+                                <input type="number" step="0.01" name="product_price" class="form-control border-0 py-3" placeholder="Price" required min="0">
+                                <span class="input-group-text">Birr/kg</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="file" name="product_image" id="product-image" class="form-control" accept="image/*">
+                          </div>                          
+                        <div class="d-grid">
+                            <button type="submit" class="btn form-control border-secondary py-3 bg-white text-primary">ADD PRODUCT</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Information Column -->
+                <div class="col-lg-5">
+                    <div class="d-flex p-4 rounded mb-4 bg-white">
+                        <i class="fas fa-box-open fa-2x text-primary me-4"></i>
+                        <div>
+                            <h4>Product Details</h4>
+                            <p class="mb-2">
+                                Choose a product category to see relevant product names, then fill in the quantity (in kg) and price (Birr per kg).
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.p-5 bg-light rounded -->
+    </div><!-- /.container -->
+</div><!-- /.container-fluid -->
+<!-- Add Product End -->
+
+<script>
+    // Define available product choices (only names)
+    const productChoices = {
+      'Fruits': {
+        'Apple': 'Apple',
+        'Banana': 'Banana',
+        'Mango': 'Mango',
+        'Orange': 'Orange'
+      },
+      'Vegetables': {
+        'Tomato': 'Tomato',
+        'Cabbage': 'Cabbage',
+        'Carrot': 'Carrot',
+        'Pepper': 'Pepper'
+      },
+      'Grains & Cereals': {
+        'Maize': 'Maize',
+        'Wheat': 'Wheat',
+        'Barley': 'Barley',
+        'Rice': 'Rice'
+      },
+      'Legumes & Pulses': {
+        'Beans': 'Beans',
+        'Chickpeas': 'Chickpeas',
+        'Lentils': 'Lentils',
+        'Peas': 'Peas'
+      },
+      'Root & Tuber Crops': {
+        'Potato': 'Potato',
+        'Sweet Potato': 'Sweet Potato',
+        'Yam': 'Yam',
+        'Cassava': 'Cassava'
+      }
+    };
+  
+    // Listen for changes on the category select element
+    document.getElementById('product_category').addEventListener('change', function(){
+      const category = this.value;
+      const productSelect = document.getElementById('product_name');
+      const container = document.getElementById('product-name-container');
+  
+      // Clear previous options
+      productSelect.innerHTML = '<option value="">Select Product</option>';
+  
+      if (productChoices[category]) {
+        // Show the product name container
+        container.style.display = 'block';
+  
+        // Populate product name options based on selected category
+        Object.keys(productChoices[category]).forEach(function(product){
+           const option = document.createElement('option');
+           option.value = product;
+           option.textContent = product;
+           productSelect.appendChild(option);
+        });
+      } else {
+        // Hide the product name container if no valid category selected
+        container.style.display = 'none';
+      }
+    });
+</script>
+
+<!-- Copyright Start -->
+{% include 'include/copyright.html' %}
+<!-- Copyright End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+    
+{% include 'include/messaging.html' %}
+{% endblock %}

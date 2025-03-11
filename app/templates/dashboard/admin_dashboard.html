@@ -1,0 +1,45 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-2 bg-light p-3 vh-100">
+            <h4 class="text-green">Admin Panel</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="{% url 'admin_dashboard' %}" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Manage Users</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Manage Orders</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Manage Products</a></li>
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link text-danger">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-10 p-4">
+            <h2 class="text-green">Admin Dashboard</h2>
+            <div class="row">
+                <!-- Summary Cards -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h5>Total Users</h5>
+                        <h3 class="text-success">{{ total_users }}</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h5>Total Orders</h5>
+                        <h3 class="text-success">{{ total_orders }}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <h4 class="mt-4">Recent Activity</h4>
+            <ul class="list-group">
+                {% for activity in recent_activity %}
+                <li class="list-group-item">{{ activity }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+

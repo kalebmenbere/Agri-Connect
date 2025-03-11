@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+{% block extra_css %}
+<style>
+  .extra-top-padding {
+    padding-top: 90px;
+  }
+  .registration-form {
+    background-color: orange;
+    margin: 5%;
+    padding: 4%;
+    border-radius: 10px;
+  }
+  .extra-links {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .extra-links a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .extra-links a:hover {
+    text-decoration: underline;
+  }
+
+</style>
+{% endblock extra_css %}
+
+<div class="container-fluid extra-top-padding">
+  <div class="container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6 sticky-image">
+        <img src="{% static 'img/registor.jpg' %}" class="img-fluid rounded-top w-100" alt="Branding Image">
+      </div>
+      <div class="col-lg-6">
+        <div class="registration-form">
+          <form method="POST" action="{% url 'register' %}" id="registrationForm">
+            {% csrf_token %}
+            <div class="mb-3">
+              <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="text" name="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+              <select name="role" class="form-control" required>
+                <option value="">Select Role</option>
+                <option value="farmer">Farmer</option>
+                <option value="buyer">Buyer</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <input type="text" name="location" class="form-control" placeholder="Location / City" required>
+            </div>
+            <div class="mb-3">
+              <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="mb-3">
+              <input type="text" name="bank_name" class="form-control" placeholder="Bank Name">
+            </div>
+            <div class="mb-3">
+              <input type="text" name="bank_number" class="form-control" placeholder="Bank Account Number">
+            </div>
+
+            <!-- Password Field with Validation -->
+            <div class="mb-3">
+              <input type="password" id="password1" name="password1" class="form-control" placeholder="Password" required>
+              <div class="invalid-feedback">Password must be at least 8 characters long, include a number, and a special character.</div>
+            </div>
+            <div class="mb-3">
+              <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" required>
+              <div class="invalid-feedback">Passwords do not match.</div>
+            </div>
+
+            <p>
+              By registering, you accept our <a href="{% url 'terms' %}">Terms of Service</a> and <a href="{% url 'terms' %}">Privacy Policy</a>.
+            </p>
+            <div class="d-grid">
+              <button type="submit" class="btn green" id="registerBtn" disabled>Register</button>
+            </div>
+          </form>
+          <div class="extra-links">
+            <p>
+              Already have an account? <a href="{% url 'login' %}">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% block extra_js %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const password1 = document.getElementById("password1");
+    const password2 = document.getElementById("password2");
+    const registerBtn = document.getElementById("registerBtn");
+    
+    function validatePassword() {
+        const password = password1.value;
+        const confirmPassword = password2.value;
+        const regex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+        if (!regex.test(password)) {
+            password1.classList.add("is-invalid");
+            registerBtn.disabled = true;
+        } else {
+            password1.classList.remove("is-invalid");
+        }
+
+        if (password !== confirmPassword || confirmPassword === "") {
+            password2.classList.add("is-invalid");
+            registerBtn.disabled = true;
+        } else {
+            password2.classList.remove("is-invalid");
+        }
+
+        if (regex.test(password) && password === confirmPassword) {
+            registerBtn.disabled = false;
+        }
+    }
+
+    password1.addEventListener("input", validatePassword);
+    password2.addEventListener("input", validatePassword);
+});
+</script>
+{% endblock extra_js %}
+{% endblock %}

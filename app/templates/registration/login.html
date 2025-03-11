@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+{% block extra_css %}
+<style>
+  .extra-top-padding {
+    padding-top: 90px;
+  }
+  .left {
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    border-radius: 10px;
+    height: 100%;
+    animation: floatAnimation 3s ease-in-out infinite;
+  }
+  @keyframes floatAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  .login-form {
+    background-color: orange;
+    margin: 5%;
+    padding: 4%;
+    border-radius: 10px;
+  }
+  .extra-links {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .extra-links a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .extra-links a:hover {
+    text-decoration: underline;
+  }
+</style>
+{% endblock extra_css %}
+
+<div class="container-fluid extra-top-padding">
+  <div class="container py-5">
+    <div class="row g-4 align-items-center">
+      <!-- Left Column: Branding / Image -->
+      <div class="col-lg-6">
+        <div class="left">
+          <img src="{% static 'img/registor.jpg' %}" class="img-fluid rounded-top w-100" alt="Login Image">
+        </div>
+      </div>
+      <!-- Right Column: Login Form -->
+      <div class="col-lg-6">
+        <div class="login-form">      
+          <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <input type="username" name="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn green">Login</button>
+            </div>
+          </form>
+
+          <div class="extra-links">
+            <p>Forgot Your Password? <a href="{% url 'password_reset' %}">Reset Password</a></p>
+            <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- /.container-fluid -->
+{% endblock %}

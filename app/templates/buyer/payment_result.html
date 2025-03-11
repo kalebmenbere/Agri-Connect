@@ -1,0 +1,44 @@
+{% extends 'include/navbar.html' %}
+{% block content %}
+{% load static %}
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Product Detail</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'cart' %}#cart">Cart</a></li>
+        <li class="breadcrumb-item"><a href="#Success">Success</a></li>
+    </ol>
+</div>
+<!-- Single Page Header End -->
+<!-- Payment Status Start -->
+<div class="container-fluid py-5" id="Success">
+    <div class="container py-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <i class="bi bi-check-circle display-1 text-success"></i>
+                <h1 class="display-1">Success</h1>
+                <h1 class="mb-4">Payment Completed</h1>
+                <p class="mb-4">Thank you for your payment! Your transaction was successful.</p>             
+                <a class="btn border-secondary rounded-pill py-3 px-5" href="{% url 'product_list' %}">Go Back To Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Payment Status End -->
+
+
+
+<!-- Footer Start -->
+{% include 'include/footer.html' %}
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+{% include 'include/copyright.html' %}
+<!-- Copyright End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+{% include 'include/messaging.html' %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Request Details{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Request Details</h2>
+    <div class="card mx-auto" style="max-width: 800px;">
+        <div class="card-body">
+            <h5 class="card-title text-center mb-4">Request #{{ request_instance.pk }}</h5>
+            <div class="row">
+                <div class="col-sm-4 text-end font-weight-bold">Request Type:</div>
+                <div class="col-sm-8">{{ request_instance.request_type }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Location:</div>
+                <div class="col-sm-8">{{ request_instance.request_location }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Department:</div>
+                <div class="col-sm-8">{{ request_instance.request_department }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Requester Name:</div>
+                <div class="col-sm-8">{{ request_instance.requester_name }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Requester Email:</div>
+                <div class="col-sm-8">{{ request_instance.requester_email }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Requester Phone:</div>
+                <div class="col-sm-8">{{ request_instance.requester_phone }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Approved by Director:</div>
+                <div class="col-sm-8">{{ request_instance.is_approved|yesno:"Yes,No" }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Assigned Team Leader:</div>
+                <div class="col-sm-8">{{ request_instance.assigned_team_leader }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Assigned Staff:</div>
+                <div class="col-sm-8">{{ request_instance.assigned_staff }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Completed:</div>
+                <div class="col-sm-8">{{ request_instance.is_completed|yesno:"Yes,No" }}</div>
+
+                <div class="col-sm-4 text-end font-weight-bold">Feed Back:</div>
+                <div class="col-sm-8">{{ request_instance.feed_back }}</div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'edit_request' pk=request_instance.pk %}" class="btn btn-primary">Edit Request</a>
+                <a href="{% url 'request_list' %}" class="btn btn-info">Request List</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

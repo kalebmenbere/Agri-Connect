@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Account Activation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .content {
+            padding: 20px;
+            font-size: 16px;
+            color: #333333;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            Activate Your Account
+        </div>
+        <div class="content">
+            <p>Hi, <strong>{{ user }}</strong></p>
+            <p>Thank you for registering! To complete your sign-up, please verify your email address by clicking the button below:</p>
+            <a href="{{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}" class="btn">Activate Account</a>
+            <p>If the button above doesn’t work, you can also copy and paste the following link into your browser:</p>
+            <p style="word-break: break-word; color: #28a745;">
+                <strong>{{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}</strong>
+            </p>
+            <p>If you did not sign up for this account, you can ignore this email.</p>
+        </div>
+        <div class="footer">
+            <p>Best regards,<br><strong>Agri Connect</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>

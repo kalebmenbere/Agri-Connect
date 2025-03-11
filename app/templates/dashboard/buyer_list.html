@@ -1,0 +1,111 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- start Page Title ---------------------------------------------------------------------->
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      <li class="breadcrumb-item active"><a href="{% url 'buyer_list' %}">Buyers</a></li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title -->
+
+
+<section class="section">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">List of Buyers</h5>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Bank Name</th>
+                                <th scope="col">Bank Number</th>
+                                <th scope="col">Date & Time Joined</th>
+                                <th scope="col">Email Verified</th>
+                                <th scope="col">Activated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for buyer in buyers %}
+                            <tr class="clickable-row" style="cursor: pointer;" data-href="{% url 'users_profile' user_id=buyer.id %}">
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td>{{ buyer.username }}</td>
+                                <td>{{ buyer.email }}</td>
+                                <td>{{ buyer.first_name }}</td>
+                                <td>{{ buyer.last_name }}</td>
+                                <td>{{ buyer.location }}</td>
+                                <td>{{ buyer.phone }}</td>
+                                <td>{{ buyer.bank_name }}</td>
+                                <td>{{ buyer.bank_number }}</td>
+                                <td>{{ buyer.date_joined|date:"Y-m-d H:i:s" }}</td>
+                                <td>
+                                    {% if buyer.is_active %}
+                                    ✅ Verified
+                                    {% else %}
+                                    ❌ Not Verified
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if buyer.is_activated %}
+                                    ✅ Activated
+                                    {% else %}
+                                    ❌ Not Activated
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="12" class="text-center">No buyers found.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const rows = document.querySelectorAll('.clickable-row');
+
+                rows.forEach(row => {
+                    row.addEventListener('click', function() {
+                        const url = this.getAttribute('data-href');
+                        window.location.href = url;
+                    });
+                });
+            });
+        </script>
+    </div>
+</section>
+</main>
+
+
+<!-- ======= Footer =============================================================================== -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Agri Connect</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+      Designed by <a href="#">Kaleb</a>
+  </div>
+</footer>
+<!-- End Footer ===================================================================================-->
+ 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  {% endblock %}

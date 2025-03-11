@@ -1,0 +1,102 @@
+{% extends 'include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Product Detail</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'cart' %}#cart">Cart</a></li>
+    </ol>
+</div>
+<!-- Single Page Header End -->
+
+
+<!-- Cart Page Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Products</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Farmer</th>
+                        <th scope="col">Buyer</th>
+                        {% if user.role == 'buyer' %}
+                        <th scope="col">Payment</th>
+                        {{else}}
+                        <th scope="col">Status</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+                        <th scope="row">
+                            <div class="d-flex align-items-center">
+                                <img src="{{ item.order_image.url }}" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="{{ item.order_name }}">
+                            </div>
+                        </th>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.order_name }}</p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.order_price }} $</p>
+                        </td>
+                        <td>
+                            <div class="input-group quantity mt-4" style="width: 100px;">
+                                <input type="text" class="form-control form-control-sm text-center border-0" value="{{ item.order_quantity }}" readonly>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.total_price }} $</p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.order_category }}
+
+                            </p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.farmer }}</p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.buyer }}</p>
+                        </td>
+                        {% if user.role == 'buyer' %}
+                        <td class="text-center align-middle">
+                            <a href="{% url 'payment_detail' item.id %}#payment_detail" class="btn btn-primary w-75 rounded-pill text-uppercase fw-semibold">Pay</a>
+                        </td>   
+                        {% endif %}                     
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>               
+        </div>
+
+    
+        
+
+        
+    </div>
+</div>
+<!-- Cart Page End -->
+
+<!-- Footer Start -->
+{% include 'include/footer.html' %}
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+{% include 'include/copyright.html' %}
+<!-- Copyright End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+{% include 'include/messaging.html' %}
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %}Request Details{% endblock %} 
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request List - MyApp</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS (optional) -->
+    <style>
+        .container {
+            margin: 10px auto;  /* Decreased margin */
+            padding: 0 10px;    /* Optional: Decreased padding */
+        }
+        table {
+            margin-top: 10px;   /* Decreased margin-top */
+        }
+        th, td {
+            text-align: center;
+        }
+        .clickable-row {
+            cursor: pointer;
+        }
+        .clickable-row:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Request List</h2>
+        {% if user.role == 'ict_director' or user.role == 'client' %}
+        <a href="{% url 'create_request' %}" class="btn btn-secondary">Create New Request</a>
+        {% endif %}
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Location</th>
+                    <th>Department</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Approved</th>
+                    <th>Team Leader</th>
+                    <th>Staff</th>
+                    <th>Completed</th>
+                    <th>Feed Back</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in requests %}
+                    <tr class="clickable-row" data-href="{% url 'view_request' request.pk %}">
+                        <td>{{ request.id }}</td>
+                        <td>{{ request.request_type }}</td>
+                        <td>{{ request.request_location }}</td>
+                        <td>{{ request.request_department }}</td>
+                        <td>{{ request.requester_name }}</td>
+                        <td>{{ request.requester_email }}</td>
+                        <td>{{ request.requester_phone }}</td>
+                        <td>{{ request.is_approved|yesno:"Yes,No" }}</td>
+                        <td>{{ request.assigned_team_leader }}</td>
+                        <td>{{ request.assigned_staff }}</td>
+                        <td>{{ request.is_completed|yesno:"Yes,No" }}</td>
+                        <td>{{ request.feed_back }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="12" class="text-center">No requests available</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript for clickable rows -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var clickableRows = document.querySelectorAll('.clickable-row');
+            clickableRows.forEach(function(row) {
+                row.addEventListener('click', function() {
+                    window.location.href = row.getAttribute('data-href');
+                });
+            });
+        });
+    </script>
+</body>
+{% endblock %}

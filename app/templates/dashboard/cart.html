@@ -1,0 +1,87 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<!-- start Page Title ---------------------------------------------------------------------->
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      <li class="breadcrumb-item active"><a href="#">cart</a></li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title --><div class="col-12">
+    <div class="card top-selling overflow-auto">
+
+        <div class="card-body pb-0">
+            <h5 class="card-title">Cart List <span>| {{ filter_title }}</span></h5>
+
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Preview</th>
+                        <th scope="col"><a href="?sort=order_name">Order Name</a></th>
+                        <th scope="col"><a href="?sort=order_quantity">Quantity</a></th>
+                        <th scope="col"><a href="?sort=order_price">Price</a></th>
+                        <th scope="col"><a href="?sort=order_category">Category</a></th>
+                        <th scope="col"><a href="?sort=farmer__username">Farmer</a></th>
+                        <th scope="col"><a href="?sort=buyer__username">Buyer</a></th>
+                        <th scope="col"><a href="?sort=total_price">Total Price</a></th>
+                        <th scope="col"><a href="?sort=created_at">Created At</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cart in carts %}
+                    <tr>
+                        <th scope="row">
+                            {% if cart.order_image %}
+                                <a href="#"><img src="{{ cart.order_image.url }}" alt="{{ cart.order_name }}" style="max-width: 50px; max-height: 50px;"></a>
+                            {% else %}
+                                <a href="#"><img src="https://via.placeholder.com/50" alt="Placeholder" style="max-width: 50px; max-height: 50px;"></a>
+                            {% endif %}
+                        </th>
+                        <td>{{ cart.order_name }}</td>
+                        <td>{{ cart.order_quantity }}</td>
+                        <td>${{ cart.order_price }}</td>
+                        <td>{{ cart.order_category }}</td>
+                        <td>{{ cart.farmer.username }}</td>
+                        <td>{{ cart.buyer.username }}</td>
+                        <td>${{ cart.total_price }}</td>
+                        <td>{{ cart.created_at|date:"Y-m-d H:i:s" }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="9" class="text-center">No carts found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+</main>
+
+
+<!-- ======= Footer =============================================================================== -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Agri Connect</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+      Designed by <a href="#">Kaleb</a>
+  </div>
+</footer>
+<!-- End Footer ===================================================================================-->
+ 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  {% endblock %}

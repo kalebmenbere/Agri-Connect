@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Create New Request{% endblock %}
+
+{% block content %}
+<style>
+    .card-body{
+        margin: 0 30%  
+    }
+
+</style>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Create New Request</h2>
+    <div class="card">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                    <a href="{% url 'request_list' %}" class="btn btn-secondary">Back to Request List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

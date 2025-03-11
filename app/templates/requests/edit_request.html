@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Request{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Edit Request #{{ request_instance.pk }}</h2>
+    <div class="card">
+        <div class="card-body">
+            <form method="post" action="{% url 'edit_request' pk=request_instance.pk %}">
+                {% csrf_token %}
+                <div class="text-center">
+                    <div class="form-group row justify-content-center">
+            {% if user.role == 'ict_director' or user.role == 'team_leader' %}
+                        <label for="id_is_approved_by_director" class="col-md-4 col-form-label text-md-right">Approved by Director:</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="id_is_approved" name="is_approved">
+                                <option value="True" {% if request_instance.is_approved %}selected{% endif %}>Yes</option>
+                                <option value="False" {% if not request_instance.is_approved %}selected{% endif %}>No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row justify-content-center">
+                        <label for="id_assigned_team_leader" class="col-md-4 col-form-label text-md-right">Assigned Team Leader:</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="id_assigned_team_leader" name="assigned_team_leader">
+                                <option value="" {% if not request_instance.assigned_team_leader %}selected{% endif %}>Select a team leader</option>
+                                {% for team_leader in form.fields.assigned_team_leader.queryset %}
+                                    <option value="{{ team_leader.id }}" {% if team_leader.id == request_instance.assigned_team_leader.id %}selected{% endif %}>{{ team_leader.email }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row justify-content-center">
+                        <label for="id_assigned_staff" class="col-md-4 col-form-label text-md-right">Assigned Staff:</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="id_assigned_staff" name="assigned_staff">
+                                <option value="" {% if not request_instance.assigned_staff %}selected{% endif %}>Select a staff member</option>
+                                {% for staff_member in form.fields.assigned_staff.queryset %}
+                                    <option value="{{ staff_member.id }}" {% if staff_member.id == request_instance.assigned_staff.id %}selected{% endif %}>{{ staff_member.email }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    {% endif %}
+            {% if user.role == 'client' %}
+                <div class="form-group row justify-content-center">
+                        <label for="id_feedback" class="col-md-4 col-form-label text-md-right">Feedback:</label>
+                        <div class="col-md-6">
+                            <textarea class="form-control" id="id_feedback" name="feed_back" rows="3">{{ request_instance.feed_back }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+                    {% if user.role == 'ict_director' or user.role == 'team_leader' or user.role == 'staff' %}
+                    <div class="form-group row justify-content-center">
+                        <label for="id_is_completed" class="col-md-4 col-form-label text-md-right">Completed:</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="id_is_completed" name="is_completed">
+                                <option value="True" {% if request_instance.is_completed %}selected{% endif %}>Yes</option>
+                                <option value="False" {% if not request_instance.is_completed %}selected{% endif %}>No</option>
+                            </select>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <a href="{% url 'request_list' %}" class="btn btn-info">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
