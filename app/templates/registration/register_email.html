@@ -82,9 +82,14 @@
               <div class="invalid-feedback">Passwords do not match.</div>
             </div>
 
-            <p>
-              By registering, you accept our <a href="{% url 'terms' %}">Terms of Service</a> and <a href="{% url 'terms' %}">Privacy Policy</a>.
-            </p>
+            <!-- Terms and Conditions Checkbox -->
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="termsCheck" name="is_agreed" required>
+              <label class="form-check-label" for="termsCheck">
+                By registering, you accept our <a href="{% url 'policy' %}">Terms of Service</a> and <a href="{% url 'policy' %}">Privacy Policy</a>.
+              </label>
+            </div>
+
             <div class="d-grid">
               <button type="submit" class="btn green" id="registerBtn" disabled>Register</button>
             </div>
@@ -106,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const password1 = document.getElementById("password1");
     const password2 = document.getElementById("password2");
     const registerBtn = document.getElementById("registerBtn");
+    const termsCheck = document.getElementById("termsCheck");
     
     function validatePassword() {
         const password = password1.value;
@@ -126,13 +132,14 @@ document.addEventListener("DOMContentLoaded", function () {
             password2.classList.remove("is-invalid");
         }
 
-        if (regex.test(password) && password === confirmPassword) {
+        if (regex.test(password) && password === confirmPassword && termsCheck.checked) {
             registerBtn.disabled = false;
         }
     }
 
     password1.addEventListener("input", validatePassword);
     password2.addEventListener("input", validatePassword);
+    termsCheck.addEventListener("change", validatePassword);
 });
 </script>
 {% endblock extra_js %}

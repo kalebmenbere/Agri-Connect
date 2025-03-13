@@ -33,7 +33,7 @@
                             <p class="mb-3"><b>Category:</b> {{ selected_product.product_category }}</p>
                             <p class="mb-3"><b>Quantity:</b> {{ selected_product.product_quantity }} Kg</p>
                             <p class="mb-3"><b>Farmer Name:</b> {{ selected_product.farmer.first_name }}</p>
-                            <p class="mb-3"><b>Location:</b> {{ selected_product.farmer.location }}</p>
+                            <p class="mb-3"><b>Product Location:</b> {{ selected_product.location }}</p>
                             <p class="mb-3"><b>Date Posted:</b> {{ selected_product.created_at|date:"Y-m-d" }}</p>
                             <p class="mb-3"><b>Time Posted:</b> {{ selected_product.created_at|date:"H:i:s T" }}</p>
                             <p class="mb-3"><b>Price per kg:</b> {{ selected_product.product_price }} birr/kg</p>

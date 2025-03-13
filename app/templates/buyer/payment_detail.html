@@ -56,7 +56,7 @@
                                 <input type="hidden" name="public_key" value="CHAPUBK_TEST-wZhybxOtDPk4MIXdbCofuihcVWezbZN6" />
                             
                                 <!-- Transaction Reference (tx_ref) - Will be updated dynamically -->
-                                <input type="hidden" id="tx_ref" name="tx_ref" value="" />
+                                <input type="hidden" id="tx_ref" name="tx_ref" value="{{trx}}" />
                             
                                 <!-- Payment Amount - Will be updated dynamically -->
                                 <input type="hidden" id="amount" name="amount" value = '{{ item.total_price }}' />
@@ -90,9 +90,6 @@
 <script>
         var unique = document.getElementById('tx_ref')
         function call() {
-            var uniqueid = "order-" + Math.random().toString(16).slice(2)
-            console.log(uniqueid)
-            unique.value = uniqueid
             document.querySelector('form').submit();
         }
     

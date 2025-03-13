@@ -14,7 +14,7 @@ class CustomUser(AbstractUser):
     )
 
     email = models.EmailField(unique=True)
-    role = models.CharField("Role", max_length=100, choices=STATUS, default='Buyer' , blank=True)
+    role = models.CharField("Role", max_length=100, choices=STATUS, default='none' , blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
@@ -30,7 +30,7 @@ class CustomUser(AbstractUser):
 User = get_user_model()
 
 class Product(models.Model):
-    product_id=models.CharField(max_length=200)
+    product_id = models.CharField(max_length=15, unique=True, editable=False)  # New field for custom product ID
     product_name = models.CharField(max_length=200)
     product_quantity = models.DecimalField(max_digits=10, decimal_places=2)
     product_price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -178,4 +178,3 @@ class Request(models.Model):
 
     def __str__(self):
         return f"Request {self.id} - {self.request_type}"
-

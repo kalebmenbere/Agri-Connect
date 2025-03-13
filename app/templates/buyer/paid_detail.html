@@ -7,15 +7,15 @@
     <h1 class="text-center text-white display-6">Paid Product Detail</h1>
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{% url 'product_list' %}#product_list">Product List</a></li>
-        <li class="breadcrumb-item"><a href="#">Paid Product Detail</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'paid' %}#paid">Paid Products</a></li>
+        <li class="breadcrumb-item"><a href="#">Detail</a></li>
     </ol>
 </div>
 <!-- Single Page Header End -->
 
 <!-- Single Product Start -->
-<div class="container-fluid py-5 mt-5" id="product_detail"> 
-    <div class="container py-5">
+<div class="container-fluid py-5 mt-5" > 
+    <div class="container py-5" id="paid_detail">
                 {% if item %}
                     <div class="row" style="margin: 0 9%;">
                         <h3><b>Paid Product Detail</b></h3>

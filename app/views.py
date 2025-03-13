@@ -1,4 +1,5 @@
 from urllib import response
+import uuid
 from django.contrib.auth import login, logout, authenticate, get_user_model
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -375,16 +376,28 @@ def add_product(request):
         if form.is_valid():
             product = form.save(commit=False)
             product.farmer = request.user  # Assign the current user as the farmer
+            
+            # Generate unique product ID
+            while True:
+                product_id = generate_product_id()
+                if not Product.objects.filter(product_id=product_id).exists():
+                    product.product_id = product_id
+                    break
+            
             product.save()
-            messages.success(request, "Product created successfully.")
+            messages.success(request, f"Product created successfully. Product ID: {product.product_id}")
             # Log the product creation
             Log.objects.create(
-                message=f"Farmer {request.user.username} added product: {product.product_name}",
+                message=f"Farmer {request.user.username} added product: {product.product_name} (ID: {product.product_id})",
                 log_type="success"
             )
             return redirect('product_list')  # Redirect to your product list view or any other page
         else:
-            messages.error(request, "Please correct the errors below.")
+            # Print form errors for debugging
+            print("Form errors:", form.errors)
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
     else:
         form = ProductForm()
     
@@ -506,10 +519,13 @@ def cart(request):
 
 def payment_detail(request, item_id):
     # Fetch the item from the database using the passed item_id
-    item = get_object_or_404((Cart), id=item_id)
+    item = get_object_or_404(Cart, id=item_id)
 
-    # Pass the item to the template for rendering
-    return render(request, 'buyer/payment_detail.html', {'item': item})
+    # Generate a unique transaction reference
+    trx = f"order-{uuid.uuid4().hex[:10]}"  # Generates a unique 10-character hex string
+
+    # Pass the item and trx to the template for rendering
+    return render(request, 'buyer/payment_detail.html', {'item': item, 'trx': trx})
 
 
 CHAPA_SECRET_KEY = "CHASECK_TEST-VPikVFcVYY4wTq4MRgonDUZujkWctaH9"
