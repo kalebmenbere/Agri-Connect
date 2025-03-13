@@ -49,6 +49,7 @@ class Product(models.Model):
         return f"Products {self.id} - {self.product_name}"
 
 class Cart(models.Model):
+    product_id = models.CharField(max_length=15, unique=True, editable=False) 
     order_name = models.CharField(max_length=200)
     order_quantity = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     order_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
@@ -78,6 +79,7 @@ class Cart(models.Model):
 
 
 class Paid(models.Model):
+    product_id = models.CharField(max_length=15, unique=True, editable=False) 
     paid_product_name = models.CharField(max_length=200)
     paid_product_quantity = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     paid_product_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)

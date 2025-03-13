@@ -42,8 +42,6 @@
 </style>
 {% endblock extra_css %}
 
-
-
 <div class="container-fluid extra-top-padding">
   <div class="container py-5">
     <div class="row g-4 align-items-center">
@@ -56,7 +54,7 @@
       <!-- Right Column: Login Form -->
       <div class="col-lg-6">
         <div class="login-form">      
-          <form method="POST" action="{% url 'login' %}">
+          <form method="POST" action="{% url 'login' %}" id="loginForm">
             {% csrf_token %}
             <div class="mb-3">
               <input type="username" name="username" class="form-control" placeholder="Username" required>
@@ -78,4 +76,12 @@
     </div><!-- /.row -->
   </div><!-- /.container -->
 </div><!-- /.container-fluid -->
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    // Show spinner when form is submitted
+    document.getElementById('spinner').classList.add('show');
+});
+</script>
+
 {% endblock %}

@@ -9,7 +9,7 @@ from django.utils.encoding import force_bytes, force_str
 from django.core.mail import EmailMessage
 from .tokens import account_activation_token
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Product, Request, Cart
+from .models import Product, Request, Cart, Paid, Log
 from .forms import ReqeustEditClient, ReqeustEditStaff, RequestEditForm, RequestForm, UserRegistrationForm, ProductForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.db.models import Count, Q
@@ -20,7 +20,6 @@ from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth import update_session_auth_hash
 import requests
 from django.http import JsonResponse
-from .models import Paid
 from django.conf import settings
 import json
 from django.utils.http import urlsafe_base64_decode
@@ -39,7 +38,6 @@ def home_view(request):
         logout(request)
         return render(request, 'home.html')
     else:
-        # User is not logged in
         return render(request, 'home.html') #Or redirect to login page.
 
 
@@ -365,6 +363,14 @@ def product_list(request):
     return render(request, 'farmer/products_list.html', context)
 
 
+import random
+import string
+
+def generate_product_id():
+    # Generate a random 6-digit number
+    random_digits = ''.join(random.choices(string.digits, k=6))
+    return f"PRODUCT{random_digits}"
+    
 @login_required
 def add_product(request):
     user = request.user

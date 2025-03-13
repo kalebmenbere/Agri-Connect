@@ -129,6 +129,10 @@
                                         <a href="{% url 'product_detail' product.id %}#product_detail" class="btn border border-secondary rounded-pill px-3 text-primary">
                                             <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                                         </a>
+                                        {% elif user.role == 'farmer' %}
+                                        <a href="{% url 'product_detail' product.id %}#product_detail" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                        See more
+                                        </a>
                                         {% endif %}
                                     </div>
                                 </div>
