@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 from django.urls import path
-from .views import create_request, register, request_list, view_request, edit_request,admin_login,admin_dashboard, farmer_list, users_profile,buyer_list
+from .views import  register,admin_login,admin_dashboard, farmer_list, users_profile,buyer_list
 from . import views
 from django.contrib.auth import views as auth_views
 
@@ -35,10 +35,7 @@ urlpatterns = [
     path("admin-dashboard/paid_list/", views.paid_list, name='paid_list'),
 
 
-    path('requests/', request_list, name='request_list'),
-    path('requests/create/', create_request, name='create_request'),
-    path('requests/<int:pk>/', view_request, name='view_request'),
-    path('requests/<int:pk>/edit/', edit_request, name='edit_request'),
+
 
 
     path('activate/<uidb64>/<token>', views.activate, name='activate'),

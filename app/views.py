@@ -8,14 +8,14 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.core.mail import EmailMessage
 from .tokens import account_activation_token
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Product, Request, Cart, Paid, Log
-from .forms import ReqeustEditClient, ReqeustEditStaff, RequestEditForm, RequestForm, UserRegistrationForm, ProductForm
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.views.decorators.csrf import csrf_exempt
+from .models import Product, Cart, Paid, Log
+from .forms import UserRegistrationForm, ProductForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.db.models import Count, Q
 from decimal import Decimal
 from django.db import transaction
-from django.shortcuts import render, redirect
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth import update_session_auth_hash
 import requests
@@ -38,7 +38,7 @@ def home_view(request):
         logout(request)
         return render(request, 'home.html')
     else:
-        return render(request, 'home.html') #Or redirect to login page.
+        return render(request, 'home.html') 
 
 
 #-----------------------------------------------------------------------------------------------------------------
@@ -144,7 +144,7 @@ def activate(request, uidb64, token):
         return redirect('login')
     else:
         messages.error(request, "Activation link is invalid!")
-    return redirect('request_list')
+    return redirect('product_list')
 
 
 
@@ -465,12 +465,14 @@ def add_to_cart(request):
         order_image = product.product_image  
         order_category = product.product_category
         created_at = product.created_at
+        product_id = product.product_id
         # Update product quantity and create cart record atomically
         with transaction.atomic():
             remaining_quantity = int(product.product_quantity) - quantity
             
             # Create the Cart record with copied product data.
             Cart.objects.create(
+                product_id=product_id,
                 order_name=order_name,
                 order_quantity=Decimal(quantity),
                 order_price=order_price,
@@ -526,78 +528,139 @@ def cart(request):
 def payment_detail(request, item_id):
     # Fetch the item from the database using the passed item_id
     item = get_object_or_404(Cart, id=item_id)
-
+    
     # Generate a unique transaction reference
-    trx = f"order-{uuid.uuid4().hex[:10]}"  # Generates a unique 10-character hex string
-
-    # Pass the item and trx to the template for rendering
-    return render(request, 'buyer/payment_detail.html', {'item': item, 'trx': trx})
+    trx_ref = f"AGC-{uuid.uuid4().hex[:10]}-{item_id}"
+    
+    context = {
+        'item': item,
+        'trx': trx_ref
+    }
+    return render(request, 'buyer/payment_detail.html', context)
 
 
 CHAPA_SECRET_KEY = "CHASECK_TEST-VPikVFcVYY4wTq4MRgonDUZujkWctaH9"
 
-
+@csrf_exempt
 def chapa_callback(request, item_id):
-    # Get transaction details from the Chapa callback
-    trx_ref = request.GET.get("trx_ref")
-    status = request.GET.get("status")
-
-    print(f"Received callback - trx_ref: {trx_ref}, status: {status}")
-
+    # Add CORS headers
+    response = JsonResponse({"status": "pending"})
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    response["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    
+    # Handle preflight requests
+    if request.method == "OPTIONS":
+        return response
+        
+    # Get the transaction reference from the request
+    trx_ref = request.GET.get('trx_ref')
     if not trx_ref:
-        return JsonResponse({"error": "Missing transaction reference"}, status=400)
+        # Try alternate parameter name
+        trx_ref = request.GET.get('tx_ref')
+    status = request.GET.get('status')
+    
+    print(f"Received callback - trx_ref: {trx_ref}, status: {status}, query params: {request.GET}")
+    
+    if not trx_ref:
+        error_msg = "Missing transaction reference"
+        print(f"❌ {error_msg}")
+        response = JsonResponse({"error": error_msg}, status=400)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
 
     # Verify the transaction with Chapa
     verification_url = f"https://api.chapa.co/v1/transaction/verify/{trx_ref}"
     headers = {"Authorization": f"Bearer {CHAPA_SECRET_KEY}"}
 
-    response = requests.get(verification_url, headers=headers)
+    try:
+        verify_response = requests.get(verification_url, headers=headers)
+        print(f"Chapa verification response: {verify_response.status_code}, {verify_response.text}")
 
-    print(f"Chapa verification response: {response.status_code}, {response.text}")
+        if verify_response.status_code == 200:
+            data = verify_response.json()
 
-    if response.status_code == 200:
-        data = response.json()
-        payment_data = data.get("data", {})
+            # Check if the payment was successful
+            if data.get("status") == "success":
+                print(f"✅ Payment verified for trx_ref: {trx_ref}")
 
-        # Check if the payment was successful
-        if data.get("status") == "success":
-            print(f"✅ Payment verified for trx_ref: {trx_ref}")
+                try:
+                    # Get the Cart item based on the item_id passed in the URL
+                    cart_item = get_object_or_404(Cart, id=item_id)
 
-            # Get the Cart item based on the item_id passed in the URL
-            cart_item = get_object_or_404(Cart, id=item_id)
+                    # Store payment data in Paid model
+                    paid_item = Paid.objects.create(
+                        paid_product_name=cart_item.order_name,  
+                        paid_product_quantity=cart_item.order_quantity,  
+                        paid_product_price=cart_item.order_price,  
+                        paid_product_image=cart_item.order_image,  
+                        paid_product_category=cart_item.order_category,  
+                        total_price=cart_item.total_price,
+                        created_at=cart_item.created_at, 
+                        ordered_at=cart_item.ordered_at,
+                        paid_at=timezone.now(),
+                        farmer=cart_item.farmer,  
+                        buyer=cart_item.buyer,  
+                        transaction_reference=trx_ref,
+                        payment_status='success',  
+                    )
 
-            # Get items_with_ref from request (but it's not really used)
-            items_with_ref = json.loads(request.POST.get('items_with_ref', '[]'))
+                    # Create a success log
+                    Log.objects.create(
+                        message=f"Payment successful for order {cart_item.order_name}",
+                        log_type="success"
+                    )
 
-            # Store payment data in Paid model
-            paid_item = Paid.objects.create(
-                paid_product_name=cart_item.order_name,  
-                paid_product_quantity=cart_item.order_quantity,  
-                paid_product_price=cart_item.order_price,  
-                paid_product_image=cart_item.order_image,  
-                paid_product_category=cart_item.order_category,  
-                total_price=cart_item.total_price,
-                created_at=cart_item.created_at, 
-                ordered_at=cart_item.ordered_at,
-                paid_at = timezone.now(),
-                farmer=cart_item.farmer,  
-                buyer=cart_item.buyer,  
-                transaction_reference=trx_ref,  # ✅ FIXED: Use `trx_ref` instead of `tx_ref`
-                payment_status='success',  
-            )
+                    # Remove the cart item after successful payment
+                    cart_item.delete()
 
-            # ✅ Optional: Remove the cart item after successful payment
-            cart_item.delete()
-
-            return JsonResponse({"message": "Payment verified successfully"})
+                    response = JsonResponse({
+                        "status": "success",
+                        "message": "Payment verified successfully",
+                        "redirect_url": "/paid/"
+                    })
+                    response["Access-Control-Allow-Origin"] = "*"
+                    return response
+                except Exception as e:
+                    error_msg = f"Error processing payment: {str(e)}"
+                    print(f"❌ {error_msg}")
+                    Log.objects.create(
+                        message=error_msg,
+                        log_type="danger"
+                    )
+                    response = JsonResponse({"error": error_msg}, status=500)
+                    response["Access-Control-Allow-Origin"] = "*"
+                    return response
+            else:
+                error_msg = f"Payment verification failed: {data.get('message', 'Unknown error')}"
+                print(f"❌ {error_msg}")
+                Log.objects.create(
+                    message=f"Payment failed: {error_msg}",
+                    log_type="danger"
+                )
+                response = JsonResponse({"error": error_msg}, status=400)
+                response["Access-Control-Allow-Origin"] = "*"
+                return response
         else:
-            print(f"❌ Payment verification failed: {data}")
-            return JsonResponse({"error": "Payment verification failed"}, status=400)
-    else:
-        print(f"⚠️ Chapa verification request failed for trx_ref: {trx_ref}")
-        return JsonResponse({"error": "Chapa verification request failed"}, status=400)
-
-
+            error_msg = f"Chapa verification request failed with status {verify_response.status_code}"
+            print(f"⚠️ {error_msg}")
+            Log.objects.create(
+                message=error_msg,
+                log_type="warning"
+            )
+            response = JsonResponse({"error": error_msg}, status=400)
+            response["Access-Control-Allow-Origin"] = "*"
+            return response
+    except Exception as e:
+        error_msg = f"Error during payment verification: {str(e)}"
+        print(f"❌ {error_msg}")
+        Log.objects.create(
+            message=error_msg,
+            log_type="danger"
+        )
+        response = JsonResponse({"error": error_msg}, status=500)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
 
 def chapa_return(request):
     return render(request, "buyer/payment_result.html")
@@ -850,65 +913,3 @@ def update_cart(request, cart_id):
 #-----------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------
-
-# request creation
-@login_required
-def create_request(request):
-    if request.method == 'POST':
-        form = RequestForm(request.POST)
-        if form.is_valid():
-            request_instance = form.save(commit=False)
-            request_instance.requester_email = request.user.email
-            request_instance.requester_name = request.user.first_name
-            request_instance.request_location = request.user.location
-            request_instance.request_department = request.user.department
-            request_instance.requester_phone = request.user.phone
-            request_instance = form.save()
-            return redirect('view_request', pk=request_instance.pk)
-    else:
-        form = RequestForm()
-    return render(request, 'requests/create_request.html', {'form': form})
-
-@login_required
-def view_request(request, pk):
-    request_instance = get_object_or_404(Request, pk=pk)
-    return render(request, 'requests/view_request.html', {'request_instance': request_instance})
-
-@login_required
-def request_list(request):
-    user = request.user
-    if user.role == 'team_leader':
-        requests = Request.objects.filter(assigned_team_leader=user)
-    elif user.role == 'staff':
-        requests = Request.objects.filter(assigned_staff=user)
-    elif user.role == 'client':
-        requests = Request.objects.filter(requester_email=user.email)
-    elif user.role == 'ict_director':
-        requests = Request.objects.all()
-    else:
-        requests = Request.objects.none()
-        
-    return render(request, 'requests/request_list.html', {'requests': requests})
-
-@login_required
-def edit_request(request, pk):
-    user = request.user
-    request_instance = get_object_or_404(Request, pk=pk)
-    if request.method == 'POST':
-        if user.role == 'client':
-            form = ReqeustEditClient(request.POST, instance=request_instance)
-        elif user.role == 'staff':
-            form = ReqeustEditStaff(request.POST, instance=request_instance)
-        else :
-            form = RequestEditForm(request.POST, instance=request_instance)
-        if form.is_valid():
-            form.save()
-            return redirect('view_request', pk=request_instance.pk)
-    else:
-        if user.role == 'client':
-            form = ReqeustEditClient(instance=request_instance)
-        elif user.role == 'staff':
-            form = ReqeustEditStaff(instance=request_instance)
-        else :
-            form = RequestEditForm(instance=request_instance)
-    return render(request, 'requests/edit_request.html', {'form': form, 'request_instance': request_instance})

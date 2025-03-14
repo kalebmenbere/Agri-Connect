@@ -13,7 +13,6 @@
         {% elif user.role == 'farmer' %} 
         <li class="breadcrumb-item"><a href="#">Order Detail</a></li>
         {% endif %}
-        
     </ol>
 </div>
 <!-- Single Page Header End -->
@@ -21,118 +20,95 @@
 <!-- Single Product Start -->
 <div class="container-fluid py-5 mt-5" id="product_detail"> 
     <div class="container py-5">
-                {% if item %}
-                    <div class="row" style="margin: 0 10%;">
-                        {% if user.role == 'buyer' %}
-                        <h3><b>Payment Detail</b></h3>
-                        {% elif user.role == 'farmer' %} 
-                        <h3><b>Order Detail</b></h3>
-                        {% endif %}
-                        <div class="col-lg-6">
-                            <div class="border rounded">
-                                {% if item.product_image %}
-                                <img src="{{ item.order_image.url }}" class="img-fluid rounded" alt="{{ item.order_name }}">
-                                {% else %}
-                                <img src="{% static 'img/best-product-1.jpg' %}" class="img-fluid rounded" alt="Default Image">
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="col-lg-6" style="width: fit-content; margin-left: 10%;">
-                            <h4 class="fw-bold mb-3">Product: {{ item.order_name }}</h4>
-                            <h4 class="fw-bold mb-3">Buyer: {{ item.buyer.first_name }}</h4>
-                            <p class="mb-3"><b>Category:</b> {{ item.order_category }}</p>
-                            <p class="mb-3"><b>Quantity:</b> {{ item.order_quantity }} Kg</p>
-                            <p class="mb-3"><b>Farmer Name:</b> {{ item.farmer.first_name }}</p>
-                            <p class="mb-3"><b>Location:</b> {{ item.farmer.location }}</p>
-                            <p class="mb-3"><b>Date Posted:</b> {{ item.created_at|date:"Y-m-d" }}</p>
-                            <p class="mb-3"><b>Time Posted:</b> {{ item.created_at|date:"H:i:s T" }}</p>
-                            <p class="mb-3"><b>Date Ordered:</b> {{ item.ordered_at|date:"Y-m-d" }}</p>
-                            <p class="mb-3"><b>Time Ordered:</b> {{ item.ordered_at|date:"H:i:s T" }}</p>
-                            <p class="mb-3"><b>Price per kg:</b> {{ item.order_price }} birr/kg</p>
-                            <h4 class="fw-bold mb-3">Total Price: {{ item.total_price }}</h4>
-                            {% if user.role == 'buyer' %}
-                            <form method="POST" action="https://api.chapa.co/v1/hosted/pay">
-                                <!-- Chapa API Credentials -->
-                                <input type="hidden" name="public_key" value="CHAPUBK_TEST-wZhybxOtDPk4MIXdbCofuihcVWezbZN6" />
-                            
-                                <!-- Transaction Reference (tx_ref) - Will be updated dynamically -->
-                                <input type="hidden" id="tx_ref" name="tx_ref" value="{{trx}}" />
-                            
-                                <!-- Payment Amount - Will be updated dynamically -->
-                                <input type="hidden" id="amount" name="amount" value = '{{ item.total_price }}' />
-                            
-                                <!-- Customer Information -->
-                                <input type="hidden" name="email" value="{{ request.user.email }}" />
-                                <input type="hidden" name="first_name" value="{{ request.user.first_name }}" />
-                                <input type="hidden" name="last_name" value="{{ request.user.last_name }}" />
+        {% if item %}
+        <div class="row" style="margin: 0 10%;">
+            {% if user.role == 'buyer' %}
+            <h3><b>Payment Detail</b></h3>
+            {% elif user.role == 'farmer' %} 
+            <h3><b>Order Detail</b></h3>
+            {% endif %}
+            <div class="col-lg-6">
+                <div class="border rounded">
+                    {% if item.order_image %}
+                    <img src="{{ item.order_image.url }}" class="img-fluid rounded" alt="{{ item.order_name }}">
+                    {% else %}
+                    <img src="{% static 'img/best-product-1.jpg' %}" class="img-fluid rounded" alt="Default Image">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6" style="width: fit-content; margin-left: 10%;">
+                <h4 class="fw-bold mb-3">Product: {{ item.order_name }}</h4>
+                <h4 class="fw-bold mb-3">Buyer: {{ item.buyer.first_name }}</h4>
+                <p class="mb-3"><b>Category:</b> {{ item.order_category }}</p>
+                <p class="mb-3"><b>Quantity:</b> {{ item.order_quantity }} Kg</p>
+                <p class="mb-3"><b>Farmer Name:</b> {{ item.farmer.first_name }}</p>
+                <p class="mb-3"><b>Location:</b> {{ item.farmer.location }}</p>
+                <p class="mb-3"><b>Date Posted:</b> {{ item.created_at|date:"Y-m-d" }}</p>
+                <p class="mb-3"><b>Time Posted:</b> {{ item.created_at|date:"H:i:s T" }}</p>
+                <p class="mb-3"><b>Date Ordered:</b> {{ item.ordered_at|date:"Y-m-d" }}</p>
+                <p class="mb-3"><b>Time Ordered:</b> {{ item.ordered_at|date:"H:i:s T" }}</p>
+                <p class="mb-3"><b>Price per kg:</b> {{ item.order_price }} birr/kg</p>
+                <h4 class="fw-bold mb-3">Total Price: {{ item.total_price }} birr</h4>
 
-                            
-                                <!-- Currency -->
-                                <input type="hidden" name="currency" value="ETB" />
-                            
-                                <!-- Product/Service Details -->
-                                <input type="hidden" name="title" value="Agri-Connect" />
-                                <input type="hidden" name="description" value="Paying with Confidence with Chapa" />
-                                <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
-                            
-                                <!-- Callback and Return URLs -->
-                                <input type="hidden" name="callback_url" value="http://127.0.0.1:8000/cart/chapa_callback/{{ item.id }}/" />
-                                <input type="hidden" name="return_url" value="http://127.0.0.1:8000/cart/chapa_return/" />
-                            
-                                <!-- Proceed to Checkout Button -->
-                                <div class="text-center pb-4">
-                                    <button class="btn btn-primary w-75 rounded-pill text-uppercase fw-semibold" type="button" onclick="call()">Pay</button>
+                {% if user.role == 'buyer' %}
+                <div id="payment-form">
+                    <form method="POST" action="https://api.chapa.co/v1/hosted/pay" id="payment-form">
+                        <!-- Chapa API Credentials -->
+                        <input type="hidden" name="public_key" value="CHAPUBK_TEST-wZhybxOtDPk4MIXdbCofuihcVWezbZN6" />
+                        
+                        <!-- Transaction Reference -->
+                        <input type="hidden" id="tx_ref" name="tx_ref" value="{{trx}}" />
+                        
+                        <!-- Payment Amount -->
+                        <input type="hidden" id="amount" name="amount" value="{{ item.total_price }}" />
+                        
+                        <!-- Customer Information -->
+                        <input type="hidden" name="email" value="{{ request.user.email }}" />
+                        <input type="hidden" name="first_name" value="{{ request.user.first_name }}" />
+                        <input type="hidden" name="last_name" value="{{ request.user.last_name }}" />
+                        
+                        <!-- Currency -->
+                        <input type="hidden" name="currency" value="ETB" />
+                        
+                        <!-- Product Details -->
+                        <input type="hidden" name="title" value="Agri-Connect" />
+                        <input type="hidden" name="description" value="Payment for {{ item.order_name }}" />
+                        <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
+                        
+                        <!-- Callback and Return URLs -->
+                        <input type="hidden" name="callback_url" value="http://127.0.0.1:8000/cart/chapa_callback/{{ item.id }}/" />
+                        <input type="hidden" name="return_url" value="http://127.0.0.1:8000/cart/chapa_return/" />
+                        
+                        <!-- Payment Button -->
+                        <div class="text-center pb-4">
+                            <button type="submit" class="btn btn-primary w-75 rounded-pill text-uppercase fw-semibold" id="pay-button">
+                                <span class="button-text">Pay Now</span>
+                                <div class="spinner-border spinner-border-sm d-none" role="status">
+                                    <span class="visually-hidden">Loading...</span>
                                 </div>
-                            </form>
-                            {% endif %}
-                        
-            
-<script>
-        var unique = document.getElementById('tx_ref')
-        function call() {
-            document.querySelector('form').submit();
-        }
-    
-</script>
-                        </script>
-                        
-                            <!-- CSS (can be placed in your stylesheet or inside a <style> tag) -->
-                            <style>
-                            /* Custom styling for the input */
-                            .custom-input {
-                                width: 50%;
-                                border: 2px solid green; /* Blue border */
-                                border-radius: 0.25rem;
-                                padding: 0.375rem 0.75rem;
-                                transition: border-color 0.3s, box-shadow 0.3s;
-                            }
-                            
-                            .custom-input:focus {
-                                border-color: orange;
-                                box-shadow: 0 0 5px rgba(0,123,255,0.5);
-                            }
-                            
-                            /* Make sure the up and down spinner icons are visible in all browsers */
-                            /* Remove any browser-specific styling overrides that might hide them */
-                            input[type=number]::-webkit-outer-spin-button,
-                            input[type=number]::-webkit-inner-spin-button {
-                                -webkit-appearance: inner-spin-button;
-                                opacity: 1;
-                            }
-                            </style>
-                        
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
-                                                              
-                           {% else %}
-                           <div id="product_detail" class="col-lg-12 mt-5">
-                               <p>Please select a product to view its details.</p>
-                           </div>
-                           {% endif %}
+                <!-- Payment Status Messages -->
+                <div id="payment-messages" class="mt-3">
+                    <div class="alert alert-success d-none" role="alert" id="success-message">
+                        Payment successful! Redirecting...
                     </div>
-                
+                    <div class="alert alert-danger d-none" role="alert" id="error-message">
+                        Payment failed. Please try again.
                     </div>
-         
+                </div>
+                {% endif %}
+            </div>
         </div>
+        {% else %}
+        <div id="product_detail" class="col-lg-12 mt-5">
+            <p>Please select a product to view its details.</p>
+        </div>
+        {% endif %}
+    </div>
 </div>
 <!-- Single Product End -->
 
@@ -144,4 +120,79 @@
 <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
 {% include 'include/messaging.html' %}
+
+<!-- Payment Processing Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('payment-form');
+    const payButton = document.getElementById('pay-button');
+    const buttonText = payButton.querySelector('.button-text');
+    const spinner = payButton.querySelector('.spinner-border');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            // Show loading state
+            buttonText.textContent = 'Processing...';
+            spinner.classList.remove('d-none');
+            payButton.disabled = true;
+            errorMessage.classList.add('d-none');
+        });
+    }
+
+    // Function to check payment status
+    function checkPaymentStatus(txRef) {
+        const callbackUrl = `/cart/chapa_callback/{{ item.id }}/?trx_ref=${txRef}`;
+        
+        $.ajax({
+            url: callbackUrl,
+            method: 'GET',
+            success: function(response) {
+                if (response.status === 'success') {
+                    successMessage.classList.remove('d-none');
+                    errorMessage.classList.add('d-none');
+                    buttonText.textContent = 'Payment Successful';
+                    spinner.classList.add('d-none');
+                    
+                    // Redirect to the paid page
+                    setTimeout(() => {
+                        window.location.href = response.redirect_url;
+                    }, 2000);
+                } else {
+                    throw new Error(response.error || 'Payment verification failed');
+                }
+            },
+            error: function(xhr) {
+                const error = xhr.responseJSON?.error || 'Payment verification failed';
+                buttonText.textContent = 'Pay Now';
+                spinner.classList.add('d-none');
+                payButton.disabled = false;
+                errorMessage.textContent = error;
+                errorMessage.classList.remove('d-none');
+                successMessage.classList.add('d-none');
+            }
+        });
+    }
+
+    // Listen for the payment response from Chapa
+    window.addEventListener('message', function(event) {
+        if (event.data && event.data.tx_ref) {
+            checkPaymentStatus(event.data.tx_ref);
+        }
+    });
+});
+</script>
+
+<!-- Single Product End -->
+
+<!-- Copyright Start -->
+{% include 'include/copyright.html' %}
+<!-- Copyright End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+{% include 'include/messaging.html' %}
+
 {% endblock %}

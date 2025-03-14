@@ -79,7 +79,6 @@ class Cart(models.Model):
 
 
 class Paid(models.Model):
-    product_id = models.CharField(max_length=15, unique=True, editable=False) 
     paid_product_name = models.CharField(max_length=200)
     paid_product_quantity = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     paid_product_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
@@ -142,41 +141,3 @@ class Log(models.Model):
 
     def __str__(self):
         return f"{self.timestamp} - {self.message}"
-
-
-
-
-
-
-
-
-class Request(models.Model):
-    request_type = models.CharField(max_length=200)
-    request_location = models.CharField(max_length=100)
-    request_department = models.CharField(max_length=100)
-    requester_name = models.CharField(max_length=100)
-    requester_email = models.EmailField()
-    requester_phone = models.CharField(max_length=20)
-    is_approved = models.BooleanField(default=False)
-    assigned_team_leader = models.ForeignKey(
-        settings.AUTH_USER_MODEL, 
-        related_name='team_leader_requests', 
-        on_delete=models.SET_NULL, 
-        null=True, 
-        blank=True, 
-        limit_choices_to={'role': 'team_leader'}
-    )
-    assigned_staff = models.ForeignKey(
-        settings.AUTH_USER_MODEL, 
-        related_name='staff_requests', 
-        on_delete=models.SET_NULL, 
-        null=True, 
-        blank=True, 
-        limit_choices_to={'role': 'staff'}
-    )
-    is_completed = models.BooleanField(default=False)
-    feed_back = models.TextField(max_length=600, default='', blank=True)
-
-
-    def __str__(self):
-        return f"Request {self.id} - {self.request_type}"
