@@ -13,16 +13,30 @@ class CustomUser(AbstractUser):
         ('buyer', 'Buyer'),
     )
 
+    REGIONS = (
+        ('Addis Ababa', 'Addis Ababa'),
+        ('Afar', 'Afar'),
+        ('Amhara', 'Amhara'),
+        ('Benishangul-Gumuz', 'Benishangul-Gumuz'),
+        ('Dire Dawa', 'Dire Dawa'),
+        ('Gambela', 'Gambela'),
+        ('Harari', 'Harari'),
+        ('Oromia', 'Oromia'),
+        ('Sidama', 'Sidama'),
+        ('SNNP', 'SNNP'),
+        ('Somali', 'Somali'),
+        ('Tigray', 'Tigray'),
+    )
+
     email = models.EmailField(unique=True)
-    role = models.CharField("Role", max_length=100, choices=STATUS, default='none' , blank=True)
+    role = models.CharField("Role", max_length=100, choices=STATUS, default='none', blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    location = models.CharField(max_length=100)
+    region = models.CharField(max_length=100, choices=REGIONS)
+    zone = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    bank_name = models.CharField(max_length=100)
-    bank_number = models.CharField(max_length=100)
-    is_activated= models.BooleanField(default=False)
-    is_agreed=models.BooleanField(default=True)
+    is_activated = models.BooleanField(default=False)
+    is_agreed = models.BooleanField(default=True)
     
     def __str__(self):
         return self.username

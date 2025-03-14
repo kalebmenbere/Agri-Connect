@@ -530,7 +530,7 @@ def payment_detail(request, item_id):
     item = get_object_or_404(Cart, id=item_id)
     
     # Generate a unique transaction reference
-    trx_ref = f"AGC-{uuid.uuid4().hex[:10]}-{item_id}"
+    trx_ref = f"Order-{uuid.uuid4().hex[:10]}-{item_id}"
     
     context = {
         'item': item,

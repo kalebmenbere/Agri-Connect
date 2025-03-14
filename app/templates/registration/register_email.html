@@ -1,146 +1,344 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
-{% load static %}
 {% block content %}
+{% load static %}
 
-{% block extra_css %}
-<style>
-  .extra-top-padding {
-    padding-top: 90px;
-  }
-  .registration-form {
-    background-color: orange;
-    margin: 5%;
-    padding: 4%;
-    border-radius: 10px;
-  }
-  .extra-links {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  .extra-links a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .extra-links a:hover {
-    text-decoration: underline;
-  }
-
-</style>
-{% endblock extra_css %}
-
-<div class="container-fluid extra-top-padding">
-  <div class="container py-5">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-6 sticky-image">
-        <img src="{% static 'img/registor.jpg' %}" class="img-fluid rounded-top w-100" alt="Branding Image">
-      </div>
-      <div class="col-lg-6">
-        <div class="registration-form">
-          <form method="POST" action="{% url 'register' %}" id="registrationForm">
-            {% csrf_token %}
-            <div class="mb-3">
-              <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
-            </div>
-            <div class="mb-3">
-              <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
-            </div>
-            <div class="mb-3">
-              <input type="text" name="username" class="form-control" placeholder="Username" required>
-            </div>
-            <div class="mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Email" required>
-            </div>
-            <div class="mb-3">
-              <select name="role" class="form-control" required>
-                <option value="">Select Role</option>
-                <option value="farmer">Farmer</option>
-                <option value="buyer">Buyer</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <input type="text" name="location" class="form-control" placeholder="Location / City" required>
-            </div>
-            <div class="mb-3">
-              <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
-            </div>
-            <div class="mb-3">
-              <input type="text" name="bank_name" class="form-control" placeholder="Bank Name">
-            </div>
-            <div class="mb-3">
-              <input type="text" name="bank_number" class="form-control" placeholder="Bank Account Number">
-            </div>
-
-            <!-- Password Field with Validation -->
-            <div class="mb-3">
-              <input type="password" id="password1" name="password1" class="form-control" placeholder="Password" required>
-              <div class="invalid-feedback">Password must be at least 8 characters long, include a number, and a special character.</div>
-            </div>
-            <div class="mb-3">
-              <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" required>
-              <div class="invalid-feedback">Passwords do not match.</div>
-            </div>
-
-            <!-- Terms and Conditions Checkbox -->
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="termsCheck" name="is_agreed" required>
-              <label class="form-check-label" for="termsCheck">
-                By registering, you accept our <a href="{% url 'policy' %}">Terms of Service</a> and <a href="{% url 'policy' %}">Privacy Policy</a>.
-              </label>
-            </div>
-
-            <div class="d-grid">
-              <button type="submit" class="btn green" id="registerBtn" disabled>Register</button>
-            </div>
-          </form>
-          <div class="extra-links">
-            <p>
-              Already have an account? <a href="{% url 'login' %}">Login</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Create Account</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active">Register</li>
+    </ol>
 </div>
+<!-- Single Page Header End -->
 
-{% block extra_js %}
+<!-- Registration Form Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0 rounded-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-5">
+                            <h1 class="fw-bold">Join Agri-Connect</h1>
+                            <p class="text-muted">Create your account to get started</p>
+                        </div>
+                        
+                        <form method="POST" action="{% url 'register' %}" id="registrationForm" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            
+                            <div class="row">
+                                <!-- First Name -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
+                                        <label for="first_name">First Name</label>
+                                        <div class="invalid-feedback">Please enter your first name.</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Last Name -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" required>
+                                        <label for="last_name">Last Name</label>
+                                        <div class="invalid-feedback">Please enter your last name.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Username -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                                        <label for="username">Username</label>
+                                        <div class="invalid-feedback">Please choose a username.</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                        <label for="email">Email Address</label>
+                                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Role -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="role" name="role" required>
+                                            <option value="">Select Role</option>
+                                            <option value="farmer">Farmer</option>
+                                            <option value="buyer">Buyer</option>
+                                        </select>
+                                        <label for="role">Your Role</label>
+                                        <div class="invalid-feedback">Please select your role.</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Phone -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" pattern="[0-9]{10}" required>
+                                        <label for="phone">Phone Number</label>
+                                        <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Location Region -->
+                            <div class="mb-3">
+                                <select name="region" id="region" class="form-control border-0 py-3" required>
+                                    <option value="">Select Region</option>
+                                    <option value="Addis Ababa">Addis Ababa</option>
+                                    <option value="Afar">Afar</option>
+                                    <option value="Amhara">Amhara</option>
+                                    <option value="Benishangul-Gumuz">Benishangul-Gumuz</option>
+                                    <option value="Dire Dawa">Dire Dawa</option>
+                                    <option value="Gambela">Gambela</option>
+                                    <option value="Harari">Harari</option>
+                                    <option value="Oromia">Oromia</option>
+                                    <option value="Sidama">Sidama</option>
+                                    <option value="SNNP">SNNP</option>
+                                    <option value="Somali">Somali</option>
+                                    <option value="Tigray">Tigray</option>
+                                </select>
+                            </div>
+                            <!-- Location Zone -->
+                            <div class="mb-3">
+                                <select name="zone" id="zone" class="form-control border-0 py-3" required disabled>
+                                    <option value="">Select Zone</option>
+                                </select>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="password1" name="password1" placeholder="Password" required>
+                                        <label for="password1">Password</label>
+                                        <div class="invalid-feedback" id="password1Feedback">
+                                            Password must be at least 8 characters and include numbers and special characters.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password" required>
+                                        <label for="password2">Confirm Password</label>
+                                        <div class="invalid-feedback">Passwords do not match.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Password Requirements -->
+                            <div class="mb-4">
+                                <div class="password-requirements small">
+                                    <p class="mb-2">Password must contain:</p>
+                                    <ul class="list-unstyled">
+                                        <li id="length-check" class="text-muted">
+                                            <i class="bi bi-x-circle"></i> At least 8 characters
+                                        </li>
+                                        <li id="number-check" class="text-muted">
+                                            <i class="bi bi-x-circle"></i> At least one number
+                                        </li>
+                                        <li id="special-check" class="text-muted">
+                                            <i class="bi bi-x-circle"></i> At least one special character
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Terms Checkbox -->
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" name="is_agreed" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        I agree to the <a href="{% url 'policy' %}" class="text-decoration-none">Terms of Service</a> and 
+                                        <a href="{% url 'policy' %}" class="text-decoration-none">Privacy Policy</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree to the Terms of Service and Privacy Policy.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="d-grid gap-2 mb-4">
+                                <button type="submit" class="btn btn-primary btn-lg" id="registerBtn" disabled>
+                                    Create Account
+                                </button>
+                            </div>
+
+                            <!-- Login Link -->
+                            <div class="text-center">
+                                <p class="mb-0">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login here</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Registration Form End -->
+ 
+
+
+<!-- Validation Script -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const password1 = document.getElementById("password1");
-    const password2 = document.getElementById("password2");
-    const registerBtn = document.getElementById("registerBtn");
-    const termsCheck = document.getElementById("termsCheck");
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('registrationForm');
+    const password1 = document.getElementById('password1');
+    const password2 = document.getElementById('password2');
+    const registerBtn = document.getElementById('registerBtn');
+    const termsCheck = document.getElementById('termsCheck');
     
+    // Password requirement checks
+    const lengthCheck = document.getElementById('length-check');
+    const numberCheck = document.getElementById('number-check');
+    const specialCheck = document.getElementById('special-check');
+    
+
+    
+    // Real-time password validation
     function validatePassword() {
         const password = password1.value;
         const confirmPassword = password2.value;
-        const regex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
-
-        if (!regex.test(password)) {
-            password1.classList.add("is-invalid");
-            registerBtn.disabled = true;
+        
+        // Check length
+        if (password.length >= 8) {
+            lengthCheck.classList.remove('text-muted');
+            lengthCheck.classList.add('text-success');
+            lengthCheck.querySelector('i').classList.replace('bi-x-circle', 'bi-check-circle-fill');
         } else {
-            password1.classList.remove("is-invalid");
+            lengthCheck.classList.remove('text-success');
+            lengthCheck.classList.add('text-muted');
+            lengthCheck.querySelector('i').classList.replace('bi-check-circle-fill', 'bi-x-circle');
         }
-
-        if (password !== confirmPassword || confirmPassword === "") {
-            password2.classList.add("is-invalid");
-            registerBtn.disabled = true;
+        
+        // Check number
+        if (/\d/.test(password)) {
+            numberCheck.classList.remove('text-muted');
+            numberCheck.classList.add('text-success');
+            numberCheck.querySelector('i').classList.replace('bi-x-circle', 'bi-check-circle-fill');
         } else {
-            password2.classList.remove("is-invalid");
+            numberCheck.classList.remove('text-success');
+            numberCheck.classList.add('text-muted');
+            numberCheck.querySelector('i').classList.replace('bi-check-circle-fill', 'bi-x-circle');
         }
-
-        if (regex.test(password) && password === confirmPassword && termsCheck.checked) {
-            registerBtn.disabled = false;
+        
+        // Check special character
+        if (/[!@#$%^&*]/.test(password)) {
+            specialCheck.classList.remove('text-muted');
+            specialCheck.classList.add('text-success');
+            specialCheck.querySelector('i').classList.replace('bi-x-circle', 'bi-check-circle-fill');
+        } else {
+            specialCheck.classList.remove('text-success');
+            specialCheck.classList.add('text-muted');
+            specialCheck.querySelector('i').classList.replace('bi-check-circle-fill', 'bi-x-circle');
         }
+        
+        // Check if passwords match
+        if (password === confirmPassword && confirmPassword !== '') {
+            password2.classList.remove('is-invalid');
+            password2.classList.add('is-valid');
+        } else {
+            password2.classList.remove('is-valid');
+            if (confirmPassword !== '') {
+                password2.classList.add('is-invalid');
+            }
+        }
+        
+        // Enable/disable register button
+        const isValid = password.length >= 8 && 
+                       /\d/.test(password) && 
+                       /[!@#$%^&*]/.test(password) && 
+                       password === confirmPassword && 
+                       confirmPassword !== '' && 
+                       termsCheck.checked;
+        
+        registerBtn.disabled = !isValid;
     }
-
-    password1.addEventListener("input", validatePassword);
-    password2.addEventListener("input", validatePassword);
-    termsCheck.addEventListener("change", validatePassword);
+    
+    // Add validation to all form fields
+    const inputs = form.querySelectorAll('input:not([type="hidden"]), select');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.checkValidity()) {
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+            } else {
+                this.classList.remove('is-valid');
+                this.classList.add('is-invalid');
+            }
+        });
+    });
+    
+    // Phone number validation
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '').substring(0, 10);
+    });
+    
+    // Add event listeners
+    password1.addEventListener('input', validatePassword);
+    password2.addEventListener('input', validatePassword);
+    termsCheck.addEventListener('change', validatePassword);
+    
+    // Form submission
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    });
 });
 </script>
-{% endblock extra_js %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Ethiopian Regions and Zones data
+    const ethiopiaData = {
+        'Addis Ababa': ['Addis Ketema', 'Akaky Kaliti', 'Arada', 'Bole', 'Gulele', 'Kirkos', 'Kolfe Keranio', 'Lideta', 'Nifas Silk-Lafto', 'Yeka'],
+        'Afar': ['Awsi Rasu (Zone 1)', 'Kilbet Rasu (Zone 2)', 'Gabi Rasu (Zone 3)', 'Fantena Rasu (Zone 4)', 'Hari Rasu (Zone 5)'],
+        'Amhara': ['Agew Awi', 'East Gojjam', 'North Gondar', 'North Shewa', 'North Wollo', 'Oromia Special Zone', 'South Gondar', 'South Wollo', 'Wag Hemra', 'West Gojjam'],
+        'Benishangul-Gumuz': ['Assosa', 'Kamashi', 'Metekel', 'Mao-Komo Special'],
+        'Dire Dawa': ['Dire Dawa City Administration'],
+        'Gambela': ['Anywaa', 'Majang', 'Nuer', 'Itang Special'],
+        'Harari': ['Harari Regional State'],
+        'Oromia': ['Arsi', 'Bale', 'Borena', 'Buno Bedele', 'East Bale', 'East Guji', 'East Hararghe', 'East Shewa', 'East Wellega', 'Horo Guduru Wellega', 'Illubabor', 'Jimma', 'Kellem Wellega', 'North Shewa', 'Southwest Shewa', 'West Arsi', 'West Guji', 'West Hararghe', 'West Shewa', 'West Wellega'],
+        'Sidama': ['Aleta Chuko', 'Aleta Wondo', 'Aroresa', 'Bensa', 'Bona', 'Bursa', 'Dale', 'Dara', 'Gorche', 'Hawassa Zuria', 'Loka Abaya', 'Malga', 'Shebedino', 'Wondo Genet', 'Wonsho'],
+        'SNNP': ['Gamo', 'Gedeo', 'Gofa', 'Hadiya', 'Halaba', 'Kembata Tembaro', 'Konso', 'Silte', 'South Omo', 'Wolayita'],
+        'Somali': ['Afder', 'Dollo', 'Erer', 'Fafan', 'Jarar', 'Korahe', 'Liben', 'Nogob', 'Shabelle', 'Sitti'],
+        'Tigray': ['Central', 'Eastern', 'North Western', 'Southern', 'Western', 'South Eastern', 'Mekelle']
+    };
+
+    const regionSelect = document.getElementById('region');
+    const zoneSelect = document.getElementById('zone');
+
+    // Update zones when region changes
+    regionSelect.addEventListener('change', function() {
+        const selectedRegion = this.value;
+        const zones = ethiopiaData[selectedRegion] || [];
+        
+        // Reset zone select
+        zoneSelect.innerHTML = '<option value="">Select Zone</option>';
+        zoneSelect.disabled = !zones.length;
+        
+        // Add new zone options
+        zones.forEach(zone => {
+            zoneSelect.add(new Option(zone, zone));
+        });
+    });
+});
+</script>
+
 {% endblock %}
