@@ -29,20 +29,21 @@
                             </div>
                         </div>
                         <div class="col-lg-6" style="width: fit-content; margin-left: 10%;">
-                            <h4 class="fw-bold mb-3">Product: {{ selected_product.product_name }}</h4>
-                            <p class="mb-3"><b>Category:</b> {{ selected_product.product_category }}</p>
-                            <p class="mb-3"><b>Quantity:</b> {{ selected_product.product_quantity }} Kg</p>
-                            <p class="mb-3"><b>Farmer Name:</b> {{ selected_product.farmer.first_name }}</p>
-                            <p class="mb-3"><b>Location:</b> {{ selected_product.farmer.location }}</p>
-                            <p class="mb-3"><b>Date Posted:</b> {{ selected_product.created_at|date:"Y-m-d" }}</p>
-                            <p class="mb-3"><b>Time Posted:</b> {{ selected_product.created_at|date:"H:i:s T" }}</p>
-                            <p class="mb-3"><b>Price per kg:</b> {{ selected_product.product_price }} birr/kg</p>
-                            
+                            <h4 class="fw-bold mb-3">Product Name: {{ selected_product.product_name }}</h4>
+                            <p class="mb-3"><b>Product Category:</b> {{ selected_product.product_category }}</p>
+                            <p class="mb-3"><b>Product Quantity:</b> {{ selected_product.product_quantity }} Kg</p>
+                            <p class="mb-3"><b>Product Seller Name:</b> {{ selected_product.farmer.first_name }}</p>
+                            <p class="mb-3"><b>Product Location:</b> {{ selected_product.farmer.location }}</p>
+                            <p class="mb-3"><b>Product Posted Date:</b> {{ selected_product.created_at|date:"Y-m-d" }}</p>
+                            <p class="mb-3"><b>Product Posted Time:</b> {{ selected_product.created_at|date:"H:i:s T" }}</p>
+                            <p class="mb-3"><b>Product Price per kg:</b> {{ selected_product.product_price }} birr/kg</p>
+                            {% if user.role == 'buyer' %}
                             <input 
                             class="form-control form-control-sm text-center custom-input" type="number" id="quantity" min="100" step="100" value="100">
                             <h5 class="fw-bold mb-3" id="total_price">
                             <b>Total Price:</b> <span>0.00</span> Birr
                             </h5>
+                            {%endif%}
                             <!-- CSS (can be placed in your stylesheet or inside a <style> tag) -->
                             <style>
                             /* Custom styling for the input */

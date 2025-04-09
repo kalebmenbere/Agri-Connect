@@ -6,7 +6,7 @@
 
 <!-- start Page Title ---------------------------------------------------------------------->
 <div class="pagetitle">
-  <h1>Dashboard</h1>
+  <h1>Cart List</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
@@ -27,11 +27,17 @@
                         <th scope="col"><a href="?sort=order_name">Order Name</a></th>
                         <th scope="col"><a href="?sort=order_quantity">Quantity</a></th>
                         <th scope="col"><a href="?sort=order_price">Price</a></th>
+                        <th scope="col"><a href="?sort=total_price">Total Price</a></th>
                         <th scope="col"><a href="?sort=order_category">Category</a></th>
                         <th scope="col"><a href="?sort=farmer__username">Farmer</a></th>
+                        <th scope="col"><a href="?sort=region">Farmer Region</a></th>
+                        <th scope="col"><a href="?sort=zone">Farmer Zone</a></th>
                         <th scope="col"><a href="?sort=buyer__username">Buyer</a></th>
-                        <th scope="col"><a href="?sort=total_price">Total Price</a></th>
+                        <th scope="col"><a href="?sort=region">Buyer Region</a></th>
+                        <th scope="col"><a href="?sort=zone">Buyer Zone</a></th>
+
                         <th scope="col"><a href="?sort=created_at">Created At</a></th>
+                        <th scope="col">Edit</a></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,11 +53,19 @@
                         <td>{{ cart.order_name }}</td>
                         <td>{{ cart.order_quantity }}</td>
                         <td>${{ cart.order_price }}</td>
+                        <td>${{ cart.total_price }}</td>
                         <td>{{ cart.order_category }}</td>
                         <td>{{ cart.farmer.username }}</td>
+                        <td>{{ cart.farmer.region }}</td>
+                        <td>{{ cart.farmer.zone }}</td>
                         <td>{{ cart.buyer.username }}</td>
-                        <td>${{ cart.total_price }}</td>
+                        <td>{{ cart.buyer.region }}</td>
+                        <td>{{ cart.buyer.zone }}</td>
+
                         <td>{{ cart.created_at|date:"Y-m-d H:i:s" }}</td>
+                        <td>
+                            <a href="{% url 'edit_cart' cart.id %}" class="btn btn-sm btn-primary">Edit</a>
+                        </td>
                     </tr>
                     {% empty %}
                     <tr>

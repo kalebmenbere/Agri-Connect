@@ -1,79 +1,102 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% block content %}
 {% load static %}
 
-{% block content %}
-{% block extra_css %}
-<style>
-  .extra-top-padding {
-    padding-top: 90px;
-  }
-  .left {
-    background-size: cover;
-    background-position: center;
-    padding: 40px;
-    border-radius: 10px;
-    height: 100%;
-    animation: floatAnimation 3s ease-in-out infinite;
-  }
-  @keyframes floatAnimation {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-  }
-  .login-form {
-    background-color: orange;
-    margin: 5%;
-    padding: 4%;
-    border-radius: 10px;
-  }
-  .extra-links {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  .extra-links a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .extra-links a:hover {
-    text-decoration: underline;
-  }
-</style>
-{% endblock extra_css %}
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Login</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item">Login</li>
+    </ol>
+</div>
+<!-- Single Page Header End -->
 
-<div class="container-fluid extra-top-padding">
-  <div class="container py-5">
-    <div class="row g-4 align-items-center">
-      <!-- Left Column: Branding / Image -->
-      <div class="col-lg-6">
-        <div class="left">
-          <img src="{% static 'img/registor.jpg' %}" class="img-fluid rounded-top w-100" alt="Login Image">
-        </div>
-      </div>
-      <!-- Right Column: Login Form -->
-      <div class="col-lg-6">
-        <div class="login-form">      
-          <form method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            <div class="mb-3">
-              <input type="username" name="username" class="form-control" placeholder="Username" required>
-            </div>
-            <div class="mb-3">
-              <input type="password" name="password" class="form-control" placeholder="Password" required>
-            </div>
-            <div class="d-grid">
-              <button type="submit" class="btn green">Login</button>
-            </div>
-          </form>
+<!-- Login Form Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card shadow-lg border-0 rounded-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-5">
+                            <h1 class="fw-bold">Welcome Back!</h1>
+                            <p class="text-muted">Please login to your account</p>
+                        </div>
+                        
+                        <form method="post" id="loginForm" novalidate>
+                            {% csrf_token %}
+                            
+                            <!-- Username Field -->
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                                <label for="username">Username</label>
+                                <div class="invalid-feedback">Please enter your username.</div>
+                            </div>
+                            
+                            <!-- Password Field -->
+                            <div class="form-floating mb-4">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                <label for="password">Password</label>
+                                <div class="invalid-feedback">Please enter your password.</div>
+                                <div class="form-text text-end">
+                                    <a href="{% url 'password_reset' %}" class="text-decoration-none">Forgot Password?</a>
+                                </div>
+                            </div>
 
-          <div class="extra-links">
-            <p>Forgot Your Password? <a href="{% url 'password_reset' %}">Reset Password</a></p>
-            <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
-          </div>
+                            <!-- Error Messages -->
+                            {% if form.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                Invalid username or password. Please try again.
+                            </div>
+                            {% endif %}
+                            
+                            <!-- Submit Button -->
+                            <div class="d-grid gap-2 mb-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                            </div>
+                            
+                            <!-- Register Link -->
+                            <div class="text-center">
+                                <p class="mb-0">Don't have an account? <a href="{% url 'register' %}" class="text-decoration-none">Register here</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div><!-- /.row -->
-  </div><!-- /.container -->
-</div><!-- /.container-fluid -->
+    </div>
+</div>
+<!-- Login Form End -->
+
+<!-- Form Validation Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('loginForm');
+    
+    // Add validation styles on input
+    const inputs = form.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.checkValidity()) {
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+            } else {
+                this.classList.remove('is-valid');
+                this.classList.add('is-invalid');
+            }
+        });
+    });
+    
+    // Form submission validation
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    });
+});
+</script>
+
 {% endblock %}

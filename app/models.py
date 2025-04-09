@@ -13,15 +13,30 @@ class CustomUser(AbstractUser):
         ('buyer', 'Buyer'),
     )
 
+    REGIONS = (
+        ('Addis Ababa', 'Addis Ababa'),
+        ('Afar', 'Afar'),
+        ('Amhara', 'Amhara'),
+        ('Benishangul-Gumuz', 'Benishangul-Gumuz'),
+        ('Dire Dawa', 'Dire Dawa'),
+        ('Gambela', 'Gambela'),
+        ('Harari', 'Harari'),
+        ('Oromia', 'Oromia'),
+        ('Sidama', 'Sidama'),
+        ('SNNP', 'SNNP'),
+        ('Somali', 'Somali'),
+        ('Tigray', 'Tigray'),
+    )
+
     email = models.EmailField(unique=True)
-    role = models.CharField("Role", max_length=100, choices=STATUS, default='Buyer' , blank=True)
+    role = models.CharField("Role", max_length=100, choices=STATUS, default='none', blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    location = models.CharField(max_length=100)
+    region = models.CharField(max_length=100, choices=REGIONS)
+    zone = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    bank_name = models.CharField(max_length=100)
-    bank_number = models.CharField(max_length=100)
-    is_activated= models.BooleanField(default=False)
+    is_activated = models.BooleanField(default=False)
+    is_agreed = models.BooleanField(default=True)
     
     def __str__(self):
         return self.username
@@ -29,11 +44,13 @@ class CustomUser(AbstractUser):
 User = get_user_model()
 
 class Product(models.Model):
+    product_id = models.CharField(max_length=15, unique=True, editable=False)  # New field for custom product ID
     product_name = models.CharField(max_length=200)
     product_quantity = models.DecimalField(max_digits=10, decimal_places=2)
     product_price = models.DecimalField(max_digits=10, decimal_places=2)
     product_image = models.ImageField(upload_to='products/', null=True, blank=True)
     product_category =models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
     farmer = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
         related_name='farmer_product', 
@@ -42,18 +59,19 @@ class Product(models.Model):
         blank=True, 
         limit_choices_to={'role': 'farmer'}
     )
-    created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"Products {self.id} - {self.product_name}"
 
 class Cart(models.Model):
+    product_id = models.CharField(max_length=15, unique=True, editable=False) 
     order_name = models.CharField(max_length=200)
     order_quantity = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     order_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     order_image = models.ImageField(upload_to='products/', null=True, blank=True)
     order_category =models.CharField(max_length=20)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField()
+    ordered_at = models.DateTimeField()
     farmer = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
         related_name='farmer_order', 
@@ -81,7 +99,12 @@ class Paid(models.Model):
     paid_product_image = models.ImageField(upload_to='products/', null=True, blank=True)
     paid_product_category = models.CharField(max_length=20)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField()
+    ordered_at = models.DateTimeField()
+    paid_at = models.DateTimeField()
+    # Add transaction reference and status for tracking
+    transaction_reference = models.CharField(max_length=200, unique=True)  # Reference for the transaction
+    payment_status = models.CharField(max_length=50, choices=[('pending', 'Pending'), ('success', 'Success'), ('failed', 'Failed')], default='pending')  # Payment status
     
     # Foreign Keys to link the farmer and buyer
     farmer = models.ForeignKey(
@@ -101,10 +124,7 @@ class Paid(models.Model):
         limit_choices_to={'role': 'buyer'}
     )
     
-    # Add transaction reference and status for tracking
-    transaction_reference = models.CharField(max_length=200, unique=True)  # Reference for the transaction
-    payment_status = models.CharField(max_length=50, choices=[('pending', 'Pending'), ('success', 'Success'), ('failed', 'Failed')], default='pending')  # Payment status
-    
+
     def __str__(self):
         return f"Paid Product {self.id} for Buyer {self.buyer}"
 
@@ -135,42 +155,3 @@ class Log(models.Model):
 
     def __str__(self):
         return f"{self.timestamp} - {self.message}"
-
-
-
-
-
-
-
-
-class Request(models.Model):
-    request_type = models.CharField(max_length=200)
-    request_location = models.CharField(max_length=100)
-    request_department = models.CharField(max_length=100)
-    requester_name = models.CharField(max_length=100)
-    requester_email = models.EmailField()
-    requester_phone = models.CharField(max_length=20)
-    is_approved = models.BooleanField(default=False)
-    assigned_team_leader = models.ForeignKey(
-        settings.AUTH_USER_MODEL, 
-        related_name='team_leader_requests', 
-        on_delete=models.SET_NULL, 
-        null=True, 
-        blank=True, 
-        limit_choices_to={'role': 'team_leader'}
-    )
-    assigned_staff = models.ForeignKey(
-        settings.AUTH_USER_MODEL, 
-        related_name='staff_requests', 
-        on_delete=models.SET_NULL, 
-        null=True, 
-        blank=True, 
-        limit_choices_to={'role': 'staff'}
-    )
-    is_completed = models.BooleanField(default=False)
-    feed_back = models.TextField(max_length=600, default='', blank=True)
-
-
-    def __str__(self):
-        return f"Request {self.id} - {self.request_type}"
-

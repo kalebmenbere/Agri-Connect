@@ -1,0 +1,83 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- start Page Title ---------------------------------------------------------------------->
+<div class="pagetitle">
+    <h1>Edit Cart</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'cart_list' %}">Cart</a></li>
+            <li class="breadcrumb-item active"><a href="#">Edit Cart</a></li>
+        </ol>
+    </nav>
+</div>
+<!-- End Page Title -->
+
+<!-- start Content ---------------------------------------------------------------------->
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-lg">
+        <div class="card-header bg-primary text-white">
+            <h2>Edit Cart | {{ cart.order_name }}</h2>
+        </div>
+        <div class="card-body pb-0">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="order_name">Order Name</label>
+                    <input type="text" name="order_name" value="{{ cart.order_name }}" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="order_quantity">Quantity</label>
+                    <input type="number" name="order_quantity" value="{{ cart.order_quantity }}" step="0.01" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="order_price">Price</label>
+                    <input type="number" name="order_price" value="{{ cart.order_price }}" step="0.01" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="order_category">Category</label>
+                    <input type="text" name="order_category" value="{{ cart.order_category }}" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="order_image">Product Image</label>
+                    {% if cart.order_image %}
+                        <img src="{{ cart.order_image.url }}" alt="Image" class="img-thumbnail mb-2" style="max-width: 100px;">
+                    {% endif %}
+                    <input type="file" name="order_image" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="farmer_id">Farmer</label>
+                    <select name="farmer_id" class="form-control">
+                        <option value="">-- Select Farmer --</option>
+                        {% for farmer in farmers %}
+                            <option value="{{ farmer.id }}" {% if farmer.id == cart.farmer.id %}selected{% endif %}>{{ farmer.username }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="buyer_id">Buyer</label>
+                    <select name="buyer_id" class="form-control">
+                        <option value="">-- Select Buyer --</option>
+                        {% for buyer in buyers %}
+                            <option value="{{ buyer.id }}" {% if buyer.id == cart.buyer.id %}selected{% endif %}>{{ buyer.username }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success">Save Changes</button>
+                <a href="{% url 'cart_list' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Content ---------------------------------------------------------------------->
+
+{% endblock %}

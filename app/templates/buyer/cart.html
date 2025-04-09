@@ -4,7 +4,7 @@
 
 <!-- Single Page Header start -->
 <div class="container-fluid page-header py-5">
-    <h1 class="text-center text-white display-6">Product Detail</h1>
+    <h1 class="text-center text-white display-6">Cart</h1>
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
         <li class="breadcrumb-item"><a href="{% url 'cart' %}#cart">Cart</a></li>
@@ -28,10 +28,11 @@
                         <th scope="col">Category</th>
                         <th scope="col">Farmer</th>
                         <th scope="col">Buyer</th>
+                        <th scope="col">Orderd at</th>
                         {% if user.role == 'buyer' %}
                         <th scope="col">Payment</th>
-                        {{else}}
-                        <th scope="col">Status</th>
+                        {% elif user.role == 'farmer' %} 
+                        <th scope="col">View Detail</th>
                         {% endif %}
                     </tr>
                 </thead>
@@ -68,11 +69,18 @@
                         <td>
                             <p class="mb-0 mt-4">{{ item.buyer }}</p>
                         </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.ordered_at|date:"Y-m-d" }}</p>
+                        </td>
                         {% if user.role == 'buyer' %}
                         <td class="text-center align-middle">
                             <a href="{% url 'payment_detail' item.id %}#payment_detail" class="btn btn-primary w-75 rounded-pill text-uppercase fw-semibold">Pay</a>
-                        </td>   
-                        {% endif %}                     
+                        </td>  
+                        {% elif user.role == 'farmer' %} 
+                        <td class="text-center align-middle">
+                            <a href="{% url 'payment_detail' item.id %}#payment_detail" class="btn btn-primary w-75 rounded-pill text-uppercase fw-semibold">View</a>
+                        </td> 
+                        {% endif %}             
                     </tr>
                     {% endfor %}
                 </tbody>

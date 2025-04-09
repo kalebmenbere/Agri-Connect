@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5" style="margin-top: 5%;">
+    <h2 class="text-green text-center mb-4">Privacy Policy & Terms</h2>
+    
+    <div class="accordion" id="policyAccordion">
+        
+        <!-- Privacy Policy -->
+        <div class="accordion-item" id="policy">
+            <h2 class="accordion-header" id="privacyHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#privacyCollapse" aria-expanded="true" aria-controls="privacyCollapse">
+                    <i class="fas fa-user-shield me-2 text-success"></i> Privacy Policy
+                </button>
+            </h2>
+            <div id="privacyCollapse" class="accordion-collapse collapse show" aria-labelledby="privacyHeading" data-bs-parent="#policyAccordion">
+                <div class="accordion-body">
+                    <p>At Agri Connect, we respect your privacy and are committed to protecting your personal information. We collect only the necessary data to provide better services and do not share your information with third parties without consent.</p>
+                    <ul>
+                        <li><strong>Data Collection:</strong> We collect user data for authentication, transactions, and order processing.</li>
+                        <li><strong>Security:</strong> Your data is stored securely and encrypted.</li>
+                        <li><strong>Cookies:</strong> We use cookies to enhance user experience.</li>
+                        <li><strong>Third-Party Services:</strong> We may use trusted third-party services for analytics and payment processing.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms of Use -->
+        <div class="accordion-item" id="terms">
+            <h2 class="accordion-header" id="termsHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#termsCollapse" aria-expanded="false" aria-controls="termsCollapse">
+                    <i class="fas fa-file-contract me-2 text-success"></i> Terms of Use
+                </button>
+            </h2>
+            <div id="termsCollapse" class="accordion-collapse collapse" aria-labelledby="termsHeading" data-bs-parent="#policyAccordion">
+                <div class="accordion-body">
+                    <p>By using Agri Connect, you agree to the following terms and conditions:</p>
+                    <ul>
+                        <li><strong>Account Responsibility:</strong> Users must provide accurate information and are responsible for maintaining their account security.</li>
+                        <li><strong>Prohibited Activities:</strong> Misuse, fraud, or any illegal activities are strictly prohibited.</li>
+                        <li><strong>Service Availability:</strong> We strive for 24/7 service availability and this website is only applicable within the Ethiopian region..</li>
+                        <li><strong>Liability:</strong> Agri Connect is not responsible for third-party transactions or external vendor interactions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sales and Refund Policy -->
+        <div class="accordion-item" id="sales">
+            <h2 class="accordion-header" id="refundHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#refundCollapse" aria-expanded="false" aria-controls="refundCollapse">
+                    <i class="fas fa-receipt me-2 text-success"></i> Sales & Refund Policy
+                </button>
+            </h2>
+            <div id="refundCollapse" class="accordion-collapse collapse" aria-labelledby="refundHeading" data-bs-parent="#policyAccordion">
+                <div class="accordion-body">
+                    <p>We strive to provide the best service, but in case of issues, our sales and refund policies are as follows:</p>
+                    <ul>
+                        <li><strong>Payment:</strong> All transactions are securely processed.</li>
+                        <li><strong>Order Cancellation:</strong> Cancellations are allowed within 24 hours of order placement.</li>
+                        <li><strong>Refunds:</strong> Refunds are issued for valid cases, such as undelivered or defective products.</li>
+                        <li><strong>Disputes:</strong> Any disputes should be reported within 7 days of the transaction.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                <!-- Farmer Agreements -->
+                <div class="accordion-item" id="sales">
+                  <h2 class="accordion-header" id="farmerHeading">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#farmerCollapse" aria-expanded="false" aria-controls="farmerCollapse">
+                          <i class="fas fa-receipt me-2 text-success"></i> Farmer Agreements
+                      </button>
+                  </h2>
+                  <div id="farmerCollapse" class="accordion-collapse collapse" aria-labelledby="farmerHeading" data-bs-parent="#policyAccordion">
+                      <div class="accordion-body">
+                          <ul>
+                            <li>Farmers can only register and cannot edit their products; only the admin has editing privileges.</li>
+                            <li>Farmers will be notified when there is an order from a buyer. However, the buyer has a 1-hour interval to complete the online payment. If the buyer does not complete the payment, the product will be returned to the product list.</li>
+                            <li>If the buyer completes the purchase, the payment will be reflected on the "Paid" page, confirming the farmer has received the money in their bank account.</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+        <!-- Buyer Agreements -->
+        <div class="accordion-item" id="sales">
+          <h2 class="accordion-header" id="buyerHeading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buyerCollapse" aria-expanded="false" aria-controls="buyerCollapse">
+                  <i class="fas fa-receipt me-2 text-success"></i> Buyer Agreements
+              </button>
+          </h2>
+          <div id="buyerCollapse" class="accordion-collapse collapse" aria-labelledby="buyerHeading" data-bs-parent="#policyAccordion">
+              <div class="accordion-body">
+                  <ul>
+                    <li>Buyers can only view products if they are signed in.</li>
+                    <li>Buyers can make purchases up to three times per week, regardless of the order amount. Orders are processed on a first-come, first-served basis.</li>
+                    <li>After successful payment, buyers will receive their products within 5-7 days, depending on their location.</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}
+</body>

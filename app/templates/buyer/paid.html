@@ -4,10 +4,10 @@
 
 <!-- Single Page Header start -->
 <div class="container-fluid page-header py-5">
-    <h1 class="text-center text-white display-6">Product Detail</h1>
+    <h1 class="text-center text-white display-6">Paid Products</h1>
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="{% url 'product_list' %}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{% url 'paid' %}#paid">Cart</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'paid' %}#paid">Paid Products</a></li>
     </ol>
 </div>
 <!-- Single Page Header End -->
@@ -28,12 +28,17 @@
                         <th scope="col">Category</th>
                         <th scope="col">Farmer</th>
                         <th scope="col">Buyer</th>
-                        <th scope="col">Transaction</th>
+                        <th scope="col">Transaction Number</th>
+                        <th scope="col">
                         {% if user.role == 'buyer' %}
-                        <th scope="col">Payment Status</th>
+                        Payment Status
                         {% else %}
-                        <th scope="col">Status</th>
+                        Status
                         {% endif %}
+                        </th>
+                        <th scope="col">
+                        View Detail
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,7 +83,9 @@
                                 {{ item.payment_status|title }}
                             </span>
                         </td>   
-                      
+                        <td class="text-center align-middle">
+                            <a href="{% url 'paid_detail' item.id %}#paid_detail" class="btn btn-primary w-75 rounded-pill text-uppercase fw-semibold">View</a>
+                        </td>   
                     </tr>
                     {% empty %}
                     <tr>

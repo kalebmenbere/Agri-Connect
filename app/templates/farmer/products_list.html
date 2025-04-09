@@ -121,13 +121,17 @@
                                         <h5>Quantity: {{ product.product_quantity }} Kg</h5>
                                         <p>Date: {{ product.created_at|date:"Y-m-d" }}</p>
                                         <p>Farmer: {{ product.farmer.username }}</p>
-                                        <p>Location: {{ product.farmer.location }}</p>
+                                        <p>Location: {{ product.location }}</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
                                             <p class="text-dark fs-5 fw-bold mb-0">${{ product.product_price }} Birr / kg</p>
                                         </div>
                                         {% if user.role == 'buyer' %}
                                         <a href="{% url 'product_detail' product.id %}#product_detail" class="btn border border-secondary rounded-pill px-3 text-primary">
                                             <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                        </a>
+                                        {% elif user.role == 'farmer' %}
+                                        <a href="{% url 'product_detail' product.id %}#product_detail" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                        See more
                                         </a>
                                         {% endif %}
                                     </div>

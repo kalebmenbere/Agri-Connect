@@ -4,7 +4,7 @@
 
 <!-- start Page Title ---------------------------------------------------------------------->
 <div class="pagetitle">
-  <h1>Dashboard</h1>
+  <h1>Product List</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
@@ -30,7 +30,10 @@
                         <th scope="col"><a href="?sort=product_price">Price</a></th>
                         <th scope="col"><a href="?sort=product_category">Category</a></th>
                         <th scope="col"><a href="?sort=farmer__username">Farmer</a></th>
+                        <th scope="col"><a href="?sort=region">Region</a></th>
+                        <th scope="col"><a href="?sort=zone">Zone</a></th>
                         <th scope="col"><a href="?sort=created_at">Created At</a></th>
+                        <th scope="col">Edit</a></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,11 +51,16 @@
                         <td>${{ product.product_price }}</td>
                         <td>{{ product.product_category }}</td>
                         <td>{{ product.farmer.username }}</td>
+                        <td>{{ product.farmer.region }}</td>
+                        <td>{{ product.farmer.zone }}</td>
                         <td>{{ product.created_at|date:"Y-m-d H:i:s" }}</td>
+                        <td>
+                            <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-primary">Edit</a>
+                        </td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="7" class="text-center">No products found.</td>
+                        <td colspan="8" class="text-center">No products found.</td>
                     </tr>
                     {% endfor %}
                 </tbody>
