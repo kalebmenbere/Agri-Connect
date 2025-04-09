@@ -27,13 +27,18 @@
                         <th scope="col"><a href="?sort=paid_product_name">Order Name</a></th>
                         <th scope="col"><a href="?sort=paid_product_quantity">Quantity</a></th>
                         <th scope="col"><a href="?sort=paid_product_price">Price</a></th>
+                        <th scope="col"><a href="?sort=total_price">Total Price</a></th>
                         <th scope="col"><a href="?sort=paid_product_category">Category</a></th>
                         <th scope="col"><a href="?sort=farmer__username">Farmer</a></th>
+                        <th scope="col"><a href="?sort=region">Farmer Region</a></th>
+                        <th scope="col"><a href="?sort=zone">Farmer Zone</a></th>
                         <th scope="col"><a href="?sort=buyer__username">Buyer</a></th>
-                        <th scope="col"><a href="?sort=total_price">Total Price</a></th>
+                        <th scope="col"><a href="?sort=region">Buyer Region</a></th>
+                        <th scope="col"><a href="?sort=zone">Buyer Zone</a></th>
                         <th scope="col"><a href="?sort=created_at">Created At</a></th>
                         <th scope="col"><a href="?sort=transaction_reference">Transaction Reference</a></th>
                         <th scope="col"><a href="?sort=payment_status">Payment Status</a></th>
+                        <th scope="col">Edit</a></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,10 +54,14 @@
                         <td>{{ paid.paid_product_name }}</td>
                         <td>{{ paid.paid_product_quantity }}</td>
                         <td>${{ paid.paid_product_price }}</td>
+                        <td>${{ paid.total_price }}</td>
                         <td>{{ paid.paid_product_category }}</td>
                         <td>{{ paid.farmer.username }}</td>
+                        <td>{{ paid.farmer.region }}</td>
+                        <td>{{ paid.farmer.zone }}</td>
                         <td>{{ paid.buyer.username }}</td>
-                        <td>${{ paid.total_price }}</td>
+                        <td>{{ paid.buyer.region }}</td>
+                        <td>{{ paid.buyer.zone }}</td>
                         <td>{{ paid.created_at|date:"Y-m-d H:i:s" }}</td>
                         <td>{{paid.transaction_reference}}</td>
                         <td>
@@ -64,7 +73,9 @@
                                <span class="text-danger">❌ Not Paid</span>
                             {% endif %}
                          </td>
-                         
+                         <td>
+                            <a href="{% url 'edit_paid' paid.id %}" class="btn btn-sm btn-primary">Edit</a>
+                        </td>
                     </tr>
                     {% empty %}
                     <tr>

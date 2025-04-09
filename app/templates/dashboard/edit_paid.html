@@ -1,0 +1,101 @@
+{% extends 'dashboard/include/navbar.html' %}
+
+{% block content %}
+<!-- Start Content -->
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-lg">
+        <div class="card-header bg-primary text-white">
+            <h2>Edit Paid Product</h2>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <!-- Product Name Selection -->
+                <div class="mb-4">
+                    <label for="paid_product_name" class="form-label">Product Name</label>
+                    <select name="paid_product_name" id="paid_product_name" class="form-select">
+                        {% for name in paid_names %}
+                            <option value="{{ name }}" {% if name == paid.paid_product_name %}selected{% endif %}>{{ name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Quantity Input -->
+                <div class="mb-4">
+                    <label for="paid_product_quantity" class="form-label">Quantity</label>
+                    <input type="number" step="0.01" id="paid_product_quantity" name="paid_product_quantity" value="{{ paid.paid_product_quantity }}" class="form-control" required>
+                </div>
+
+                <!-- Price Input -->
+                <div class="mb-4">
+                    <label for="paid_product_price" class="form-label">Price</label>
+                    <input type="number" step="0.01" id="paid_product_price" name="paid_product_price" value="{{ paid.paid_product_price }}" class="form-control" required>
+                </div>
+
+                <!-- Category Input -->
+                <div class="mb-4">
+                    <label for="paid_product_category" class="form-label">Category</label>
+                    <input type="text" id="paid_product_category" name="paid_product_category" value="{{ paid.paid_product_category }}" class="form-control" required>
+                </div>
+
+                <!-- Farmer Selection -->
+                <div class="mb-4">
+                    <label for="farmer_id" class="form-label">Farmer</label>
+                    <select name="farmer_id" id="farmer_id" class="form-select">
+                        <option value="">-- Select Farmer --</option>
+                        {% for farmer in farmers %}
+                            <option value="{{ farmer.id }}" {% if farmer.id == paid.farmer.id %}selected{% endif %}>{{ farmer.username }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Buyer Selection -->
+                <div class="mb-4">
+                    <label for="buyer_id" class="form-label">Buyer</label>
+                    <select name="buyer_id" id="buyer_id" class="form-select">
+                        <option value="">-- Select Buyer --</option>
+                        {% for buyer in buyers %}
+                            <option value="{{ buyer.id }}" {% if buyer.id == paid.buyer.id %}selected{% endif %}>{{ buyer.username }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Product Image -->
+                <div class="mb-4">
+                    <label for="paid_product_image" class="form-label">Product Image</label>
+                    {% if paid.paid_product_image %}
+                        <div class="mb-2">
+                            <img src="{{ paid.paid_product_image.url }}" alt="Image" class="img-fluid rounded" style="max-height: 120px;">
+                        </div>
+                    {% endif %}
+                    <input type="file" id="paid_product_image" name="paid_product_image" class="form-control">
+                </div>
+
+                <!-- Payment Status -->
+                <div class="mb-4">
+                    <label for="payment_status" class="form-label">Payment Status</label>
+                    <select name="payment_status" id="payment_status" class="form-select">
+                        <option value="pending" {% if paid.payment_status == 'pending' %}selected{% endif %}>Pending</option>
+                        <option value="success" {% if paid.payment_status == 'success' %}selected{% endif %}>Success</option>
+                        <option value="failed" {% if paid.payment_status == 'failed' %}selected{% endif %}>Failed</option>
+                    </select>
+                </div>
+
+                <!-- Transaction Reference -->
+                <div class="mb-4">
+                    <label for="transaction_reference" class="form-label">Transaction Reference</label>
+                    <input type="text" id="transaction_reference" name="transaction_reference" value="{{ paid.transaction_reference }}" class="form-control" required>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                    <a href="{% url 'paid_list' %}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Content -->
+{% endblock %}

@@ -602,7 +602,7 @@ def chapa_callback(request, item_id):
                         farmer=cart_item.farmer,  
                         buyer=cart_item.buyer,  
                         transaction_reference=trx_ref,
-                        payment_status='success',  
+                        payment_status='pending',  
                     )
 
                     # Create a success log
@@ -663,7 +663,7 @@ def chapa_callback(request, item_id):
         return response
 
 def chapa_return(request):
-    return render(request, "buyer/payment_result.html")
+    return render(request, "buyer/paid.html")
 
 
 @login_required
@@ -800,6 +800,153 @@ def admin_dashboard(request):
     }
     return render(request, "dashboard/index.html", context)
 
+
+@login_required
+def edit_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    product_names = Product.objects.values_list('product_name', flat=True).distinct()
+    farmers = CustomUser.objects.filter(role='farmer') 
+
+    if request.method == 'POST':
+        product.product_name = request.POST.get('product_name')
+        product.product_quantity = request.POST.get('product_quantity')
+        product.product_price = request.POST.get('product_price')
+        product.product_category = request.POST.get('product_category')
+
+        if 'product_image' in request.FILES:
+            product.product_image = request.FILES['product_image']
+
+        # Check if the 'farmer_id' is blank, if so set farmer to None
+        farmer_id = request.POST.get('farmer_id')
+        if farmer_id:
+            product.farmer = CustomUser.objects.get(id=farmer_id)
+        else:
+            product.farmer = None  # If no farmer selected, set it to None
+
+        product.save()
+        messages.success(request, "Product updated successfully.")
+        return redirect('products')  # Back to product list
+
+    return render(request, 'dashboard/edit_product.html', {
+        'product': product,
+        'product_names': product_names,
+        'farmers': farmers,
+    })
+
+
+@login_required
+def edit_cart(request, cart_id):
+    cart = get_object_or_404(Cart, id=cart_id)
+    cart_names = Cart.objects.values_list('order_name', flat=True).distinct()  # Fix field name to match model
+    farmers = CustomUser.objects.filter(role='farmer')  # Fetch farmers based on their role
+    buyers = CustomUser.objects.filter(role='buyer')  # Fetch buyers based on their role
+
+    if request.method == 'POST':
+        # Get values from the form
+        order_name = request.POST.get('order_name')
+        order_quantity = Decimal(request.POST.get('order_quantity'))  # Convert to Decimal
+        order_price = Decimal(request.POST.get('order_price'))  # Convert to Decimal
+        order_category = request.POST.get('order_category')
+
+        # Update the cart object
+        cart.order_name = order_name
+        cart.order_quantity = order_quantity
+        cart.order_price = order_price
+        cart.order_category = order_category
+
+        # Handle image upload if present
+        if 'order_image' in request.FILES:
+            cart.order_image = request.FILES['order_image']
+
+        # Update farmer if selected
+        farmer_id = request.POST.get('farmer_id')
+        if farmer_id:
+            cart.farmer = CustomUser.objects.get(id=farmer_id)
+        else:
+            cart.farmer = None  # If no farmer selected, set it to None
+
+        # Update buyer if selected
+        buyer_id = request.POST.get('buyer_id')
+        if buyer_id:
+            cart.buyer = CustomUser.objects.get(id=buyer_id)
+        else:
+            cart.buyer = None  # If no buyer selected, set it to None
+
+        # Update total price based on quantity and price
+        cart.total_price = cart.order_quantity * cart.order_price
+
+        cart.save()
+        messages.success(request, "Cart updated successfully.")
+        return redirect('cart_list')  # Redirect to cart list or wherever you need
+
+    return render(request, 'dashboard/edit_cart.html', {
+        'cart': cart,
+        'cart_names': cart_names,
+        'farmers': farmers,
+        'buyers': buyers,
+    })
+
+@login_required
+def edit_paid(request, paid_id):
+    # Get the Paid record by ID
+    paid = get_object_or_404(Paid, id=paid_id)
+    paid_names = Paid.objects.values_list('paid_product_name', flat=True).distinct()  # Ensure this matches the field you want to filter by
+    farmers = CustomUser.objects.filter(role='farmer')  # Filter for farmers based on role
+    buyers = CustomUser.objects.filter(role='buyer')  # Filter for buyers based on role
+
+    if request.method == 'POST':
+        # Get updated values from the form
+        paid_product_name = request.POST.get('paid_product_name')
+        paid_product_quantity = Decimal(request.POST.get('paid_product_quantity'))  # Convert to Decimal
+        paid_product_price = Decimal(request.POST.get('paid_product_price'))  # Convert to Decimal
+        paid_product_category = request.POST.get('paid_product_category')
+
+        # Update paid fields
+        paid.paid_product_name = paid_product_name
+        paid.paid_product_quantity = paid_product_quantity
+        paid.paid_product_price = paid_product_price
+        paid.paid_product_category = paid_product_category
+
+        # Handle image upload if there is a new image
+        if 'paid_product_image' in request.FILES:
+            paid.paid_product_image = request.FILES['paid_product_image']
+
+        # Update farmer if selected
+        farmer_id = request.POST.get('farmer_id')
+        if farmer_id:
+            paid.farmer = CustomUser.objects.get(id=farmer_id)
+        else:
+            paid.farmer = None  # If no farmer selected, set to None
+
+        # Update buyer if selected
+        buyer_id = request.POST.get('buyer_id')
+        if buyer_id:
+            paid.buyer = CustomUser.objects.get(id=buyer_id)
+        else:
+            paid.buyer = None  # If no buyer selected, set to None
+
+        # Update total price based on quantity and price
+        paid.total_price = paid.paid_product_quantity * paid.paid_product_price
+
+        # If payment status or transaction reference is updated
+        payment_status = request.POST.get('payment_status')
+        if payment_status:
+            paid.payment_status = payment_status
+        
+        transaction_reference = request.POST.get('transaction_reference')
+        if transaction_reference:
+            paid.transaction_reference = transaction_reference
+
+        paid.save()
+        messages.success(request, "Paid order updated successfully.")
+        return redirect('paid_list')  # Redirect to the paid orders list or another appropriate page
+
+    return render(request, 'dashboard/edit_paid.html', {
+        'paid': paid,
+        'paid_names': paid_names,
+        'farmers': farmers,
+        'buyers': buyers,
+    })
 
 @login_required
 def farmer_list(request):
