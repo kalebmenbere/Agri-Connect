@@ -964,6 +964,16 @@ def edit_paid(request, paid_id):
         'buyers': buyers,
     })
 
+def delete_paid(request, paid_id):
+    # Retrieve the cart item or return a 404 error if it does not exist
+    paid = get_object_or_404(Paid, id=paid_id)
+
+    if request.method == 'POST':
+        paid.delete()  # Deletes the cart item
+        messages.success(request, 'Paid item deleted successfully.')
+        return redirect('paid_list')  # Redirect to cart list page after deletion
+
+
 @login_required
 def farmer_list(request):
     farmers = CustomUser.objects.filter(role='farmer')  # Assuming `user_type` field exists

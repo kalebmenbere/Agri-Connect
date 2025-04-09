@@ -71,10 +71,16 @@
                         {% endfor %}
                     </select>
                 </div>
-
-                <button type="submit" class="btn btn-success">Save Changes</button>
-                <a href="{% url 'cart_list' %}" class="btn btn-secondary">Cancel</a>
             </form>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                    <a href="{% url 'cart_list' %}" class="btn btn-secondary">Cancel</a>
+                    <form action="{% url 'delete_cart' cart.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete Cart</button>
+                    </form>
+                </div>
+
         </div>
     </div>
 </div>
