@@ -832,7 +832,14 @@ def edit_product(request, product_id):
         'product_names': product_names,
         'farmers': farmers,
     })
+def delete_product(request, product_id):
+    # Get the product by ID, or return a 404 if not found
+    product = get_object_or_404(Product, id=product_id)
 
+    if request.method == 'POST':
+        product.delete()  # Delete the product
+        messages.success(request, 'Product deleted successfully.')
+        return redirect('products')  # Redirect to the products list page
 
 @login_required
 def edit_cart(request, cart_id):
@@ -886,6 +893,15 @@ def edit_cart(request, cart_id):
         'buyers': buyers,
     })
 
+def delete_cart(request, cart_id):
+    # Retrieve the cart item or return a 404 error if it does not exist
+    cart = get_object_or_404(Cart, id=cart_id)
+
+    if request.method == 'POST':
+        cart.delete()  # Deletes the cart item
+        messages.success(request, 'Cart item deleted successfully.')
+        return redirect('cart_list')  # Redirect to cart list page after deletion
+    
 @login_required
 def edit_paid(request, paid_id):
     # Get the Paid record by ID

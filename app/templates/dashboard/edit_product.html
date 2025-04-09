@@ -78,10 +78,15 @@
                 <div class="d-flex justify-content-between">
                     <button type="submit" class="btn btn-success">Save Changes</button>
                     <a href="{% url 'products' %}" class="btn btn-secondary">Cancel</a>
+                    <form action="{% url 'delete_product' product.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete Product</button>
+                    </form>
                 </div>
             </form>
         </div>
     </div>
 </div>
 <!-- End Content ---------------------------------------------------------------------->
+
 {% endblock %}
