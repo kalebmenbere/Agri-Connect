@@ -27,7 +27,9 @@
                         <th scope="col">Total</th>
                         <th scope="col">Category</th>
                         <th scope="col">Farmer</th>
+                        <th scope="col">Farmer Region</th>
                         <th scope="col">Buyer</th>
+                        <th scope="col">Buyer Region</th>
                         <th scope="col">Orderd at</th>
                         {% if user.role == 'buyer' %}
                         <th scope="col">Payment</th>
@@ -67,8 +69,12 @@
                             <p class="mb-0 mt-4">{{ item.farmer }}</p>
                         </td>
                         <td>
+                            <p class="mb-0 mt-4">{{ item.farmer.region }}</p>
+                        <td>
                             <p class="mb-0 mt-4">{{ item.buyer }}</p>
                         </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.buyer.region }}</p>
                         <td>
                             <p class="mb-0 mt-4">{{ item.ordered_at|date:"Y-m-d" }}</p>
                         </td>

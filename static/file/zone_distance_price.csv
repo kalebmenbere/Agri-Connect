@@ -1,0 +1,4657 @@
+From Zone,To Zone,Distance (km),Approx. Price (Birr)
+Addis Ketema,Akaky Kaliti,227,113.5
+Addis Ketema,Arada,827,413.5
+Addis Ketema,Bole,603,301.5
+Addis Ketema,Gulele,185,92.5
+Addis Ketema,Kirkos,452,226
+Addis Ketema,Kolfe Keranio,969,484.5
+Addis Ketema,Lideta,778,389
+Addis Ketema,Nifas Silk-Lafto,972,486
+Addis Ketema,Yeka,531,265.5
+Addis Ketema,Awsi Rasu (Zone 1),545,272.5
+Addis Ketema,Kilbet Rasu (Zone 2),101,50.5
+Addis Ketema,Gabi Rasu (Zone 3),392,196
+Addis Ketema,Fantena Rasu (Zone 4),607,303.5
+Addis Ketema,Hari Rasu (Zone 5),708,354
+Addis Ketema,Agew Awi,649,324.5
+Addis Ketema,East Gojjam,104,52
+Addis Ketema,North Gondar,649,324.5
+Addis Ketema,North Shewa,928,464
+Addis Ketema,North Wollo,84,42
+Addis Ketema,Oromia Special Zone,641,320.5
+Addis Ketema,South Gondar,451,225.5
+Addis Ketema,South Wollo,828,414
+Addis Ketema,Wag Hemra,114,57
+Addis Ketema,West Gojjam,388,194
+Addis Ketema,Assosa,558,279
+Addis Ketema,Kamashi,61,30.5
+Addis Ketema,Metekel,950,475
+Addis Ketema,Mao-Komo Special,576,288
+Addis Ketema,Dire Dawa City Administration,515,257.5
+Addis Ketema,Anywaa,425,212.5
+Addis Ketema,Majang,506,253
+Addis Ketema,Nuer,841,420.5
+Addis Ketema,Itang Special,219,109.5
+Addis Ketema,Harari Regional State,56,28
+Addis Ketema,Arsi,373,186.5
+Addis Ketema,Bale,374,187
+Addis Ketema,Borena,903,451.5
+Addis Ketema,Buno Bedele,762,381
+Addis Ketema,East Bale,370,185
+Addis Ketema,East Guji,177,88.5
+Addis Ketema,East Hararghe,346,173
+Addis Ketema,East Shewa,346,173
+Addis Ketema,East Wellega,986,493
+Addis Ketema,Horo Guduru Wellega,979,489.5
+Addis Ketema,Illubabor,629,314.5
+Addis Ketema,Jimma,133,66.5
+Addis Ketema,Kellem Wellega,247,123.5
+Addis Ketema,North Shewa,928,464
+Addis Ketema,Southwest Shewa,919,459.5
+Addis Ketema,West Arsi,669,334.5
+Addis Ketema,West Guji,762,381
+Addis Ketema,West Hararghe,564,282
+Addis Ketema,West Shewa,712,356
+Addis Ketema,West Wellega,642,321
+Addis Ketema,Aleta Chuko,985,492.5
+Addis Ketema,Aleta Wondo,530,265
+Addis Ketema,Aroresa,537,268.5
+Addis Ketema,Bensa,310,155
+Addis Ketema,Bona,393,196.5
+Addis Ketema,Bursa,637,318.5
+Addis Ketema,Dale,458,229
+Addis Ketema,Dara,773,386.5
+Addis Ketema,Gorche,724,362
+Addis Ketema,Hawassa Zuria,401,200.5
+Addis Ketema,Loka Abaya,606,303
+Addis Ketema,Malga,724,362
+Addis Ketema,Shebedino,290,145
+Addis Ketema,Wondo Genet,959,479.5
+Addis Ketema,Wonsho,168,84
+Addis Ketema,Gamo,507,253.5
+Addis Ketema,Gedeo,191,95.5
+Addis Ketema,Gofa,764,382
+Addis Ketema,Hadiya,370,185
+Addis Ketema,Halaba,665,332.5
+Addis Ketema,Kembata Tembaro,978,489
+Addis Ketema,Konso,393,196.5
+Addis Ketema,Silte,995,497.5
+Addis Ketema,South Omo,868,434
+Addis Ketema,Wolayita,710,355
+Addis Ketema,Afder,280,140
+Addis Ketema,Dollo,621,310.5
+Addis Ketema,Erer,71,35.5
+Addis Ketema,Fafan,829,414.5
+Addis Ketema,Jarar,377,188.5
+Addis Ketema,Korahe,472,236
+Addis Ketema,Liben,325,162.5
+Addis Ketema,Nogob,157,78.5
+Addis Ketema,Shabelle,927,463.5
+Addis Ketema,Sitti,147,73.5
+Addis Ketema,Central,916,458
+Addis Ketema,Eastern,886,443
+Addis Ketema,North Western,290,145
+Addis Ketema,Southern,66,33
+Addis Ketema,Western,588,294
+Addis Ketema,South Eastern,795,397.5
+Addis Ketema,Mekelle,204,102
+Akaky Kaliti,Arada,360,180
+Akaky Kaliti,Bole,115,57.5
+Akaky Kaliti,Gulele,417,208.5
+Akaky Kaliti,Kirkos,603,301.5
+Akaky Kaliti,Kolfe Keranio,924,462
+Akaky Kaliti,Lideta,973,486.5
+Akaky Kaliti,Nifas Silk-Lafto,674,337
+Akaky Kaliti,Yeka,178,89
+Akaky Kaliti,Awsi Rasu (Zone 1),804,402
+Akaky Kaliti,Kilbet Rasu (Zone 2),147,73.5
+Akaky Kaliti,Gabi Rasu (Zone 3),748,374
+Akaky Kaliti,Fantena Rasu (Zone 4),355,177.5
+Akaky Kaliti,Hari Rasu (Zone 5),278,139
+Akaky Kaliti,Agew Awi,201,100.5
+Akaky Kaliti,East Gojjam,571,285.5
+Akaky Kaliti,North Gondar,393,196.5
+Akaky Kaliti,North Shewa,272,136
+Akaky Kaliti,North Wollo,662,331
+Akaky Kaliti,Oromia Special Zone,525,262.5
+Akaky Kaliti,South Gondar,350,175
+Akaky Kaliti,South Wollo,916,458
+Akaky Kaliti,Wag Hemra,978,489
+Akaky Kaliti,West Gojjam,598,299
+Akaky Kaliti,Assosa,522,261
+Akaky Kaliti,Kamashi,249,124.5
+Akaky Kaliti,Metekel,59,29.5
+Akaky Kaliti,Mao-Komo Special,895,447.5
+Akaky Kaliti,Dire Dawa City Administration,651,325.5
+Akaky Kaliti,Anywaa,710,355
+Akaky Kaliti,Majang,961,480.5
+Akaky Kaliti,Nuer,969,484.5
+Akaky Kaliti,Itang Special,57,28.5
+Akaky Kaliti,Harari Regional State,833,416.5
+Akaky Kaliti,Arsi,795,397.5
+Akaky Kaliti,Bale,79,39.5
+Akaky Kaliti,Borena,388,194
+Akaky Kaliti,Buno Bedele,606,303
+Akaky Kaliti,East Bale,931,465.5
+Akaky Kaliti,East Guji,274,137
+Akaky Kaliti,East Hararghe,797,398.5
+Akaky Kaliti,East Shewa,117,58.5
+Akaky Kaliti,East Wellega,217,108.5
+Akaky Kaliti,Horo Guduru Wellega,946,473
+Akaky Kaliti,Illubabor,523,261.5
+Akaky Kaliti,Jimma,308,154
+Akaky Kaliti,Kellem Wellega,501,250.5
+Akaky Kaliti,North Shewa,225,112.5
+Akaky Kaliti,Southwest Shewa,103,51.5
+Akaky Kaliti,West Arsi,84,42
+Akaky Kaliti,West Guji,747,373.5
+Akaky Kaliti,West Hararghe,882,441
+Akaky Kaliti,West Shewa,673,336.5
+Akaky Kaliti,West Wellega,415,207.5
+Akaky Kaliti,Aleta Chuko,857,428.5
+Akaky Kaliti,Aleta Wondo,864,432
+Akaky Kaliti,Aroresa,677,338.5
+Akaky Kaliti,Bensa,149,74.5
+Akaky Kaliti,Bona,815,407.5
+Akaky Kaliti,Bursa,853,426.5
+Akaky Kaliti,Dale,531,265.5
+Akaky Kaliti,Dara,165,82.5
+Akaky Kaliti,Gorche,945,472.5
+Akaky Kaliti,Hawassa Zuria,200,100
+Akaky Kaliti,Loka Abaya,668,334
+Akaky Kaliti,Malga,529,264.5
+Akaky Kaliti,Shebedino,146,73
+Akaky Kaliti,Wondo Genet,683,341.5
+Akaky Kaliti,Wonsho,344,172
+Akaky Kaliti,Gamo,816,408
+Akaky Kaliti,Gedeo,202,101
+Akaky Kaliti,Gofa,135,67.5
+Akaky Kaliti,Hadiya,357,178.5
+Akaky Kaliti,Halaba,281,140.5
+Akaky Kaliti,Kembata Tembaro,211,105.5
+Akaky Kaliti,Konso,783,391.5
+Akaky Kaliti,Silte,327,163.5
+Akaky Kaliti,South Omo,252,126
+Akaky Kaliti,Wolayita,713,356.5
+Akaky Kaliti,Afder,191,95.5
+Akaky Kaliti,Dollo,321,160.5
+Akaky Kaliti,Erer,778,389
+Akaky Kaliti,Fafan,100,50
+Akaky Kaliti,Jarar,660,330
+Akaky Kaliti,Korahe,338,169
+Akaky Kaliti,Liben,746,373
+Akaky Kaliti,Nogob,552,276
+Akaky Kaliti,Shabelle,385,192.5
+Akaky Kaliti,Sitti,934,467
+Akaky Kaliti,Central,400,200
+Akaky Kaliti,Eastern,870,435
+Akaky Kaliti,North Western,416,208
+Akaky Kaliti,Southern,979,489.5
+Akaky Kaliti,Western,395,197.5
+Akaky Kaliti,South Eastern,66,33
+Akaky Kaliti,Mekelle,804,402
+Arada,Bole,688,344
+Arada,Gulele,598,299
+Arada,Kirkos,460,230
+Arada,Kolfe Keranio,197,98.5
+Arada,Lideta,890,445
+Arada,Nifas Silk-Lafto,783,391.5
+Arada,Yeka,501,250.5
+Arada,Awsi Rasu (Zone 1),671,335.5
+Arada,Kilbet Rasu (Zone 2),976,488
+Arada,Gabi Rasu (Zone 3),555,277.5
+Arada,Fantena Rasu (Zone 4),289,144.5
+Arada,Hari Rasu (Zone 5),277,138.5
+Arada,Agew Awi,544,272
+Arada,East Gojjam,297,148.5
+Arada,North Gondar,58,29
+Arada,North Shewa,727,363.5
+Arada,North Wollo,989,494.5
+Arada,Oromia Special Zone,417,208.5
+Arada,South Gondar,636,318
+Arada,South Wollo,485,242.5
+Arada,Wag Hemra,334,167
+Arada,West Gojjam,826,413
+Arada,Assosa,844,422
+Arada,Kamashi,599,299.5
+Arada,Metekel,375,187.5
+Arada,Mao-Komo Special,932,466
+Arada,Dire Dawa City Administration,583,291.5
+Arada,Anywaa,931,465.5
+Arada,Majang,242,121
+Arada,Nuer,399,199.5
+Arada,Itang Special,931,465.5
+Arada,Harari Regional State,831,415.5
+Arada,Arsi,658,329
+Arada,Bale,80,40
+Arada,Borena,833,416.5
+Arada,Buno Bedele,910,455
+Arada,East Bale,571,285.5
+Arada,East Guji,361,180.5
+Arada,East Hararghe,986,493
+Arada,East Shewa,538,269
+Arada,East Wellega,622,311
+Arada,Horo Guduru Wellega,489,244.5
+Arada,Illubabor,155,77.5
+Arada,Jimma,577,288.5
+Arada,Kellem Wellega,783,391.5
+Arada,North Shewa,797,398.5
+Arada,Southwest Shewa,119,59.5
+Arada,West Arsi,54,27
+Arada,West Guji,325,162.5
+Arada,West Hararghe,553,276.5
+Arada,West Shewa,955,477.5
+Arada,West Wellega,811,405.5
+Arada,Aleta Chuko,731,365.5
+Arada,Aleta Wondo,755,377.5
+Arada,Aroresa,910,455
+Arada,Bensa,294,147
+Arada,Bona,951,475.5
+Arada,Bursa,220,110
+Arada,Dale,131,65.5
+Arada,Dara,129,64.5
+Arada,Gorche,648,324
+Arada,Hawassa Zuria,501,250.5
+Arada,Loka Abaya,819,409.5
+Arada,Malga,575,287.5
+Arada,Shebedino,837,418.5
+Arada,Wondo Genet,795,397.5
+Arada,Wonsho,277,138.5
+Arada,Gamo,779,389.5
+Arada,Gedeo,948,474
+Arada,Gofa,544,272
+Arada,Hadiya,965,482.5
+Arada,Halaba,733,366.5
+Arada,Kembata Tembaro,79,39.5
+Arada,Konso,73,36.5
+Arada,Silte,310,155
+Arada,South Omo,932,466
+Arada,Wolayita,662,331
+Arada,Afder,833,416.5
+Arada,Dollo,684,342
+Arada,Erer,960,480
+Arada,Fafan,317,158.5
+Arada,Jarar,481,240.5
+Arada,Korahe,430,215
+Arada,Liben,933,466.5
+Arada,Nogob,651,325.5
+Arada,Shabelle,878,439
+Arada,Sitti,969,484.5
+Arada,Central,463,231.5
+Arada,Eastern,972,486
+Arada,North Western,614,307
+Arada,Southern,568,284
+Arada,Western,80,40
+Arada,South Eastern,303,151.5
+Arada,Mekelle,707,353.5
+Bole,Gulele,118,59
+Bole,Kirkos,873,436.5
+Bole,Kolfe Keranio,812,406
+Bole,Lideta,548,274
+Bole,Nifas Silk-Lafto,105,52.5
+Bole,Yeka,708,354
+Bole,Awsi Rasu (Zone 1),747,373.5
+Bole,Kilbet Rasu (Zone 2),740,370
+Bole,Gabi Rasu (Zone 3),931,465.5
+Bole,Fantena Rasu (Zone 4),852,426
+Bole,Hari Rasu (Zone 5),773,386.5
+Bole,Agew Awi,871,435.5
+Bole,East Gojjam,122,61
+Bole,North Gondar,548,274
+Bole,North Shewa,659,329.5
+Bole,North Wollo,698,349
+Bole,Oromia Special Zone,50,25
+Bole,South Gondar,511,255.5
+Bole,South Wollo,170,85
+Bole,Wag Hemra,215,107.5
+Bole,West Gojjam,620,310
+Bole,Assosa,534,267
+Bole,Kamashi,998,499
+Bole,Metekel,725,362.5
+Bole,Mao-Komo Special,177,88.5
+Bole,Dire Dawa City Administration,313,156.5
+Bole,Anywaa,444,222
+Bole,Majang,368,184
+Bole,Nuer,692,346
+Bole,Itang Special,349,174.5
+Bole,Harari Regional State,658,329
+Bole,Arsi,539,269.5
+Bole,Bale,148,74
+Bole,Borena,466,233
+Bole,Buno Bedele,485,242.5
+Bole,East Bale,206,103
+Bole,East Guji,224,112
+Bole,East Hararghe,245,122.5
+Bole,East Shewa,703,351.5
+Bole,East Wellega,655,327.5
+Bole,Horo Guduru Wellega,416,208
+Bole,Illubabor,837,418.5
+Bole,Jimma,892,446
+Bole,Kellem Wellega,92,46
+Bole,North Shewa,387,193.5
+Bole,Southwest Shewa,445,222.5
+Bole,West Arsi,373,186.5
+Bole,West Guji,529,264.5
+Bole,West Hararghe,200,100
+Bole,West Shewa,394,197
+Bole,West Wellega,103,51.5
+Bole,Aleta Chuko,911,455.5
+Bole,Aleta Wondo,915,457.5
+Bole,Aroresa,684,342
+Bole,Bensa,437,218.5
+Bole,Bona,314,157
+Bole,Bursa,978,489
+Bole,Dale,776,388
+Bole,Dara,748,374
+Bole,Gorche,966,483
+Bole,Hawassa Zuria,871,435.5
+Bole,Loka Abaya,519,259.5
+Bole,Malga,389,194.5
+Bole,Shebedino,253,126.5
+Bole,Wondo Genet,180,90
+Bole,Wonsho,163,81.5
+Bole,Gamo,899,449.5
+Bole,Gedeo,543,271.5
+Bole,Gofa,397,198.5
+Bole,Hadiya,591,295.5
+Bole,Halaba,135,67.5
+Bole,Kembata Tembaro,823,411.5
+Bole,Konso,176,88
+Bole,Silte,366,183
+Bole,South Omo,312,156
+Bole,Wolayita,760,380
+Bole,Afder,384,192
+Bole,Dollo,421,210.5
+Bole,Erer,91,45.5
+Bole,Fafan,663,331.5
+Bole,Jarar,476,238
+Bole,Korahe,961,480.5
+Bole,Liben,989,494.5
+Bole,Nogob,960,480
+Bole,Shabelle,55,27.5
+Bole,Sitti,1000,500
+Bole,Central,119,59.5
+Bole,Eastern,696,348
+Bole,North Western,812,406
+Bole,Southern,867,433.5
+Bole,Western,87,43.5
+Bole,South Eastern,617,308.5
+Bole,Mekelle,192,96
+Gulele,Kirkos,700,350
+Gulele,Kolfe Keranio,608,304
+Gulele,Lideta,710,355
+Gulele,Nifas Silk-Lafto,888,444
+Gulele,Yeka,75,37.5
+Gulele,Awsi Rasu (Zone 1),663,331.5
+Gulele,Kilbet Rasu (Zone 2),534,267
+Gulele,Gabi Rasu (Zone 3),98,49
+Gulele,Fantena Rasu (Zone 4),896,448
+Gulele,Hari Rasu (Zone 5),364,182
+Gulele,Agew Awi,967,483.5
+Gulele,East Gojjam,270,135
+Gulele,North Gondar,382,191
+Gulele,North Shewa,555,277.5
+Gulele,North Wollo,750,375
+Gulele,Oromia Special Zone,683,341.5
+Gulele,South Gondar,716,358
+Gulele,South Wollo,148,74
+Gulele,Wag Hemra,840,420
+Gulele,West Gojjam,193,96.5
+Gulele,Assosa,296,148
+Gulele,Kamashi,66,33
+Gulele,Metekel,361,180.5
+Gulele,Mao-Komo Special,946,473
+Gulele,Dire Dawa City Administration,729,364.5
+Gulele,Anywaa,171,85.5
+Gulele,Majang,983,491.5
+Gulele,Nuer,521,260.5
+Gulele,Itang Special,116,58
+Gulele,Harari Regional State,184,92
+Gulele,Arsi,844,422
+Gulele,Bale,650,325
+Gulele,Borena,744,372
+Gulele,Buno Bedele,377,188.5
+Gulele,East Bale,132,66
+Gulele,East Guji,81,40.5
+Gulele,East Hararghe,294,147
+Gulele,East Shewa,968,484
+Gulele,East Wellega,281,140.5
+Gulele,Horo Guduru Wellega,734,367
+Gulele,Illubabor,496,248
+Gulele,Jimma,214,107
+Gulele,Kellem Wellega,840,420
+Gulele,North Shewa,382,191
+Gulele,Southwest Shewa,70,35
+Gulele,West Arsi,67,33.5
+Gulele,West Guji,433,216.5
+Gulele,West Hararghe,632,316
+Gulele,West Shewa,306,153
+Gulele,West Wellega,588,294
+Gulele,Aleta Chuko,363,181.5
+Gulele,Aleta Wondo,490,245
+Gulele,Aroresa,558,279
+Gulele,Bensa,719,359.5
+Gulele,Bona,389,194.5
+Gulele,Bursa,224,112
+Gulele,Dale,691,345.5
+Gulele,Dara,840,420
+Gulele,Gorche,951,475.5
+Gulele,Hawassa Zuria,103,51.5
+Gulele,Loka Abaya,491,245.5
+Gulele,Malga,733,366.5
+Gulele,Shebedino,338,169
+Gulele,Wondo Genet,896,448
+Gulele,Wonsho,515,257.5
+Gulele,Gamo,159,79.5
+Gulele,Gedeo,642,321
+Gulele,Gofa,476,238
+Gulele,Hadiya,118,59
+Gulele,Halaba,822,411
+Gulele,Kembata Tembaro,659,329.5
+Gulele,Konso,59,29.5
+Gulele,Silte,489,244.5
+Gulele,South Omo,902,451
+Gulele,Wolayita,319,159.5
+Gulele,Afder,828,414
+Gulele,Dollo,437,218.5
+Gulele,Erer,790,395
+Gulele,Fafan,190,95
+Gulele,Jarar,368,184
+Gulele,Korahe,787,393.5
+Gulele,Liben,385,192.5
+Gulele,Nogob,983,491.5
+Gulele,Shabelle,393,196.5
+Gulele,Sitti,444,222
+Gulele,Central,571,285.5
+Gulele,Eastern,70,35
+Gulele,North Western,981,490.5
+Gulele,Southern,432,216
+Gulele,Western,546,273
+Gulele,South Eastern,78,39
+Gulele,Mekelle,509,254.5
+Kirkos,Kolfe Keranio,766,383
+Kirkos,Lideta,135,67.5
+Kirkos,Nifas Silk-Lafto,115,57.5
+Kirkos,Yeka,717,358.5
+Kirkos,Awsi Rasu (Zone 1),168,84
+Kirkos,Kilbet Rasu (Zone 2),558,279
+Kirkos,Gabi Rasu (Zone 3),927,463.5
+Kirkos,Fantena Rasu (Zone 4),309,154.5
+Kirkos,Hari Rasu (Zone 5),480,240
+Kirkos,Agew Awi,449,224.5
+Kirkos,East Gojjam,323,161.5
+Kirkos,North Gondar,847,423.5
+Kirkos,North Shewa,329,164.5
+Kirkos,North Wollo,650,325
+Kirkos,Oromia Special Zone,541,270.5
+Kirkos,South Gondar,896,448
+Kirkos,South Wollo,483,241.5
+Kirkos,Wag Hemra,767,383.5
+Kirkos,West Gojjam,800,400
+Kirkos,Assosa,748,374
+Kirkos,Kamashi,745,372.5
+Kirkos,Metekel,967,483.5
+Kirkos,Mao-Komo Special,395,197.5
+Kirkos,Dire Dawa City Administration,813,406.5
+Kirkos,Anywaa,256,128
+Kirkos,Majang,998,499
+Kirkos,Nuer,239,119.5
+Kirkos,Itang Special,229,114.5
+Kirkos,Harari Regional State,205,102.5
+Kirkos,Arsi,545,272.5
+Kirkos,Bale,502,251
+Kirkos,Borena,141,70.5
+Kirkos,Buno Bedele,436,218
+Kirkos,East Bale,294,147
+Kirkos,East Guji,303,151.5
+Kirkos,East Hararghe,70,35
+Kirkos,East Shewa,266,133
+Kirkos,East Wellega,52,26
+Kirkos,Horo Guduru Wellega,181,90.5
+Kirkos,Illubabor,714,357
+Kirkos,Jimma,603,301.5
+Kirkos,Kellem Wellega,113,56.5
+Kirkos,North Shewa,574,287
+Kirkos,Southwest Shewa,217,108.5
+Kirkos,West Arsi,459,229.5
+Kirkos,West Guji,908,454
+Kirkos,West Hararghe,233,116.5
+Kirkos,West Shewa,374,187
+Kirkos,West Wellega,880,440
+Kirkos,Aleta Chuko,163,81.5
+Kirkos,Aleta Wondo,427,213.5
+Kirkos,Aroresa,277,138.5
+Kirkos,Bensa,465,232.5
+Kirkos,Bona,108,54
+Kirkos,Bursa,551,275.5
+Kirkos,Dale,555,277.5
+Kirkos,Dara,372,186
+Kirkos,Gorche,125,62.5
+Kirkos,Hawassa Zuria,202,101
+Kirkos,Loka Abaya,656,328
+Kirkos,Malga,894,447
+Kirkos,Shebedino,521,260.5
+Kirkos,Wondo Genet,278,139
+Kirkos,Wonsho,138,69
+Kirkos,Gamo,188,94
+Kirkos,Gedeo,683,341.5
+Kirkos,Gofa,465,232.5
+Kirkos,Hadiya,465,232.5
+Kirkos,Halaba,671,335.5
+Kirkos,Kembata Tembaro,991,495.5
+Kirkos,Konso,581,290.5
+Kirkos,Silte,615,307.5
+Kirkos,South Omo,400,200
+Kirkos,Wolayita,723,361.5
+Kirkos,Afder,315,157.5
+Kirkos,Dollo,901,450.5
+Kirkos,Erer,768,384
+Kirkos,Fafan,822,411
+Kirkos,Jarar,858,429
+Kirkos,Korahe,395,197.5
+Kirkos,Liben,725,362.5
+Kirkos,Nogob,670,335
+Kirkos,Shabelle,616,308
+Kirkos,Sitti,681,340.5
+Kirkos,Central,471,235.5
+Kirkos,Eastern,690,345
+Kirkos,North Western,924,462
+Kirkos,Southern,360,180
+Kirkos,Western,557,278.5
+Kirkos,South Eastern,639,319.5
+Kirkos,Mekelle,509,254.5
+Kolfe Keranio,Lideta,532,266
+Kolfe Keranio,Nifas Silk-Lafto,833,416.5
+Kolfe Keranio,Yeka,507,253.5
+Kolfe Keranio,Awsi Rasu (Zone 1),221,110.5
+Kolfe Keranio,Kilbet Rasu (Zone 2),649,324.5
+Kolfe Keranio,Gabi Rasu (Zone 3),236,118
+Kolfe Keranio,Fantena Rasu (Zone 4),124,62
+Kolfe Keranio,Hari Rasu (Zone 5),184,92
+Kolfe Keranio,Agew Awi,143,71.5
+Kolfe Keranio,East Gojjam,548,274
+Kolfe Keranio,North Gondar,550,275
+Kolfe Keranio,North Shewa,480,240
+Kolfe Keranio,North Wollo,788,394
+Kolfe Keranio,Oromia Special Zone,732,366
+Kolfe Keranio,South Gondar,606,303
+Kolfe Keranio,South Wollo,310,155
+Kolfe Keranio,Wag Hemra,751,375.5
+Kolfe Keranio,West Gojjam,313,156.5
+Kolfe Keranio,Assosa,316,158
+Kolfe Keranio,Kamashi,550,275
+Kolfe Keranio,Metekel,528,264
+Kolfe Keranio,Mao-Komo Special,596,298
+Kolfe Keranio,Dire Dawa City Administration,886,443
+Kolfe Keranio,Anywaa,146,73
+Kolfe Keranio,Majang,953,476.5
+Kolfe Keranio,Nuer,101,50.5
+Kolfe Keranio,Itang Special,808,404
+Kolfe Keranio,Harari Regional State,800,400
+Kolfe Keranio,Arsi,573,286.5
+Kolfe Keranio,Bale,783,391.5
+Kolfe Keranio,Borena,438,219
+Kolfe Keranio,Buno Bedele,143,71.5
+Kolfe Keranio,East Bale,898,449
+Kolfe Keranio,East Guji,255,127.5
+Kolfe Keranio,East Hararghe,451,225.5
+Kolfe Keranio,East Shewa,480,240
+Kolfe Keranio,East Wellega,61,30.5
+Kolfe Keranio,Horo Guduru Wellega,105,52.5
+Kolfe Keranio,Illubabor,919,459.5
+Kolfe Keranio,Jimma,321,160.5
+Kolfe Keranio,Kellem Wellega,70,35
+Kolfe Keranio,North Shewa,229,114.5
+Kolfe Keranio,Southwest Shewa,873,436.5
+Kolfe Keranio,West Arsi,441,220.5
+Kolfe Keranio,West Guji,274,137
+Kolfe Keranio,West Hararghe,573,286.5
+Kolfe Keranio,West Shewa,242,121
+Kolfe Keranio,West Wellega,786,393
+Kolfe Keranio,Aleta Chuko,94,47
+Kolfe Keranio,Aleta Wondo,733,366.5
+Kolfe Keranio,Aroresa,468,234
+Kolfe Keranio,Bensa,138,69
+Kolfe Keranio,Bona,622,311
+Kolfe Keranio,Bursa,527,263.5
+Kolfe Keranio,Dale,443,221.5
+Kolfe Keranio,Dara,348,174
+Kolfe Keranio,Gorche,757,378.5
+Kolfe Keranio,Hawassa Zuria,479,239.5
+Kolfe Keranio,Loka Abaya,832,416
+Kolfe Keranio,Malga,356,178
+Kolfe Keranio,Shebedino,56,28
+Kolfe Keranio,Wondo Genet,185,92.5
+Kolfe Keranio,Wonsho,90,45
+Kolfe Keranio,Gamo,471,235.5
+Kolfe Keranio,Gedeo,544,272
+Kolfe Keranio,Gofa,578,289
+Kolfe Keranio,Hadiya,976,488
+Kolfe Keranio,Halaba,706,353
+Kolfe Keranio,Kembata Tembaro,280,140
+Kolfe Keranio,Konso,685,342.5
+Kolfe Keranio,Silte,582,291
+Kolfe Keranio,South Omo,135,67.5
+Kolfe Keranio,Wolayita,754,377
+Kolfe Keranio,Afder,678,339
+Kolfe Keranio,Dollo,382,191
+Kolfe Keranio,Erer,125,62.5
+Kolfe Keranio,Fafan,463,231.5
+Kolfe Keranio,Jarar,87,43.5
+Kolfe Keranio,Korahe,241,120.5
+Kolfe Keranio,Liben,186,93
+Kolfe Keranio,Nogob,970,485
+Kolfe Keranio,Shabelle,639,319.5
+Kolfe Keranio,Sitti,349,174.5
+Kolfe Keranio,Central,545,272.5
+Kolfe Keranio,Eastern,509,254.5
+Kolfe Keranio,North Western,601,300.5
+Kolfe Keranio,Southern,93,46.5
+Kolfe Keranio,Western,656,328
+Kolfe Keranio,South Eastern,963,481.5
+Kolfe Keranio,Mekelle,701,350.5
+Lideta,Nifas Silk-Lafto,313,156.5
+Lideta,Yeka,336,168
+Lideta,Awsi Rasu (Zone 1),625,312.5
+Lideta,Kilbet Rasu (Zone 2),805,402.5
+Lideta,Gabi Rasu (Zone 3),620,310
+Lideta,Fantena Rasu (Zone 4),250,125
+Lideta,Hari Rasu (Zone 5),80,40
+Lideta,Agew Awi,618,309
+Lideta,East Gojjam,488,244
+Lideta,North Gondar,588,294
+Lideta,North Shewa,601,300.5
+Lideta,North Wollo,602,301
+Lideta,Oromia Special Zone,348,174
+Lideta,South Gondar,960,480
+Lideta,South Wollo,166,83
+Lideta,Wag Hemra,999,499.5
+Lideta,West Gojjam,701,350.5
+Lideta,Assosa,888,444
+Lideta,Kamashi,433,216.5
+Lideta,Metekel,850,425
+Lideta,Mao-Komo Special,660,330
+Lideta,Dire Dawa City Administration,449,224.5
+Lideta,Anywaa,823,411.5
+Lideta,Majang,746,373
+Lideta,Nuer,207,103.5
+Lideta,Itang Special,468,234
+Lideta,Harari Regional State,877,438.5
+Lideta,Arsi,118,59
+Lideta,Bale,63,31.5
+Lideta,Borena,65,32.5
+Lideta,Buno Bedele,543,271.5
+Lideta,East Bale,55,27.5
+Lideta,East Guji,77,38.5
+Lideta,East Hararghe,474,237
+Lideta,East Shewa,234,117
+Lideta,East Wellega,118,59
+Lideta,Horo Guduru Wellega,436,218
+Lideta,Illubabor,488,244
+Lideta,Jimma,852,426
+Lideta,Kellem Wellega,81,40.5
+Lideta,North Shewa,365,182.5
+Lideta,Southwest Shewa,687,343.5
+Lideta,West Arsi,447,223.5
+Lideta,West Guji,186,93
+Lideta,West Hararghe,93,46.5
+Lideta,West Shewa,616,308
+Lideta,West Wellega,313,156.5
+Lideta,Aleta Chuko,505,252.5
+Lideta,Aleta Wondo,997,498.5
+Lideta,Aroresa,417,208.5
+Lideta,Bensa,611,305.5
+Lideta,Bona,587,293.5
+Lideta,Bursa,522,261
+Lideta,Dale,446,223
+Lideta,Dara,984,492
+Lideta,Gorche,464,232
+Lideta,Hawassa Zuria,566,283
+Lideta,Loka Abaya,832,416
+Lideta,Malga,637,318.5
+Lideta,Shebedino,739,369.5
+Lideta,Wondo Genet,109,54.5
+Lideta,Wonsho,219,109.5
+Lideta,Gamo,451,225.5
+Lideta,Gedeo,63,31.5
+Lideta,Gofa,623,311.5
+Lideta,Hadiya,471,235.5
+Lideta,Halaba,452,226
+Lideta,Kembata Tembaro,203,101.5
+Lideta,Konso,452,226
+Lideta,Silte,961,480.5
+Lideta,South Omo,78,39
+Lideta,Wolayita,770,385
+Lideta,Afder,656,328
+Lideta,Dollo,846,423
+Lideta,Erer,533,266.5
+Lideta,Fafan,874,437
+Lideta,Jarar,901,450.5
+Lideta,Korahe,501,250.5
+Lideta,Liben,346,173
+Lideta,Nogob,549,274.5
+Lideta,Shabelle,498,249
+Lideta,Sitti,624,312
+Lideta,Central,720,360
+Lideta,Eastern,143,71.5
+Lideta,North Western,514,257
+Lideta,Southern,833,416.5
+Lideta,Western,736,368
+Lideta,South Eastern,531,265.5
+Lideta,Mekelle,267,133.5
+Nifas Silk-Lafto,Yeka,488,244
+Nifas Silk-Lafto,Awsi Rasu (Zone 1),249,124.5
+Nifas Silk-Lafto,Kilbet Rasu (Zone 2),375,187.5
+Nifas Silk-Lafto,Gabi Rasu (Zone 3),695,347.5
+Nifas Silk-Lafto,Fantena Rasu (Zone 4),389,194.5
+Nifas Silk-Lafto,Hari Rasu (Zone 5),550,275
+Nifas Silk-Lafto,Agew Awi,564,282
+Nifas Silk-Lafto,East Gojjam,799,399.5
+Nifas Silk-Lafto,North Gondar,78,39
+Nifas Silk-Lafto,North Shewa,154,77
+Nifas Silk-Lafto,North Wollo,744,372
+Nifas Silk-Lafto,Oromia Special Zone,873,436.5
+Nifas Silk-Lafto,South Gondar,770,385
+Nifas Silk-Lafto,South Wollo,108,54
+Nifas Silk-Lafto,Wag Hemra,124,62
+Nifas Silk-Lafto,West Gojjam,732,366
+Nifas Silk-Lafto,Assosa,835,417.5
+Nifas Silk-Lafto,Kamashi,764,382
+Nifas Silk-Lafto,Metekel,417,208.5
+Nifas Silk-Lafto,Mao-Komo Special,392,196
+Nifas Silk-Lafto,Dire Dawa City Administration,763,381.5
+Nifas Silk-Lafto,Anywaa,850,425
+Nifas Silk-Lafto,Majang,671,335.5
+Nifas Silk-Lafto,Nuer,847,423.5
+Nifas Silk-Lafto,Itang Special,576,288
+Nifas Silk-Lafto,Harari Regional State,828,414
+Nifas Silk-Lafto,Arsi,971,485.5
+Nifas Silk-Lafto,Bale,186,93
+Nifas Silk-Lafto,Borena,687,343.5
+Nifas Silk-Lafto,Buno Bedele,651,325.5
+Nifas Silk-Lafto,East Bale,893,446.5
+Nifas Silk-Lafto,East Guji,465,232.5
+Nifas Silk-Lafto,East Hararghe,130,65
+Nifas Silk-Lafto,East Shewa,475,237.5
+Nifas Silk-Lafto,East Wellega,142,71
+Nifas Silk-Lafto,Horo Guduru Wellega,795,397.5
+Nifas Silk-Lafto,Illubabor,170,85
+Nifas Silk-Lafto,Jimma,270,135
+Nifas Silk-Lafto,Kellem Wellega,271,135.5
+Nifas Silk-Lafto,North Shewa,712,356
+Nifas Silk-Lafto,Southwest Shewa,350,175
+Nifas Silk-Lafto,West Arsi,213,106.5
+Nifas Silk-Lafto,West Guji,497,248.5
+Nifas Silk-Lafto,West Hararghe,137,68.5
+Nifas Silk-Lafto,West Shewa,633,316.5
+Nifas Silk-Lafto,West Wellega,177,88.5
+Nifas Silk-Lafto,Aleta Chuko,217,108.5
+Nifas Silk-Lafto,Aleta Wondo,818,409
+Nifas Silk-Lafto,Aroresa,239,119.5
+Nifas Silk-Lafto,Bensa,485,242.5
+Nifas Silk-Lafto,Bona,543,271.5
+Nifas Silk-Lafto,Bursa,458,229
+Nifas Silk-Lafto,Dale,493,246.5
+Nifas Silk-Lafto,Dara,721,360.5
+Nifas Silk-Lafto,Gorche,234,117
+Nifas Silk-Lafto,Hawassa Zuria,91,45.5
+Nifas Silk-Lafto,Loka Abaya,825,412.5
+Nifas Silk-Lafto,Malga,481,240.5
+Nifas Silk-Lafto,Shebedino,53,26.5
+Nifas Silk-Lafto,Wondo Genet,741,370.5
+Nifas Silk-Lafto,Wonsho,772,386
+Nifas Silk-Lafto,Gamo,199,99.5
+Nifas Silk-Lafto,Gedeo,470,235
+Nifas Silk-Lafto,Gofa,61,30.5
+Nifas Silk-Lafto,Hadiya,60,30
+Nifas Silk-Lafto,Halaba,781,390.5
+Nifas Silk-Lafto,Kembata Tembaro,981,490.5
+Nifas Silk-Lafto,Konso,493,246.5
+Nifas Silk-Lafto,Silte,493,246.5
+Nifas Silk-Lafto,South Omo,261,130.5
+Nifas Silk-Lafto,Wolayita,155,77.5
+Nifas Silk-Lafto,Afder,61,30.5
+Nifas Silk-Lafto,Dollo,709,354.5
+Nifas Silk-Lafto,Erer,735,367.5
+Nifas Silk-Lafto,Fafan,646,323
+Nifas Silk-Lafto,Jarar,271,135.5
+Nifas Silk-Lafto,Korahe,734,367
+Nifas Silk-Lafto,Liben,767,383.5
+Nifas Silk-Lafto,Nogob,111,55.5
+Nifas Silk-Lafto,Shabelle,968,484
+Nifas Silk-Lafto,Sitti,429,214.5
+Nifas Silk-Lafto,Central,809,404.5
+Nifas Silk-Lafto,Eastern,254,127
+Nifas Silk-Lafto,North Western,515,257.5
+Nifas Silk-Lafto,Southern,945,472.5
+Nifas Silk-Lafto,Western,300,150
+Nifas Silk-Lafto,South Eastern,679,339.5
+Nifas Silk-Lafto,Mekelle,56,28
+Yeka,Awsi Rasu (Zone 1),968,484
+Yeka,Kilbet Rasu (Zone 2),66,33
+Yeka,Gabi Rasu (Zone 3),51,25.5
+Yeka,Fantena Rasu (Zone 4),717,358.5
+Yeka,Hari Rasu (Zone 5),864,432
+Yeka,Agew Awi,802,401
+Yeka,East Gojjam,986,493
+Yeka,North Gondar,624,312
+Yeka,North Shewa,110,55
+Yeka,North Wollo,380,190
+Yeka,Oromia Special Zone,418,209
+Yeka,South Gondar,587,293.5
+Yeka,South Wollo,996,498
+Yeka,Wag Hemra,137,68.5
+Yeka,West Gojjam,728,364
+Yeka,Assosa,681,340.5
+Yeka,Kamashi,911,455.5
+Yeka,Metekel,567,283.5
+Yeka,Mao-Komo Special,339,169.5
+Yeka,Dire Dawa City Administration,673,336.5
+Yeka,Anywaa,707,353.5
+Yeka,Majang,471,235.5
+Yeka,Nuer,529,264.5
+Yeka,Itang Special,642,321
+Yeka,Harari Regional State,754,377
+Yeka,Arsi,837,418.5
+Yeka,Bale,565,282.5
+Yeka,Borena,127,63.5
+Yeka,Buno Bedele,543,271.5
+Yeka,East Bale,661,330.5
+Yeka,East Guji,60,30
+Yeka,East Hararghe,280,140
+Yeka,East Shewa,517,258.5
+Yeka,East Wellega,310,155
+Yeka,Horo Guduru Wellega,197,98.5
+Yeka,Illubabor,210,105
+Yeka,Jimma,127,63.5
+Yeka,Kellem Wellega,128,64
+Yeka,North Shewa,492,246
+Yeka,Southwest Shewa,955,477.5
+Yeka,West Arsi,889,444.5
+Yeka,West Guji,536,268
+Yeka,West Hararghe,555,277.5
+Yeka,West Shewa,991,495.5
+Yeka,West Wellega,844,422
+Yeka,Aleta Chuko,81,40.5
+Yeka,Aleta Wondo,250,125
+Yeka,Aroresa,138,69
+Yeka,Bensa,191,95.5
+Yeka,Bona,761,380.5
+Yeka,Bursa,974,487
+Yeka,Dale,92,46
+Yeka,Dara,52,26
+Yeka,Gorche,329,164.5
+Yeka,Hawassa Zuria,721,360.5
+Yeka,Loka Abaya,602,301
+Yeka,Malga,613,306.5
+Yeka,Shebedino,870,435
+Yeka,Wondo Genet,823,411.5
+Yeka,Wonsho,168,84
+Yeka,Gamo,325,162.5
+Yeka,Gedeo,648,324
+Yeka,Gofa,766,383
+Yeka,Hadiya,870,435
+Yeka,Halaba,521,260.5
+Yeka,Kembata Tembaro,233,116.5
+Yeka,Konso,617,308.5
+Yeka,Silte,972,486
+Yeka,South Omo,264,132
+Yeka,Wolayita,411,205.5
+Yeka,Afder,259,129.5
+Yeka,Dollo,367,183.5
+Yeka,Erer,551,275.5
+Yeka,Fafan,625,312.5
+Yeka,Jarar,317,158.5
+Yeka,Korahe,160,80
+Yeka,Liben,473,236.5
+Yeka,Nogob,399,199.5
+Yeka,Shabelle,457,228.5
+Yeka,Sitti,113,56.5
+Yeka,Central,589,294.5
+Yeka,Eastern,471,235.5
+Yeka,North Western,173,86.5
+Yeka,Southern,949,474.5
+Yeka,Western,957,478.5
+Yeka,South Eastern,165,82.5
+Yeka,Mekelle,244,122
+Awsi Rasu (Zone 1),Kilbet Rasu (Zone 2),656,328
+Awsi Rasu (Zone 1),Gabi Rasu (Zone 3),672,336
+Awsi Rasu (Zone 1),Fantena Rasu (Zone 4),364,182
+Awsi Rasu (Zone 1),Hari Rasu (Zone 5),524,262
+Awsi Rasu (Zone 1),Agew Awi,227,113.5
+Awsi Rasu (Zone 1),East Gojjam,403,201.5
+Awsi Rasu (Zone 1),North Gondar,658,329
+Awsi Rasu (Zone 1),North Shewa,370,185
+Awsi Rasu (Zone 1),North Wollo,683,341.5
+Awsi Rasu (Zone 1),Oromia Special Zone,565,282.5
+Awsi Rasu (Zone 1),South Gondar,823,411.5
+Awsi Rasu (Zone 1),South Wollo,857,428.5
+Awsi Rasu (Zone 1),Wag Hemra,573,286.5
+Awsi Rasu (Zone 1),West Gojjam,885,442.5
+Awsi Rasu (Zone 1),Assosa,837,418.5
+Awsi Rasu (Zone 1),Kamashi,415,207.5
+Awsi Rasu (Zone 1),Metekel,724,362
+Awsi Rasu (Zone 1),Mao-Komo Special,665,332.5
+Awsi Rasu (Zone 1),Dire Dawa City Administration,510,255
+Awsi Rasu (Zone 1),Anywaa,807,403.5
+Awsi Rasu (Zone 1),Majang,681,340.5
+Awsi Rasu (Zone 1),Nuer,553,276.5
+Awsi Rasu (Zone 1),Itang Special,406,203
+Awsi Rasu (Zone 1),Harari Regional State,343,171.5
+Awsi Rasu (Zone 1),Arsi,677,338.5
+Awsi Rasu (Zone 1),Bale,726,363
+Awsi Rasu (Zone 1),Borena,708,354
+Awsi Rasu (Zone 1),Buno Bedele,703,351.5
+Awsi Rasu (Zone 1),East Bale,89,44.5
+Awsi Rasu (Zone 1),East Guji,448,224
+Awsi Rasu (Zone 1),East Hararghe,607,303.5
+Awsi Rasu (Zone 1),East Shewa,431,215.5
+Awsi Rasu (Zone 1),East Wellega,983,491.5
+Awsi Rasu (Zone 1),Horo Guduru Wellega,545,272.5
+Awsi Rasu (Zone 1),Illubabor,582,291
+Awsi Rasu (Zone 1),Jimma,117,58.5
+Awsi Rasu (Zone 1),Kellem Wellega,89,44.5
+Awsi Rasu (Zone 1),North Shewa,177,88.5
+Awsi Rasu (Zone 1),Southwest Shewa,269,134.5
+Awsi Rasu (Zone 1),West Arsi,959,479.5
+Awsi Rasu (Zone 1),West Guji,571,285.5
+Awsi Rasu (Zone 1),West Hararghe,575,287.5
+Awsi Rasu (Zone 1),West Shewa,721,360.5
+Awsi Rasu (Zone 1),West Wellega,545,272.5
+Awsi Rasu (Zone 1),Aleta Chuko,783,391.5
+Awsi Rasu (Zone 1),Aleta Wondo,445,222.5
+Awsi Rasu (Zone 1),Aroresa,637,318.5
+Awsi Rasu (Zone 1),Bensa,571,285.5
+Awsi Rasu (Zone 1),Bona,498,249
+Awsi Rasu (Zone 1),Bursa,607,303.5
+Awsi Rasu (Zone 1),Dale,261,130.5
+Awsi Rasu (Zone 1),Dara,575,287.5
+Awsi Rasu (Zone 1),Gorche,436,218
+Awsi Rasu (Zone 1),Hawassa Zuria,772,386
+Awsi Rasu (Zone 1),Loka Abaya,830,415
+Awsi Rasu (Zone 1),Malga,416,208
+Awsi Rasu (Zone 1),Shebedino,855,427.5
+Awsi Rasu (Zone 1),Wondo Genet,358,179
+Awsi Rasu (Zone 1),Wonsho,293,146.5
+Awsi Rasu (Zone 1),Gamo,641,320.5
+Awsi Rasu (Zone 1),Gedeo,97,48.5
+Awsi Rasu (Zone 1),Gofa,399,199.5
+Awsi Rasu (Zone 1),Hadiya,797,398.5
+Awsi Rasu (Zone 1),Halaba,375,187.5
+Awsi Rasu (Zone 1),Kembata Tembaro,151,75.5
+Awsi Rasu (Zone 1),Konso,951,475.5
+Awsi Rasu (Zone 1),Silte,292,146
+Awsi Rasu (Zone 1),South Omo,785,392.5
+Awsi Rasu (Zone 1),Wolayita,52,26
+Awsi Rasu (Zone 1),Afder,310,155
+Awsi Rasu (Zone 1),Dollo,553,276.5
+Awsi Rasu (Zone 1),Erer,324,162
+Awsi Rasu (Zone 1),Fafan,968,484
+Awsi Rasu (Zone 1),Jarar,199,99.5
+Awsi Rasu (Zone 1),Korahe,782,391
+Awsi Rasu (Zone 1),Liben,261,130.5
+Awsi Rasu (Zone 1),Nogob,851,425.5
+Awsi Rasu (Zone 1),Shabelle,365,182.5
+Awsi Rasu (Zone 1),Sitti,263,131.5
+Awsi Rasu (Zone 1),Central,475,237.5
+Awsi Rasu (Zone 1),Eastern,196,98
+Awsi Rasu (Zone 1),North Western,839,419.5
+Awsi Rasu (Zone 1),Southern,694,347
+Awsi Rasu (Zone 1),Western,666,333
+Awsi Rasu (Zone 1),South Eastern,172,86
+Awsi Rasu (Zone 1),Mekelle,839,419.5
+Kilbet Rasu (Zone 2),Gabi Rasu (Zone 3),890,445
+Kilbet Rasu (Zone 2),Fantena Rasu (Zone 4),241,120.5
+Kilbet Rasu (Zone 2),Hari Rasu (Zone 5),727,363.5
+Kilbet Rasu (Zone 2),Agew Awi,686,343
+Kilbet Rasu (Zone 2),East Gojjam,720,360
+Kilbet Rasu (Zone 2),North Gondar,162,81
+Kilbet Rasu (Zone 2),North Shewa,162,81
+Kilbet Rasu (Zone 2),North Wollo,182,91
+Kilbet Rasu (Zone 2),Oromia Special Zone,773,386.5
+Kilbet Rasu (Zone 2),South Gondar,864,432
+Kilbet Rasu (Zone 2),South Wollo,982,491
+Kilbet Rasu (Zone 2),Wag Hemra,802,401
+Kilbet Rasu (Zone 2),West Gojjam,364,182
+Kilbet Rasu (Zone 2),Assosa,254,127
+Kilbet Rasu (Zone 2),Kamashi,90,45
+Kilbet Rasu (Zone 2),Metekel,498,249
+Kilbet Rasu (Zone 2),Mao-Komo Special,519,259.5
+Kilbet Rasu (Zone 2),Dire Dawa City Administration,522,261
+Kilbet Rasu (Zone 2),Anywaa,672,336
+Kilbet Rasu (Zone 2),Majang,330,165
+Kilbet Rasu (Zone 2),Nuer,696,348
+Kilbet Rasu (Zone 2),Itang Special,343,171.5
+Kilbet Rasu (Zone 2),Harari Regional State,621,310.5
+Kilbet Rasu (Zone 2),Arsi,998,499
+Kilbet Rasu (Zone 2),Bale,719,359.5
+Kilbet Rasu (Zone 2),Borena,924,462
+Kilbet Rasu (Zone 2),Buno Bedele,688,344
+Kilbet Rasu (Zone 2),East Bale,673,336.5
+Kilbet Rasu (Zone 2),East Guji,559,279.5
+Kilbet Rasu (Zone 2),East Hararghe,242,121
+Kilbet Rasu (Zone 2),East Shewa,952,476
+Kilbet Rasu (Zone 2),East Wellega,200,100
+Kilbet Rasu (Zone 2),Horo Guduru Wellega,235,117.5
+Kilbet Rasu (Zone 2),Illubabor,551,275.5
+Kilbet Rasu (Zone 2),Jimma,234,117
+Kilbet Rasu (Zone 2),Kellem Wellega,783,391.5
+Kilbet Rasu (Zone 2),North Shewa,276,138
+Kilbet Rasu (Zone 2),Southwest Shewa,390,195
+Kilbet Rasu (Zone 2),West Arsi,684,342
+Kilbet Rasu (Zone 2),West Guji,245,122.5
+Kilbet Rasu (Zone 2),West Hararghe,50,25
+Kilbet Rasu (Zone 2),West Shewa,237,118.5
+Kilbet Rasu (Zone 2),West Wellega,728,364
+Kilbet Rasu (Zone 2),Aleta Chuko,324,162
+Kilbet Rasu (Zone 2),Aleta Wondo,273,136.5
+Kilbet Rasu (Zone 2),Aroresa,264,132
+Kilbet Rasu (Zone 2),Bensa,728,364
+Kilbet Rasu (Zone 2),Bona,180,90
+Kilbet Rasu (Zone 2),Bursa,911,455.5
+Kilbet Rasu (Zone 2),Dale,104,52
+Kilbet Rasu (Zone 2),Dara,559,279.5
+Kilbet Rasu (Zone 2),Gorche,227,113.5
+Kilbet Rasu (Zone 2),Hawassa Zuria,641,320.5
+Kilbet Rasu (Zone 2),Loka Abaya,809,404.5
+Kilbet Rasu (Zone 2),Malga,691,345.5
+Kilbet Rasu (Zone 2),Shebedino,318,159
+Kilbet Rasu (Zone 2),Wondo Genet,939,469.5
+Kilbet Rasu (Zone 2),Wonsho,380,190
+Kilbet Rasu (Zone 2),Gamo,911,455.5
+Kilbet Rasu (Zone 2),Gedeo,546,273
+Kilbet Rasu (Zone 2),Gofa,119,59.5
+Kilbet Rasu (Zone 2),Hadiya,786,393
+Kilbet Rasu (Zone 2),Halaba,827,413.5
+Kilbet Rasu (Zone 2),Kembata Tembaro,175,87.5
+Kilbet Rasu (Zone 2),Konso,160,80
+Kilbet Rasu (Zone 2),Silte,438,219
+Kilbet Rasu (Zone 2),South Omo,401,200.5
+Kilbet Rasu (Zone 2),Wolayita,942,471
+Kilbet Rasu (Zone 2),Afder,737,368.5
+Kilbet Rasu (Zone 2),Dollo,112,56
+Kilbet Rasu (Zone 2),Erer,123,61.5
+Kilbet Rasu (Zone 2),Fafan,934,467
+Kilbet Rasu (Zone 2),Jarar,576,288
+Kilbet Rasu (Zone 2),Korahe,662,331
+Kilbet Rasu (Zone 2),Liben,378,189
+Kilbet Rasu (Zone 2),Nogob,495,247.5
+Kilbet Rasu (Zone 2),Shabelle,580,290
+Kilbet Rasu (Zone 2),Sitti,802,401
+Kilbet Rasu (Zone 2),Central,742,371
+Kilbet Rasu (Zone 2),Eastern,732,366
+Kilbet Rasu (Zone 2),North Western,429,214.5
+Kilbet Rasu (Zone 2),Southern,151,75.5
+Kilbet Rasu (Zone 2),Western,189,94.5
+Kilbet Rasu (Zone 2),South Eastern,79,39.5
+Kilbet Rasu (Zone 2),Mekelle,152,76
+Gabi Rasu (Zone 3),Fantena Rasu (Zone 4),356,178
+Gabi Rasu (Zone 3),Hari Rasu (Zone 5),326,163
+Gabi Rasu (Zone 3),Agew Awi,964,482
+Gabi Rasu (Zone 3),East Gojjam,415,207.5
+Gabi Rasu (Zone 3),North Gondar,156,78
+Gabi Rasu (Zone 3),North Shewa,131,65.5
+Gabi Rasu (Zone 3),North Wollo,454,227
+Gabi Rasu (Zone 3),Oromia Special Zone,64,32
+Gabi Rasu (Zone 3),South Gondar,729,364.5
+Gabi Rasu (Zone 3),South Wollo,156,78
+Gabi Rasu (Zone 3),Wag Hemra,787,393.5
+Gabi Rasu (Zone 3),West Gojjam,964,482
+Gabi Rasu (Zone 3),Assosa,261,130.5
+Gabi Rasu (Zone 3),Kamashi,123,61.5
+Gabi Rasu (Zone 3),Metekel,531,265.5
+Gabi Rasu (Zone 3),Mao-Komo Special,378,189
+Gabi Rasu (Zone 3),Dire Dawa City Administration,710,355
+Gabi Rasu (Zone 3),Anywaa,470,235
+Gabi Rasu (Zone 3),Majang,226,113
+Gabi Rasu (Zone 3),Nuer,415,207.5
+Gabi Rasu (Zone 3),Itang Special,627,313.5
+Gabi Rasu (Zone 3),Harari Regional State,317,158.5
+Gabi Rasu (Zone 3),Arsi,410,205
+Gabi Rasu (Zone 3),Bale,135,67.5
+Gabi Rasu (Zone 3),Borena,98,49
+Gabi Rasu (Zone 3),Buno Bedele,857,428.5
+Gabi Rasu (Zone 3),East Bale,699,349.5
+Gabi Rasu (Zone 3),East Guji,691,345.5
+Gabi Rasu (Zone 3),East Hararghe,285,142.5
+Gabi Rasu (Zone 3),East Shewa,358,179
+Gabi Rasu (Zone 3),East Wellega,699,349.5
+Gabi Rasu (Zone 3),Horo Guduru Wellega,138,69
+Gabi Rasu (Zone 3),Illubabor,891,445.5
+Gabi Rasu (Zone 3),Jimma,463,231.5
+Gabi Rasu (Zone 3),Kellem Wellega,212,106
+Gabi Rasu (Zone 3),North Shewa,192,96
+Gabi Rasu (Zone 3),Southwest Shewa,266,133
+Gabi Rasu (Zone 3),West Arsi,574,287
+Gabi Rasu (Zone 3),West Guji,655,327.5
+Gabi Rasu (Zone 3),West Hararghe,568,284
+Gabi Rasu (Zone 3),West Shewa,156,78
+Gabi Rasu (Zone 3),West Wellega,715,357.5
+Gabi Rasu (Zone 3),Aleta Chuko,407,203.5
+Gabi Rasu (Zone 3),Aleta Wondo,256,128
+Gabi Rasu (Zone 3),Aroresa,94,47
+Gabi Rasu (Zone 3),Bensa,343,171.5
+Gabi Rasu (Zone 3),Bona,185,92.5
+Gabi Rasu (Zone 3),Bursa,380,190
+Gabi Rasu (Zone 3),Dale,278,139
+Gabi Rasu (Zone 3),Dara,316,158
+Gabi Rasu (Zone 3),Gorche,979,489.5
+Gabi Rasu (Zone 3),Hawassa Zuria,788,394
+Gabi Rasu (Zone 3),Loka Abaya,293,146.5
+Gabi Rasu (Zone 3),Malga,220,110
+Gabi Rasu (Zone 3),Shebedino,581,290.5
+Gabi Rasu (Zone 3),Wondo Genet,333,166.5
+Gabi Rasu (Zone 3),Wonsho,704,352
+Gabi Rasu (Zone 3),Gamo,506,253
+Gabi Rasu (Zone 3),Gedeo,351,175.5
+Gabi Rasu (Zone 3),Gofa,708,354
+Gabi Rasu (Zone 3),Hadiya,108,54
+Gabi Rasu (Zone 3),Halaba,804,402
+Gabi Rasu (Zone 3),Kembata Tembaro,85,42.5
+Gabi Rasu (Zone 3),Konso,299,149.5
+Gabi Rasu (Zone 3),Silte,628,314
+Gabi Rasu (Zone 3),South Omo,698,349
+Gabi Rasu (Zone 3),Wolayita,970,485
+Gabi Rasu (Zone 3),Afder,425,212.5
+Gabi Rasu (Zone 3),Dollo,78,39
+Gabi Rasu (Zone 3),Erer,270,135
+Gabi Rasu (Zone 3),Fafan,84,42
+Gabi Rasu (Zone 3),Jarar,568,284
+Gabi Rasu (Zone 3),Korahe,656,328
+Gabi Rasu (Zone 3),Liben,288,144
+Gabi Rasu (Zone 3),Nogob,808,404
+Gabi Rasu (Zone 3),Shabelle,178,89
+Gabi Rasu (Zone 3),Sitti,387,193.5
+Gabi Rasu (Zone 3),Central,247,123.5
+Gabi Rasu (Zone 3),Eastern,701,350.5
+Gabi Rasu (Zone 3),North Western,125,62.5
+Gabi Rasu (Zone 3),Southern,524,262
+Gabi Rasu (Zone 3),Western,963,481.5
+Gabi Rasu (Zone 3),South Eastern,663,331.5
+Gabi Rasu (Zone 3),Mekelle,707,353.5
+Fantena Rasu (Zone 4),Hari Rasu (Zone 5),459,229.5
+Fantena Rasu (Zone 4),Agew Awi,468,234
+Fantena Rasu (Zone 4),East Gojjam,909,454.5
+Fantena Rasu (Zone 4),North Gondar,171,85.5
+Fantena Rasu (Zone 4),North Shewa,541,270.5
+Fantena Rasu (Zone 4),North Wollo,517,258.5
+Fantena Rasu (Zone 4),Oromia Special Zone,511,255.5
+Fantena Rasu (Zone 4),South Gondar,852,426
+Fantena Rasu (Zone 4),South Wollo,264,132
+Fantena Rasu (Zone 4),Wag Hemra,89,44.5
+Fantena Rasu (Zone 4),West Gojjam,895,447.5
+Fantena Rasu (Zone 4),Assosa,203,101.5
+Fantena Rasu (Zone 4),Kamashi,185,92.5
+Fantena Rasu (Zone 4),Metekel,564,282
+Fantena Rasu (Zone 4),Mao-Komo Special,308,154
+Fantena Rasu (Zone 4),Dire Dawa City Administration,331,165.5
+Fantena Rasu (Zone 4),Anywaa,979,489.5
+Fantena Rasu (Zone 4),Majang,338,169
+Fantena Rasu (Zone 4),Nuer,317,158.5
+Fantena Rasu (Zone 4),Itang Special,156,78
+Fantena Rasu (Zone 4),Harari Regional State,795,397.5
+Fantena Rasu (Zone 4),Arsi,119,59.5
+Fantena Rasu (Zone 4),Bale,325,162.5
+Fantena Rasu (Zone 4),Borena,333,166.5
+Fantena Rasu (Zone 4),Buno Bedele,292,146
+Fantena Rasu (Zone 4),East Bale,782,391
+Fantena Rasu (Zone 4),East Guji,371,185.5
+Fantena Rasu (Zone 4),East Hararghe,930,465
+Fantena Rasu (Zone 4),East Shewa,66,33
+Fantena Rasu (Zone 4),East Wellega,970,485
+Fantena Rasu (Zone 4),Horo Guduru Wellega,101,50.5
+Fantena Rasu (Zone 4),Illubabor,74,37
+Fantena Rasu (Zone 4),Jimma,641,320.5
+Fantena Rasu (Zone 4),Kellem Wellega,87,43.5
+Fantena Rasu (Zone 4),North Shewa,952,476
+Fantena Rasu (Zone 4),Southwest Shewa,226,113
+Fantena Rasu (Zone 4),West Arsi,201,100.5
+Fantena Rasu (Zone 4),West Guji,234,117
+Fantena Rasu (Zone 4),West Hararghe,601,300.5
+Fantena Rasu (Zone 4),West Shewa,841,420.5
+Fantena Rasu (Zone 4),West Wellega,320,160
+Fantena Rasu (Zone 4),Aleta Chuko,975,487.5
+Fantena Rasu (Zone 4),Aleta Wondo,591,295.5
+Fantena Rasu (Zone 4),Aroresa,527,263.5
+Fantena Rasu (Zone 4),Bensa,965,482.5
+Fantena Rasu (Zone 4),Bona,968,484
+Fantena Rasu (Zone 4),Bursa,607,303.5
+Fantena Rasu (Zone 4),Dale,83,41.5
+Fantena Rasu (Zone 4),Dara,73,36.5
+Fantena Rasu (Zone 4),Gorche,309,154.5
+Fantena Rasu (Zone 4),Hawassa Zuria,246,123
+Fantena Rasu (Zone 4),Loka Abaya,855,427.5
+Fantena Rasu (Zone 4),Malga,299,149.5
+Fantena Rasu (Zone 4),Shebedino,916,458
+Fantena Rasu (Zone 4),Wondo Genet,557,278.5
+Fantena Rasu (Zone 4),Wonsho,903,451.5
+Fantena Rasu (Zone 4),Gamo,703,351.5
+Fantena Rasu (Zone 4),Gedeo,947,473.5
+Fantena Rasu (Zone 4),Gofa,794,397
+Fantena Rasu (Zone 4),Hadiya,571,285.5
+Fantena Rasu (Zone 4),Halaba,581,290.5
+Fantena Rasu (Zone 4),Kembata Tembaro,85,42.5
+Fantena Rasu (Zone 4),Konso,694,347
+Fantena Rasu (Zone 4),Silte,342,171
+Fantena Rasu (Zone 4),South Omo,185,92.5
+Fantena Rasu (Zone 4),Wolayita,585,292.5
+Fantena Rasu (Zone 4),Afder,156,78
+Fantena Rasu (Zone 4),Dollo,95,47.5
+Fantena Rasu (Zone 4),Erer,164,82
+Fantena Rasu (Zone 4),Fafan,802,401
+Fantena Rasu (Zone 4),Jarar,327,163.5
+Fantena Rasu (Zone 4),Korahe,679,339.5
+Fantena Rasu (Zone 4),Liben,617,308.5
+Fantena Rasu (Zone 4),Nogob,772,386
+Fantena Rasu (Zone 4),Shabelle,569,284.5
+Fantena Rasu (Zone 4),Sitti,119,59.5
+Fantena Rasu (Zone 4),Central,623,311.5
+Fantena Rasu (Zone 4),Eastern,928,464
+Fantena Rasu (Zone 4),North Western,284,142
+Fantena Rasu (Zone 4),Southern,828,414
+Fantena Rasu (Zone 4),Western,581,290.5
+Fantena Rasu (Zone 4),South Eastern,154,77
+Fantena Rasu (Zone 4),Mekelle,245,122.5
+Hari Rasu (Zone 5),Agew Awi,355,177.5
+Hari Rasu (Zone 5),East Gojjam,481,240.5
+Hari Rasu (Zone 5),North Gondar,972,486
+Hari Rasu (Zone 5),North Shewa,519,259.5
+Hari Rasu (Zone 5),North Wollo,507,253.5
+Hari Rasu (Zone 5),Oromia Special Zone,58,29
+Hari Rasu (Zone 5),South Gondar,62,31
+Hari Rasu (Zone 5),South Wollo,702,351
+Hari Rasu (Zone 5),Wag Hemra,323,161.5
+Hari Rasu (Zone 5),West Gojjam,266,133
+Hari Rasu (Zone 5),Assosa,788,394
+Hari Rasu (Zone 5),Kamashi,264,132
+Hari Rasu (Zone 5),Metekel,143,71.5
+Hari Rasu (Zone 5),Mao-Komo Special,486,243
+Hari Rasu (Zone 5),Dire Dawa City Administration,537,268.5
+Hari Rasu (Zone 5),Anywaa,355,177.5
+Hari Rasu (Zone 5),Majang,904,452
+Hari Rasu (Zone 5),Nuer,892,446
+Hari Rasu (Zone 5),Itang Special,121,60.5
+Hari Rasu (Zone 5),Harari Regional State,555,277.5
+Hari Rasu (Zone 5),Arsi,846,423
+Hari Rasu (Zone 5),Bale,861,430.5
+Hari Rasu (Zone 5),Borena,642,321
+Hari Rasu (Zone 5),Buno Bedele,160,80
+Hari Rasu (Zone 5),East Bale,659,329.5
+Hari Rasu (Zone 5),East Guji,934,467
+Hari Rasu (Zone 5),East Hararghe,94,47
+Hari Rasu (Zone 5),East Shewa,938,469
+Hari Rasu (Zone 5),East Wellega,189,94.5
+Hari Rasu (Zone 5),Horo Guduru Wellega,876,438
+Hari Rasu (Zone 5),Illubabor,456,228
+Hari Rasu (Zone 5),Jimma,307,153.5
+Hari Rasu (Zone 5),Kellem Wellega,291,145.5
+Hari Rasu (Zone 5),North Shewa,77,38.5
+Hari Rasu (Zone 5),Southwest Shewa,928,464
+Hari Rasu (Zone 5),West Arsi,650,325
+Hari Rasu (Zone 5),West Guji,723,361.5
+Hari Rasu (Zone 5),West Hararghe,827,413.5
+Hari Rasu (Zone 5),West Shewa,925,462.5
+Hari Rasu (Zone 5),West Wellega,62,31
+Hari Rasu (Zone 5),Aleta Chuko,771,385.5
+Hari Rasu (Zone 5),Aleta Wondo,956,478
+Hari Rasu (Zone 5),Aroresa,66,33
+Hari Rasu (Zone 5),Bensa,72,36
+Hari Rasu (Zone 5),Bona,188,94
+Hari Rasu (Zone 5),Bursa,909,454.5
+Hari Rasu (Zone 5),Dale,292,146
+Hari Rasu (Zone 5),Dara,684,342
+Hari Rasu (Zone 5),Gorche,78,39
+Hari Rasu (Zone 5),Hawassa Zuria,987,493.5
+Hari Rasu (Zone 5),Loka Abaya,737,368.5
+Hari Rasu (Zone 5),Malga,126,63
+Hari Rasu (Zone 5),Shebedino,849,424.5
+Hari Rasu (Zone 5),Wondo Genet,751,375.5
+Hari Rasu (Zone 5),Wonsho,752,376
+Hari Rasu (Zone 5),Gamo,596,298
+Hari Rasu (Zone 5),Gedeo,649,324.5
+Hari Rasu (Zone 5),Gofa,375,187.5
+Hari Rasu (Zone 5),Hadiya,505,252.5
+Hari Rasu (Zone 5),Halaba,227,113.5
+Hari Rasu (Zone 5),Kembata Tembaro,310,155
+Hari Rasu (Zone 5),Konso,649,324.5
+Hari Rasu (Zone 5),Silte,361,180.5
+Hari Rasu (Zone 5),South Omo,784,392
+Hari Rasu (Zone 5),Wolayita,121,60.5
+Hari Rasu (Zone 5),Afder,697,348.5
+Hari Rasu (Zone 5),Dollo,548,274
+Hari Rasu (Zone 5),Erer,449,224.5
+Hari Rasu (Zone 5),Fafan,55,27.5
+Hari Rasu (Zone 5),Jarar,738,369
+Hari Rasu (Zone 5),Korahe,715,357.5
+Hari Rasu (Zone 5),Liben,627,313.5
+Hari Rasu (Zone 5),Nogob,507,253.5
+Hari Rasu (Zone 5),Shabelle,743,371.5
+Hari Rasu (Zone 5),Sitti,810,405
+Hari Rasu (Zone 5),Central,813,406.5
+Hari Rasu (Zone 5),Eastern,484,242
+Hari Rasu (Zone 5),North Western,406,203
+Hari Rasu (Zone 5),Southern,415,207.5
+Hari Rasu (Zone 5),Western,369,184.5
+Hari Rasu (Zone 5),South Eastern,404,202
+Hari Rasu (Zone 5),Mekelle,949,474.5
+Agew Awi,East Gojjam,738,369
+Agew Awi,North Gondar,357,178.5
+Agew Awi,North Shewa,156,78
+Agew Awi,North Wollo,222,111
+Agew Awi,Oromia Special Zone,847,423.5
+Agew Awi,South Gondar,513,256.5
+Agew Awi,South Wollo,778,389
+Agew Awi,Wag Hemra,409,204.5
+Agew Awi,West Gojjam,226,113
+Agew Awi,Assosa,738,369
+Agew Awi,Kamashi,317,158.5
+Agew Awi,Metekel,141,70.5
+Agew Awi,Mao-Komo Special,744,372
+Agew Awi,Dire Dawa City Administration,704,352
+Agew Awi,Anywaa,434,217
+Agew Awi,Majang,767,383.5
+Agew Awi,Nuer,51,25.5
+Agew Awi,Itang Special,534,267
+Agew Awi,Harari Regional State,61,30.5
+Agew Awi,Arsi,476,238
+Agew Awi,Bale,638,319
+Agew Awi,Borena,907,453.5
+Agew Awi,Buno Bedele,643,321.5
+Agew Awi,East Bale,265,132.5
+Agew Awi,East Guji,151,75.5
+Agew Awi,East Hararghe,848,424
+Agew Awi,East Shewa,924,462
+Agew Awi,East Wellega,789,394.5
+Agew Awi,Horo Guduru Wellega,939,469.5
+Agew Awi,Illubabor,111,55.5
+Agew Awi,Jimma,243,121.5
+Agew Awi,Kellem Wellega,650,325
+Agew Awi,North Shewa,423,211.5
+Agew Awi,Southwest Shewa,989,494.5
+Agew Awi,West Arsi,99,49.5
+Agew Awi,West Guji,624,312
+Agew Awi,West Hararghe,388,194
+Agew Awi,West Shewa,274,137
+Agew Awi,West Wellega,740,370
+Agew Awi,Aleta Chuko,953,476.5
+Agew Awi,Aleta Wondo,209,104.5
+Agew Awi,Aroresa,405,202.5
+Agew Awi,Bensa,155,77.5
+Agew Awi,Bona,850,425
+Agew Awi,Bursa,262,131
+Agew Awi,Dale,557,278.5
+Agew Awi,Dara,260,130
+Agew Awi,Gorche,171,85.5
+Agew Awi,Hawassa Zuria,458,229
+Agew Awi,Loka Abaya,785,392.5
+Agew Awi,Malga,783,391.5
+Agew Awi,Shebedino,690,345
+Agew Awi,Wondo Genet,656,328
+Agew Awi,Wonsho,493,246.5
+Agew Awi,Gamo,547,273.5
+Agew Awi,Gedeo,713,356.5
+Agew Awi,Gofa,673,336.5
+Agew Awi,Hadiya,489,244.5
+Agew Awi,Halaba,990,495
+Agew Awi,Kembata Tembaro,442,221
+Agew Awi,Konso,234,117
+Agew Awi,Silte,110,55
+Agew Awi,South Omo,70,35
+Agew Awi,Wolayita,742,371
+Agew Awi,Afder,412,206
+Agew Awi,Dollo,527,263.5
+Agew Awi,Erer,482,241
+Agew Awi,Fafan,126,63
+Agew Awi,Jarar,868,434
+Agew Awi,Korahe,632,316
+Agew Awi,Liben,417,208.5
+Agew Awi,Nogob,669,334.5
+Agew Awi,Shabelle,94,47
+Agew Awi,Sitti,995,497.5
+Agew Awi,Central,109,54.5
+Agew Awi,Eastern,319,159.5
+Agew Awi,North Western,433,216.5
+Agew Awi,Southern,924,462
+Agew Awi,Western,849,424.5
+Agew Awi,South Eastern,312,156
+Agew Awi,Mekelle,644,322
+East Gojjam,North Gondar,150,75
+East Gojjam,North Shewa,129,64.5
+East Gojjam,North Wollo,160,80
+East Gojjam,Oromia Special Zone,871,435.5
+East Gojjam,South Gondar,479,239.5
+East Gojjam,South Wollo,65,32.5
+East Gojjam,Wag Hemra,643,321.5
+East Gojjam,West Gojjam,93,46.5
+East Gojjam,Assosa,628,314
+East Gojjam,Kamashi,961,480.5
+East Gojjam,Metekel,619,309.5
+East Gojjam,Mao-Komo Special,746,373
+East Gojjam,Dire Dawa City Administration,587,293.5
+East Gojjam,Anywaa,566,283
+East Gojjam,Majang,129,64.5
+East Gojjam,Nuer,915,457.5
+East Gojjam,Itang Special,375,187.5
+East Gojjam,Harari Regional State,620,310
+East Gojjam,Arsi,58,29
+East Gojjam,Bale,89,44.5
+East Gojjam,Borena,419,209.5
+East Gojjam,Buno Bedele,858,429
+East Gojjam,East Bale,511,255.5
+East Gojjam,East Guji,91,45.5
+East Gojjam,East Hararghe,616,308
+East Gojjam,East Shewa,840,420
+East Gojjam,East Wellega,638,319
+East Gojjam,Horo Guduru Wellega,998,499
+East Gojjam,Illubabor,230,115
+East Gojjam,Jimma,432,216
+East Gojjam,Kellem Wellega,274,137
+East Gojjam,North Shewa,251,125.5
+East Gojjam,Southwest Shewa,184,92
+East Gojjam,West Arsi,939,469.5
+East Gojjam,West Guji,403,201.5
+East Gojjam,West Hararghe,984,492
+East Gojjam,West Shewa,336,168
+East Gojjam,West Wellega,551,275.5
+East Gojjam,Aleta Chuko,132,66
+East Gojjam,Aleta Wondo,136,68
+East Gojjam,Aroresa,681,340.5
+East Gojjam,Bensa,600,300
+East Gojjam,Bona,988,494
+East Gojjam,Bursa,985,492.5
+East Gojjam,Dale,496,248
+East Gojjam,Dara,337,168.5
+East Gojjam,Gorche,222,111
+East Gojjam,Hawassa Zuria,62,31
+East Gojjam,Loka Abaya,810,405
+East Gojjam,Malga,822,411
+East Gojjam,Shebedino,433,216.5
+East Gojjam,Wondo Genet,999,499.5
+East Gojjam,Wonsho,460,230
+East Gojjam,Gamo,773,386.5
+East Gojjam,Gedeo,466,233
+East Gojjam,Gofa,546,273
+East Gojjam,Hadiya,117,58.5
+East Gojjam,Halaba,991,495.5
+East Gojjam,Kembata Tembaro,712,356
+East Gojjam,Konso,894,447
+East Gojjam,Silte,504,252
+East Gojjam,South Omo,304,152
+East Gojjam,Wolayita,971,485.5
+East Gojjam,Afder,503,251.5
+East Gojjam,Dollo,210,105
+East Gojjam,Erer,608,304
+East Gojjam,Fafan,564,282
+East Gojjam,Jarar,506,253
+East Gojjam,Korahe,804,402
+East Gojjam,Liben,553,276.5
+East Gojjam,Nogob,458,229
+East Gojjam,Shabelle,723,361.5
+East Gojjam,Sitti,738,369
+East Gojjam,Central,603,301.5
+East Gojjam,Eastern,671,335.5
+East Gojjam,North Western,949,474.5
+East Gojjam,Southern,607,303.5
+East Gojjam,Western,125,62.5
+East Gojjam,South Eastern,827,413.5
+East Gojjam,Mekelle,114,57
+North Gondar,North Shewa,890,445
+North Gondar,North Wollo,512,256
+North Gondar,Oromia Special Zone,139,69.5
+North Gondar,South Gondar,590,295
+North Gondar,South Wollo,607,303.5
+North Gondar,Wag Hemra,290,145
+North Gondar,West Gojjam,480,240
+North Gondar,Assosa,541,270.5
+North Gondar,Kamashi,379,189.5
+North Gondar,Metekel,844,422
+North Gondar,Mao-Komo Special,446,223
+North Gondar,Dire Dawa City Administration,422,211
+North Gondar,Anywaa,888,444
+North Gondar,Majang,120,60
+North Gondar,Nuer,612,306
+North Gondar,Itang Special,687,343.5
+North Gondar,Harari Regional State,794,397
+North Gondar,Arsi,656,328
+North Gondar,Bale,172,86
+North Gondar,Borena,643,321.5
+North Gondar,Buno Bedele,55,27.5
+North Gondar,East Bale,232,116
+North Gondar,East Guji,332,166
+North Gondar,East Hararghe,657,328.5
+North Gondar,East Shewa,814,407
+North Gondar,East Wellega,550,275
+North Gondar,Horo Guduru Wellega,751,375.5
+North Gondar,Illubabor,320,160
+North Gondar,Jimma,862,431
+North Gondar,Kellem Wellega,640,320
+North Gondar,North Shewa,923,461.5
+North Gondar,Southwest Shewa,434,217
+North Gondar,West Arsi,475,237.5
+North Gondar,West Guji,828,414
+North Gondar,West Hararghe,980,490
+North Gondar,West Shewa,442,221
+North Gondar,West Wellega,981,490.5
+North Gondar,Aleta Chuko,965,482.5
+North Gondar,Aleta Wondo,106,53
+North Gondar,Aroresa,568,284
+North Gondar,Bensa,710,355
+North Gondar,Bona,743,371.5
+North Gondar,Bursa,181,90.5
+North Gondar,Dale,213,106.5
+North Gondar,Dara,848,424
+North Gondar,Gorche,130,65
+North Gondar,Hawassa Zuria,773,386.5
+North Gondar,Loka Abaya,270,135
+North Gondar,Malga,960,480
+North Gondar,Shebedino,356,178
+North Gondar,Wondo Genet,332,166
+North Gondar,Wonsho,177,88.5
+North Gondar,Gamo,431,215.5
+North Gondar,Gedeo,566,283
+North Gondar,Gofa,609,304.5
+North Gondar,Hadiya,318,159
+North Gondar,Halaba,828,414
+North Gondar,Kembata Tembaro,711,355.5
+North Gondar,Konso,972,486
+North Gondar,Silte,540,270
+North Gondar,South Omo,382,191
+North Gondar,Wolayita,692,346
+North Gondar,Afder,531,265.5
+North Gondar,Dollo,525,262.5
+North Gondar,Erer,231,115.5
+North Gondar,Fafan,867,433.5
+North Gondar,Jarar,238,119
+North Gondar,Korahe,934,467
+North Gondar,Liben,63,31.5
+North Gondar,Nogob,121,60.5
+North Gondar,Shabelle,141,70.5
+North Gondar,Sitti,336,168
+North Gondar,Central,635,317.5
+North Gondar,Eastern,309,154.5
+North Gondar,North Western,237,118.5
+North Gondar,Southern,388,194
+North Gondar,Western,222,111
+North Gondar,South Eastern,845,422.5
+North Gondar,Mekelle,903,451.5
+North Shewa,North Wollo,923,461.5
+North Shewa,Oromia Special Zone,113,56.5
+North Shewa,South Gondar,50,25
+North Shewa,South Wollo,737,368.5
+North Shewa,Wag Hemra,180,90
+North Shewa,West Gojjam,339,169.5
+North Shewa,Assosa,923,461.5
+North Shewa,Kamashi,187,93.5
+North Shewa,Metekel,67,33.5
+North Shewa,Mao-Komo Special,599,299.5
+North Shewa,Dire Dawa City Administration,320,160
+North Shewa,Anywaa,744,372
+North Shewa,Majang,786,393
+North Shewa,Nuer,673,336.5
+North Shewa,Itang Special,289,144.5
+North Shewa,Harari Regional State,643,321.5
+North Shewa,Arsi,248,124
+North Shewa,Bale,551,275.5
+North Shewa,Borena,768,384
+North Shewa,Buno Bedele,665,332.5
+North Shewa,East Bale,533,266.5
+North Shewa,East Guji,507,253.5
+North Shewa,East Hararghe,597,298.5
+North Shewa,East Shewa,280,140
+North Shewa,East Wellega,139,69.5
+North Shewa,Horo Guduru Wellega,580,290
+North Shewa,Illubabor,123,61.5
+North Shewa,Jimma,388,194
+North Shewa,Kellem Wellega,233,116.5
+North Shewa,North Shewa,394,197
+North Shewa,Southwest Shewa,925,462.5
+North Shewa,West Arsi,337,168.5
+North Shewa,West Guji,659,329.5
+North Shewa,West Hararghe,370,185
+North Shewa,West Shewa,245,122.5
+North Shewa,West Wellega,287,143.5
+North Shewa,Aleta Chuko,95,47.5
+North Shewa,Aleta Wondo,985,492.5
+North Shewa,Aroresa,732,366
+North Shewa,Bensa,529,264.5
+North Shewa,Bona,936,468
+North Shewa,Bursa,509,254.5
+North Shewa,Dale,654,327
+North Shewa,Dara,687,343.5
+North Shewa,Gorche,512,256
+North Shewa,Hawassa Zuria,809,404.5
+North Shewa,Loka Abaya,239,119.5
+North Shewa,Malga,642,321
+North Shewa,Shebedino,166,83
+North Shewa,Wondo Genet,788,394
+North Shewa,Wonsho,182,91
+North Shewa,Gamo,538,269
+North Shewa,Gedeo,425,212.5
+North Shewa,Gofa,653,326.5
+North Shewa,Hadiya,907,453.5
+North Shewa,Halaba,124,62
+North Shewa,Kembata Tembaro,256,128
+North Shewa,Konso,251,125.5
+North Shewa,Silte,644,322
+North Shewa,South Omo,969,484.5
+North Shewa,Wolayita,65,32.5
+North Shewa,Afder,283,141.5
+North Shewa,Dollo,771,385.5
+North Shewa,Erer,367,183.5
+North Shewa,Fafan,149,74.5
+North Shewa,Jarar,322,161
+North Shewa,Korahe,982,491
+North Shewa,Liben,999,499.5
+North Shewa,Nogob,320,160
+North Shewa,Shabelle,961,480.5
+North Shewa,Sitti,103,51.5
+North Shewa,Central,886,443
+North Shewa,Eastern,201,100.5
+North Shewa,North Western,304,152
+North Shewa,Southern,623,311.5
+North Shewa,Western,959,479.5
+North Shewa,South Eastern,138,69
+North Shewa,Mekelle,674,337
+North Wollo,Oromia Special Zone,927,463.5
+North Wollo,South Gondar,772,386
+North Wollo,South Wollo,839,419.5
+North Wollo,Wag Hemra,383,191.5
+North Wollo,West Gojjam,589,294.5
+North Wollo,Assosa,206,103
+North Wollo,Kamashi,383,191.5
+North Wollo,Metekel,996,498
+North Wollo,Mao-Komo Special,896,448
+North Wollo,Dire Dawa City Administration,397,198.5
+North Wollo,Anywaa,541,270.5
+North Wollo,Majang,759,379.5
+North Wollo,Nuer,286,143
+North Wollo,Itang Special,316,158
+North Wollo,Harari Regional State,549,274.5
+North Wollo,Arsi,972,486
+North Wollo,Bale,310,155
+North Wollo,Borena,638,319
+North Wollo,Buno Bedele,232,116
+North Wollo,East Bale,463,231.5
+North Wollo,East Guji,976,488
+North Wollo,East Hararghe,72,36
+North Wollo,East Shewa,105,52.5
+North Wollo,East Wellega,730,365
+North Wollo,Horo Guduru Wellega,161,80.5
+North Wollo,Illubabor,445,222.5
+North Wollo,Jimma,209,104.5
+North Wollo,Kellem Wellega,167,83.5
+North Wollo,North Shewa,664,332
+North Wollo,Southwest Shewa,786,393
+North Wollo,West Arsi,486,243
+North Wollo,West Guji,341,170.5
+North Wollo,West Hararghe,328,164
+North Wollo,West Shewa,430,215
+North Wollo,West Wellega,668,334
+North Wollo,Aleta Chuko,344,172
+North Wollo,Aleta Wondo,737,368.5
+North Wollo,Aroresa,146,73
+North Wollo,Bensa,129,64.5
+North Wollo,Bona,282,141
+North Wollo,Bursa,875,437.5
+North Wollo,Dale,979,489.5
+North Wollo,Dara,352,176
+North Wollo,Gorche,507,253.5
+North Wollo,Hawassa Zuria,727,363.5
+North Wollo,Loka Abaya,333,166.5
+North Wollo,Malga,602,301
+North Wollo,Shebedino,569,284.5
+North Wollo,Wondo Genet,673,336.5
+North Wollo,Wonsho,928,464
+North Wollo,Gamo,681,340.5
+North Wollo,Gedeo,158,79
+North Wollo,Gofa,964,482
+North Wollo,Hadiya,905,452.5
+North Wollo,Halaba,78,39
+North Wollo,Kembata Tembaro,141,70.5
+North Wollo,Konso,600,300
+North Wollo,Silte,881,440.5
+North Wollo,South Omo,481,240.5
+North Wollo,Wolayita,837,418.5
+North Wollo,Afder,978,489
+North Wollo,Dollo,376,188
+North Wollo,Erer,402,201
+North Wollo,Fafan,146,73
+North Wollo,Jarar,797,398.5
+North Wollo,Korahe,344,172
+North Wollo,Liben,796,398
+North Wollo,Nogob,157,78.5
+North Wollo,Shabelle,139,69.5
+North Wollo,Sitti,849,424.5
+North Wollo,Central,317,158.5
+North Wollo,Eastern,399,199.5
+North Wollo,North Western,676,338
+North Wollo,Southern,719,359.5
+North Wollo,Western,612,306
+North Wollo,South Eastern,280,140
+North Wollo,Mekelle,918,459
+Oromia Special Zone,South Gondar,676,338
+Oromia Special Zone,South Wollo,855,427.5
+Oromia Special Zone,Wag Hemra,402,201
+Oromia Special Zone,West Gojjam,893,446.5
+Oromia Special Zone,Assosa,878,439
+Oromia Special Zone,Kamashi,989,494.5
+Oromia Special Zone,Metekel,622,311
+Oromia Special Zone,Mao-Komo Special,216,108
+Oromia Special Zone,Dire Dawa City Administration,685,342.5
+Oromia Special Zone,Anywaa,882,441
+Oromia Special Zone,Majang,212,106
+Oromia Special Zone,Nuer,948,474
+Oromia Special Zone,Itang Special,928,464
+Oromia Special Zone,Harari Regional State,520,260
+Oromia Special Zone,Arsi,591,295.5
+Oromia Special Zone,Bale,985,492.5
+Oromia Special Zone,Borena,351,175.5
+Oromia Special Zone,Buno Bedele,395,197.5
+Oromia Special Zone,East Bale,528,264
+Oromia Special Zone,East Guji,247,123.5
+Oromia Special Zone,East Hararghe,775,387.5
+Oromia Special Zone,East Shewa,705,352.5
+Oromia Special Zone,East Wellega,691,345.5
+Oromia Special Zone,Horo Guduru Wellega,711,355.5
+Oromia Special Zone,Illubabor,161,80.5
+Oromia Special Zone,Jimma,206,103
+Oromia Special Zone,Kellem Wellega,987,493.5
+Oromia Special Zone,North Shewa,907,453.5
+Oromia Special Zone,Southwest Shewa,102,51
+Oromia Special Zone,West Arsi,381,190.5
+Oromia Special Zone,West Guji,150,75
+Oromia Special Zone,West Hararghe,389,194.5
+Oromia Special Zone,West Shewa,138,69
+Oromia Special Zone,West Wellega,779,389.5
+Oromia Special Zone,Aleta Chuko,418,209
+Oromia Special Zone,Aleta Wondo,193,96.5
+Oromia Special Zone,Aroresa,780,390
+Oromia Special Zone,Bensa,587,293.5
+Oromia Special Zone,Bona,642,321
+Oromia Special Zone,Bursa,266,133
+Oromia Special Zone,Dale,186,93
+Oromia Special Zone,Dara,995,497.5
+Oromia Special Zone,Gorche,230,115
+Oromia Special Zone,Hawassa Zuria,310,155
+Oromia Special Zone,Loka Abaya,433,216.5
+Oromia Special Zone,Malga,906,453
+Oromia Special Zone,Shebedino,268,134
+Oromia Special Zone,Wondo Genet,971,485.5
+Oromia Special Zone,Wonsho,399,199.5
+Oromia Special Zone,Gamo,105,52.5
+Oromia Special Zone,Gedeo,542,271
+Oromia Special Zone,Gofa,60,30
+Oromia Special Zone,Hadiya,164,82
+Oromia Special Zone,Halaba,712,356
+Oromia Special Zone,Kembata Tembaro,414,207
+Oromia Special Zone,Konso,339,169.5
+Oromia Special Zone,Silte,662,331
+Oromia Special Zone,South Omo,250,125
+Oromia Special Zone,Wolayita,521,260.5
+Oromia Special Zone,Afder,827,413.5
+Oromia Special Zone,Dollo,935,467.5
+Oromia Special Zone,Erer,103,51.5
+Oromia Special Zone,Fafan,563,281.5
+Oromia Special Zone,Jarar,81,40.5
+Oromia Special Zone,Korahe,633,316.5
+Oromia Special Zone,Liben,392,196
+Oromia Special Zone,Nogob,235,117.5
+Oromia Special Zone,Shabelle,779,389.5
+Oromia Special Zone,Sitti,105,52.5
+Oromia Special Zone,Central,157,78.5
+Oromia Special Zone,Eastern,636,318
+Oromia Special Zone,North Western,962,481
+Oromia Special Zone,Southern,386,193
+Oromia Special Zone,Western,111,55.5
+Oromia Special Zone,South Eastern,738,369
+Oromia Special Zone,Mekelle,470,235
+South Gondar,South Wollo,439,219.5
+South Gondar,Wag Hemra,926,463
+South Gondar,West Gojjam,927,463.5
+South Gondar,Assosa,111,55.5
+South Gondar,Kamashi,219,109.5
+South Gondar,Metekel,723,361.5
+South Gondar,Mao-Komo Special,606,303
+South Gondar,Dire Dawa City Administration,788,394
+South Gondar,Anywaa,566,283
+South Gondar,Majang,200,100
+South Gondar,Nuer,187,93.5
+South Gondar,Itang Special,974,487
+South Gondar,Harari Regional State,217,108.5
+South Gondar,Arsi,694,347
+South Gondar,Bale,833,416.5
+South Gondar,Borena,632,316
+South Gondar,Buno Bedele,89,44.5
+South Gondar,East Bale,493,246.5
+South Gondar,East Guji,970,485
+South Gondar,East Hararghe,356,178
+South Gondar,East Shewa,353,176.5
+South Gondar,East Wellega,730,365
+South Gondar,Horo Guduru Wellega,103,51.5
+South Gondar,Illubabor,317,158.5
+South Gondar,Jimma,150,75
+South Gondar,Kellem Wellega,561,280.5
+South Gondar,North Shewa,701,350.5
+South Gondar,Southwest Shewa,707,353.5
+South Gondar,West Arsi,172,86
+South Gondar,West Guji,689,344.5
+South Gondar,West Hararghe,209,104.5
+South Gondar,West Shewa,555,277.5
+South Gondar,West Wellega,944,472
+South Gondar,Aleta Chuko,85,42.5
+South Gondar,Aleta Wondo,366,183
+South Gondar,Aroresa,272,136
+South Gondar,Bensa,388,194
+South Gondar,Bona,123,61.5
+South Gondar,Bursa,304,152
+South Gondar,Dale,221,110.5
+South Gondar,Dara,232,116
+South Gondar,Gorche,911,455.5
+South Gondar,Hawassa Zuria,190,95
+South Gondar,Loka Abaya,95,47.5
+South Gondar,Malga,229,114.5
+South Gondar,Shebedino,76,38
+South Gondar,Wondo Genet,214,107
+South Gondar,Wonsho,567,283.5
+South Gondar,Gamo,429,214.5
+South Gondar,Gedeo,753,376.5
+South Gondar,Gofa,675,337.5
+South Gondar,Hadiya,904,452
+South Gondar,Halaba,495,247.5
+South Gondar,Kembata Tembaro,283,141.5
+South Gondar,Konso,95,47.5
+South Gondar,Silte,501,250.5
+South Gondar,South Omo,620,310
+South Gondar,Wolayita,262,131
+South Gondar,Afder,651,325.5
+South Gondar,Dollo,143,71.5
+South Gondar,Erer,99,49.5
+South Gondar,Fafan,250,125
+South Gondar,Jarar,826,413
+South Gondar,Korahe,159,79.5
+South Gondar,Liben,185,92.5
+South Gondar,Nogob,994,497
+South Gondar,Shabelle,218,109
+South Gondar,Sitti,92,46
+South Gondar,Central,360,180
+South Gondar,Eastern,179,89.5
+South Gondar,North Western,215,107.5
+South Gondar,Southern,404,202
+South Gondar,Western,242,121
+South Gondar,South Eastern,255,127.5
+South Gondar,Mekelle,692,346
+South Wollo,Wag Hemra,915,457.5
+South Wollo,West Gojjam,559,279.5
+South Wollo,Assosa,375,187.5
+South Wollo,Kamashi,571,285.5
+South Wollo,Metekel,183,91.5
+South Wollo,Mao-Komo Special,244,122
+South Wollo,Dire Dawa City Administration,872,436
+South Wollo,Anywaa,173,86.5
+South Wollo,Majang,748,374
+South Wollo,Nuer,498,249
+South Wollo,Itang Special,69,34.5
+South Wollo,Harari Regional State,237,118.5
+South Wollo,Arsi,932,466
+South Wollo,Bale,758,379
+South Wollo,Borena,472,236
+South Wollo,Buno Bedele,530,265
+South Wollo,East Bale,786,393
+South Wollo,East Guji,401,200.5
+South Wollo,East Hararghe,296,148
+South Wollo,East Shewa,369,184.5
+South Wollo,East Wellega,232,116
+South Wollo,Horo Guduru Wellega,966,483
+South Wollo,Illubabor,378,189
+South Wollo,Jimma,430,215
+South Wollo,Kellem Wellega,312,156
+South Wollo,North Shewa,408,204
+South Wollo,Southwest Shewa,182,91
+South Wollo,West Arsi,399,199.5
+South Wollo,West Guji,132,66
+South Wollo,West Hararghe,981,490.5
+South Wollo,West Shewa,793,396.5
+South Wollo,West Wellega,373,186.5
+South Wollo,Aleta Chuko,416,208
+South Wollo,Aleta Wondo,247,123.5
+South Wollo,Aroresa,396,198
+South Wollo,Bensa,936,468
+South Wollo,Bona,73,36.5
+South Wollo,Bursa,500,250
+South Wollo,Dale,934,467
+South Wollo,Dara,787,393.5
+South Wollo,Gorche,862,431
+South Wollo,Hawassa Zuria,621,310.5
+South Wollo,Loka Abaya,856,428
+South Wollo,Malga,548,274
+South Wollo,Shebedino,183,91.5
+South Wollo,Wondo Genet,949,474.5
+South Wollo,Wonsho,802,401
+South Wollo,Gamo,398,199
+South Wollo,Gedeo,725,362.5
+South Wollo,Gofa,492,246
+South Wollo,Hadiya,439,219.5
+South Wollo,Halaba,731,365.5
+South Wollo,Kembata Tembaro,678,339
+South Wollo,Konso,574,287
+South Wollo,Silte,493,246.5
+South Wollo,South Omo,199,99.5
+South Wollo,Wolayita,663,331.5
+South Wollo,Afder,801,400.5
+South Wollo,Dollo,860,430
+South Wollo,Erer,217,108.5
+South Wollo,Fafan,778,389
+South Wollo,Jarar,972,486
+South Wollo,Korahe,446,223
+South Wollo,Liben,503,251.5
+South Wollo,Nogob,231,115.5
+South Wollo,Shabelle,398,199
+South Wollo,Sitti,954,477
+South Wollo,Central,656,328
+South Wollo,Eastern,930,465
+South Wollo,North Western,63,31.5
+South Wollo,Southern,142,71
+South Wollo,Western,581,290.5
+South Wollo,South Eastern,575,287.5
+South Wollo,Mekelle,415,207.5
+Wag Hemra,West Gojjam,747,373.5
+Wag Hemra,Assosa,257,128.5
+Wag Hemra,Kamashi,971,485.5
+Wag Hemra,Metekel,151,75.5
+Wag Hemra,Mao-Komo Special,889,444.5
+Wag Hemra,Dire Dawa City Administration,303,151.5
+Wag Hemra,Anywaa,71,35.5
+Wag Hemra,Majang,79,39.5
+Wag Hemra,Nuer,340,170
+Wag Hemra,Itang Special,245,122.5
+Wag Hemra,Harari Regional State,210,105
+Wag Hemra,Arsi,62,31
+Wag Hemra,Bale,611,305.5
+Wag Hemra,Borena,714,357
+Wag Hemra,Buno Bedele,825,412.5
+Wag Hemra,East Bale,270,135
+Wag Hemra,East Guji,951,475.5
+Wag Hemra,East Hararghe,675,337.5
+Wag Hemra,East Shewa,502,251
+Wag Hemra,East Wellega,813,406.5
+Wag Hemra,Horo Guduru Wellega,654,327
+Wag Hemra,Illubabor,107,53.5
+Wag Hemra,Jimma,423,211.5
+Wag Hemra,Kellem Wellega,182,91
+Wag Hemra,North Shewa,218,109
+Wag Hemra,Southwest Shewa,939,469.5
+Wag Hemra,West Arsi,536,268
+Wag Hemra,West Guji,434,217
+Wag Hemra,West Hararghe,355,177.5
+Wag Hemra,West Shewa,81,40.5
+Wag Hemra,West Wellega,934,467
+Wag Hemra,Aleta Chuko,409,204.5
+Wag Hemra,Aleta Wondo,981,490.5
+Wag Hemra,Aroresa,142,71
+Wag Hemra,Bensa,826,413
+Wag Hemra,Bona,894,447
+Wag Hemra,Bursa,903,451.5
+Wag Hemra,Dale,760,380
+Wag Hemra,Dara,92,46
+Wag Hemra,Gorche,972,486
+Wag Hemra,Hawassa Zuria,575,287.5
+Wag Hemra,Loka Abaya,851,425.5
+Wag Hemra,Malga,558,279
+Wag Hemra,Shebedino,98,49
+Wag Hemra,Wondo Genet,708,354
+Wag Hemra,Wonsho,96,48
+Wag Hemra,Gamo,81,40.5
+Wag Hemra,Gedeo,680,340
+Wag Hemra,Gofa,386,193
+Wag Hemra,Hadiya,670,335
+Wag Hemra,Halaba,691,345.5
+Wag Hemra,Kembata Tembaro,759,379.5
+Wag Hemra,Konso,396,198
+Wag Hemra,Silte,932,466
+Wag Hemra,South Omo,143,71.5
+Wag Hemra,Wolayita,129,64.5
+Wag Hemra,Afder,312,156
+Wag Hemra,Dollo,76,38
+Wag Hemra,Erer,609,304.5
+Wag Hemra,Fafan,634,317
+Wag Hemra,Jarar,369,184.5
+Wag Hemra,Korahe,769,384.5
+Wag Hemra,Liben,657,328.5
+Wag Hemra,Nogob,785,392.5
+Wag Hemra,Shabelle,850,425
+Wag Hemra,Sitti,991,495.5
+Wag Hemra,Central,576,288
+Wag Hemra,Eastern,794,397
+Wag Hemra,North Western,266,133
+Wag Hemra,Southern,728,364
+Wag Hemra,Western,597,298.5
+Wag Hemra,South Eastern,923,461.5
+Wag Hemra,Mekelle,662,331
+West Gojjam,Assosa,919,459.5
+West Gojjam,Kamashi,590,295
+West Gojjam,Metekel,111,55.5
+West Gojjam,Mao-Komo Special,569,284.5
+West Gojjam,Dire Dawa City Administration,153,76.5
+West Gojjam,Anywaa,808,404
+West Gojjam,Majang,745,372.5
+West Gojjam,Nuer,83,41.5
+West Gojjam,Itang Special,859,429.5
+West Gojjam,Harari Regional State,155,77.5
+West Gojjam,Arsi,439,219.5
+West Gojjam,Bale,597,298.5
+West Gojjam,Borena,284,142
+West Gojjam,Buno Bedele,814,407
+West Gojjam,East Bale,821,410.5
+West Gojjam,East Guji,983,491.5
+West Gojjam,East Hararghe,731,365.5
+West Gojjam,East Shewa,923,461.5
+West Gojjam,East Wellega,66,33
+West Gojjam,Horo Guduru Wellega,386,193
+West Gojjam,Illubabor,837,418.5
+West Gojjam,Jimma,937,468.5
+West Gojjam,Kellem Wellega,998,499
+West Gojjam,North Shewa,178,89
+West Gojjam,Southwest Shewa,440,220
+West Gojjam,West Arsi,159,79.5
+West Gojjam,West Guji,799,399.5
+West Gojjam,West Hararghe,242,121
+West Gojjam,West Shewa,849,424.5
+West Gojjam,West Wellega,777,388.5
+West Gojjam,Aleta Chuko,418,209
+West Gojjam,Aleta Wondo,657,328.5
+West Gojjam,Aroresa,103,51.5
+West Gojjam,Bensa,876,438
+West Gojjam,Bona,415,207.5
+West Gojjam,Bursa,857,428.5
+West Gojjam,Dale,836,418
+West Gojjam,Dara,120,60
+West Gojjam,Gorche,354,177
+West Gojjam,Hawassa Zuria,550,275
+West Gojjam,Loka Abaya,90,45
+West Gojjam,Malga,796,398
+West Gojjam,Shebedino,123,61.5
+West Gojjam,Wondo Genet,167,83.5
+West Gojjam,Wonsho,65,32.5
+West Gojjam,Gamo,647,323.5
+West Gojjam,Gedeo,764,382
+West Gojjam,Gofa,284,142
+West Gojjam,Hadiya,917,458.5
+West Gojjam,Halaba,992,496
+West Gojjam,Kembata Tembaro,570,285
+West Gojjam,Konso,818,409
+West Gojjam,Silte,121,60.5
+West Gojjam,South Omo,488,244
+West Gojjam,Wolayita,729,364.5
+West Gojjam,Afder,284,142
+West Gojjam,Dollo,256,128
+West Gojjam,Erer,779,389.5
+West Gojjam,Fafan,962,481
+West Gojjam,Jarar,379,189.5
+West Gojjam,Korahe,630,315
+West Gojjam,Liben,876,438
+West Gojjam,Nogob,930,465
+West Gojjam,Shabelle,674,337
+West Gojjam,Sitti,101,50.5
+West Gojjam,Central,795,397.5
+West Gojjam,Eastern,91,45.5
+West Gojjam,North Western,766,383
+West Gojjam,Southern,443,221.5
+West Gojjam,Western,149,74.5
+West Gojjam,South Eastern,795,397.5
+West Gojjam,Mekelle,820,410
+Assosa,Kamashi,509,254.5
+Assosa,Metekel,914,457
+Assosa,Mao-Komo Special,546,273
+Assosa,Dire Dawa City Administration,956,478
+Assosa,Anywaa,465,232.5
+Assosa,Majang,128,64
+Assosa,Nuer,870,435
+Assosa,Itang Special,685,342.5
+Assosa,Harari Regional State,683,341.5
+Assosa,Arsi,425,212.5
+Assosa,Bale,206,103
+Assosa,Borena,430,215
+Assosa,Buno Bedele,911,455.5
+Assosa,East Bale,73,36.5
+Assosa,East Guji,988,494
+Assosa,East Hararghe,908,454
+Assosa,East Shewa,661,330.5
+Assosa,East Wellega,466,233
+Assosa,Horo Guduru Wellega,790,395
+Assosa,Illubabor,610,305
+Assosa,Jimma,920,460
+Assosa,Kellem Wellega,985,492.5
+Assosa,North Shewa,249,124.5
+Assosa,Southwest Shewa,386,193
+Assosa,West Arsi,665,332.5
+Assosa,West Guji,82,41
+Assosa,West Hararghe,510,255
+Assosa,West Shewa,373,186.5
+Assosa,West Wellega,435,217.5
+Assosa,Aleta Chuko,793,396.5
+Assosa,Aleta Wondo,443,221.5
+Assosa,Aroresa,145,72.5
+Assosa,Bensa,128,64
+Assosa,Bona,865,432.5
+Assosa,Bursa,742,371
+Assosa,Dale,484,242
+Assosa,Dara,250,125
+Assosa,Gorche,422,211
+Assosa,Hawassa Zuria,924,462
+Assosa,Loka Abaya,176,88
+Assosa,Malga,360,180
+Assosa,Shebedino,200,100
+Assosa,Wondo Genet,71,35.5
+Assosa,Wonsho,217,108.5
+Assosa,Gamo,877,438.5
+Assosa,Gedeo,559,279.5
+Assosa,Gofa,825,412.5
+Assosa,Hadiya,123,61.5
+Assosa,Halaba,962,481
+Assosa,Kembata Tembaro,565,282.5
+Assosa,Konso,778,389
+Assosa,Silte,538,269
+Assosa,South Omo,223,111.5
+Assosa,Wolayita,811,405.5
+Assosa,Afder,683,341.5
+Assosa,Dollo,565,282.5
+Assosa,Erer,603,301.5
+Assosa,Fafan,261,130.5
+Assosa,Jarar,689,344.5
+Assosa,Korahe,795,397.5
+Assosa,Liben,907,453.5
+Assosa,Nogob,310,155
+Assosa,Shabelle,240,120
+Assosa,Sitti,490,245
+Assosa,Central,718,359
+Assosa,Eastern,817,408.5
+Assosa,North Western,316,158
+Assosa,Southern,989,494.5
+Assosa,Western,472,236
+Assosa,South Eastern,184,92
+Assosa,Mekelle,433,216.5
+Kamashi,Metekel,206,103
+Kamashi,Mao-Komo Special,500,250
+Kamashi,Dire Dawa City Administration,306,153
+Kamashi,Anywaa,471,235.5
+Kamashi,Majang,643,321.5
+Kamashi,Nuer,443,221.5
+Kamashi,Itang Special,278,139
+Kamashi,Harari Regional State,219,109.5
+Kamashi,Arsi,456,228
+Kamashi,Bale,676,338
+Kamashi,Borena,164,82
+Kamashi,Buno Bedele,67,33.5
+Kamashi,East Bale,865,432.5
+Kamashi,East Guji,177,88.5
+Kamashi,East Hararghe,806,403
+Kamashi,East Shewa,642,321
+Kamashi,East Wellega,679,339.5
+Kamashi,Horo Guduru Wellega,823,411.5
+Kamashi,Illubabor,871,435.5
+Kamashi,Jimma,891,445.5
+Kamashi,Kellem Wellega,291,145.5
+Kamashi,North Shewa,507,253.5
+Kamashi,Southwest Shewa,238,119
+Kamashi,West Arsi,635,317.5
+Kamashi,West Guji,50,25
+Kamashi,West Hararghe,101,50.5
+Kamashi,West Shewa,120,60
+Kamashi,West Wellega,914,457
+Kamashi,Aleta Chuko,197,98.5
+Kamashi,Aleta Wondo,695,347.5
+Kamashi,Aroresa,827,413.5
+Kamashi,Bensa,581,290.5
+Kamashi,Bona,368,184
+Kamashi,Bursa,691,345.5
+Kamashi,Dale,706,353
+Kamashi,Dara,505,252.5
+Kamashi,Gorche,585,292.5
+Kamashi,Hawassa Zuria,925,462.5
+Kamashi,Loka Abaya,751,375.5
+Kamashi,Malga,202,101
+Kamashi,Shebedino,934,467
+Kamashi,Wondo Genet,345,172.5
+Kamashi,Wonsho,973,486.5
+Kamashi,Gamo,251,125.5
+Kamashi,Gedeo,738,369
+Kamashi,Gofa,153,76.5
+Kamashi,Hadiya,832,416
+Kamashi,Halaba,933,466.5
+Kamashi,Kembata Tembaro,502,251
+Kamashi,Konso,148,74
+Kamashi,Silte,678,339
+Kamashi,South Omo,825,412.5
+Kamashi,Wolayita,320,160
+Kamashi,Afder,664,332
+Kamashi,Dollo,876,438
+Kamashi,Erer,558,279
+Kamashi,Fafan,454,227
+Kamashi,Jarar,162,81
+Kamashi,Korahe,594,297
+Kamashi,Liben,413,206.5
+Kamashi,Nogob,957,478.5
+Kamashi,Shabelle,944,472
+Kamashi,Sitti,698,349
+Kamashi,Central,977,488.5
+Kamashi,Eastern,858,429
+Kamashi,North Western,608,304
+Kamashi,Southern,180,90
+Kamashi,Western,701,350.5
+Kamashi,South Eastern,457,228.5
+Kamashi,Mekelle,764,382
+Metekel,Mao-Komo Special,511,255.5
+Metekel,Dire Dawa City Administration,809,404.5
+Metekel,Anywaa,161,80.5
+Metekel,Majang,818,409
+Metekel,Nuer,683,341.5
+Metekel,Itang Special,409,204.5
+Metekel,Harari Regional State,798,399
+Metekel,Arsi,353,176.5
+Metekel,Bale,714,357
+Metekel,Borena,362,181
+Metekel,Buno Bedele,287,143.5
+Metekel,East Bale,234,117
+Metekel,East Guji,949,474.5
+Metekel,East Hararghe,434,217
+Metekel,East Shewa,268,134
+Metekel,East Wellega,703,351.5
+Metekel,Horo Guduru Wellega,814,407
+Metekel,Illubabor,955,477.5
+Metekel,Jimma,989,494.5
+Metekel,Kellem Wellega,667,333.5
+Metekel,North Shewa,658,329
+Metekel,Southwest Shewa,719,359.5
+Metekel,West Arsi,381,190.5
+Metekel,West Guji,393,196.5
+Metekel,West Hararghe,784,392
+Metekel,West Shewa,443,221.5
+Metekel,West Wellega,496,248
+Metekel,Aleta Chuko,579,289.5
+Metekel,Aleta Wondo,840,420
+Metekel,Aroresa,877,438.5
+Metekel,Bensa,127,63.5
+Metekel,Bona,568,284
+Metekel,Bursa,609,304.5
+Metekel,Dale,121,60.5
+Metekel,Dara,56,28
+Metekel,Gorche,204,102
+Metekel,Hawassa Zuria,736,368
+Metekel,Loka Abaya,417,208.5
+Metekel,Malga,442,221
+Metekel,Shebedino,806,403
+Metekel,Wondo Genet,386,193
+Metekel,Wonsho,322,161
+Metekel,Gamo,744,372
+Metekel,Gedeo,676,338
+Metekel,Gofa,929,464.5
+Metekel,Hadiya,140,70
+Metekel,Halaba,337,168.5
+Metekel,Kembata Tembaro,976,488
+Metekel,Konso,592,296
+Metekel,Silte,921,460.5
+Metekel,South Omo,327,163.5
+Metekel,Wolayita,602,301
+Metekel,Afder,55,27.5
+Metekel,Dollo,323,161.5
+Metekel,Erer,628,314
+Metekel,Fafan,536,268
+Metekel,Jarar,521,260.5
+Metekel,Korahe,359,179.5
+Metekel,Liben,587,293.5
+Metekel,Nogob,772,386
+Metekel,Shabelle,847,423.5
+Metekel,Sitti,128,64
+Metekel,Central,578,289
+Metekel,Eastern,337,168.5
+Metekel,North Western,733,366.5
+Metekel,Southern,189,94.5
+Metekel,Western,523,261.5
+Metekel,South Eastern,544,272
+Metekel,Mekelle,850,425
+Mao-Komo Special,Dire Dawa City Administration,689,344.5
+Mao-Komo Special,Anywaa,862,431
+Mao-Komo Special,Majang,594,297
+Mao-Komo Special,Nuer,895,447.5
+Mao-Komo Special,Itang Special,874,437
+Mao-Komo Special,Harari Regional State,363,181.5
+Mao-Komo Special,Arsi,117,58.5
+Mao-Komo Special,Bale,468,234
+Mao-Komo Special,Borena,908,454
+Mao-Komo Special,Buno Bedele,258,129
+Mao-Komo Special,East Bale,253,126.5
+Mao-Komo Special,East Guji,111,55.5
+Mao-Komo Special,East Hararghe,651,325.5
+Mao-Komo Special,East Shewa,947,473.5
+Mao-Komo Special,East Wellega,557,278.5
+Mao-Komo Special,Horo Guduru Wellega,427,213.5
+Mao-Komo Special,Illubabor,131,65.5
+Mao-Komo Special,Jimma,139,69.5
+Mao-Komo Special,Kellem Wellega,649,324.5
+Mao-Komo Special,North Shewa,550,275
+Mao-Komo Special,Southwest Shewa,451,225.5
+Mao-Komo Special,West Arsi,163,81.5
+Mao-Komo Special,West Guji,822,411
+Mao-Komo Special,West Hararghe,324,162
+Mao-Komo Special,West Shewa,773,386.5
+Mao-Komo Special,West Wellega,996,498
+Mao-Komo Special,Aleta Chuko,247,123.5
+Mao-Komo Special,Aleta Wondo,994,497
+Mao-Komo Special,Aroresa,184,92
+Mao-Komo Special,Bensa,539,269.5
+Mao-Komo Special,Bona,50,25
+Mao-Komo Special,Bursa,952,476
+Mao-Komo Special,Dale,982,491
+Mao-Komo Special,Dara,732,366
+Mao-Komo Special,Gorche,251,125.5
+Mao-Komo Special,Hawassa Zuria,671,335.5
+Mao-Komo Special,Loka Abaya,541,270.5
+Mao-Komo Special,Malga,514,257
+Mao-Komo Special,Shebedino,745,372.5
+Mao-Komo Special,Wondo Genet,749,374.5
+Mao-Komo Special,Wonsho,922,461
+Mao-Komo Special,Gamo,746,373
+Mao-Komo Special,Gedeo,355,177.5
+Mao-Komo Special,Gofa,673,336.5
+Mao-Komo Special,Hadiya,936,468
+Mao-Komo Special,Halaba,135,67.5
+Mao-Komo Special,Kembata Tembaro,337,168.5
+Mao-Komo Special,Konso,997,498.5
+Mao-Komo Special,Silte,799,399.5
+Mao-Komo Special,South Omo,845,422.5
+Mao-Komo Special,Wolayita,241,120.5
+Mao-Komo Special,Afder,556,278
+Mao-Komo Special,Dollo,746,373
+Mao-Komo Special,Erer,756,378
+Mao-Komo Special,Fafan,262,131
+Mao-Komo Special,Jarar,436,218
+Mao-Komo Special,Korahe,588,294
+Mao-Komo Special,Liben,608,304
+Mao-Komo Special,Nogob,348,174
+Mao-Komo Special,Shabelle,367,183.5
+Mao-Komo Special,Sitti,119,59.5
+Mao-Komo Special,Central,157,78.5
+Mao-Komo Special,Eastern,881,440.5
+Mao-Komo Special,North Western,217,108.5
+Mao-Komo Special,Southern,733,366.5
+Mao-Komo Special,Western,553,276.5
+Mao-Komo Special,South Eastern,690,345
+Mao-Komo Special,Mekelle,998,499
+Dire Dawa City Administration,Anywaa,643,321.5
+Dire Dawa City Administration,Majang,573,286.5
+Dire Dawa City Administration,Nuer,547,273.5
+Dire Dawa City Administration,Itang Special,665,332.5
+Dire Dawa City Administration,Harari Regional State,672,336
+Dire Dawa City Administration,Arsi,181,90.5
+Dire Dawa City Administration,Bale,50,25
+Dire Dawa City Administration,Borena,790,395
+Dire Dawa City Administration,Buno Bedele,871,435.5
+Dire Dawa City Administration,East Bale,353,176.5
+Dire Dawa City Administration,East Guji,936,468
+Dire Dawa City Administration,East Hararghe,987,493.5
+Dire Dawa City Administration,East Shewa,998,499
+Dire Dawa City Administration,East Wellega,408,204
+Dire Dawa City Administration,Horo Guduru Wellega,820,410
+Dire Dawa City Administration,Illubabor,935,467.5
+Dire Dawa City Administration,Jimma,945,472.5
+Dire Dawa City Administration,Kellem Wellega,641,320.5
+Dire Dawa City Administration,North Shewa,810,405
+Dire Dawa City Administration,Southwest Shewa,639,319.5
+Dire Dawa City Administration,West Arsi,753,376.5
+Dire Dawa City Administration,West Guji,289,144.5
+Dire Dawa City Administration,West Hararghe,522,261
+Dire Dawa City Administration,West Shewa,570,285
+Dire Dawa City Administration,West Wellega,182,91
+Dire Dawa City Administration,Aleta Chuko,636,318
+Dire Dawa City Administration,Aleta Wondo,325,162.5
+Dire Dawa City Administration,Aroresa,68,34
+Dire Dawa City Administration,Bensa,189,94.5
+Dire Dawa City Administration,Bona,592,296
+Dire Dawa City Administration,Bursa,532,266
+Dire Dawa City Administration,Dale,61,30.5
+Dire Dawa City Administration,Dara,402,201
+Dire Dawa City Administration,Gorche,299,149.5
+Dire Dawa City Administration,Hawassa Zuria,737,368.5
+Dire Dawa City Administration,Loka Abaya,642,321
+Dire Dawa City Administration,Malga,321,160.5
+Dire Dawa City Administration,Shebedino,905,452.5
+Dire Dawa City Administration,Wondo Genet,645,322.5
+Dire Dawa City Administration,Wonsho,187,93.5
+Dire Dawa City Administration,Gamo,425,212.5
+Dire Dawa City Administration,Gedeo,746,373
+Dire Dawa City Administration,Gofa,435,217.5
+Dire Dawa City Administration,Hadiya,853,426.5
+Dire Dawa City Administration,Halaba,472,236
+Dire Dawa City Administration,Kembata Tembaro,530,265
+Dire Dawa City Administration,Konso,160,80
+Dire Dawa City Administration,Silte,572,286
+Dire Dawa City Administration,South Omo,551,275.5
+Dire Dawa City Administration,Wolayita,731,365.5
+Dire Dawa City Administration,Afder,909,454.5
+Dire Dawa City Administration,Dollo,631,315.5
+Dire Dawa City Administration,Erer,66,33
+Dire Dawa City Administration,Fafan,591,295.5
+Dire Dawa City Administration,Jarar,767,383.5
+Dire Dawa City Administration,Korahe,748,374
+Dire Dawa City Administration,Liben,441,220.5
+Dire Dawa City Administration,Nogob,333,166.5
+Dire Dawa City Administration,Shabelle,885,442.5
+Dire Dawa City Administration,Sitti,382,191
+Dire Dawa City Administration,Central,327,163.5
+Dire Dawa City Administration,Eastern,722,361
+Dire Dawa City Administration,North Western,497,248.5
+Dire Dawa City Administration,Southern,410,205
+Dire Dawa City Administration,Western,629,314.5
+Dire Dawa City Administration,South Eastern,749,374.5
+Dire Dawa City Administration,Mekelle,245,122.5
+Anywaa,Majang,755,377.5
+Anywaa,Nuer,67,33.5
+Anywaa,Itang Special,449,224.5
+Anywaa,Harari Regional State,983,491.5
+Anywaa,Arsi,681,340.5
+Anywaa,Bale,758,379
+Anywaa,Borena,769,384.5
+Anywaa,Buno Bedele,825,412.5
+Anywaa,East Bale,259,129.5
+Anywaa,East Guji,519,259.5
+Anywaa,East Hararghe,691,345.5
+Anywaa,East Shewa,437,218.5
+Anywaa,East Wellega,655,327.5
+Anywaa,Horo Guduru Wellega,499,249.5
+Anywaa,Illubabor,224,112
+Anywaa,Jimma,735,367.5
+Anywaa,Kellem Wellega,134,67
+Anywaa,North Shewa,921,460.5
+Anywaa,Southwest Shewa,154,77
+Anywaa,West Arsi,274,137
+Anywaa,West Guji,370,185
+Anywaa,West Hararghe,716,358
+Anywaa,West Shewa,297,148.5
+Anywaa,West Wellega,148,74
+Anywaa,Aleta Chuko,781,390.5
+Anywaa,Aleta Wondo,341,170.5
+Anywaa,Aroresa,161,80.5
+Anywaa,Bensa,530,265
+Anywaa,Bona,880,440
+Anywaa,Bursa,875,437.5
+Anywaa,Dale,951,475.5
+Anywaa,Dara,165,82.5
+Anywaa,Gorche,478,239
+Anywaa,Hawassa Zuria,405,202.5
+Anywaa,Loka Abaya,799,399.5
+Anywaa,Malga,615,307.5
+Anywaa,Shebedino,832,416
+Anywaa,Wondo Genet,77,38.5
+Anywaa,Wonsho,487,243.5
+Anywaa,Gamo,761,380.5
+Anywaa,Gedeo,658,329
+Anywaa,Gofa,424,212
+Anywaa,Hadiya,822,411
+Anywaa,Halaba,871,435.5
+Anywaa,Kembata Tembaro,589,294.5
+Anywaa,Konso,460,230
+Anywaa,Silte,945,472.5
+Anywaa,South Omo,454,227
+Anywaa,Wolayita,176,88
+Anywaa,Afder,893,446.5
+Anywaa,Dollo,750,375
+Anywaa,Erer,697,348.5
+Anywaa,Fafan,696,348
+Anywaa,Jarar,91,45.5
+Anywaa,Korahe,764,382
+Anywaa,Liben,644,322
+Anywaa,Nogob,916,458
+Anywaa,Shabelle,224,112
+Anywaa,Sitti,973,486.5
+Anywaa,Central,665,332.5
+Anywaa,Eastern,128,64
+Anywaa,North Western,860,430
+Anywaa,Southern,692,346
+Anywaa,Western,459,229.5
+Anywaa,South Eastern,613,306.5
+Anywaa,Mekelle,597,298.5
+Majang,Nuer,859,429.5
+Majang,Itang Special,731,365.5
+Majang,Harari Regional State,741,370.5
+Majang,Arsi,921,460.5
+Majang,Bale,684,342
+Majang,Borena,662,331
+Majang,Buno Bedele,790,395
+Majang,East Bale,528,264
+Majang,East Guji,76,38
+Majang,East Hararghe,726,363
+Majang,East Shewa,263,131.5
+Majang,East Wellega,456,228
+Majang,Horo Guduru Wellega,740,370
+Majang,Illubabor,322,161
+Majang,Jimma,454,227
+Majang,Kellem Wellega,626,313
+Majang,North Shewa,638,319
+Majang,Southwest Shewa,670,335
+Majang,West Arsi,295,147.5
+Majang,West Guji,193,96.5
+Majang,West Hararghe,911,455.5
+Majang,West Shewa,696,348
+Majang,West Wellega,260,130
+Majang,Aleta Chuko,534,267
+Majang,Aleta Wondo,984,492
+Majang,Aroresa,82,41
+Majang,Bensa,643,321.5
+Majang,Bona,590,295
+Majang,Bursa,419,209.5
+Majang,Dale,729,364.5
+Majang,Dara,877,438.5
+Majang,Gorche,668,334
+Majang,Hawassa Zuria,438,219
+Majang,Loka Abaya,623,311.5
+Majang,Malga,798,399
+Majang,Shebedino,583,291.5
+Majang,Wondo Genet,413,206.5
+Majang,Wonsho,659,329.5
+Majang,Gamo,901,450.5
+Majang,Gedeo,72,36
+Majang,Gofa,580,290
+Majang,Hadiya,865,432.5
+Majang,Halaba,218,109
+Majang,Kembata Tembaro,64,32
+Majang,Konso,589,294.5
+Majang,Silte,236,118
+Majang,South Omo,945,472.5
+Majang,Wolayita,719,359.5
+Majang,Afder,762,381
+Majang,Dollo,961,480.5
+Majang,Erer,516,258
+Majang,Fafan,793,396.5
+Majang,Jarar,505,252.5
+Majang,Korahe,761,380.5
+Majang,Liben,93,46.5
+Majang,Nogob,463,231.5
+Majang,Shabelle,832,416
+Majang,Sitti,844,422
+Majang,Central,460,230
+Majang,Eastern,550,275
+Majang,North Western,485,242.5
+Majang,Southern,723,361.5
+Majang,Western,767,383.5
+Majang,South Eastern,331,165.5
+Majang,Mekelle,67,33.5
+Nuer,Itang Special,120,60
+Nuer,Harari Regional State,783,391.5
+Nuer,Arsi,282,141
+Nuer,Bale,444,222
+Nuer,Borena,874,437
+Nuer,Buno Bedele,797,398.5
+Nuer,East Bale,776,388
+Nuer,East Guji,873,436.5
+Nuer,East Hararghe,466,233
+Nuer,East Shewa,102,51
+Nuer,East Wellega,88,44
+Nuer,Horo Guduru Wellega,607,303.5
+Nuer,Illubabor,927,463.5
+Nuer,Jimma,125,62.5
+Nuer,Kellem Wellega,975,487.5
+Nuer,North Shewa,917,458.5
+Nuer,Southwest Shewa,61,30.5
+Nuer,West Arsi,896,448
+Nuer,West Guji,416,208
+Nuer,West Hararghe,649,324.5
+Nuer,West Shewa,66,33
+Nuer,West Wellega,450,225
+Nuer,Aleta Chuko,806,403
+Nuer,Aleta Wondo,300,150
+Nuer,Aroresa,450,225
+Nuer,Bensa,948,474
+Nuer,Bona,574,287
+Nuer,Bursa,247,123.5
+Nuer,Dale,67,33.5
+Nuer,Dara,915,457.5
+Nuer,Gorche,322,161
+Nuer,Hawassa Zuria,361,180.5
+Nuer,Loka Abaya,539,269.5
+Nuer,Malga,875,437.5
+Nuer,Shebedino,357,178.5
+Nuer,Wondo Genet,520,260
+Nuer,Wonsho,737,368.5
+Nuer,Gamo,359,179.5
+Nuer,Gedeo,378,189
+Nuer,Gofa,156,78
+Nuer,Hadiya,705,352.5
+Nuer,Halaba,611,305.5
+Nuer,Kembata Tembaro,596,298
+Nuer,Konso,852,426
+Nuer,Silte,919,459.5
+Nuer,South Omo,99,49.5
+Nuer,Wolayita,694,347
+Nuer,Afder,220,110
+Nuer,Dollo,407,203.5
+Nuer,Erer,603,301.5
+Nuer,Fafan,572,286
+Nuer,Jarar,743,371.5
+Nuer,Korahe,374,187
+Nuer,Liben,578,289
+Nuer,Nogob,712,356
+Nuer,Shabelle,144,72
+Nuer,Sitti,615,307.5
+Nuer,Central,320,160
+Nuer,Eastern,54,27
+Nuer,North Western,580,290
+Nuer,Southern,994,497
+Nuer,Western,671,335.5
+Nuer,South Eastern,558,279
+Nuer,Mekelle,530,265
+Itang Special,Harari Regional State,545,272.5
+Itang Special,Arsi,361,180.5
+Itang Special,Bale,503,251.5
+Itang Special,Borena,63,31.5
+Itang Special,Buno Bedele,175,87.5
+Itang Special,East Bale,362,181
+Itang Special,East Guji,103,51.5
+Itang Special,East Hararghe,801,400.5
+Itang Special,East Shewa,929,464.5
+Itang Special,East Wellega,990,495
+Itang Special,Horo Guduru Wellega,490,245
+Itang Special,Illubabor,893,446.5
+Itang Special,Jimma,402,201
+Itang Special,Kellem Wellega,519,259.5
+Itang Special,North Shewa,66,33
+Itang Special,Southwest Shewa,819,409.5
+Itang Special,West Arsi,72,36
+Itang Special,West Guji,116,58
+Itang Special,West Hararghe,566,283
+Itang Special,West Shewa,669,334.5
+Itang Special,West Wellega,201,100.5
+Itang Special,Aleta Chuko,369,184.5
+Itang Special,Aleta Wondo,909,454.5
+Itang Special,Aroresa,234,117
+Itang Special,Bensa,273,136.5
+Itang Special,Bona,992,496
+Itang Special,Bursa,435,217.5
+Itang Special,Dale,802,401
+Itang Special,Dara,429,214.5
+Itang Special,Gorche,285,142.5
+Itang Special,Hawassa Zuria,619,309.5
+Itang Special,Loka Abaya,69,34.5
+Itang Special,Malga,892,446
+Itang Special,Shebedino,163,81.5
+Itang Special,Wondo Genet,910,455
+Itang Special,Wonsho,229,114.5
+Itang Special,Gamo,917,458.5
+Itang Special,Gedeo,905,452.5
+Itang Special,Gofa,497,248.5
+Itang Special,Hadiya,138,69
+Itang Special,Halaba,290,145
+Itang Special,Kembata Tembaro,144,72
+Itang Special,Konso,772,386
+Itang Special,Silte,777,388.5
+Itang Special,South Omo,457,228.5
+Itang Special,Wolayita,350,175
+Itang Special,Afder,473,236.5
+Itang Special,Dollo,671,335.5
+Itang Special,Erer,473,236.5
+Itang Special,Fafan,459,229.5
+Itang Special,Jarar,237,118.5
+Itang Special,Korahe,334,167
+Itang Special,Liben,652,326
+Itang Special,Nogob,225,112.5
+Itang Special,Shabelle,950,475
+Itang Special,Sitti,219,109.5
+Itang Special,Central,717,358.5
+Itang Special,Eastern,910,455
+Itang Special,North Western,720,360
+Itang Special,Southern,489,244.5
+Itang Special,Western,396,198
+Itang Special,South Eastern,407,203.5
+Itang Special,Mekelle,774,387
+Harari Regional State,Arsi,61,30.5
+Harari Regional State,Bale,656,328
+Harari Regional State,Borena,153,76.5
+Harari Regional State,Buno Bedele,784,392
+Harari Regional State,East Bale,556,278
+Harari Regional State,East Guji,304,152
+Harari Regional State,East Hararghe,945,472.5
+Harari Regional State,East Shewa,380,190
+Harari Regional State,East Wellega,873,436.5
+Harari Regional State,Horo Guduru Wellega,963,481.5
+Harari Regional State,Illubabor,98,49
+Harari Regional State,Jimma,440,220
+Harari Regional State,Kellem Wellega,178,89
+Harari Regional State,North Shewa,80,40
+Harari Regional State,Southwest Shewa,298,149
+Harari Regional State,West Arsi,171,85.5
+Harari Regional State,West Guji,937,468.5
+Harari Regional State,West Hararghe,152,76
+Harari Regional State,West Shewa,239,119.5
+Harari Regional State,West Wellega,894,447
+Harari Regional State,Aleta Chuko,548,274
+Harari Regional State,Aleta Wondo,185,92.5
+Harari Regional State,Aroresa,168,84
+Harari Regional State,Bensa,443,221.5
+Harari Regional State,Bona,924,462
+Harari Regional State,Bursa,611,305.5
+Harari Regional State,Dale,410,205
+Harari Regional State,Dara,623,311.5
+Harari Regional State,Gorche,887,443.5
+Harari Regional State,Hawassa Zuria,147,73.5
+Harari Regional State,Loka Abaya,873,436.5
+Harari Regional State,Malga,811,405.5
+Harari Regional State,Shebedino,595,297.5
+Harari Regional State,Wondo Genet,234,117
+Harari Regional State,Wonsho,221,110.5
+Harari Regional State,Gamo,99,49.5
+Harari Regional State,Gedeo,869,434.5
+Harari Regional State,Gofa,206,103
+Harari Regional State,Hadiya,311,155.5
+Harari Regional State,Halaba,861,430.5
+Harari Regional State,Kembata Tembaro,110,55
+Harari Regional State,Konso,289,144.5
+Harari Regional State,Silte,411,205.5
+Harari Regional State,South Omo,449,224.5
+Harari Regional State,Wolayita,574,287
+Harari Regional State,Afder,803,401.5
+Harari Regional State,Dollo,967,483.5
+Harari Regional State,Erer,972,486
+Harari Regional State,Fafan,146,73
+Harari Regional State,Jarar,122,61
+Harari Regional State,Korahe,547,273.5
+Harari Regional State,Liben,733,366.5
+Harari Regional State,Nogob,328,164
+Harari Regional State,Shabelle,341,170.5
+Harari Regional State,Sitti,657,328.5
+Harari Regional State,Central,607,303.5
+Harari Regional State,Eastern,926,463
+Harari Regional State,North Western,378,189
+Harari Regional State,Southern,228,114
+Harari Regional State,Western,263,131.5
+Harari Regional State,South Eastern,271,135.5
+Harari Regional State,Mekelle,591,295.5
+Arsi,Bale,423,211.5
+Arsi,Borena,822,411
+Arsi,Buno Bedele,304,152
+Arsi,East Bale,80,40
+Arsi,East Guji,351,175.5
+Arsi,East Hararghe,335,167.5
+Arsi,East Shewa,611,305.5
+Arsi,East Wellega,865,432.5
+Arsi,Horo Guduru Wellega,853,426.5
+Arsi,Illubabor,62,31
+Arsi,Jimma,113,56.5
+Arsi,Kellem Wellega,82,41
+Arsi,North Shewa,238,119
+Arsi,Southwest Shewa,566,283
+Arsi,West Arsi,564,282
+Arsi,West Guji,167,83.5
+Arsi,West Hararghe,459,229.5
+Arsi,West Shewa,198,99
+Arsi,West Wellega,260,130
+Arsi,Aleta Chuko,162,81
+Arsi,Aleta Wondo,832,416
+Arsi,Aroresa,885,442.5
+Arsi,Bensa,774,387
+Arsi,Bona,692,346
+Arsi,Bursa,355,177.5
+Arsi,Dale,256,128
+Arsi,Dara,102,51
+Arsi,Gorche,111,55.5
+Arsi,Hawassa Zuria,467,233.5
+Arsi,Loka Abaya,175,87.5
+Arsi,Malga,608,304
+Arsi,Shebedino,418,209
+Arsi,Wondo Genet,334,167
+Arsi,Wonsho,196,98
+Arsi,Gamo,935,467.5
+Arsi,Gedeo,130,65
+Arsi,Gofa,578,289
+Arsi,Hadiya,421,210.5
+Arsi,Halaba,109,54.5
+Arsi,Kembata Tembaro,594,297
+Arsi,Konso,702,351
+Arsi,Silte,489,244.5
+Arsi,South Omo,735,367.5
+Arsi,Wolayita,452,226
+Arsi,Afder,170,85
+Arsi,Dollo,917,458.5
+Arsi,Erer,553,276.5
+Arsi,Fafan,423,211.5
+Arsi,Jarar,691,345.5
+Arsi,Korahe,889,444.5
+Arsi,Liben,666,333
+Arsi,Nogob,390,195
+Arsi,Shabelle,236,118
+Arsi,Sitti,433,216.5
+Arsi,Central,775,387.5
+Arsi,Eastern,462,231
+Arsi,North Western,639,319.5
+Arsi,Southern,884,442
+Arsi,Western,830,415
+Arsi,South Eastern,612,306
+Arsi,Mekelle,611,305.5
+Bale,Borena,326,163
+Bale,Buno Bedele,953,476.5
+Bale,East Bale,197,98.5
+Bale,East Guji,758,379
+Bale,East Hararghe,210,105
+Bale,East Shewa,356,178
+Bale,East Wellega,824,412
+Bale,Horo Guduru Wellega,341,170.5
+Bale,Illubabor,414,207
+Bale,Jimma,143,71.5
+Bale,Kellem Wellega,236,118
+Bale,North Shewa,225,112.5
+Bale,Southwest Shewa,386,193
+Bale,West Arsi,977,488.5
+Bale,West Guji,296,148
+Bale,West Hararghe,580,290
+Bale,West Shewa,598,299
+Bale,West Wellega,567,283.5
+Bale,Aleta Chuko,470,235
+Bale,Aleta Wondo,84,42
+Bale,Aroresa,591,295.5
+Bale,Bensa,130,65
+Bale,Bona,782,391
+Bale,Bursa,607,303.5
+Bale,Dale,516,258
+Bale,Dara,624,312
+Bale,Gorche,671,335.5
+Bale,Hawassa Zuria,667,333.5
+Bale,Loka Abaya,357,178.5
+Bale,Malga,205,102.5
+Bale,Shebedino,732,366
+Bale,Wondo Genet,93,46.5
+Bale,Wonsho,181,90.5
+Bale,Gamo,549,274.5
+Bale,Gedeo,466,233
+Bale,Gofa,761,380.5
+Bale,Hadiya,918,459
+Bale,Halaba,619,309.5
+Bale,Kembata Tembaro,800,400
+Bale,Konso,210,105
+Bale,Silte,993,496.5
+Bale,South Omo,800,400
+Bale,Wolayita,419,209.5
+Bale,Afder,449,224.5
+Bale,Dollo,166,83
+Bale,Erer,298,149
+Bale,Fafan,677,338.5
+Bale,Jarar,871,435.5
+Bale,Korahe,851,425.5
+Bale,Liben,933,466.5
+Bale,Nogob,285,142.5
+Bale,Shabelle,836,418
+Bale,Sitti,137,68.5
+Bale,Central,152,76
+Bale,Eastern,130,65
+Bale,North Western,647,323.5
+Bale,Southern,757,378.5
+Bale,Western,945,472.5
+Bale,South Eastern,893,446.5
+Bale,Mekelle,519,259.5
+Borena,Buno Bedele,175,87.5
+Borena,East Bale,361,180.5
+Borena,East Guji,661,330.5
+Borena,East Hararghe,887,443.5
+Borena,East Shewa,497,248.5
+Borena,East Wellega,117,58.5
+Borena,Horo Guduru Wellega,717,358.5
+Borena,Illubabor,244,122
+Borena,Jimma,69,34.5
+Borena,Kellem Wellega,435,217.5
+Borena,North Shewa,656,328
+Borena,Southwest Shewa,800,400
+Borena,West Arsi,287,143.5
+Borena,West Guji,391,195.5
+Borena,West Hararghe,669,334.5
+Borena,West Shewa,793,396.5
+Borena,West Wellega,101,50.5
+Borena,Aleta Chuko,812,406
+Borena,Aleta Wondo,750,375
+Borena,Aroresa,89,44.5
+Borena,Bensa,634,317
+Borena,Bona,974,487
+Borena,Bursa,109,54.5
+Borena,Dale,542,271
+Borena,Dara,441,220.5
+Borena,Gorche,329,164.5
+Borena,Hawassa Zuria,366,183
+Borena,Loka Abaya,189,94.5
+Borena,Malga,208,104
+Borena,Shebedino,899,449.5
+Borena,Wondo Genet,522,261
+Borena,Wonsho,646,323
+Borena,Gamo,757,378.5
+Borena,Gedeo,191,95.5
+Borena,Gofa,613,306.5
+Borena,Hadiya,611,305.5
+Borena,Halaba,710,355
+Borena,Kembata Tembaro,918,459
+Borena,Konso,752,376
+Borena,Silte,486,243
+Borena,South Omo,244,122
+Borena,Wolayita,475,237.5
+Borena,Afder,762,381
+Borena,Dollo,901,450.5
+Borena,Erer,798,399
+Borena,Fafan,886,443
+Borena,Jarar,332,166
+Borena,Korahe,545,272.5
+Borena,Liben,210,105
+Borena,Nogob,475,237.5
+Borena,Shabelle,454,227
+Borena,Sitti,536,268
+Borena,Central,549,274.5
+Borena,Eastern,382,191
+Borena,North Western,195,97.5
+Borena,Southern,557,278.5
+Borena,Western,373,186.5
+Borena,South Eastern,163,81.5
+Borena,Mekelle,305,152.5
+Buno Bedele,East Bale,274,137
+Buno Bedele,East Guji,922,461
+Buno Bedele,East Hararghe,482,241
+Buno Bedele,East Shewa,508,254
+Buno Bedele,East Wellega,547,273.5
+Buno Bedele,Horo Guduru Wellega,862,431
+Buno Bedele,Illubabor,692,346
+Buno Bedele,Jimma,637,318.5
+Buno Bedele,Kellem Wellega,320,160
+Buno Bedele,North Shewa,491,245.5
+Buno Bedele,Southwest Shewa,703,351.5
+Buno Bedele,West Arsi,322,161
+Buno Bedele,West Guji,447,223.5
+Buno Bedele,West Hararghe,603,301.5
+Buno Bedele,West Shewa,647,323.5
+Buno Bedele,West Wellega,747,373.5
+Buno Bedele,Aleta Chuko,957,478.5
+Buno Bedele,Aleta Wondo,847,423.5
+Buno Bedele,Aroresa,561,280.5
+Buno Bedele,Bensa,852,426
+Buno Bedele,Bona,626,313
+Buno Bedele,Bursa,965,482.5
+Buno Bedele,Dale,718,359
+Buno Bedele,Dara,686,343
+Buno Bedele,Gorche,841,420.5
+Buno Bedele,Hawassa Zuria,480,240
+Buno Bedele,Loka Abaya,394,197
+Buno Bedele,Malga,171,85.5
+Buno Bedele,Shebedino,820,410
+Buno Bedele,Wondo Genet,804,402
+Buno Bedele,Wonsho,143,71.5
+Buno Bedele,Gamo,338,169
+Buno Bedele,Gedeo,585,292.5
+Buno Bedele,Gofa,990,495
+Buno Bedele,Hadiya,347,173.5
+Buno Bedele,Halaba,960,480
+Buno Bedele,Kembata Tembaro,499,249.5
+Buno Bedele,Konso,50,25
+Buno Bedele,Silte,779,389.5
+Buno Bedele,South Omo,222,111
+Buno Bedele,Wolayita,750,375
+Buno Bedele,Afder,342,171
+Buno Bedele,Dollo,629,314.5
+Buno Bedele,Erer,723,361.5
+Buno Bedele,Fafan,369,184.5
+Buno Bedele,Jarar,764,382
+Buno Bedele,Korahe,559,279.5
+Buno Bedele,Liben,97,48.5
+Buno Bedele,Nogob,533,266.5
+Buno Bedele,Shabelle,692,346
+Buno Bedele,Sitti,683,341.5
+Buno Bedele,Central,703,351.5
+Buno Bedele,Eastern,762,381
+Buno Bedele,North Western,643,321.5
+Buno Bedele,Southern,369,184.5
+Buno Bedele,Western,920,460
+Buno Bedele,South Eastern,414,207
+Buno Bedele,Mekelle,580,290
+East Bale,East Guji,290,145
+East Bale,East Hararghe,827,413.5
+East Bale,East Shewa,895,447.5
+East Bale,East Wellega,427,213.5
+East Bale,Horo Guduru Wellega,520,260
+East Bale,Illubabor,508,254
+East Bale,Jimma,658,329
+East Bale,Kellem Wellega,507,253.5
+East Bale,North Shewa,294,147
+East Bale,Southwest Shewa,978,489
+East Bale,West Arsi,459,229.5
+East Bale,West Guji,98,49
+East Bale,West Hararghe,610,305
+East Bale,West Shewa,400,200
+East Bale,West Wellega,709,354.5
+East Bale,Aleta Chuko,479,239.5
+East Bale,Aleta Wondo,348,174
+East Bale,Aroresa,762,381
+East Bale,Bensa,741,370.5
+East Bale,Bona,981,490.5
+East Bale,Bursa,128,64
+East Bale,Dale,731,365.5
+East Bale,Dara,761,380.5
+East Bale,Gorche,739,369.5
+East Bale,Hawassa Zuria,741,370.5
+East Bale,Loka Abaya,104,52
+East Bale,Malga,176,88
+East Bale,Shebedino,963,481.5
+East Bale,Wondo Genet,891,445.5
+East Bale,Wonsho,699,349.5
+East Bale,Gamo,121,60.5
+East Bale,Gedeo,260,130
+East Bale,Gofa,335,167.5
+East Bale,Hadiya,792,396
+East Bale,Halaba,355,177.5
+East Bale,Kembata Tembaro,534,267
+East Bale,Konso,779,389.5
+East Bale,Silte,726,363
+East Bale,South Omo,914,457
+East Bale,Wolayita,617,308.5
+East Bale,Afder,437,218.5
+East Bale,Dollo,246,123
+East Bale,Erer,93,46.5
+East Bale,Fafan,173,86.5
+East Bale,Jarar,542,271
+East Bale,Korahe,269,134.5
+East Bale,Liben,564,282
+East Bale,Nogob,574,287
+East Bale,Shabelle,744,372
+East Bale,Sitti,535,267.5
+East Bale,Central,442,221
+East Bale,Eastern,560,280
+East Bale,North Western,732,366
+East Bale,Southern,236,118
+East Bale,Western,334,167
+East Bale,South Eastern,170,85
+East Bale,Mekelle,939,469.5
+East Guji,East Hararghe,875,437.5
+East Guji,East Shewa,977,488.5
+East Guji,East Wellega,657,328.5
+East Guji,Horo Guduru Wellega,487,243.5
+East Guji,Illubabor,344,172
+East Guji,Jimma,294,147
+East Guji,Kellem Wellega,524,262
+East Guji,North Shewa,254,127
+East Guji,Southwest Shewa,952,476
+East Guji,West Arsi,538,269
+East Guji,West Guji,824,412
+East Guji,West Hararghe,548,274
+East Guji,West Shewa,483,241.5
+East Guji,West Wellega,634,317
+East Guji,Aleta Chuko,717,358.5
+East Guji,Aleta Wondo,874,437
+East Guji,Aroresa,910,455
+East Guji,Bensa,203,101.5
+East Guji,Bona,477,238.5
+East Guji,Bursa,555,277.5
+East Guji,Dale,805,402.5
+East Guji,Dara,899,449.5
+East Guji,Gorche,343,171.5
+East Guji,Hawassa Zuria,114,57
+East Guji,Loka Abaya,92,46
+East Guji,Malga,516,258
+East Guji,Shebedino,342,171
+East Guji,Wondo Genet,584,292
+East Guji,Wonsho,292,146
+East Guji,Gamo,501,250.5
+East Guji,Gedeo,981,490.5
+East Guji,Gofa,713,356.5
+East Guji,Hadiya,793,396.5
+East Guji,Halaba,846,423
+East Guji,Kembata Tembaro,533,266.5
+East Guji,Konso,972,486
+East Guji,Silte,956,478
+East Guji,South Omo,892,446
+East Guji,Wolayita,636,318
+East Guji,Afder,493,246.5
+East Guji,Dollo,355,177.5
+East Guji,Erer,851,425.5
+East Guji,Fafan,963,481.5
+East Guji,Jarar,262,131
+East Guji,Korahe,466,233
+East Guji,Liben,279,139.5
+East Guji,Nogob,320,160
+East Guji,Shabelle,504,252
+East Guji,Sitti,591,295.5
+East Guji,Central,298,149
+East Guji,Eastern,425,212.5
+East Guji,North Western,891,445.5
+East Guji,Southern,455,227.5
+East Guji,Western,144,72
+East Guji,South Eastern,603,301.5
+East Guji,Mekelle,713,356.5
+East Hararghe,East Shewa,501,250.5
+East Hararghe,East Wellega,417,208.5
+East Hararghe,Horo Guduru Wellega,723,361.5
+East Hararghe,Illubabor,946,473
+East Hararghe,Jimma,519,259.5
+East Hararghe,Kellem Wellega,912,456
+East Hararghe,North Shewa,705,352.5
+East Hararghe,Southwest Shewa,856,428
+East Hararghe,West Arsi,635,317.5
+East Hararghe,West Guji,608,304
+East Hararghe,West Hararghe,819,409.5
+East Hararghe,West Shewa,545,272.5
+East Hararghe,West Wellega,495,247.5
+East Hararghe,Aleta Chuko,917,458.5
+East Hararghe,Aleta Wondo,819,409.5
+East Hararghe,Aroresa,714,357
+East Hararghe,Bensa,892,446
+East Hararghe,Bona,835,417.5
+East Hararghe,Bursa,423,211.5
+East Hararghe,Dale,66,33
+East Hararghe,Dara,832,416
+East Hararghe,Gorche,820,410
+East Hararghe,Hawassa Zuria,520,260
+East Hararghe,Loka Abaya,820,410
+East Hararghe,Malga,919,459.5
+East Hararghe,Shebedino,152,76
+East Hararghe,Wondo Genet,696,348
+East Hararghe,Wonsho,284,142
+East Hararghe,Gamo,217,108.5
+East Hararghe,Gedeo,662,331
+East Hararghe,Gofa,241,120.5
+East Hararghe,Hadiya,492,246
+East Hararghe,Halaba,426,213
+East Hararghe,Kembata Tembaro,631,315.5
+East Hararghe,Konso,491,245.5
+East Hararghe,Silte,262,131
+East Hararghe,South Omo,990,495
+East Hararghe,Wolayita,97,48.5
+East Hararghe,Afder,741,370.5
+East Hararghe,Dollo,784,392
+East Hararghe,Erer,630,315
+East Hararghe,Fafan,207,103.5
+East Hararghe,Jarar,712,356
+East Hararghe,Korahe,830,415
+East Hararghe,Liben,624,312
+East Hararghe,Nogob,761,380.5
+East Hararghe,Shabelle,220,110
+East Hararghe,Sitti,81,40.5
+East Hararghe,Central,50,25
+East Hararghe,Eastern,979,489.5
+East Hararghe,North Western,98,49
+East Hararghe,Southern,719,359.5
+East Hararghe,Western,372,186
+East Hararghe,South Eastern,69,34.5
+East Hararghe,Mekelle,738,369
+East Shewa,East Wellega,366,183
+East Shewa,Horo Guduru Wellega,357,178.5
+East Shewa,Illubabor,772,386
+East Shewa,Jimma,869,434.5
+East Shewa,Kellem Wellega,526,263
+East Shewa,North Shewa,469,234.5
+East Shewa,Southwest Shewa,879,439.5
+East Shewa,West Arsi,188,94
+East Shewa,West Guji,613,306.5
+East Shewa,West Hararghe,501,250.5
+East Shewa,West Shewa,134,67
+East Shewa,West Wellega,348,174
+East Shewa,Aleta Chuko,926,463
+East Shewa,Aleta Wondo,202,101
+East Shewa,Aroresa,695,347.5
+East Shewa,Bensa,607,303.5
+East Shewa,Bona,562,281
+East Shewa,Bursa,758,379
+East Shewa,Dale,603,301.5
+East Shewa,Dara,552,276
+East Shewa,Gorche,215,107.5
+East Shewa,Hawassa Zuria,128,64
+East Shewa,Loka Abaya,291,145.5
+East Shewa,Malga,721,360.5
+East Shewa,Shebedino,382,191
+East Shewa,Wondo Genet,533,266.5
+East Shewa,Wonsho,468,234
+East Shewa,Gamo,619,309.5
+East Shewa,Gedeo,304,152
+East Shewa,Gofa,968,484
+East Shewa,Hadiya,993,496.5
+East Shewa,Halaba,346,173
+East Shewa,Kembata Tembaro,718,359
+East Shewa,Konso,77,38.5
+East Shewa,Silte,817,408.5
+East Shewa,South Omo,362,181
+East Shewa,Wolayita,421,210.5
+East Shewa,Afder,776,388
+East Shewa,Dollo,170,85
+East Shewa,Erer,435,217.5
+East Shewa,Fafan,708,354
+East Shewa,Jarar,993,496.5
+East Shewa,Korahe,617,308.5
+East Shewa,Liben,580,290
+East Shewa,Nogob,818,409
+East Shewa,Shabelle,651,325.5
+East Shewa,Sitti,826,413
+East Shewa,Central,526,263
+East Shewa,Eastern,494,247
+East Shewa,North Western,844,422
+East Shewa,Southern,530,265
+East Shewa,Western,861,430.5
+East Shewa,South Eastern,547,273.5
+East Shewa,Mekelle,651,325.5
+East Wellega,Horo Guduru Wellega,116,58
+East Wellega,Illubabor,861,430.5
+East Wellega,Jimma,978,489
+East Wellega,Kellem Wellega,380,190
+East Wellega,North Shewa,509,254.5
+East Wellega,Southwest Shewa,269,134.5
+East Wellega,West Arsi,352,176
+East Wellega,West Guji,341,170.5
+East Wellega,West Hararghe,325,162.5
+East Wellega,West Shewa,545,272.5
+East Wellega,West Wellega,211,105.5
+East Wellega,Aleta Chuko,483,241.5
+East Wellega,Aleta Wondo,992,496
+East Wellega,Aroresa,166,83
+East Wellega,Bensa,901,450.5
+East Wellega,Bona,137,68.5
+East Wellega,Bursa,736,368
+East Wellega,Dale,737,368.5
+East Wellega,Dara,427,213.5
+East Wellega,Gorche,215,107.5
+East Wellega,Hawassa Zuria,383,191.5
+East Wellega,Loka Abaya,370,185
+East Wellega,Malga,149,74.5
+East Wellega,Shebedino,294,147
+East Wellega,Wondo Genet,401,200.5
+East Wellega,Wonsho,975,487.5
+East Wellega,Gamo,272,136
+East Wellega,Gedeo,62,31
+East Wellega,Gofa,385,192.5
+East Wellega,Hadiya,222,111
+East Wellega,Halaba,950,475
+East Wellega,Kembata Tembaro,671,335.5
+East Wellega,Konso,771,385.5
+East Wellega,Silte,532,266
+East Wellega,South Omo,677,338.5
+East Wellega,Wolayita,248,124
+East Wellega,Afder,790,395
+East Wellega,Dollo,890,445
+East Wellega,Erer,863,431.5
+East Wellega,Fafan,793,396.5
+East Wellega,Jarar,68,34
+East Wellega,Korahe,445,222.5
+East Wellega,Liben,128,64
+East Wellega,Nogob,534,267
+East Wellega,Shabelle,268,134
+East Wellega,Sitti,493,246.5
+East Wellega,Central,307,153.5
+East Wellega,Eastern,978,489
+East Wellega,North Western,231,115.5
+East Wellega,Southern,239,119.5
+East Wellega,Western,269,134.5
+East Wellega,South Eastern,288,144
+East Wellega,Mekelle,855,427.5
+Horo Guduru Wellega,Illubabor,718,359
+Horo Guduru Wellega,Jimma,909,454.5
+Horo Guduru Wellega,Kellem Wellega,958,479
+Horo Guduru Wellega,North Shewa,445,222.5
+Horo Guduru Wellega,Southwest Shewa,172,86
+Horo Guduru Wellega,West Arsi,532,266
+Horo Guduru Wellega,West Guji,145,72.5
+Horo Guduru Wellega,West Hararghe,969,484.5
+Horo Guduru Wellega,West Shewa,292,146
+Horo Guduru Wellega,West Wellega,178,89
+Horo Guduru Wellega,Aleta Chuko,308,154
+Horo Guduru Wellega,Aleta Wondo,466,233
+Horo Guduru Wellega,Aroresa,245,122.5
+Horo Guduru Wellega,Bensa,396,198
+Horo Guduru Wellega,Bona,370,185
+Horo Guduru Wellega,Bursa,447,223.5
+Horo Guduru Wellega,Dale,255,127.5
+Horo Guduru Wellega,Dara,403,201.5
+Horo Guduru Wellega,Gorche,776,388
+Horo Guduru Wellega,Hawassa Zuria,704,352
+Horo Guduru Wellega,Loka Abaya,243,121.5
+Horo Guduru Wellega,Malga,67,33.5
+Horo Guduru Wellega,Shebedino,70,35
+Horo Guduru Wellega,Wondo Genet,737,368.5
+Horo Guduru Wellega,Wonsho,999,499.5
+Horo Guduru Wellega,Gamo,750,375
+Horo Guduru Wellega,Gedeo,238,119
+Horo Guduru Wellega,Gofa,534,267
+Horo Guduru Wellega,Hadiya,824,412
+Horo Guduru Wellega,Halaba,452,226
+Horo Guduru Wellega,Kembata Tembaro,852,426
+Horo Guduru Wellega,Konso,606,303
+Horo Guduru Wellega,Silte,959,479.5
+Horo Guduru Wellega,South Omo,564,282
+Horo Guduru Wellega,Wolayita,843,421.5
+Horo Guduru Wellega,Afder,685,342.5
+Horo Guduru Wellega,Dollo,685,342.5
+Horo Guduru Wellega,Erer,820,410
+Horo Guduru Wellega,Fafan,94,47
+Horo Guduru Wellega,Jarar,450,225
+Horo Guduru Wellega,Korahe,770,385
+Horo Guduru Wellega,Liben,810,405
+Horo Guduru Wellega,Nogob,501,250.5
+Horo Guduru Wellega,Shabelle,693,346.5
+Horo Guduru Wellega,Sitti,930,465
+Horo Guduru Wellega,Central,706,353
+Horo Guduru Wellega,Eastern,510,255
+Horo Guduru Wellega,North Western,301,150.5
+Horo Guduru Wellega,Southern,323,161.5
+Horo Guduru Wellega,Western,255,127.5
+Horo Guduru Wellega,South Eastern,176,88
+Horo Guduru Wellega,Mekelle,164,82
+Illubabor,Jimma,710,355
+Illubabor,Kellem Wellega,200,100
+Illubabor,North Shewa,665,332.5
+Illubabor,Southwest Shewa,980,490
+Illubabor,West Arsi,517,258.5
+Illubabor,West Guji,484,242
+Illubabor,West Hararghe,439,219.5
+Illubabor,West Shewa,283,141.5
+Illubabor,West Wellega,839,419.5
+Illubabor,Aleta Chuko,974,487
+Illubabor,Aleta Wondo,278,139
+Illubabor,Aroresa,261,130.5
+Illubabor,Bensa,342,171
+Illubabor,Bona,978,489
+Illubabor,Bursa,212,106
+Illubabor,Dale,630,315
+Illubabor,Dara,669,334.5
+Illubabor,Gorche,590,295
+Illubabor,Hawassa Zuria,139,69.5
+Illubabor,Loka Abaya,637,318.5
+Illubabor,Malga,903,451.5
+Illubabor,Shebedino,137,68.5
+Illubabor,Wondo Genet,784,392
+Illubabor,Wonsho,84,42
+Illubabor,Gamo,937,468.5
+Illubabor,Gedeo,957,478.5
+Illubabor,Gofa,403,201.5
+Illubabor,Hadiya,115,57.5
+Illubabor,Halaba,755,377.5
+Illubabor,Kembata Tembaro,497,248.5
+Illubabor,Konso,991,495.5
+Illubabor,Silte,312,156
+Illubabor,South Omo,161,80.5
+Illubabor,Wolayita,237,118.5
+Illubabor,Afder,317,158.5
+Illubabor,Dollo,848,424
+Illubabor,Erer,716,358
+Illubabor,Fafan,337,168.5
+Illubabor,Jarar,979,489.5
+Illubabor,Korahe,901,450.5
+Illubabor,Liben,432,216
+Illubabor,Nogob,373,186.5
+Illubabor,Shabelle,236,118
+Illubabor,Sitti,802,401
+Illubabor,Central,345,172.5
+Illubabor,Eastern,296,148
+Illubabor,North Western,488,244
+Illubabor,Southern,552,276
+Illubabor,Western,811,405.5
+Illubabor,South Eastern,525,262.5
+Illubabor,Mekelle,160,80
+Jimma,Kellem Wellega,396,198
+Jimma,North Shewa,235,117.5
+Jimma,Southwest Shewa,967,483.5
+Jimma,West Arsi,159,79.5
+Jimma,West Guji,509,254.5
+Jimma,West Hararghe,663,331.5
+Jimma,West Shewa,581,290.5
+Jimma,West Wellega,642,321
+Jimma,Aleta Chuko,921,460.5
+Jimma,Aleta Wondo,504,252
+Jimma,Aroresa,925,462.5
+Jimma,Bensa,838,419
+Jimma,Bona,630,315
+Jimma,Bursa,226,113
+Jimma,Dale,322,161
+Jimma,Dara,133,66.5
+Jimma,Gorche,937,468.5
+Jimma,Hawassa Zuria,307,153.5
+Jimma,Loka Abaya,841,420.5
+Jimma,Malga,353,176.5
+Jimma,Shebedino,587,293.5
+Jimma,Wondo Genet,930,465
+Jimma,Wonsho,559,279.5
+Jimma,Gamo,74,37
+Jimma,Gedeo,224,112
+Jimma,Gofa,118,59
+Jimma,Hadiya,230,115
+Jimma,Halaba,84,42
+Jimma,Kembata Tembaro,865,432.5
+Jimma,Konso,76,38
+Jimma,Silte,624,312
+Jimma,South Omo,126,63
+Jimma,Wolayita,453,226.5
+Jimma,Afder,578,289
+Jimma,Dollo,246,123
+Jimma,Erer,150,75
+Jimma,Fafan,127,63.5
+Jimma,Jarar,430,215
+Jimma,Korahe,661,330.5
+Jimma,Liben,611,305.5
+Jimma,Nogob,95,47.5
+Jimma,Shabelle,909,454.5
+Jimma,Sitti,926,463
+Jimma,Central,147,73.5
+Jimma,Eastern,145,72.5
+Jimma,North Western,921,460.5
+Jimma,Southern,762,381
+Jimma,Western,453,226.5
+Jimma,South Eastern,671,335.5
+Jimma,Mekelle,269,134.5
+Kellem Wellega,North Shewa,736,368
+Kellem Wellega,Southwest Shewa,101,50.5
+Kellem Wellega,West Arsi,591,295.5
+Kellem Wellega,West Guji,415,207.5
+Kellem Wellega,West Hararghe,81,40.5
+Kellem Wellega,West Shewa,297,148.5
+Kellem Wellega,West Wellega,143,71.5
+Kellem Wellega,Aleta Chuko,444,222
+Kellem Wellega,Aleta Wondo,992,496
+Kellem Wellega,Aroresa,656,328
+Kellem Wellega,Bensa,78,39
+Kellem Wellega,Bona,528,264
+Kellem Wellega,Bursa,534,267
+Kellem Wellega,Dale,545,272.5
+Kellem Wellega,Dara,836,418
+Kellem Wellega,Gorche,252,126
+Kellem Wellega,Hawassa Zuria,706,353
+Kellem Wellega,Loka Abaya,671,335.5
+Kellem Wellega,Malga,428,214
+Kellem Wellega,Shebedino,245,122.5
+Kellem Wellega,Wondo Genet,236,118
+Kellem Wellega,Wonsho,638,319
+Kellem Wellega,Gamo,270,135
+Kellem Wellega,Gedeo,688,344
+Kellem Wellega,Gofa,333,166.5
+Kellem Wellega,Hadiya,372,186
+Kellem Wellega,Halaba,509,254.5
+Kellem Wellega,Kembata Tembaro,67,33.5
+Kellem Wellega,Konso,779,389.5
+Kellem Wellega,Silte,777,388.5
+Kellem Wellega,South Omo,950,475
+Kellem Wellega,Wolayita,183,91.5
+Kellem Wellega,Afder,819,409.5
+Kellem Wellega,Dollo,723,361.5
+Kellem Wellega,Erer,103,51.5
+Kellem Wellega,Fafan,466,233
+Kellem Wellega,Jarar,912,456
+Kellem Wellega,Korahe,856,428
+Kellem Wellega,Liben,70,35
+Kellem Wellega,Nogob,291,145.5
+Kellem Wellega,Shabelle,215,107.5
+Kellem Wellega,Sitti,402,201
+Kellem Wellega,Central,215,107.5
+Kellem Wellega,Eastern,150,75
+Kellem Wellega,North Western,355,177.5
+Kellem Wellega,Southern,567,283.5
+Kellem Wellega,Western,178,89
+Kellem Wellega,South Eastern,902,451
+Kellem Wellega,Mekelle,518,259
+North Shewa,Southwest Shewa,422,211
+North Shewa,West Arsi,693,346.5
+North Shewa,West Guji,767,383.5
+North Shewa,West Hararghe,332,166
+North Shewa,West Shewa,816,408
+North Shewa,West Wellega,132,66
+North Shewa,Aleta Chuko,98,49
+North Shewa,Aleta Wondo,895,447.5
+North Shewa,Aroresa,669,334.5
+North Shewa,Bensa,873,436.5
+North Shewa,Bona,643,321.5
+North Shewa,Bursa,374,187
+North Shewa,Dale,380,190
+North Shewa,Dara,835,417.5
+North Shewa,Gorche,458,229
+North Shewa,Hawassa Zuria,408,204
+North Shewa,Loka Abaya,516,258
+North Shewa,Malga,710,355
+North Shewa,Shebedino,91,45.5
+North Shewa,Wondo Genet,249,124.5
+North Shewa,Wonsho,710,355
+North Shewa,Gamo,133,66.5
+North Shewa,Gedeo,153,76.5
+North Shewa,Gofa,548,274
+North Shewa,Hadiya,628,314
+North Shewa,Halaba,774,387
+North Shewa,Kembata Tembaro,784,392
+North Shewa,Konso,511,255.5
+North Shewa,Silte,512,256
+North Shewa,South Omo,848,424
+North Shewa,Wolayita,706,353
+North Shewa,Afder,314,157
+North Shewa,Dollo,823,411.5
+North Shewa,Erer,160,80
+North Shewa,Fafan,341,170.5
+North Shewa,Jarar,815,407.5
+North Shewa,Korahe,642,321
+North Shewa,Liben,958,479
+North Shewa,Nogob,360,180
+North Shewa,Shabelle,563,281.5
+North Shewa,Sitti,386,193
+North Shewa,Central,487,243.5
+North Shewa,Eastern,917,458.5
+North Shewa,North Western,435,217.5
+North Shewa,Southern,240,120
+North Shewa,Western,866,433
+North Shewa,South Eastern,1000,500
+North Shewa,Mekelle,542,271
+Southwest Shewa,West Arsi,477,238.5
+Southwest Shewa,West Guji,605,302.5
+Southwest Shewa,West Hararghe,446,223
+Southwest Shewa,West Shewa,247,123.5
+Southwest Shewa,West Wellega,776,388
+Southwest Shewa,Aleta Chuko,445,222.5
+Southwest Shewa,Aleta Wondo,279,139.5
+Southwest Shewa,Aroresa,776,388
+Southwest Shewa,Bensa,845,422.5
+Southwest Shewa,Bona,857,428.5
+Southwest Shewa,Bursa,145,72.5
+Southwest Shewa,Dale,119,59.5
+Southwest Shewa,Dara,951,475.5
+Southwest Shewa,Gorche,229,114.5
+Southwest Shewa,Hawassa Zuria,857,428.5
+Southwest Shewa,Loka Abaya,56,28
+Southwest Shewa,Malga,565,282.5
+Southwest Shewa,Shebedino,365,182.5
+Southwest Shewa,Wondo Genet,298,149
+Southwest Shewa,Wonsho,615,307.5
+Southwest Shewa,Gamo,546,273
+Southwest Shewa,Gedeo,812,406
+Southwest Shewa,Gofa,326,163
+Southwest Shewa,Hadiya,94,47
+Southwest Shewa,Halaba,987,493.5
+Southwest Shewa,Kembata Tembaro,191,95.5
+Southwest Shewa,Konso,318,159
+Southwest Shewa,Silte,720,360
+Southwest Shewa,South Omo,61,30.5
+Southwest Shewa,Wolayita,318,159
+Southwest Shewa,Afder,103,51.5
+Southwest Shewa,Dollo,616,308
+Southwest Shewa,Erer,756,378
+Southwest Shewa,Fafan,284,142
+Southwest Shewa,Jarar,272,136
+Southwest Shewa,Korahe,721,360.5
+Southwest Shewa,Liben,958,479
+Southwest Shewa,Nogob,128,64
+Southwest Shewa,Shabelle,918,459
+Southwest Shewa,Sitti,791,395.5
+Southwest Shewa,Central,556,278
+Southwest Shewa,Eastern,625,312.5
+Southwest Shewa,North Western,635,317.5
+Southwest Shewa,Southern,252,126
+Southwest Shewa,Western,315,157.5
+Southwest Shewa,South Eastern,450,225
+Southwest Shewa,Mekelle,766,383
+West Arsi,West Guji,920,460
+West Arsi,West Hararghe,605,302.5
+West Arsi,West Shewa,109,54.5
+West Arsi,West Wellega,446,223
+West Arsi,Aleta Chuko,495,247.5
+West Arsi,Aleta Wondo,654,327
+West Arsi,Aroresa,982,491
+West Arsi,Bensa,213,106.5
+West Arsi,Bona,295,147.5
+West Arsi,Bursa,870,435
+West Arsi,Dale,584,292
+West Arsi,Dara,278,139
+West Arsi,Gorche,819,409.5
+West Arsi,Hawassa Zuria,979,489.5
+West Arsi,Loka Abaya,514,257
+West Arsi,Malga,279,139.5
+West Arsi,Shebedino,924,462
+West Arsi,Wondo Genet,238,119
+West Arsi,Wonsho,155,77.5
+West Arsi,Gamo,580,290
+West Arsi,Gedeo,116,58
+West Arsi,Gofa,844,422
+West Arsi,Hadiya,72,36
+West Arsi,Halaba,510,255
+West Arsi,Kembata Tembaro,195,97.5
+West Arsi,Konso,595,297.5
+West Arsi,Silte,53,26.5
+West Arsi,South Omo,755,377.5
+West Arsi,Wolayita,611,305.5
+West Arsi,Afder,287,143.5
+West Arsi,Dollo,781,390.5
+West Arsi,Erer,312,156
+West Arsi,Fafan,94,47
+West Arsi,Jarar,105,52.5
+West Arsi,Korahe,60,30
+West Arsi,Liben,433,216.5
+West Arsi,Nogob,190,95
+West Arsi,Shabelle,229,114.5
+West Arsi,Sitti,736,368
+West Arsi,Central,443,221.5
+West Arsi,Eastern,416,208
+West Arsi,North Western,207,103.5
+West Arsi,Southern,749,374.5
+West Arsi,Western,600,300
+West Arsi,South Eastern,871,435.5
+West Arsi,Mekelle,332,166
+West Guji,West Hararghe,333,166.5
+West Guji,West Shewa,898,449
+West Guji,West Wellega,735,367.5
+West Guji,Aleta Chuko,745,372.5
+West Guji,Aleta Wondo,975,487.5
+West Guji,Aroresa,978,489
+West Guji,Bensa,275,137.5
+West Guji,Bona,846,423
+West Guji,Bursa,649,324.5
+West Guji,Dale,297,148.5
+West Guji,Dara,265,132.5
+West Guji,Gorche,248,124
+West Guji,Hawassa Zuria,536,268
+West Guji,Loka Abaya,664,332
+West Guji,Malga,839,419.5
+West Guji,Shebedino,322,161
+West Guji,Wondo Genet,77,38.5
+West Guji,Wonsho,979,489.5
+West Guji,Gamo,191,95.5
+West Guji,Gedeo,252,126
+West Guji,Gofa,777,388.5
+West Guji,Hadiya,884,442
+West Guji,Halaba,913,456.5
+West Guji,Kembata Tembaro,209,104.5
+West Guji,Konso,888,444
+West Guji,Silte,893,446.5
+West Guji,South Omo,883,441.5
+West Guji,Wolayita,298,149
+West Guji,Afder,638,319
+West Guji,Dollo,463,231.5
+West Guji,Erer,912,456
+West Guji,Fafan,446,223
+West Guji,Jarar,510,255
+West Guji,Korahe,569,284.5
+West Guji,Liben,856,428
+West Guji,Nogob,735,367.5
+West Guji,Shabelle,157,78.5
+West Guji,Sitti,231,115.5
+West Guji,Central,223,111.5
+West Guji,Eastern,630,315
+West Guji,North Western,795,397.5
+West Guji,Southern,246,123
+West Guji,Western,239,119.5
+West Guji,South Eastern,558,279
+West Guji,Mekelle,973,486.5
+West Hararghe,West Shewa,185,92.5
+West Hararghe,West Wellega,446,223
+West Hararghe,Aleta Chuko,305,152.5
+West Hararghe,Aleta Wondo,339,169.5
+West Hararghe,Aroresa,719,359.5
+West Hararghe,Bensa,958,479
+West Hararghe,Bona,687,343.5
+West Hararghe,Bursa,508,254
+West Hararghe,Dale,910,455
+West Hararghe,Dara,656,328
+West Hararghe,Gorche,222,111
+West Hararghe,Hawassa Zuria,709,354.5
+West Hararghe,Loka Abaya,938,469
+West Hararghe,Malga,934,467
+West Hararghe,Shebedino,121,60.5
+West Hararghe,Wondo Genet,749,374.5
+West Hararghe,Wonsho,383,191.5
+West Hararghe,Gamo,960,480
+West Hararghe,Gedeo,244,122
+West Hararghe,Gofa,610,305
+West Hararghe,Hadiya,288,144
+West Hararghe,Halaba,656,328
+West Hararghe,Kembata Tembaro,257,128.5
+West Hararghe,Konso,200,100
+West Hararghe,Silte,442,221
+West Hararghe,South Omo,681,340.5
+West Hararghe,Wolayita,746,373
+West Hararghe,Afder,715,357.5
+West Hararghe,Dollo,172,86
+West Hararghe,Erer,627,313.5
+West Hararghe,Fafan,54,27
+West Hararghe,Jarar,461,230.5
+West Hararghe,Korahe,741,370.5
+West Hararghe,Liben,237,118.5
+West Hararghe,Nogob,283,141.5
+West Hararghe,Shabelle,177,88.5
+West Hararghe,Sitti,418,209
+West Hararghe,Central,265,132.5
+West Hararghe,Eastern,316,158
+West Hararghe,North Western,700,350
+West Hararghe,Southern,823,411.5
+West Hararghe,Western,787,393.5
+West Hararghe,South Eastern,896,448
+West Hararghe,Mekelle,977,488.5
+West Shewa,West Wellega,647,323.5
+West Shewa,Aleta Chuko,573,286.5
+West Shewa,Aleta Wondo,563,281.5
+West Shewa,Aroresa,87,43.5
+West Shewa,Bensa,928,464
+West Shewa,Bona,963,481.5
+West Shewa,Bursa,602,301
+West Shewa,Dale,647,323.5
+West Shewa,Dara,914,457
+West Shewa,Gorche,184,92
+West Shewa,Hawassa Zuria,610,305
+West Shewa,Loka Abaya,854,427
+West Shewa,Malga,707,353.5
+West Shewa,Shebedino,835,417.5
+West Shewa,Wondo Genet,112,56
+West Shewa,Wonsho,159,79.5
+West Shewa,Gamo,203,101.5
+West Shewa,Gedeo,369,184.5
+West Shewa,Gofa,788,394
+West Shewa,Hadiya,601,300.5
+West Shewa,Halaba,138,69
+West Shewa,Kembata Tembaro,678,339
+West Shewa,Konso,523,261.5
+West Shewa,Silte,721,360.5
+West Shewa,South Omo,753,376.5
+West Shewa,Wolayita,96,48
+West Shewa,Afder,726,363
+West Shewa,Dollo,949,474.5
+West Shewa,Erer,730,365
+West Shewa,Fafan,696,348
+West Shewa,Jarar,501,250.5
+West Shewa,Korahe,670,335
+West Shewa,Liben,391,195.5
+West Shewa,Nogob,307,153.5
+West Shewa,Shabelle,766,383
+West Shewa,Sitti,511,255.5
+West Shewa,Central,887,443.5
+West Shewa,Eastern,249,124.5
+West Shewa,North Western,342,171
+West Shewa,Southern,386,193
+West Shewa,Western,241,120.5
+West Shewa,South Eastern,398,199
+West Shewa,Mekelle,131,65.5
+West Wellega,Aleta Chuko,946,473
+West Wellega,Aleta Wondo,923,461.5
+West Wellega,Aroresa,575,287.5
+West Wellega,Bensa,229,114.5
+West Wellega,Bona,50,25
+West Wellega,Bursa,97,48.5
+West Wellega,Dale,568,284
+West Wellega,Dara,934,467
+West Wellega,Gorche,872,436
+West Wellega,Hawassa Zuria,474,237
+West Wellega,Loka Abaya,429,214.5
+West Wellega,Malga,631,315.5
+West Wellega,Shebedino,580,290
+West Wellega,Wondo Genet,513,256.5
+West Wellega,Wonsho,203,101.5
+West Wellega,Gamo,778,389
+West Wellega,Gedeo,419,209.5
+West Wellega,Gofa,783,391.5
+West Wellega,Hadiya,331,165.5
+West Wellega,Halaba,540,270
+West Wellega,Kembata Tembaro,825,412.5
+West Wellega,Konso,617,308.5
+West Wellega,Silte,292,146
+West Wellega,South Omo,758,379
+West Wellega,Wolayita,366,183
+West Wellega,Afder,277,138.5
+West Wellega,Dollo,179,89.5
+West Wellega,Erer,103,51.5
+West Wellega,Fafan,543,271.5
+West Wellega,Jarar,927,463.5
+West Wellega,Korahe,189,94.5
+West Wellega,Liben,925,462.5
+West Wellega,Nogob,485,242.5
+West Wellega,Shabelle,651,325.5
+West Wellega,Sitti,120,60
+West Wellega,Central,627,313.5
+West Wellega,Eastern,857,428.5
+West Wellega,North Western,186,93
+West Wellega,Southern,101,50.5
+West Wellega,Western,493,246.5
+West Wellega,South Eastern,879,439.5
+West Wellega,Mekelle,599,299.5
+Aleta Chuko,Aleta Wondo,101,50.5
+Aleta Chuko,Aroresa,330,165
+Aleta Chuko,Bensa,575,287.5
+Aleta Chuko,Bona,239,119.5
+Aleta Chuko,Bursa,217,108.5
+Aleta Chuko,Dale,475,237.5
+Aleta Chuko,Dara,513,256.5
+Aleta Chuko,Gorche,608,304
+Aleta Chuko,Hawassa Zuria,704,352
+Aleta Chuko,Loka Abaya,820,410
+Aleta Chuko,Malga,618,309
+Aleta Chuko,Shebedino,329,164.5
+Aleta Chuko,Wondo Genet,141,70.5
+Aleta Chuko,Wonsho,307,153.5
+Aleta Chuko,Gamo,942,471
+Aleta Chuko,Gedeo,941,470.5
+Aleta Chuko,Gofa,810,405
+Aleta Chuko,Hadiya,852,426
+Aleta Chuko,Halaba,528,264
+Aleta Chuko,Kembata Tembaro,315,157.5
+Aleta Chuko,Konso,626,313
+Aleta Chuko,Silte,151,75.5
+Aleta Chuko,South Omo,329,164.5
+Aleta Chuko,Wolayita,255,127.5
+Aleta Chuko,Afder,654,327
+Aleta Chuko,Dollo,172,86
+Aleta Chuko,Erer,704,352
+Aleta Chuko,Fafan,769,384.5
+Aleta Chuko,Jarar,249,124.5
+Aleta Chuko,Korahe,75,37.5
+Aleta Chuko,Liben,519,259.5
+Aleta Chuko,Nogob,585,292.5
+Aleta Chuko,Shabelle,351,175.5
+Aleta Chuko,Sitti,407,203.5
+Aleta Chuko,Central,389,194.5
+Aleta Chuko,Eastern,278,139
+Aleta Chuko,North Western,393,196.5
+Aleta Chuko,Southern,533,266.5
+Aleta Chuko,Western,786,393
+Aleta Chuko,South Eastern,479,239.5
+Aleta Chuko,Mekelle,926,463
+Aleta Wondo,Aroresa,796,398
+Aleta Wondo,Bensa,361,180.5
+Aleta Wondo,Bona,546,273
+Aleta Wondo,Bursa,735,367.5
+Aleta Wondo,Dale,274,137
+Aleta Wondo,Dara,319,159.5
+Aleta Wondo,Gorche,630,315
+Aleta Wondo,Hawassa Zuria,885,442.5
+Aleta Wondo,Loka Abaya,833,416.5
+Aleta Wondo,Malga,465,232.5
+Aleta Wondo,Shebedino,942,471
+Aleta Wondo,Wondo Genet,782,391
+Aleta Wondo,Wonsho,73,36.5
+Aleta Wondo,Gamo,126,63
+Aleta Wondo,Gedeo,455,227.5
+Aleta Wondo,Gofa,422,211
+Aleta Wondo,Hadiya,371,185.5
+Aleta Wondo,Halaba,339,169.5
+Aleta Wondo,Kembata Tembaro,663,331.5
+Aleta Wondo,Konso,123,61.5
+Aleta Wondo,Silte,861,430.5
+Aleta Wondo,South Omo,95,47.5
+Aleta Wondo,Wolayita,798,399
+Aleta Wondo,Afder,952,476
+Aleta Wondo,Dollo,201,100.5
+Aleta Wondo,Erer,227,113.5
+Aleta Wondo,Fafan,923,461.5
+Aleta Wondo,Jarar,432,216
+Aleta Wondo,Korahe,518,259
+Aleta Wondo,Liben,339,169.5
+Aleta Wondo,Nogob,386,193
+Aleta Wondo,Shabelle,878,439
+Aleta Wondo,Sitti,456,228
+Aleta Wondo,Central,498,249
+Aleta Wondo,Eastern,601,300.5
+Aleta Wondo,North Western,929,464.5
+Aleta Wondo,Southern,350,175
+Aleta Wondo,Western,437,218.5
+Aleta Wondo,South Eastern,501,250.5
+Aleta Wondo,Mekelle,142,71
+Aroresa,Bensa,967,483.5
+Aroresa,Bona,239,119.5
+Aroresa,Bursa,287,143.5
+Aroresa,Dale,748,374
+Aroresa,Dara,807,403.5
+Aroresa,Gorche,882,441
+Aroresa,Hawassa Zuria,202,101
+Aroresa,Loka Abaya,474,237
+Aroresa,Malga,985,492.5
+Aroresa,Shebedino,435,217.5
+Aroresa,Wondo Genet,955,477.5
+Aroresa,Wonsho,743,371.5
+Aroresa,Gamo,801,400.5
+Aroresa,Gedeo,927,463.5
+Aroresa,Gofa,993,496.5
+Aroresa,Hadiya,350,175
+Aroresa,Halaba,505,252.5
+Aroresa,Kembata Tembaro,562,281
+Aroresa,Konso,427,213.5
+Aroresa,Silte,393,196.5
+Aroresa,South Omo,640,320
+Aroresa,Wolayita,738,369
+Aroresa,Afder,916,458
+Aroresa,Dollo,419,209.5
+Aroresa,Erer,61,30.5
+Aroresa,Fafan,353,176.5
+Aroresa,Jarar,245,122.5
+Aroresa,Korahe,491,245.5
+Aroresa,Liben,495,247.5
+Aroresa,Nogob,980,490
+Aroresa,Shabelle,541,270.5
+Aroresa,Sitti,938,469
+Aroresa,Central,572,286
+Aroresa,Eastern,213,106.5
+Aroresa,North Western,77,38.5
+Aroresa,Southern,780,390
+Aroresa,Western,796,398
+Aroresa,South Eastern,841,420.5
+Aroresa,Mekelle,896,448
+Bensa,Bona,518,259
+Bensa,Bursa,881,440.5
+Bensa,Dale,144,72
+Bensa,Dara,692,346
+Bensa,Gorche,575,287.5
+Bensa,Hawassa Zuria,81,40.5
+Bensa,Loka Abaya,998,499
+Bensa,Malga,440,220
+Bensa,Shebedino,285,142.5
+Bensa,Wondo Genet,887,443.5
+Bensa,Wonsho,656,328
+Bensa,Gamo,566,283
+Bensa,Gedeo,620,310
+Bensa,Gofa,270,135
+Bensa,Hadiya,191,95.5
+Bensa,Halaba,326,163
+Bensa,Kembata Tembaro,333,166.5
+Bensa,Konso,795,397.5
+Bensa,Silte,491,245.5
+Bensa,South Omo,629,314.5
+Bensa,Wolayita,216,108
+Bensa,Afder,161,80.5
+Bensa,Dollo,907,453.5
+Bensa,Erer,673,336.5
+Bensa,Fafan,170,85
+Bensa,Jarar,501,250.5
+Bensa,Korahe,107,53.5
+Bensa,Liben,666,333
+Bensa,Nogob,176,88
+Bensa,Shabelle,224,112
+Bensa,Sitti,822,411
+Bensa,Central,137,68.5
+Bensa,Eastern,852,426
+Bensa,North Western,546,273
+Bensa,Southern,848,424
+Bensa,Western,399,199.5
+Bensa,South Eastern,572,286
+Bensa,Mekelle,298,149
+Bona,Bursa,798,399
+Bona,Dale,159,79.5
+Bona,Dara,440,220
+Bona,Gorche,720,360
+Bona,Hawassa Zuria,880,440
+Bona,Loka Abaya,938,469
+Bona,Malga,919,459.5
+Bona,Shebedino,560,280
+Bona,Wondo Genet,675,337.5
+Bona,Wonsho,758,379
+Bona,Gamo,772,386
+Bona,Gedeo,735,367.5
+Bona,Gofa,290,145
+Bona,Hadiya,923,461.5
+Bona,Halaba,159,79.5
+Bona,Kembata Tembaro,849,424.5
+Bona,Konso,206,103
+Bona,Silte,843,421.5
+Bona,South Omo,158,79
+Bona,Wolayita,981,490.5
+Bona,Afder,455,227.5
+Bona,Dollo,820,410
+Bona,Erer,290,145
+Bona,Fafan,614,307
+Bona,Jarar,854,427
+Bona,Korahe,960,480
+Bona,Liben,168,84
+Bona,Nogob,625,312.5
+Bona,Shabelle,313,156.5
+Bona,Sitti,461,230.5
+Bona,Central,462,231
+Bona,Eastern,749,374.5
+Bona,North Western,191,95.5
+Bona,Southern,777,388.5
+Bona,Western,845,422.5
+Bona,South Eastern,504,252
+Bona,Mekelle,944,472
+Bursa,Dale,546,273
+Bursa,Dara,908,454
+Bursa,Gorche,803,401.5
+Bursa,Hawassa Zuria,244,122
+Bursa,Loka Abaya,153,76.5
+Bursa,Malga,384,192
+Bursa,Shebedino,236,118
+Bursa,Wondo Genet,386,193
+Bursa,Wonsho,752,376
+Bursa,Gamo,222,111
+Bursa,Gedeo,610,305
+Bursa,Gofa,357,178.5
+Bursa,Hadiya,896,448
+Bursa,Halaba,833,416.5
+Bursa,Kembata Tembaro,930,465
+Bursa,Konso,177,88.5
+Bursa,Silte,519,259.5
+Bursa,South Omo,121,60.5
+Bursa,Wolayita,945,472.5
+Bursa,Afder,252,126
+Bursa,Dollo,451,225.5
+Bursa,Erer,922,461
+Bursa,Fafan,91,45.5
+Bursa,Jarar,513,256.5
+Bursa,Korahe,507,253.5
+Bursa,Liben,407,203.5
+Bursa,Nogob,206,103
+Bursa,Shabelle,623,311.5
+Bursa,Sitti,412,206
+Bursa,Central,111,55.5
+Bursa,Eastern,558,279
+Bursa,North Western,204,102
+Bursa,Southern,174,87
+Bursa,Western,187,93.5
+Bursa,South Eastern,126,63
+Bursa,Mekelle,291,145.5
+Dale,Dara,481,240.5
+Dale,Gorche,87,43.5
+Dale,Hawassa Zuria,377,188.5
+Dale,Loka Abaya,376,188
+Dale,Malga,923,461.5
+Dale,Shebedino,272,136
+Dale,Wondo Genet,341,170.5
+Dale,Wonsho,840,420
+Dale,Gamo,718,359
+Dale,Gedeo,442,221
+Dale,Gofa,299,149.5
+Dale,Hadiya,948,474
+Dale,Halaba,700,350
+Dale,Kembata Tembaro,238,119
+Dale,Konso,630,315
+Dale,Silte,606,303
+Dale,South Omo,649,324.5
+Dale,Wolayita,148,74
+Dale,Afder,513,256.5
+Dale,Dollo,800,400
+Dale,Erer,218,109
+Dale,Fafan,109,54.5
+Dale,Jarar,131,65.5
+Dale,Korahe,566,283
+Dale,Liben,885,442.5
+Dale,Nogob,649,324.5
+Dale,Shabelle,877,438.5
+Dale,Sitti,265,132.5
+Dale,Central,942,471
+Dale,Eastern,704,352
+Dale,North Western,217,108.5
+Dale,Southern,899,449.5
+Dale,Western,957,478.5
+Dale,South Eastern,836,418
+Dale,Mekelle,684,342
+Dara,Gorche,167,83.5
+Dara,Hawassa Zuria,706,353
+Dara,Loka Abaya,695,347.5
+Dara,Malga,165,82.5
+Dara,Shebedino,91,45.5
+Dara,Wondo Genet,557,278.5
+Dara,Wonsho,944,472
+Dara,Gamo,320,160
+Dara,Gedeo,881,440.5
+Dara,Gofa,325,162.5
+Dara,Hadiya,483,241.5
+Dara,Halaba,509,254.5
+Dara,Kembata Tembaro,718,359
+Dara,Konso,857,428.5
+Dara,Silte,472,236
+Dara,South Omo,791,395.5
+Dara,Wolayita,936,468
+Dara,Afder,654,327
+Dara,Dollo,966,483
+Dara,Erer,513,256.5
+Dara,Fafan,335,167.5
+Dara,Jarar,347,173.5
+Dara,Korahe,293,146.5
+Dara,Liben,820,410
+Dara,Nogob,733,366.5
+Dara,Shabelle,394,197
+Dara,Sitti,534,267
+Dara,Central,379,189.5
+Dara,Eastern,734,367
+Dara,North Western,67,33.5
+Dara,Southern,764,382
+Dara,Western,389,194.5
+Dara,South Eastern,209,104.5
+Dara,Mekelle,798,399
+Gorche,Hawassa Zuria,401,200.5
+Gorche,Loka Abaya,909,454.5
+Gorche,Malga,652,326
+Gorche,Shebedino,646,323
+Gorche,Wondo Genet,779,389.5
+Gorche,Wonsho,622,311
+Gorche,Gamo,115,57.5
+Gorche,Gedeo,823,411.5
+Gorche,Gofa,457,228.5
+Gorche,Hadiya,129,64.5
+Gorche,Halaba,575,287.5
+Gorche,Kembata Tembaro,452,226
+Gorche,Konso,653,326.5
+Gorche,Silte,437,218.5
+Gorche,South Omo,117,58.5
+Gorche,Wolayita,927,463.5
+Gorche,Afder,477,238.5
+Gorche,Dollo,989,494.5
+Gorche,Erer,524,262
+Gorche,Fafan,650,325
+Gorche,Jarar,255,127.5
+Gorche,Korahe,171,85.5
+Gorche,Liben,717,358.5
+Gorche,Nogob,896,448
+Gorche,Shabelle,275,137.5
+Gorche,Sitti,879,439.5
+Gorche,Central,639,319.5
+Gorche,Eastern,748,374
+Gorche,North Western,851,425.5
+Gorche,Southern,259,129.5
+Gorche,Western,379,189.5
+Gorche,South Eastern,278,139
+Gorche,Mekelle,877,438.5
+Hawassa Zuria,Loka Abaya,350,175
+Hawassa Zuria,Malga,131,65.5
+Hawassa Zuria,Shebedino,108,54
+Hawassa Zuria,Wondo Genet,292,146
+Hawassa Zuria,Wonsho,341,170.5
+Hawassa Zuria,Gamo,604,302
+Hawassa Zuria,Gedeo,232,116
+Hawassa Zuria,Gofa,90,45
+Hawassa Zuria,Hadiya,164,82
+Hawassa Zuria,Halaba,970,485
+Hawassa Zuria,Kembata Tembaro,955,477.5
+Hawassa Zuria,Konso,317,158.5
+Hawassa Zuria,Silte,86,43
+Hawassa Zuria,South Omo,638,319
+Hawassa Zuria,Wolayita,861,430.5
+Hawassa Zuria,Afder,507,253.5
+Hawassa Zuria,Dollo,546,273
+Hawassa Zuria,Erer,197,98.5
+Hawassa Zuria,Fafan,424,212
+Hawassa Zuria,Jarar,952,476
+Hawassa Zuria,Korahe,636,318
+Hawassa Zuria,Liben,690,345
+Hawassa Zuria,Nogob,573,286.5
+Hawassa Zuria,Shabelle,966,483
+Hawassa Zuria,Sitti,826,413
+Hawassa Zuria,Central,563,281.5
+Hawassa Zuria,Eastern,838,419
+Hawassa Zuria,North Western,593,296.5
+Hawassa Zuria,Southern,399,199.5
+Hawassa Zuria,Western,987,493.5
+Hawassa Zuria,South Eastern,944,472
+Hawassa Zuria,Mekelle,981,490.5
+Loka Abaya,Malga,930,465
+Loka Abaya,Shebedino,328,164
+Loka Abaya,Wondo Genet,470,235
+Loka Abaya,Wonsho,429,214.5
+Loka Abaya,Gamo,324,162
+Loka Abaya,Gedeo,439,219.5
+Loka Abaya,Gofa,340,170
+Loka Abaya,Hadiya,72,36
+Loka Abaya,Halaba,209,104.5
+Loka Abaya,Kembata Tembaro,668,334
+Loka Abaya,Konso,293,146.5
+Loka Abaya,Silte,204,102
+Loka Abaya,South Omo,109,54.5
+Loka Abaya,Wolayita,151,75.5
+Loka Abaya,Afder,517,258.5
+Loka Abaya,Dollo,296,148
+Loka Abaya,Erer,454,227
+Loka Abaya,Fafan,334,167
+Loka Abaya,Jarar,631,315.5
+Loka Abaya,Korahe,56,28
+Loka Abaya,Liben,195,97.5
+Loka Abaya,Nogob,704,352
+Loka Abaya,Shabelle,736,368
+Loka Abaya,Sitti,261,130.5
+Loka Abaya,Central,773,386.5
+Loka Abaya,Eastern,715,357.5
+Loka Abaya,North Western,778,389
+Loka Abaya,Southern,678,339
+Loka Abaya,Western,248,124
+Loka Abaya,South Eastern,638,319
+Loka Abaya,Mekelle,768,384
+Malga,Shebedino,975,487.5
+Malga,Wondo Genet,480,240
+Malga,Wonsho,633,316.5
+Malga,Gamo,788,394
+Malga,Gedeo,669,334.5
+Malga,Gofa,628,314
+Malga,Hadiya,922,461
+Malga,Halaba,357,178.5
+Malga,Kembata Tembaro,746,373
+Malga,Konso,874,437
+Malga,Silte,122,61
+Malga,South Omo,291,145.5
+Malga,Wolayita,276,138
+Malga,Afder,776,388
+Malga,Dollo,144,72
+Malga,Erer,321,160.5
+Malga,Fafan,904,452
+Malga,Jarar,510,255
+Malga,Korahe,572,286
+Malga,Liben,316,158
+Malga,Nogob,588,294
+Malga,Shabelle,204,102
+Malga,Sitti,149,74.5
+Malga,Central,269,134.5
+Malga,Eastern,535,267.5
+Malga,North Western,556,278
+Malga,Southern,519,259.5
+Malga,Western,997,498.5
+Malga,South Eastern,720,360
+Malga,Mekelle,435,217.5
+Shebedino,Wondo Genet,356,178
+Shebedino,Wonsho,986,493
+Shebedino,Gamo,201,100.5
+Shebedino,Gedeo,59,29.5
+Shebedino,Gofa,323,161.5
+Shebedino,Hadiya,894,447
+Shebedino,Halaba,348,174
+Shebedino,Kembata Tembaro,130,65
+Shebedino,Konso,82,41
+Shebedino,Silte,361,180.5
+Shebedino,South Omo,621,310.5
+Shebedino,Wolayita,512,256
+Shebedino,Afder,275,137.5
+Shebedino,Dollo,778,389
+Shebedino,Erer,653,326.5
+Shebedino,Fafan,405,202.5
+Shebedino,Jarar,936,468
+Shebedino,Korahe,891,445.5
+Shebedino,Liben,182,91
+Shebedino,Nogob,979,489.5
+Shebedino,Shabelle,151,75.5
+Shebedino,Sitti,554,277
+Shebedino,Central,753,376.5
+Shebedino,Eastern,902,451
+Shebedino,North Western,675,337.5
+Shebedino,Southern,974,487
+Shebedino,Western,651,325.5
+Shebedino,South Eastern,723,361.5
+Shebedino,Mekelle,334,167
+Wondo Genet,Wonsho,865,432.5
+Wondo Genet,Gamo,437,218.5
+Wondo Genet,Gedeo,235,117.5
+Wondo Genet,Gofa,729,364.5
+Wondo Genet,Hadiya,416,208
+Wondo Genet,Halaba,511,255.5
+Wondo Genet,Kembata Tembaro,787,393.5
+Wondo Genet,Konso,952,476
+Wondo Genet,Silte,313,156.5
+Wondo Genet,South Omo,140,70
+Wondo Genet,Wolayita,862,431
+Wondo Genet,Afder,721,360.5
+Wondo Genet,Dollo,989,494.5
+Wondo Genet,Erer,939,469.5
+Wondo Genet,Fafan,827,413.5
+Wondo Genet,Jarar,719,359.5
+Wondo Genet,Korahe,764,382
+Wondo Genet,Liben,843,421.5
+Wondo Genet,Nogob,508,254
+Wondo Genet,Shabelle,994,497
+Wondo Genet,Sitti,720,360
+Wondo Genet,Central,151,75.5
+Wondo Genet,Eastern,239,119.5
+Wondo Genet,North Western,138,69
+Wondo Genet,Southern,540,270
+Wondo Genet,Western,921,460.5
+Wondo Genet,South Eastern,571,285.5
+Wondo Genet,Mekelle,464,232
+Wonsho,Gamo,128,64
+Wonsho,Gedeo,79,39.5
+Wonsho,Gofa,137,68.5
+Wonsho,Hadiya,555,277.5
+Wonsho,Halaba,956,478
+Wonsho,Kembata Tembaro,596,298
+Wonsho,Konso,891,445.5
+Wonsho,Silte,428,214
+Wonsho,South Omo,195,97.5
+Wonsho,Wolayita,714,357
+Wonsho,Afder,392,196
+Wonsho,Dollo,765,382.5
+Wonsho,Erer,635,317.5
+Wonsho,Fafan,568,284
+Wonsho,Jarar,498,249
+Wonsho,Korahe,835,417.5
+Wonsho,Liben,415,207.5
+Wonsho,Nogob,561,280.5
+Wonsho,Shabelle,477,238.5
+Wonsho,Sitti,190,95
+Wonsho,Central,565,282.5
+Wonsho,Eastern,1000,500
+Wonsho,North Western,825,412.5
+Wonsho,Southern,446,223
+Wonsho,Western,719,359.5
+Wonsho,South Eastern,372,186
+Wonsho,Mekelle,801,400.5
+Gamo,Gedeo,895,447.5
+Gamo,Gofa,289,144.5
+Gamo,Hadiya,936,468
+Gamo,Halaba,57,28.5
+Gamo,Kembata Tembaro,764,382
+Gamo,Konso,256,128
+Gamo,Silte,575,287.5
+Gamo,South Omo,510,255
+Gamo,Wolayita,858,429
+Gamo,Afder,133,66.5
+Gamo,Dollo,762,381
+Gamo,Erer,277,138.5
+Gamo,Fafan,270,135
+Gamo,Jarar,875,437.5
+Gamo,Korahe,846,423
+Gamo,Liben,916,458
+Gamo,Nogob,229,114.5
+Gamo,Shabelle,309,154.5
+Gamo,Sitti,448,224
+Gamo,Central,737,368.5
+Gamo,Eastern,199,99.5
+Gamo,North Western,98,49
+Gamo,Southern,189,94.5
+Gamo,Western,468,234
+Gamo,South Eastern,590,295
+Gamo,Mekelle,390,195
+Gedeo,Gofa,943,471.5
+Gedeo,Hadiya,745,372.5
+Gedeo,Halaba,689,344.5
+Gedeo,Kembata Tembaro,163,81.5
+Gedeo,Konso,423,211.5
+Gedeo,Silte,55,27.5
+Gedeo,South Omo,843,421.5
+Gedeo,Wolayita,670,335
+Gedeo,Afder,172,86
+Gedeo,Dollo,900,450
+Gedeo,Erer,724,362
+Gedeo,Fafan,591,295.5
+Gedeo,Jarar,133,66.5
+Gedeo,Korahe,445,222.5
+Gedeo,Liben,927,463.5
+Gedeo,Nogob,862,431
+Gedeo,Shabelle,418,209
+Gedeo,Sitti,969,484.5
+Gedeo,Central,499,249.5
+Gedeo,Eastern,223,111.5
+Gedeo,North Western,398,199
+Gedeo,Southern,768,384
+Gedeo,Western,790,395
+Gedeo,South Eastern,805,402.5
+Gedeo,Mekelle,489,244.5
+Gofa,Hadiya,227,113.5
+Gofa,Halaba,898,449
+Gofa,Kembata Tembaro,605,302.5
+Gofa,Konso,628,314
+Gofa,Silte,749,374.5
+Gofa,South Omo,656,328
+Gofa,Wolayita,482,241
+Gofa,Afder,671,335.5
+Gofa,Dollo,445,222.5
+Gofa,Erer,251,125.5
+Gofa,Fafan,134,67
+Gofa,Jarar,799,399.5
+Gofa,Korahe,438,219
+Gofa,Liben,888,444
+Gofa,Nogob,850,425
+Gofa,Shabelle,581,290.5
+Gofa,Sitti,645,322.5
+Gofa,Central,322,161
+Gofa,Eastern,856,428
+Gofa,North Western,158,79
+Gofa,Southern,823,411.5
+Gofa,Western,890,445
+Gofa,South Eastern,185,92.5
+Gofa,Mekelle,150,75
+Hadiya,Halaba,787,393.5
+Hadiya,Kembata Tembaro,731,365.5
+Hadiya,Konso,441,220.5
+Hadiya,Silte,376,188
+Hadiya,South Omo,521,260.5
+Hadiya,Wolayita,605,302.5
+Hadiya,Afder,791,395.5
+Hadiya,Dollo,247,123.5
+Hadiya,Erer,113,56.5
+Hadiya,Fafan,889,444.5
+Hadiya,Jarar,735,367.5
+Hadiya,Korahe,637,318.5
+Hadiya,Liben,153,76.5
+Hadiya,Nogob,184,92
+Hadiya,Shabelle,686,343
+Hadiya,Sitti,187,93.5
+Hadiya,Central,595,297.5
+Hadiya,Eastern,309,154.5
+Hadiya,North Western,628,314
+Hadiya,Southern,150,75
+Hadiya,Western,240,120
+Hadiya,South Eastern,553,276.5
+Hadiya,Mekelle,904,452
+Halaba,Kembata Tembaro,375,187.5
+Halaba,Konso,199,99.5
+Halaba,Silte,992,496
+Halaba,South Omo,965,482.5
+Halaba,Wolayita,862,431
+Halaba,Afder,755,377.5
+Halaba,Dollo,234,117
+Halaba,Erer,85,42.5
+Halaba,Fafan,897,448.5
+Halaba,Jarar,717,358.5
+Halaba,Korahe,586,293
+Halaba,Liben,74,37
+Halaba,Nogob,472,236
+Halaba,Shabelle,137,68.5
+Halaba,Sitti,214,107
+Halaba,Central,433,216.5
+Halaba,Eastern,806,403
+Halaba,North Western,300,150
+Halaba,Southern,803,401.5
+Halaba,Western,389,194.5
+Halaba,South Eastern,885,442.5
+Halaba,Mekelle,593,296.5
+Kembata Tembaro,Konso,481,240.5
+Kembata Tembaro,Silte,307,153.5
+Kembata Tembaro,South Omo,305,152.5
+Kembata Tembaro,Wolayita,221,110.5
+Kembata Tembaro,Afder,452,226
+Kembata Tembaro,Dollo,779,389.5
+Kembata Tembaro,Erer,828,414
+Kembata Tembaro,Fafan,595,297.5
+Kembata Tembaro,Jarar,872,436
+Kembata Tembaro,Korahe,310,155
+Kembata Tembaro,Liben,992,496
+Kembata Tembaro,Nogob,723,361.5
+Kembata Tembaro,Shabelle,402,201
+Kembata Tembaro,Sitti,981,490.5
+Kembata Tembaro,Central,192,96
+Kembata Tembaro,Eastern,164,82
+Kembata Tembaro,North Western,247,123.5
+Kembata Tembaro,Southern,761,380.5
+Kembata Tembaro,Western,463,231.5
+Kembata Tembaro,South Eastern,750,375
+Kembata Tembaro,Mekelle,601,300.5
+Konso,Silte,60,30
+Konso,South Omo,950,475
+Konso,Wolayita,763,381.5
+Konso,Afder,780,390
+Konso,Dollo,522,261
+Konso,Erer,800,400
+Konso,Fafan,132,66
+Konso,Jarar,186,93
+Konso,Korahe,977,488.5
+Konso,Liben,55,27.5
+Konso,Nogob,358,179
+Konso,Shabelle,318,159
+Konso,Sitti,449,224.5
+Konso,Central,116,58
+Konso,Eastern,867,433.5
+Konso,North Western,738,369
+Konso,Southern,639,319.5
+Konso,Western,558,279
+Konso,South Eastern,737,368.5
+Konso,Mekelle,183,91.5
+Silte,South Omo,408,204
+Silte,Wolayita,269,134.5
+Silte,Afder,56,28
+Silte,Dollo,115,57.5
+Silte,Erer,126,63
+Silte,Fafan,530,265
+Silte,Jarar,926,463
+Silte,Korahe,183,91.5
+Silte,Liben,137,68.5
+Silte,Nogob,351,175.5
+Silte,Shabelle,531,265.5
+Silte,Sitti,392,196
+Silte,Central,132,66
+Silte,Eastern,765,382.5
+Silte,North Western,918,459
+Silte,Southern,788,394
+Silte,Western,655,327.5
+Silte,South Eastern,980,490
+Silte,Mekelle,336,168
+South Omo,Wolayita,279,139.5
+South Omo,Afder,477,238.5
+South Omo,Dollo,736,368
+South Omo,Erer,315,157.5
+South Omo,Fafan,728,364
+South Omo,Jarar,327,163.5
+South Omo,Korahe,210,105
+South Omo,Liben,84,42
+South Omo,Nogob,773,386.5
+South Omo,Shabelle,758,379
+South Omo,Sitti,302,151
+South Omo,Central,607,303.5
+South Omo,Eastern,371,185.5
+South Omo,North Western,515,257.5
+South Omo,Southern,183,91.5
+South Omo,Western,771,385.5
+South Omo,South Eastern,709,354.5
+South Omo,Mekelle,472,236
+Wolayita,Afder,315,157.5
+Wolayita,Dollo,751,375.5
+Wolayita,Erer,101,50.5
+Wolayita,Fafan,731,365.5
+Wolayita,Jarar,556,278
+Wolayita,Korahe,910,455
+Wolayita,Liben,819,409.5
+Wolayita,Nogob,856,428
+Wolayita,Shabelle,249,124.5
+Wolayita,Sitti,633,316.5
+Wolayita,Central,540,270
+Wolayita,Eastern,722,361
+Wolayita,North Western,859,429.5
+Wolayita,Southern,799,399.5
+Wolayita,Western,276,138
+Wolayita,South Eastern,509,254.5
+Wolayita,Mekelle,108,54
+Afder,Dollo,300,150
+Afder,Erer,587,293.5
+Afder,Fafan,995,497.5
+Afder,Jarar,399,199.5
+Afder,Korahe,881,440.5
+Afder,Liben,99,49.5
+Afder,Nogob,849,424.5
+Afder,Shabelle,824,412
+Afder,Sitti,693,346.5
+Afder,Central,163,81.5
+Afder,Eastern,779,389.5
+Afder,North Western,900,450
+Afder,Southern,935,467.5
+Afder,Western,725,362.5
+Afder,South Eastern,555,277.5
+Afder,Mekelle,150,75
+Dollo,Erer,113,56.5
+Dollo,Fafan,920,460
+Dollo,Jarar,513,256.5
+Dollo,Korahe,963,481.5
+Dollo,Liben,402,201
+Dollo,Nogob,907,453.5
+Dollo,Shabelle,270,135
+Dollo,Sitti,667,333.5
+Dollo,Central,266,133
+Dollo,Eastern,333,166.5
+Dollo,North Western,388,194
+Dollo,Southern,421,210.5
+Dollo,Western,834,417
+Dollo,South Eastern,888,444
+Dollo,Mekelle,531,265.5
+Erer,Fafan,781,390.5
+Erer,Jarar,734,367
+Erer,Korahe,537,268.5
+Erer,Liben,248,124
+Erer,Nogob,588,294
+Erer,Shabelle,117,58.5
+Erer,Sitti,768,384
+Erer,Central,770,385
+Erer,Eastern,169,84.5
+Erer,North Western,859,429.5
+Erer,Southern,86,43
+Erer,Western,419,209.5
+Erer,South Eastern,540,270
+Erer,Mekelle,962,481
+Fafan,Jarar,796,398
+Fafan,Korahe,120,60
+Fafan,Liben,625,312.5
+Fafan,Nogob,363,181.5
+Fafan,Shabelle,696,348
+Fafan,Sitti,776,388
+Fafan,Central,913,456.5
+Fafan,Eastern,744,372
+Fafan,North Western,321,160.5
+Fafan,Southern,673,336.5
+Fafan,Western,468,234
+Fafan,South Eastern,904,452
+Fafan,Mekelle,795,397.5
+Jarar,Korahe,430,215
+Jarar,Liben,519,259.5
+Jarar,Nogob,938,469
+Jarar,Shabelle,471,235.5
+Jarar,Sitti,265,132.5
+Jarar,Central,156,78
+Jarar,Eastern,158,79
+Jarar,North Western,480,240
+Jarar,Southern,207,103.5
+Jarar,Western,253,126.5
+Jarar,South Eastern,579,289.5
+Jarar,Mekelle,143,71.5
+Korahe,Liben,212,106
+Korahe,Nogob,970,485
+Korahe,Shabelle,751,375.5
+Korahe,Sitti,350,175
+Korahe,Central,200,100
+Korahe,Eastern,260,130
+Korahe,North Western,215,107.5
+Korahe,Southern,88,44
+Korahe,Western,786,393
+Korahe,South Eastern,778,389
+Korahe,Mekelle,901,450.5
+Liben,Nogob,856,428
+Liben,Shabelle,370,185
+Liben,Sitti,96,48
+Liben,Central,360,180
+Liben,Eastern,552,276
+Liben,North Western,923,461.5
+Liben,Southern,116,58
+Liben,Western,374,187
+Liben,South Eastern,118,59
+Liben,Mekelle,984,492
+Nogob,Shabelle,863,431.5
+Nogob,Sitti,759,379.5
+Nogob,Central,487,243.5
+Nogob,Eastern,496,248
+Nogob,North Western,278,139
+Nogob,Southern,348,174
+Nogob,Western,745,372.5
+Nogob,South Eastern,725,362.5
+Nogob,Mekelle,496,248
+Shabelle,Sitti,103,51.5
+Shabelle,Central,391,195.5
+Shabelle,Eastern,874,437
+Shabelle,North Western,434,217
+Shabelle,Southern,884,442
+Shabelle,Western,391,195.5
+Shabelle,South Eastern,88,44
+Shabelle,Mekelle,823,411.5
+Sitti,Central,584,292
+Sitti,Eastern,275,137.5
+Sitti,North Western,77,38.5
+Sitti,Southern,333,166.5
+Sitti,Western,372,186
+Sitti,South Eastern,117,58.5
+Sitti,Mekelle,261,130.5
+Central,Eastern,981,490.5
+Central,North Western,552,276
+Central,Southern,208,104
+Central,Western,736,368
+Central,South Eastern,500,250
+Central,Mekelle,802,401
+Eastern,North Western,800,400
+Eastern,Southern,181,90.5
+Eastern,Western,387,193.5
+Eastern,South Eastern,215,107.5
+Eastern,Mekelle,965,482.5
+North Western,Southern,174,87
+North Western,Western,610,305
+North Western,South Eastern,268,134
+North Western,Mekelle,51,25.5
+Southern,Western,542,271
+Southern,South Eastern,94,47
+Southern,Mekelle,252,126
+Western,South Eastern,754,377
+Western,Mekelle,412,206
+South Eastern,Mekelle,995,497.5

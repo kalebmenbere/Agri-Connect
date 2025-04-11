@@ -30,10 +30,9 @@
                         <th scope="col">Email</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
-                        <th scope="col">Location</th>
+                        <th scope="col">Region</th>
+                        <th scope="col">Zone</th>
                         <th scope="col">Phone</th>
-                        <th scope="col">Bank Name</th>
-                        <th scope="col">Bank Number</th>
                         <th scope="col">Date & Time Joined</th>
                         <th scope="col">Email Verified</th>
                         <th scope="col">Activated</th> </tr>
@@ -46,10 +45,9 @@
                         <td>{{ farmer.email }}</td>
                         <td>{{ farmer.first_name }}</td>
                         <td>{{ farmer.last_name }}</td>
-                        <td>{{ farmer.location }}</td>
+                        <td>{{ farmer.region }}</td>
+                        <td>{{ farmer.zone }}</td>
                         <td>{{ farmer.phone }}</td>
-                        <td>{{ farmer.bank_name }}</td>
-                        <td>{{ farmer.bank_number }}</td>
                         <td>{{ farmer.date_joined|date:"Y-m-d H:i:s" }}</td>
                         <td>
                             {% if farmer.is_active %}

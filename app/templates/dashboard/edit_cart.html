@@ -35,10 +35,23 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="transport_fee">Transport Fee</label>
+                    <input type="number" name="transport_fee" value="{{ cart.transport_fee }}" step="0.01" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="distance_km">Distance (km)</label>
+                    <input type="number" name="distance_km" value="{{ cart.distance_km }}" step="0.01" class="form-control">
+                </div>
+
+                <div class="mb-3">
                     <label for="order_price">Price</label>
                     <input type="number" name="order_price" value="{{ cart.order_price }}" step="0.01" class="form-control">
                 </div>
-
+                <div class="mb-3">
+                    <label for="total_price">Total Price</label>
+                    <input type="number" name="total_price" value="{{ cart.total_price }}" step="0.01" class="form-control">
+                </div>
                 <div class="mb-3">
                     <label for="order_category">Category</label>
                     <input type="text" name="order_category" value="{{ cart.order_category }}" class="form-control">
@@ -71,9 +84,9 @@
                         {% endfor %}
                     </select>
                 </div>
+                <button type="submit" class="btn btn-success">Save Changes</button>
             </form>
                 <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-success">Save Changes</button>
                     <a href="{% url 'cart_list' %}" class="btn btn-secondary">Cancel</a>
                     <form action="{% url 'delete_cart' cart.id %}" method="POST" style="display:inline;">
                         {% csrf_token %}

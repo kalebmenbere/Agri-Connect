@@ -30,21 +30,27 @@
                         </div>
                         <div class="col-lg-6" style="width: fit-content; margin-left: 10%;">
                             <h4 class="fw-bold mb-3">Product: {{ item.paid_product_name }}</h4>
-                            <h4 class="fw-bold mb-3">Buyer: {{ item.buyer.first_name }}</h4>
                             <p class="mb-3"><b>Category:</b> {{ item.paid_product_category }}</p>
-                            <p class="mb-3"><b>Quantity:</b> {{ item.paid_product_quantity }} Kg</p>
                             <p class="mb-3"><b>Farmer Name:</b> {{ item.farmer.first_name }}</p>
-                            <p class="mb-3"><b>Location:</b> {{ item.farmer.location }}</p>
+                            <p class="mb-3"><b>Farmer Region:</b> {{ item.farmer.region }}</p>
+                            <p class="mb-3"><b>Farmer City:</b> {{ item.farmer.zone }}</p>
                             <p class="mb-3"><b>Date Posted:</b> {{ item.created_at|date:"Y-m-d" }}</p>
                             <p class="mb-3"><b>Time Posted:</b> {{ item.created_at|date:"H:i:s T" }}</p>
+
+                            <h4 class="fw-bold mb-3">Buyer: {{ item.buyer.first_name }}</h4>
+
+                            <p class="mb-3"><b>Destination Region:</b> {{ item.buyer.region }}</p>
+                            <p class="mb-3"><b>Destination City:</b> {{ item.buyer.zone }}</p>
+
                             <p class="mb-3"><b>Date Ordered:</b> {{ item.ordered_at|date:"Y-m-d" }}</p>
                             <p class="mb-3"><b>Time Ordered:</b> {{ item.ordered_at|date:"H:i:s T" }}</p>
                             <p class="mb-3"><b>Time paid:</b> {{ item.paid_at|date:"H:i:s T" }}</p>
+                            <p class="mb-3"><b>Distance:</b> {{ item.distance_km }} km</p>
+                            <p class="mb-3"><b>Transport Fee:</b> {{ item.transport_fee }} birr</p>
+                            <p class="mb-3"><b>Quantity:</b> {{ item.paid_product_quantity }} Kg</p>
                             <p class="mb-3"><b>Price per kg:</b> {{ item.paid_product_price }} birr/kg</p>
-                            <p class="mb-3"><b>Transaction Number:</b> {{ item.transaction_reference }} </p>
-                            <p><span class="badge {% if item.payment_status == 'success' %}bg-success{% elif item.payment_status == 'pending' %}bg-warning{% else %}bg-danger{% endif %}">
-                                {{ item.payment_status|title }}
-                            </span></p>
+
+                            
                             <h4 class="fw-bold mb-3">Total Price: {{ item.total_price }}</h4>
                                            
                            {% else %}
@@ -52,6 +58,9 @@
                                <p>Please select a product to view its details.</p>
                            </div>
                            {% endif %}
+                           <p class="mb-3"><b>Transaction Number:</b> {{ item.transaction_reference }} </p>
+                           <p><span class="badge {% if item.payment_status == 'success' %}bg-success{% elif item.payment_status == 'pending' %}bg-warning{% else %}bg-danger{% endif %}">
+                            {{ item.payment_status|title }}</span></p>
                     </div>
                 
                     </div>

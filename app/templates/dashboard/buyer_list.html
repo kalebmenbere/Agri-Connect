@@ -30,10 +30,9 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">First Name</th>
                                 <th scope="col">Last Name</th>
-                                <th scope="col">Location</th>
+                                <th scope="col">Region</th>
+                                <th scope="col">City</th>
                                 <th scope="col">Phone</th>
-                                <th scope="col">Bank Name</th>
-                                <th scope="col">Bank Number</th>
                                 <th scope="col">Date & Time Joined</th>
                                 <th scope="col">Email Verified</th>
                                 <th scope="col">Activated</th>
@@ -47,10 +46,9 @@
                                 <td>{{ buyer.email }}</td>
                                 <td>{{ buyer.first_name }}</td>
                                 <td>{{ buyer.last_name }}</td>
-                                <td>{{ buyer.location }}</td>
+                                <td>{{ buyer.region }}</td>
+                                <td>{{ buyer.city }}</td>
                                 <td>{{ buyer.phone }}</td>
-                                <td>{{ buyer.bank_name }}</td>
-                                <td>{{ buyer.bank_number }}</td>
                                 <td>{{ buyer.date_joined|date:"Y-m-d H:i:s" }}</td>
                                 <td>
                                     {% if buyer.is_active %}

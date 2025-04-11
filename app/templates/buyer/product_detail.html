@@ -29,13 +29,22 @@
                             </div>
                         </div>
                         <div class="col-lg-6" style="width: fit-content; margin-left: 10%;">
-                            <h4 class="fw-bold mb-3">Product Name: {{ selected_product.product_name }}</h4>
+                            <h4 class="fw-bold mb-3">Product : {{ selected_product.product_name }}</h4>
                             <p class="mb-3"><b>Product Category:</b> {{ selected_product.product_category }}</p>
                             <p class="mb-3"><b>Product Quantity:</b> {{ selected_product.product_quantity }} Kg</p>
                             <p class="mb-3"><b>Product Seller Name:</b> {{ selected_product.farmer.first_name }}</p>
-                            <p class="mb-3"><b>Product Location:</b> {{ selected_product.farmer.location }}</p>
+                            <p class="mb-3"><b>Origin Region:</b> {{ selected_product.farmer.region }}</p>
+                            <p class="mb-3"><b>Origin City:</b> {{ selected_product.farmer.zone }}</p>
+                            {% if user.role == 'buyer' %}
+                            <p class="mb-3"><b>Destination Region:</b> {{ user.region }}</p>
+                            <p class="mb-3"><b>Destination City:</b> {{ user.zone }}</p>
+                            {% endif %}
                             <p class="mb-3"><b>Product Posted Date:</b> {{ selected_product.created_at|date:"Y-m-d" }}</p>
                             <p class="mb-3"><b>Product Posted Time:</b> {{ selected_product.created_at|date:"H:i:s T" }}</p>
+                            {% if user.role == 'buyer' %}
+                            <p class="mb-3"><b>Distance :</b> {{ distance_km }} km</p>
+                            <p class="mb-3"><b>Estimated Transport Fee:</b> {{ transport_fee }} birr</p>
+                            {% endif %}
                             <p class="mb-3"><b>Product Price per kg:</b> {{ selected_product.product_price }} birr/kg</p>
                             {% if user.role == 'buyer' %}
                             <input 
@@ -83,56 +92,38 @@
                             
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
-                                    // Retrieve unit price and maximum quantity from the server-side context.
-                                    // Fallbacks: pricePerKg defaults to 0, maxQuantity defaults to 1000.
                                     const pricePerKg = parseFloat("{{ selected_product.product_price }}") || 0;
                                     const maxQuantity = parseInt("{{ selected_product.product_quantity }}", 10) || 1000;
-                                
-                                    const quantityInput = document.getElementById('quantity');          // Visible number input field.
-                                    const totalPriceSpan = document.querySelector('#total_price span');   // Element to display total price.
-                                    const formQuantity = document.getElementById('form_quantity');        // Hidden input field.
-                                    
-                                    // Function to update the total price based on the quantity input.
+                                    const transportFee = parseFloat("{{ transport_fee }}") || 0;
+                            
+                                    const quantityInput = document.getElementById('quantity');
+                                    const totalPriceSpan = document.querySelector('#total_price span');
+                                    const formQuantity = document.getElementById('form_quantity');
+                            
                                     function updateTotalPrice() {
-                                        // Ensure the value is a number and divisible by 100.
                                         let qty = parseInt(quantityInput.value, 10);
-                                        
-                                        // If the input value is not a number, default to 100.
-                                        if (isNaN(qty)) {
-                                            qty = 100;
-                                        }
-                                        
-                                        // Force the quantity to be a multiple of 100.
-                                        // For example, if someone types 250, this rounds down to 200.
+                            
+                                        if (isNaN(qty)) qty = 100;
                                         qty = Math.floor(qty / 100) * 100;
-                                        
-                                        // Enforce a minimum of 100 and maximum limit.
-                                        if (qty < 100) {
-                                            qty = 100;
-                                        } else if (qty > maxQuantity) {
-                                            qty = maxQuantity - (maxQuantity % 100); // Largest multiple of 100 not exceeding maxQuantity.
-                                        }
-                                        
-                                        // Update both the visible input and hidden form field with the validated quantity.
+                                        if (qty < 100) qty = 100;
+                                        else if (qty > maxQuantity) qty = maxQuantity - (maxQuantity % 100);
+                            
                                         quantityInput.value = qty;
                                         formQuantity.value = qty;
-                                        
-                                        // Calculate the total price.
-                                        const total = qty * pricePerKg;
-                                        // Update the total price display with 2 decimal places.
-                                        totalPriceSpan.textContent = total.toFixed(2);
+                            
+                                        const productTotal = qty * pricePerKg;
+                                        const finalTotal = productTotal + transportFee;
+                            
+                                        totalPriceSpan.textContent = finalTotal.toFixed(2);
                                     }
-                                    
-                                    // Listen for changes on the input field.
+                            
                                     quantityInput.addEventListener('input', updateTotalPrice);
-                                    
-                                    // Also validate on change (in case the browser does auto-adjust the value).
                                     quantityInput.addEventListener('change', updateTotalPrice);
-                                    
-                                    // Initialize the display on page load.
+                            
                                     updateTotalPrice();
                                 });
-                                </script>
+                            </script>
+                            
                                                               
                            {% else %}
                            <div id="product_detail" class="col-lg-12 mt-5">

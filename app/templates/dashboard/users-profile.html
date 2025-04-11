@@ -113,23 +113,18 @@
       </div>
 
       <div class="row">
-          <div class="col-lg-3 col-md-4 label">Location</div>
-          <div class="col-lg-9 col-md-8">{{ user.location }}</div>
+          <div class="col-lg-3 col-md-4 label">Region</div>
+          <div class="col-lg-9 col-md-8">{{ user.region }}</div>
       </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-4 label">City</div>
+        <div class="col-lg-9 col-md-8">{{ user.zone }}</div>
+    </div>
 
       <div class="row">
           <div class="col-lg-3 col-md-4 label">Phone</div>
           <div class="col-lg-9 col-md-8">{{ user.phone }}</div>
-      </div>
-
-      <div class="row">
-          <div class="col-lg-3 col-md-4 label">Bank Name</div>
-          <div class="col-lg-9 col-md-8">{{ user.bank_name }}</div>
-      </div>
-
-      <div class="row">
-          <div class="col-lg-3 col-md-4 label">Bank Number</div>
-          <div class="col-lg-9 col-md-8">{{ user.bank_number }}</div>
       </div>
 
       <div class="row">
@@ -174,30 +169,23 @@
           </div>
 
           <div class="row mb-3">
-              <label for="location" class="col-md-4 col-lg-3 col-form-label">Location</label>
+              <label for="region" class="col-md-4 col-lg-3 col-form-label">Region</label>
               <div class="col-md-8 col-lg-9">
-                  <input name="location" type="text" class="form-control" id="location" value="{{ user.location }}">
+                  <input name="region" type="text" class="form-control" id="region" value="{{ user.region }}">
               </div>
           </div>
+
+          <div class="row mb-3">
+            <label for="zone" class="col-md-4 col-lg-3 col-form-label">City</label>
+            <div class="col-md-8 col-lg-9">
+                <input name="zone" type="text" class="form-control" id="zone" value="{{ user.zone }}">
+            </div>
+        </div>
 
           <div class="row mb-3">
               <label for="phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
               <div class="col-md-8 col-lg-9">
                   <input name="phone" type="text" class="form-control" id="phone" value="{{ user.phone }}">
-              </div>
-          </div>
-
-          <div class="row mb-3">
-              <label for="bankName" class="col-md-4 col-lg-3 col-form-label">Bank Name</label>
-              <div class="col-md-8 col-lg-9">
-                  <input name="bank_name" type="text" class="form-control" id="bankName" value="{{ user.bank_name }}">
-              </div>
-          </div>
-
-          <div class="row mb-3">
-              <label for="bankNumber" class="col-md-4 col-lg-3 col-form-label">Bank Account Number</label>
-              <div class="col-md-8 col-lg-9">
-                  <input name="bank_number" type="text" class="form-control" id="bankNumber" value="{{ user.bank_number }}">
               </div>
           </div>
 
@@ -260,15 +248,18 @@
 <!---------------------------------------------------------------------------------------------------------------->
 <!-- Delete User ----------------------------------------------------------------------------------------------->
 <div class="tab-pane fade pt-3" id="profile-change-password">
-  <!-- Delete user -->
-  <form>
-    <div class="text-center">
-      <button type="submit" class="btn btn-primary">Delete User</button>
-    </div>
-  </form><!-- Delete User -->
-
-</div>
-
+    <!-- Delete user -->
+    <form method="POST"  action="{% url 'delete_user' user.id %}" >
+      {% csrf_token %}
+      <div class="text-center">
+        <button type="submit" class="btn btn-danger"
+        onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+        Delete User
+        </button>
+      </div>
+    </form>
+  </div>
+  
 
 
 

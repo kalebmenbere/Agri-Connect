@@ -410,25 +410,284 @@ def add_product(request):
     return render(request, 'farmer/add_product.html', {'form': form})
 
 
+
+from math import radians, cos, sin, asin, sqrt
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, render
+from .models import Product, Log
+
+#coordinates: 
+LOCATION_COORDINATES = {
+    # Addis Ababa (Subcities)
+    ("Addis Ababa", "Addis Ketema"): (38.73, 9.03),
+    ("Addis Ababa", "Akaky Kaliti"): (38.80, 8.90),
+    ("Addis Ababa", "Arada"): (38.75, 9.03),
+    ("Addis Ababa", "Bole"): (38.80, 8.99),
+    ("Addis Ababa", "Gulele"): (38.73, 9.06),
+    ("Addis Ababa", "Kirkos"): (38.76, 9.01),
+    ("Addis Ababa", "Kolfe Keranio"): (38.68, 9.01),
+    ("Addis Ababa", "Lideta"): (38.74, 9.02),
+    ("Addis Ababa", "Nifas Silk-Lafto"): (38.73, 8.97),
+    ("Addis Ababa", "Yeka"): (38.82, 9.04),
+
+    # Afar
+    ("Afar", "Semera"): (41.01, 11.79),
+    ("Afar", "Awash"): (40.17, 8.99),
+    ("Afar", "Asayita"): (41.44, 11.57),
+    ("Afar", "Logia"): (40.97, 11.73),
+    ("Afar", "Dubti"): (41.09, 11.73),
+
+    # Amhara
+    ("Amhara", "Bahir Dar"): (37.38, 11.58),
+    ("Amhara", "Gondar"): (37.47, 12.60),
+    ("Amhara", "Dessie"): (39.63, 11.13),
+    ("Amhara", "Debre Markos"): (37.73, 10.33),
+    ("Amhara", "Kombolcha"): (39.74, 11.09),
+    ("Amhara", "Debre Birhan"): (39.53, 9.68),
+    ("Amhara", "Weldiya"): (39.59, 11.83),
+    ("Amhara", "Lalibela"): (39.04, 12.03),
+    ("Amhara", "Finote Selam"): (37.27, 10.70),
+    ("Amhara", "Debre Tabor"): (38.02, 11.85),
+    ("Amhara", "Guba Lafto"): (39.59, 11.83),
+    ("Amhara", "Bati"): (40.02, 11.19),
+    ("Amhara", "Sekota"): (39.03, 12.63),
+    ("Amhara", "Dabat"): (37.77, 12.98),
+    ("Amhara", "Debre Sina"): (39.77, 9.85),
+
+    # Benishangul-Gumuz
+    ("Benishangul-Gumuz", "Assosa"): (34.53, 10.07),
+    ("Benishangul-Gumuz", "Bambasi"): (34.73, 9.75),
+    ("Benishangul-Gumuz", "Mankush"): (35.20, 10.92),
+    ("Benishangul-Gumuz", "Gilgel Beles"): (36.10, 10.88),
+
+    # Dire Dawa
+    ("Dire Dawa", "Dire Dawa"): (41.87, 9.59),
+    ("Dire Dawa", "Deder"): (41.44, 9.31),
+    ("Dire Dawa", "Chiro"): (40.87, 9.07),
+    ("Dire Dawa", "Babile"): (42.33, 9.22),
+    ("Dire Dawa", "Mieso"): (40.75, 9.23),
+    ("Dire Dawa", "Kersa"): (41.60, 9.35),
+
+    # Gambela
+    ("Gambela", "Gambela"): (34.58, 8.25),
+    ("Gambela", "Abobo"): (34.53, 7.85),
+    ("Gambela", "Itang"): (34.27, 8.17),
+    ("Gambela", "Mettu"): (35.58, 8.30),
+    ("Gambela", "Lare"): (33.90, 8.28),
+    ("Gambela", "Jikawo"): (33.37, 8.65),
+    ("Gambela", "Akobo"): (33.05, 7.80),
+
+    # Harari
+    ("Harari", "Harar"): (42.12, 9.31),
+    ("Harari", "Babile"): (42.33, 9.22),
+    ("Harari", "Chiro"): (40.87, 9.07),
+    ("Harari", "Deder"): (41.44, 9.31),
+    ("Harari", "Harar Meda"): (39.00, 8.77),
+    ("Harari", "Kersa"): (41.60, 9.35),
+    ("Harari", "Mieso"): (40.75, 9.23),
+
+    # Oromia
+    ("Oromia", "Adama"): (39.27, 8.55),
+    ("Oromia", "Jimma"): (36.83, 7.67),
+    ("Oromia", "Ambo"): (37.85, 8.98),
+    ("Oromia", "Shashamene"): (38.60, 7.20),
+    ("Oromia", "Bishoftu"): (38.98, 8.75),
+    ("Oromia", "Nekemte"): (36.55, 9.08),
+    ("Oromia", "Asella"): (39.12, 7.95),
+    ("Oromia", "Hossana"): (37.85, 7.55),
+    ("Oromia", "Woliso"): (37.97, 8.53),
+    ("Oromia", "Agaro"): (36.58, 7.85),
+    ("Oromia", "Bale Robe"): (40.00, 7.13),
+    ("Oromia", "Bedele"): (36.35, 8.45),
+    ("Oromia", "Gimbi"): (35.83, 9.17),
+    ("Oromia", "Bako"): (37.05, 9.13),
+    ("Oromia", "Dembi Dolo"): (34.80, 8.53),
+    ("Oromia", "Fincha"): (37.38, 9.58),
+    ("Oromia", "Gindhir"): (40.70, 6.87),
+    ("Oromia", "Kofele"): (38.78, 7.07),
+    ("Oromia", "Mettu"): (35.58, 8.30),
+    ("Oromia", "Shakiso"): (38.90, 5.78),
+    ("Oromia", "Yabelo"): (38.08, 4.88),
+
+    # Sidama
+    ("Sidama", "Hawassa"): (38.48, 7.05),
+    ("Sidama", "Yirgalem"): (38.42, 6.75),
+    ("Sidama", "Hagere Selam"): (38.53, 6.48),
+    ("Sidama", "Bensa"): (39.00, 6.67),
+    ("Sidama", "Arsi Negele"): (38.70, 7.35),
+
+    # SNNP
+    ("SNNP", "Arba Minch"): (37.55, 6.03),
+    ("SNNP", "Wolayita Sodo"): (37.75, 6.85),
+    ("SNNP", "Hossana"): (37.85, 7.55),
+    ("SNNP", "Jinka"): (36.57, 5.78),
+    ("SNNP", "Sawla"): (36.88, 6.30),
+    ("SNNP", "Boditi"): (37.87, 6.97),
+    ("SNNP", "Areka"): (37.70, 7.07),
+    ("SNNP", "Chencha"): (37.57, 6.25),
+    ("SNNP", "Dilla"): (38.31, 6.41),
+
+    # Somali
+    ("Somali", "Jijiga"): (42.80, 9.35),
+    ("Somali", "Dollo"): (41.95, 4.17),
+    ("Somali", "Degehabur"): (43.57, 8.22),
+    ("Somali", "Gode"): (43.55, 5.95),
+    ("Somali", "Kebri Dehar"): (44.27, 6.73),
+    ("Somali", "Fik"): (42.28, 8.08),
+    ("Somali", "Warder"): (45.35, 6.97),
+
+    # Tigray
+    ("Tigray", "Axum"): (38.72, 14.13),
+    ("Tigray", "Adigrat"): (39.46, 14.28),
+    ("Tigray", "Shire"): (38.29, 14.10),
+    ("Tigray", "Alamata"): (39.55, 12.42),
+    ("Tigray", "Wukro"): (39.60, 13.78),
+    ("Tigray", "Adwa"): (38.90, 14.17),
+    ("Tigray", "Hawzen"): (39.43, 13.98),
+    ("Tigray", "Mekele"): (39.47, 13.50),
+    ("Tigray", "Enderta"): (39.47, 13.50),
+    ("Tigray", "Tsegede"): (37.53, 13.60),
+    ("Tigray", "Laelay Adiyabo"): (38.13, 14.38),
+    ("Tigray", "Degua Tembien"): (39.17, 13.65),
+    ("Tigray", "Saharti Samre"): (39.10, 13.23),
+    ("Tigray", "Ofla"): (39.52, 12.50),
+    ("Tigray", "Kilte Awlalo"): (39.60, 13.78),
+}
+
+
+import openrouteservice
+from django.shortcuts import get_object_or_404, render
+from django.contrib.auth.decorators import login_required
+from .models import Product, Log
+
+ors_client = openrouteservice.Client(key='5b3ce3597851110001cf6248672144f6a5714e8988cc68cf90382422')
+
+
+
+def get_coords(region, zone):
+    return LOCATION_COORDINATES.get((region, zone))
+
+
+def get_distance_km(start_coords, end_coords):
+    try:
+        route = ors_client.directions(
+            coordinates=[start_coords, end_coords],  # [lon, lat]
+            profile='driving-car',
+            format='geojson'
+        )
+        distance_m = route['features'][0]['properties']['segments'][0]['distance']
+        print(f"Distance in meters: {distance_m}")
+        return round(distance_m / 1000, 2)  # Return in kilometers
+    except Exception as e:
+        print(f"Distance retrieval failed: {e}")
+        return 0
+
+
+def calculate_transport_fee(distance_km):
+    if 1 <= distance_km <= 10:
+        return 3000
+    elif 10 < distance_km <= 50:
+        return 5000
+    elif 50 < distance_km <= 100:
+        return 8000
+    elif 100 < distance_km <= 200:
+        return 15000
+    elif 200 < distance_km <= 300:
+        return 20000
+    elif 300 < distance_km <= 400:
+        return 25000
+    elif 400 < distance_km <= 500:
+        return 30000
+    elif 500 < distance_km <= 600:
+        return 35000
+    elif 600 < distance_km <= 700:
+        return 40000
+    elif 700 < distance_km <= 800:
+        return 45000
+    elif 300 < distance_km <= 400:
+        return 25000
+    elif 400 < distance_km <= 500:
+        return 30000
+    elif 500 < distance_km <= 600:
+        return 35000
+    elif 600 < distance_km <= 700:
+        return 40000
+    elif 700 < distance_km <= 800:
+        return 45000
+    elif 300 < distance_km <= 400:
+        return 25000
+    elif 400 < distance_km <= 500:
+        return 30000
+    elif 500 < distance_km <= 600:
+        return 35000
+    elif 600 < distance_km <= 700:
+        return 40000
+    elif 700 < distance_km <= 800:
+        return 45000
+    elif 300 < distance_km <= 400:
+        return 25000
+    elif 400 < distance_km <= 500:
+        return 30000
+    elif 500 < distance_km <= 600:
+        return 35000
+    elif 600 < distance_km <= 700:
+        return 40000
+    elif 700 < distance_km <= 800:
+        return 45000
+    elif 800 < distance_km <= 900:
+        return 50000
+    elif 900 < distance_km <= 1000:
+        return 55000
+    elif 1000 < distance_km <= 1500:
+        return 65000
+    elif 1500 < distance_km <= 2000:
+        return 75000
+    elif 2000 < distance_km <= 2500:
+        return 85000
+    elif 2500 < distance_km <= 3000:
+        return 95000
+    else:
+        return 100000
+
+
 @login_required
 def product_detail(request, product_id):
-    # Use the GET parameter "selected" if provided; otherwise, fallback to the URL parameter.
     selected_product_id = request.GET.get('selected', product_id)
     product = get_object_or_404(Product, id=selected_product_id)
-    # Log the product detail view
+
+    # Get coordinates from predefined dictionary
+    farmer_coords = get_coords(product.farmer.region, product.farmer.zone)
+    buyer_coords = get_coords(request.user.region, request.user.zone)
+
+    transport_fee = 0
+    if farmer_coords and buyer_coords:
+        distance_km = get_distance_km(farmer_coords, buyer_coords)
+        transport_fee = calculate_transport_fee(distance_km)
+
     Log.objects.create(
         message=f"Buyer {request.user.username} viewed product details: {product.product_name}",
-        log_type="info"  # Or another appropriate log type
+        log_type="info"
     )
-    context = { 'selected_product': product }
+
+    context = {
+        'selected_product': product,
+        'transport_fee': transport_fee,
+        'distance_km' : distance_km
+    }
     return render(request, 'buyer/product_detail.html', context)
 
-from django.utils import timezone
+
+
+
+
 
 #-----------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------
 # Cart adding-----------------------------------------------------------------------------------------------------------------
+from django.utils import timezone
+
+
 @login_required
 def add_to_cart(request):
     if request.method == 'POST':
@@ -451,12 +710,21 @@ def add_to_cart(request):
             messages.error(request, "Requested quantity exceeds available stock.")
             return redirect('product_detail', product_id=product_id)
         
+        # Get coordinates from predefined dictionary
+        farmer_coords = get_coords(product.farmer.region, product.farmer.zone)
+        buyer_coords = get_coords(request.user.region, request.user.zone)
+
+        transport_fee = 0
+        if farmer_coords and buyer_coords:
+            distance_km = get_distance_km(farmer_coords, buyer_coords)
+            transport_fee = calculate_transport_fee(distance_km)
+
         # Calculate total price; using Decimal for arithmetic accuracy.
         try:
             price_per_kg = Decimal(product.product_price)
         except Exception:
             price_per_kg = Decimal('0.00')
-        total_price = Decimal(quantity) * price_per_kg
+        total_price = (Decimal(quantity) * price_per_kg)+ transport_fee
         
         # Copy key fields from the product to the cart record.
         # Adjust the field names as per your Product model.
@@ -466,6 +734,9 @@ def add_to_cart(request):
         order_category = product.product_category
         created_at = product.created_at
         product_id = product.product_id
+
+       
+
         # Update product quantity and create cart record atomically
         with transaction.atomic():
             remaining_quantity = int(product.product_quantity) - quantity
@@ -479,22 +750,21 @@ def add_to_cart(request):
                 order_image=order_image,
                 order_category=order_category,
                 total_price=total_price,
+                distance_km=distance_km,
+                transport_fee=transport_fee,
                 farmer=product.farmer,
                 buyer=request.user,
                 created_at=created_at,
-                ordered_at = timezone.now(),
+                ordered_at=timezone.now(),
             )
-            
-            # If remaining quantity is 0, delete the product;
-            # otherwise, update its quantity.
+
             if remaining_quantity == 0:
                 product.delete()
             else:
                 product.product_quantity = str(remaining_quantity)
                 product.save()
-        
-        messages.success(request, "Product added to cart successfully!")
-        # Log the add to cart action
+
+        messages.success(request, f"Product added to cart with transport fee of {transport_fee}!")
         Log.objects.create(
             message=f"Buyer {request.user.username} added {quantity} of {product.product_name} to cart.",
             log_type="success"
@@ -503,6 +773,7 @@ def add_to_cart(request):
     else:
         messages.error(request, "Invalid request.")
         return redirect('product_list')
+
 
 
 @login_required
@@ -524,7 +795,7 @@ def cart(request):
 #-----------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------
 # paying-----------------------------------------------------------------------------------------------------------------
-
+@login_required
 def payment_detail(request, item_id):
     # Fetch the item from the database using the passed item_id
     item = get_object_or_404(Cart, id=item_id)
@@ -596,6 +867,8 @@ def chapa_callback(request, item_id):
                         paid_product_image=cart_item.order_image,  
                         paid_product_category=cart_item.order_category,  
                         total_price=cart_item.total_price,
+                        distance_km=cart_item.distance_km,
+                        transport_fee=cart_item.transport_fee,
                         created_at=cart_item.created_at, 
                         ordered_at=cart_item.ordered_at,
                         paid_at=timezone.now(),
@@ -686,7 +959,7 @@ def paid(request):
 
     return render(request, template, {'paid_items': paid_items})
 
-
+@login_required
 def paid_detail(request, item_id):
     # Fetch the item from the database using the passed item_id
     item = get_object_or_404((Paid), id=item_id)
@@ -832,6 +1105,7 @@ def edit_product(request, product_id):
         'product_names': product_names,
         'farmers': farmers,
     })
+@login_required
 def delete_product(request, product_id):
     # Get the product by ID, or return a 404 if not found
     product = get_object_or_404(Product, id=product_id)
@@ -840,6 +1114,7 @@ def delete_product(request, product_id):
         product.delete()  # Delete the product
         messages.success(request, 'Product deleted successfully.')
         return redirect('products')  # Redirect to the products list page
+    
 
 @login_required
 def edit_cart(request, cart_id):
@@ -854,12 +1129,17 @@ def edit_cart(request, cart_id):
         order_quantity = Decimal(request.POST.get('order_quantity'))  # Convert to Decimal
         order_price = Decimal(request.POST.get('order_price'))  # Convert to Decimal
         order_category = request.POST.get('order_category')
+        transport_fee = Decimal(request.POST.get('transport_fee') or 0)
+        distance_km = Decimal(request.POST.get('distance_km') or 0)
+
 
         # Update the cart object
         cart.order_name = order_name
         cart.order_quantity = order_quantity
         cart.order_price = order_price
         cart.order_category = order_category
+        cart.transport_fee = transport_fee
+        cart.distance_km = distance_km
 
         # Handle image upload if present
         if 'order_image' in request.FILES:
@@ -880,7 +1160,7 @@ def edit_cart(request, cart_id):
             cart.buyer = None  # If no buyer selected, set it to None
 
         # Update total price based on quantity and price
-        cart.total_price = cart.order_quantity * cart.order_price
+        cart.total_price = (cart.order_quantity * cart.order_price) + cart.transport_fee
 
         cart.save()
         messages.success(request, "Cart updated successfully.")
@@ -893,6 +1173,8 @@ def edit_cart(request, cart_id):
         'buyers': buyers,
     })
 
+
+@login_required
 def delete_cart(request, cart_id):
     # Retrieve the cart item or return a 404 error if it does not exist
     cart = get_object_or_404(Cart, id=cart_id)
@@ -916,6 +1198,8 @@ def edit_paid(request, paid_id):
         paid_product_quantity = Decimal(request.POST.get('paid_product_quantity'))  # Convert to Decimal
         paid_product_price = Decimal(request.POST.get('paid_product_price'))  # Convert to Decimal
         paid_product_category = request.POST.get('paid_product_category')
+        paid.transport_fee = Decimal(request.POST.get('transport_fee') or 0)
+        paid.distance_km = Decimal(request.POST.get('distance_km') or 0)
 
         # Update paid fields
         paid.paid_product_name = paid_product_name
@@ -942,7 +1226,7 @@ def edit_paid(request, paid_id):
             paid.buyer = None  # If no buyer selected, set to None
 
         # Update total price based on quantity and price
-        paid.total_price = paid.paid_product_quantity * paid.paid_product_price
+        paid.total_price = (paid.paid_product_quantity * paid.paid_product_price) + paid.transport_fee
 
         # If payment status or transaction reference is updated
         payment_status = request.POST.get('payment_status')
@@ -963,7 +1247,7 @@ def edit_paid(request, paid_id):
         'farmers': farmers,
         'buyers': buyers,
     })
-
+@login_required
 def delete_paid(request, paid_id):
     # Retrieve the cart item or return a 404 error if it does not exist
     paid = get_object_or_404(Paid, id=paid_id)
@@ -1006,11 +1290,10 @@ def users_profile(request, user_id):
         elif 'first_name' in request.POST:
             user.first_name = request.POST.get("first_name")
             user.last_name = request.POST.get("last_name")
-            user.location = request.POST.get("location")
+            user.region = request.POST.get("region")
+            user.zone = request.POST.get("zone")
             user.phone = request.POST.get("phone")
             user.email = request.POST.get("email")
-            user.bank_name = request.POST.get("bank_name")
-            user.bank_number = request.POST.get("bank_number")
             user.save()
 
             messages.success(request, "Profile updated successfully!")
@@ -1019,6 +1302,27 @@ def users_profile(request, user_id):
     return render(request, "dashboard/users-profile.html", {'user': user})
 
 
+@login_required
+def delete_user(request, user_id):
+    if request.method == 'POST':
+        # Only staff or superuser can delete others
+        if not request.user.is_staff and not request.user.is_superuser:
+            messages.error(request, "You don't have permission to delete users.")
+            return redirect('admin_dashboard')
+        
+        user_to_delete = get_object_or_404(CustomUser, id=user_id)
+        
+        if user_to_delete == request.user:
+            messages.error(request, "You cannot delete your own account from the admin panel.")
+            return redirect('admin_dashboard')
+        
+        user_to_delete.delete()
+        messages.success(request, f"User {user_to_delete.username} has been deleted.")
+        return redirect('admin_dashboard')
+    else:
+        messages.error(request, "Invalid request.")
+        return redirect('admin_dashboard')
+    
 @login_required
 def products(request):
     sort_by = request.GET.get('sort', 'created_at') #default sort

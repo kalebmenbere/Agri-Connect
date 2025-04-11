@@ -35,7 +35,10 @@
                         <th scope="col"><a href="?sort=buyer__username">Buyer</a></th>
                         <th scope="col"><a href="?sort=region">Buyer Region</a></th>
                         <th scope="col"><a href="?sort=zone">Buyer Zone</a></th>
-                        <th scope="col"><a href="?sort=created_at">Created At</a></th>
+                        <th scope="col"><a href="?sort=transport_fee">Transport Fee</a></th>
+                        <th scope="col"><a href="?sort=distance_km">Distance km</a></th>
+                        <th scope="col"><a href="?sort=created_at">Created Date</a></th>
+                        <th scope="col"><a href="?sort=created_at">Created Time</a></th>
                         <th scope="col"><a href="?sort=transaction_reference">Transaction Reference</a></th>
                         <th scope="col"><a href="?sort=payment_status">Payment Status</a></th>
                         <th scope="col">Edit</a></th>
@@ -62,7 +65,10 @@
                         <td>{{ paid.buyer.username }}</td>
                         <td>{{ paid.buyer.region }}</td>
                         <td>{{ paid.buyer.zone }}</td>
-                        <td>{{ paid.created_at|date:"Y-m-d H:i:s" }}</td>
+                        <td>${{ paid.transport_fee }}</td>
+                        <td>{{ paid.distance_km }}</td>
+                        <td>{{ paid.created_at|date:"Y-m-d" }}</td>
+                        <td>{{ paid.created_at|date:"H:i:s" }}</td>
                         <td>{{paid.transaction_reference}}</td>
                         <td>
                             {% if paid.payment_status == "success" %}

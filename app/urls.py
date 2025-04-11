@@ -23,13 +23,16 @@ urlpatterns = [
     path("cartupdate_cart/<int:cart_id>/", views.update_cart, name="update_cart"),
     path('paid/', views.paid, name='paid'),
     path('cart/paid_detail/<int:item_id>/', views.paid_detail, name='paid_detail'),
-    
+
+   path('delete-user/<int:user_id>/', views.delete_user, name='delete_user'),
+
     path('dashboard/product/edit/<int:product_id>/', views.edit_product, name='edit_product'),
     path('dashboard/paid/edit/<int:paid_id>/', views.edit_paid, name='edit_paid'),
     path('dashboard/cart/edit/<int:cart_id>/', views.edit_cart, name='edit_cart'),
     path('product/<int:product_id>/delete/', views.delete_product, name='delete_product'),
     path('cart/<int:cart_id>/delete/', views.delete_cart, name='delete_cart'), 
     path('paid/<int:paid_id>/delete/', views.delete_paid, name='delete_paid'),
+
     path("admin-login/", admin_login, name="admin_login"),
     path("admin-dashboard/", admin_dashboard, name="admin_dashboard"),
     path("admin-dashboard/farmer-list/", farmer_list, name="farmer_list"),

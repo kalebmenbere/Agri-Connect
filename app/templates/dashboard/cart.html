@@ -35,6 +35,8 @@
                         <th scope="col"><a href="?sort=buyer__username">Buyer</a></th>
                         <th scope="col"><a href="?sort=region">Buyer Region</a></th>
                         <th scope="col"><a href="?sort=zone">Buyer Zone</a></th>
+                        <th scope="col"><a href="?sort=transport_fee">Transport Fee</a></th>
+                        <th scope="col"><a href="?sort=distance_km">Distance (km)</a></th>
 
                         <th scope="col"><a href="?sort=created_at">Created At</a></th>
                         <th scope="col">Edit</a></th>
@@ -61,6 +63,8 @@
                         <td>{{ cart.buyer.username }}</td>
                         <td>{{ cart.buyer.region }}</td>
                         <td>{{ cart.buyer.zone }}</td>
+                        <td>{{ cart.transport_fee }}</td>
+                        <td>{{ cart.distance_km }}</td>
 
                         <td>{{ cart.created_at|date:"Y-m-d H:i:s" }}</td>
                         <td>
