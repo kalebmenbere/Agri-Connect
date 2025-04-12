@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Agri Connect{% endblock %}</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
     {% load static %}
@@ -17,6 +16,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
+     
     <link href="{% static 'lib/lightbox/css/lightbox.min.css'%}" rel="stylesheet">
     <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
@@ -88,7 +88,6 @@
                                 <a href="{% url 'logout' %}" class="btn btn-success me-2">Log out</a>
                             </li>
                         {% else %}
-                            </li>
                             <a href="{% url 'register' %}" class="btn btn-success me-2">Sign Up</a>
                             <a href="{% url 'login' %}" class="btn btn-outline-success">Log In</a>
                             {% endif %}

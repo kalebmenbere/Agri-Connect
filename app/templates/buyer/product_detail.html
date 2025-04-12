@@ -31,7 +31,7 @@
                         <div class="col-lg-6" style="width: fit-content; margin-left: 10%;">
                             <h4 class="fw-bold mb-3">Product : {{ selected_product.product_name }}</h4>
                             <p class="mb-3"><b>Product Category:</b> {{ selected_product.product_category }}</p>
-                            <p class="mb-3"><b>Product Quantity:</b> {{ selected_product.product_quantity }} Kg</p>
+
                             <p class="mb-3"><b>Product Seller Name:</b> {{ selected_product.farmer.first_name }}</p>
                             <p class="mb-3"><b>Origin Region:</b> {{ selected_product.farmer.region }}</p>
                             <p class="mb-3"><b>Origin City:</b> {{ selected_product.farmer.zone }}</p>
@@ -41,11 +41,14 @@
                             {% endif %}
                             <p class="mb-3"><b>Product Posted Date:</b> {{ selected_product.created_at|date:"Y-m-d" }}</p>
                             <p class="mb-3"><b>Product Posted Time:</b> {{ selected_product.created_at|date:"H:i:s T" }}</p>
+
                             {% if user.role == 'buyer' %}
                             <p class="mb-3"><b>Distance :</b> {{ distance_km }} km</p>
                             <p class="mb-3"><b>Estimated Transport Fee:</b> {{ transport_fee }} birr</p>
                             {% endif %}
+                            <p class="mb-3"><b>Product Quantity:</b> {{ selected_product.product_quantity }} Kg</p>
                             <p class="mb-3"><b>Product Price per kg:</b> {{ selected_product.product_price }} birr/kg</p>
+
                             {% if user.role == 'buyer' %}
                             <input 
                             class="form-control form-control-sm text-center custom-input" type="number" id="quantity" min="100" step="100" value="100">

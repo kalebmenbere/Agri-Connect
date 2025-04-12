@@ -1012,6 +1012,7 @@ def admin_login(request):
 def admin_dashboard(request):
     product_count = Product.objects.count()
     cart_count = Cart.objects.count()
+    paid_count = Paid.objects.count()
     this_month = now().month
     this_year = now().year
     product_count_month = Product.objects.filter(created_at__month=this_month, created_at__year=this_year).count()
@@ -1022,12 +1023,13 @@ def admin_dashboard(request):
     time_24_hours_ago = now() - timedelta(hours=24)
     product_count_24_hours = Product.objects.filter(created_at__gte=time_24_hours_ago).count()
     cart_count_24_hours = Cart.objects.filter(created_at__gte=time_24_hours_ago).count()
-    total_product_value = Product.objects.annotate(
-        total_value=ExpressionWrapper(F('product_quantity') * F('product_price'), output_field=DecimalField())
-    ).aggregate(total_value_sum=Sum('total_value'))['total_value_sum'] or 0
-    total_cart_value = Cart.objects.aggregate(
-        cart_total_value_sum=Sum(F('order_quantity') * F('order_price'))
-    )['cart_total_value_sum'] or 0
+    total_product_value = Product.objects.annotate(total_value=ExpressionWrapper(F('product_quantity') * F('product_price'), output_field=DecimalField())).aggregate(total_value_sum=Sum('total_value'))['total_value_sum'] or 0
+    total_cart_value = Cart.objects.aggregate(cart_total_value_sum=Sum(F('order_quantity') * F('order_price')))['cart_total_value_sum'] or 0
+    total_paid_value = Paid.objects.aggregate(total_paid_sum=Sum('total_price'))['total_paid_sum'] or 0
+    #total_paid_value = Paid.objects.filter(payment_status='pending').aggregate(total_paid_sum=Sum('total_price'))['total_paid_sum'] or 0
+    total_transport_fee = Paid.objects.aggregate(total=Sum('transport_fee'))['total'] or 0
+    total_product_cost = total_paid_value-total_transport_fee
+
     total_users = CustomUser.objects.count()
     total_buyers = CustomUser.objects.filter(role='buyer').count()
     total_farmers = CustomUser.objects.filter(role='farmer').count()
@@ -1049,6 +1051,9 @@ def admin_dashboard(request):
     context = {
         'product_count': product_count,
         'cart_count': cart_count,
+        'paid_count': paid_count,
+        'total_transport_fee': total_transport_fee,
+        'total_product_cost': total_product_cost,
         'product_count_month': product_count_month,
         'cart_count_month': cart_count_month,
         'product_count_day': product_count_day,
@@ -1056,6 +1061,7 @@ def admin_dashboard(request):
         'product_count_24_hours': product_count_24_hours,
         'cart_count_24_hours': cart_count_24_hours,
         'total_product_value': total_product_value,
+        'total_paid_value': total_paid_value,
         'total_cart_value': total_cart_value,
         'total_users': total_users,
         'total_buyers': total_buyers,

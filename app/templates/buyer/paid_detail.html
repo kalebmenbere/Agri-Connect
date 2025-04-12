@@ -46,10 +46,16 @@
                             <p class="mb-3"><b>Time Ordered:</b> {{ item.ordered_at|date:"H:i:s T" }}</p>
                             <p class="mb-3"><b>Time paid:</b> {{ item.paid_at|date:"H:i:s T" }}</p>
                             <p class="mb-3"><b>Distance:</b> {{ item.distance_km }} km</p>
-                            <p class="mb-3"><b>Transport Fee:</b> {{ item.transport_fee }} birr</p>
+
                             <p class="mb-3"><b>Quantity:</b> {{ item.paid_product_quantity }} Kg</p>
                             <p class="mb-3"><b>Price per kg:</b> {{ item.paid_product_price }} birr/kg</p>
-
+                            <p class="mb-3">
+                                <b>Product Cost =</b>
+                                <span id="order_price">{{ item.paid_product_price }}</span> birr * 
+                                <span id="order_quantity">{{ item.paid_product_quantity }}</span> Kg <br><b>Product Cost = </b>
+                                <span id="total_price_calc" style="font-weight: bold;"></span> birr
+                            </p>
+                            <p class="mb-3"><b>Transport Fee:</b> {{ item.transport_fee }} birr</p>
                             
                             <h4 class="fw-bold mb-3">Total Price: {{ item.total_price }}</h4>
                                            
@@ -67,6 +73,15 @@
          
         </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const price = parseFloat(document.getElementById('order_price').textContent);
+      const quantity = parseFloat(document.getElementById('order_quantity').textContent);
+      const total = (price * quantity).toFixed(2);
+      document.getElementById('total_price_calc').textContent = total;
+    });
+  </script>
+  
 <!-- Single Product End -->
 
 <!-- Copyright Start -->
