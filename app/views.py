@@ -7,6 +7,8 @@ from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from django.core.mail import EmailMessage
+from django.core.paginator import Paginator
+from app.utils import log_user_activity
 from .tokens import account_activation_token
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -28,7 +30,7 @@ from app.models import CustomUser
 from django.db.models import Sum, F, ExpressionWrapper, DecimalField
 from django.utils.timezone import now
 from datetime import timedelta, timezone
-from .models import Log
+from .models import Log, UserActivityLog
 
 
 
@@ -53,7 +55,7 @@ def password_reset_request(request):
             user = CustomUser.objects.get(email=email)
         except CustomUser.DoesNotExist:
             messages.error(request, "No user found with this email address.")
-            return redirect("password_reset_request")
+            return redirect("password_reset")
 
         # Generate password reset token
         uid = urlsafe_base64_encode(force_bytes(user.pk))
@@ -181,21 +183,18 @@ def register(request):
             user.save()
             activateEmail(request, user, form.cleaned_data.get('email'))
 
-            # Log the registration attempt
-            Log.objects.create(
-                message=f"User registration attempted for {user.username}. Activation email sent.",
-                log_type="info"
-            )
+            # Registration Success
+            log_user_activity(request.user, 'registered', 'New user registered')
+
 
             return redirect('login')
         else:
             for error in list(form.errors.values()):
                 messages.error(request, error)
                 # Log invalid registration attempt
-                Log.objects.create(
-                    message=f"Invalid registration form submission. Errors: {error}",
-                    log_type="warning"
-                )
+                # Registration Failed
+                log_user_activity(request.user, 'failed_registration', 'Registration failed: email already taken', status='failure')
+
 
     else:
         form = UserRegistrationForm()
@@ -215,13 +214,15 @@ def custom_logout(request):
     user = request.user
     logout(request)
     messages.info(request, "Logged out successfully!")
+    
     if user.is_authenticated: #in case logout failed for some reason, do not log.
-        Log.objects.create(
-            message=f"User {user.username} logged out.",
-            log_type="info"
-        )
+        
         if user.is_superuser:  # Check if the user is a superuser (admin)
+            logout(request)
+            log_user_activity(request.user, 'logged_out', 'User logged out')
             return redirect("admin_login")
+        log_user_activity(request.user.first_name, 'logged_out', 'User logged out')
+
     return redirect("login")
 
 def custom_login(request):
@@ -237,33 +238,26 @@ def custom_login(request):
             if user is not None:
                 if not user.is_activated: # Check if user is activated
                     messages.error(request, "Your account is not activated by admins!")
-                    Log.objects.create(
-                        message=f"Failed login attempt for username: {username}. Account not activated by admin!",
-                        log_type="warning"
-                    )
+                    # Login Failed
+                    log_user_activity(request.user, 'failed_login', f"Failed login attempt for username: {username}. Account not activated by admin!", status='failure')
+
                     return render(
                         request,
                         template_name="registration/login.html",
                         context={"form": form}
                     )
                 login(request, user)
-                Log.objects.create(
-                    message=f"User {user.username} logged in.",
-                    log_type="info"
-                )
+                # Login Success
+                log_user_activity(request.user, 'logged_in', f'User {request.user} logged in successfully')
                 return redirect_based_on_role(user, request)
             else:
                 messages.error(request, "Invalid username or password.")
-                Log.objects.create(
-                    message=f"Failed login attempt for username: {username}.",
-                    log_type="warning"
-                )
+                # Login Failed
+                log_user_activity(request.user, 'failed_login', 'Login failed due to incorrect credentials', status='failure')
         else:
             for error in form.errors.values():
-                Log.objects.create(
-                    message=f"Invalid login form submission. Errors: {error}",
-                    log_type="warning"
-                )
+                # Login Failed
+                log_user_activity(request.user, 'failed_login', f"Invalid login form submission. Errors: {error}", status='failure')
                 messages.error(request, error)
     else:
         form = AuthenticationForm()
@@ -290,16 +284,56 @@ def redirect_based_on_role(user, request):
 #-----------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------
 # Product-----------------------------------------------------------------------------------------------------------------
+@login_required
+def online(request):
+    user = request.user
+    products = Product.objects.none()  # Default empty queryset
+
+    expired_time = timezone.now() - timedelta(minutes=3)
+    expired_items = Cart.objects.filter(ordered_at__lt=expired_time)
+
+    for item in expired_items:
+        with transaction.atomic():
+            try:
+                product = Product.objects.get(product_id=item.product_id)
+                # Add the expired cart quantity to existing product quantity
+                product.product_quantity += item.order_quantity
+
+                # Update other product fields as needed (replace or keep as is)
+                product.product_name = item.order_name
+                product.product_price = item.order_price
+                product.product_image = item.order_image
+                product.product_category = item.order_category
+                product.created_at = item.created_at
+                product.farmer = item.farmer
+                product.save()
+            except Product.DoesNotExist:
+                # Create new product if not found
+                Product.objects.create(
+                    product_id=item.product_id,
+                    product_name=item.order_name,
+                    product_quantity=item.order_quantity,
+                    product_price=item.order_price,
+                    product_image=item.order_image,
+                    product_category=item.order_category,
+                    created_at=item.created_at,
+                    farmer=item.farmer
+                )
+
+            # Delete the expired cart item after update/create
+            item.delete()
+
 
 @login_required
 def product_list(request):
+    online(request)
     user = request.user
-    products = Product.objects.none()  # Default empty queryset
 
     # Get search, category, and sorting filters
     search_query = request.GET.get('q', '').strip()
     selected_category = request.GET.get('category', '').strip()
     sort_by = request.GET.get('sort', '').strip()  # Existing sort option, if any
+    page_number = request.GET.get('page', 1)  # Current page number, default to 1
 
     # Role-based product filtering
     if user.role == 'farmer':
@@ -320,14 +354,6 @@ def product_list(request):
             .annotate(count=Count('id'))
             .order_by('product_category')
         )
-    # elif request.user.is_superuser:
-    #     products = Product.objects.all()
-    #     total_products = products.count()
-    #     categories = (
-    #         Product.objects.values('product_category')
-    #         .annotate(count=Count('id'))
-    #         .order_by('product_category')
-    #     )
     else:
         categories = Product.objects.none()  # Default to empty if no role is found
         total_products = 0
@@ -335,7 +361,6 @@ def product_list(request):
     # Apply category filter to products
     if selected_category:
         products = products.filter(product_category=selected_category)
-        # Only default to 'price' sort if no sort option is provided
         if not sort_by:
             sort_by = 'price'
 
@@ -352,13 +377,18 @@ def product_list(request):
         elif sort_by == 'price':
             products = products.order_by('product_price')
 
+    # Pagination - 9 products per page
+    paginator = Paginator(products, 6)
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'products': products,
+        'products': page_obj,  # pass paginated page object to template
         'categories': categories,
         'search_query': search_query,
         'selected_category': selected_category,
         'total_products': total_products,
         'sort_by': sort_by,
+        'page_obj': page_obj,  # useful for pagination controls in template
     }
     return render(request, 'farmer/products_list.html', context)
 
@@ -393,6 +423,8 @@ def add_product(request):
             product.save()
             messages.success(request, f"Product created successfully. Product ID: {product.product_id}")
             # Log the product creation
+            log_user_activity(request.user, 'product_added', f"Farmer {request.user.username} added product: {product.product_name} (ID: {product.product_id})", status='success')
+
             Log.objects.create(
                 message=f"Farmer {request.user.username} added product: {product.product_name} (ID: {product.product_id})",
                 log_type="success"
@@ -664,10 +696,8 @@ def product_detail(request, product_id):
         distance_km = get_distance_km(farmer_coords, buyer_coords)
         transport_fee = calculate_transport_fee(distance_km)
 
-    Log.objects.create(
-        message=f"Buyer {request.user.username} viewed product details: {product.product_name}",
-        log_type="info"
-    )
+    # Viewed Product
+    log_user_activity(request.user, 'viewed_product', f'Viewed product: {product.product_name} + {product.product_category} + {product.product_price} ETB + {product.product_quantity} kg + {product.created_at} + {product.farmer.username} ', status='success')
 
     context = {
         'selected_product': product,
@@ -700,7 +730,7 @@ def add_to_cart(request):
             return redirect('product_detail', product_id=product_id)
         
         # Get the product from the database
-        product = get_object_or_404(Product, id=product_id)
+        product = get_object_or_404(Product, product_id=product_id)
         
         # Validate the ordered quantity
         if quantity < 100:
@@ -742,7 +772,7 @@ def add_to_cart(request):
             remaining_quantity = int(product.product_quantity) - quantity
             
             # Create the Cart record with copied product data.
-            Cart.objects.create(
+            cart =  Cart.objects.create(
                 product_id=product_id,
                 order_name=order_name,
                 order_quantity=Decimal(quantity),
@@ -765,10 +795,9 @@ def add_to_cart(request):
                 product.save()
 
         messages.success(request, f"Product added to cart with transport fee of {transport_fee}!")
-        Log.objects.create(
-            message=f"Buyer {request.user.username} added {quantity} of {product.product_name} to cart.",
-            log_type="success"
-        )
+        # Added to Cart
+        log_user_activity(cart.buyer.first_name, 'added_to_cart', f'Added {cart.order_name} + {cart.order_category} + {cart.order_quantity} kg + {cart.total_price} ETB + {cart.distance_km} km + {cart.transport_fee} ETB + {cart.ordered_at} + {cart.farmer.username} + {cart.buyer.username}')
+
         return redirect('cart')
     else:
         messages.error(request, "Invalid request.")
@@ -778,6 +807,7 @@ def add_to_cart(request):
 
 @login_required
 def cart(request):
+    online(request)
     if hasattr(request.user, 'role'):  # Ensure the user has a role attribute
         if request.user.role == 'buyer':
             cart_items = Cart.objects.filter(buyer=request.user)
@@ -861,6 +891,7 @@ def chapa_callback(request, item_id):
 
                     # Store payment data in Paid model
                     paid_item = Paid.objects.create(
+                        product_id=cart_item.product_id,  # Use the same ID as the Cart item
                         paid_product_name=cart_item.order_name,  
                         paid_product_quantity=cart_item.order_quantity,  
                         paid_product_price=cart_item.order_price,  
@@ -878,10 +909,11 @@ def chapa_callback(request, item_id):
                         payment_status='pending',  
                     )
 
-                    # Create a success log
-                    Log.objects.create(
-                        message=f"Payment successful for order {cart_item.order_name}",
-                        log_type="success"
+                    # Use the created paid_item directly for logging
+                    log_user_activity(
+                        paid_item.buyer.first_name,
+                        'ordered_product',
+                        f'Ordered product: {paid_item.paid_product_name} + {paid_item.paid_product_category} + {paid_item.paid_product_quantity} kg + {paid_item.total_price} ETB + {paid_item.distance_km} km + {paid_item.transport_fee} ETB + {paid_item.paid_at} + {paid_item.transaction_reference} + {paid_item.farmer.username} + {paid_item.buyer.username}'
                     )
 
                     # Remove the cart item after successful payment
@@ -897,52 +929,46 @@ def chapa_callback(request, item_id):
                 except Exception as e:
                     error_msg = f"Error processing payment: {str(e)}"
                     print(f"❌ {error_msg}")
-                    Log.objects.create(
-                        message=error_msg,
-                        log_type="danger"
-                    )
+                    
+                    # Checkout Failed
+                    log_user_activity(request.user, 'failed_checkout', f'Checkout failed: payment error {error_msg}', status='failure')
+
                     response = JsonResponse({"error": error_msg}, status=500)
                     response["Access-Control-Allow-Origin"] = "*"
                     return response
             else:
                 error_msg = f"Payment verification failed: {data.get('message', 'Unknown error')}"
                 print(f"❌ {error_msg}")
-                Log.objects.create(
-                    message=f"Payment failed: {error_msg}",
-                    log_type="danger"
-                )
+                # Checkout Failed
+                log_user_activity(request.user, 'failed_checkout', f'Checkout failed: Payment failed: {error_msg}', status='failure')
                 response = JsonResponse({"error": error_msg}, status=400)
                 response["Access-Control-Allow-Origin"] = "*"
                 return response
         else:
             error_msg = f"Chapa verification request failed with status {verify_response.status_code}"
             print(f"⚠️ {error_msg}")
-            Log.objects.create(
-                message=error_msg,
-                log_type="warning"
-            )
+
+            # Checkout Failed
+            log_user_activity(request.user, 'failed_checkout', f'Checkout failed: Payment failed: {error_msg}', status='failure')
             response = JsonResponse({"error": error_msg}, status=400)
             response["Access-Control-Allow-Origin"] = "*"
             return response
     except Exception as e:
         error_msg = f"Error during payment verification: {str(e)}"
         print(f"❌ {error_msg}")
-        Log.objects.create(
-            message=error_msg,
-            log_type="danger"
-        )
+        # Checkout Failed
+        log_user_activity(request.user, 'failed_checkout', f'Checkout failed: Payment failed: {error_msg}', status='failure')
         response = JsonResponse({"error": error_msg}, status=500)
         response["Access-Control-Allow-Origin"] = "*"
         return response
 
 def chapa_return(request):
-    return render(request, "buyer/paid.html")
+    return redirect('paid') 
 
 
 @login_required
 def paid(request):
     user = request.user
-
     # Ensure the user has a role attribute before proceeding
     if hasattr(user, 'role'):
         if user.role == 'buyer':
@@ -973,8 +999,39 @@ def paid_detail(request, item_id):
 #admin --------------------------------------------------------------------------------------------------------------
 
 
+def activity_log_filtered(request, action):
+    logs = UserActivityLog.objects.filter(action=action)
+    return render(request, 'dashboard/user_activity_log.html', {
+        'user_activity_logs': logs,
+        'filter_title': action.replace('_', ' ').title(),
+    })
+
+def activity_log_detail(request, pk):
+    log = get_object_or_404(UserActivityLog, pk=pk)
+    return render(request, 'dashboard/activity_log_detail.html', {'log': log})
+
+def activity_log_delete(request, log_id, action):
+    log = get_object_or_404(UserActivityLog, id=log_id)
+
+    if request.method == "POST":
+        log.delete()
+        messages.success(request, "Activity log deleted successfully.")
+    else:
+        messages.error(request, "Invalid request method.")
+
+    return redirect('activity_log_filtered', action=action)  # Update to your actual log listing view name
 
 
+
+def delete_all_activity_logs(request, action):
+    if request.method == "POST":
+        UserActivityLog.objects.filter(action=action).delete()
+        messages.success(request, "All activity logs for this action were deleted.")
+    else:
+        messages.error(request, "Invalid request.")
+    return redirect('activity_log_filtered', action=action)
+
+    
 
 from django.contrib.auth import authenticate, login
 
@@ -992,17 +1049,11 @@ def admin_login(request):
 
         if user is not None and user.is_staff:  # Only allow staff users
             login(request, user)
-            Log.objects.create(
-                message=f"Admin {user.username} logged in.",
-                log_type="success"
-            )
+            log_user_activity(request.user, 'logged_in', 'Admin logged in successfully')
             return redirect('admin_dashboard')
         else:
             messages.error(request, "Invalid credentials or not an admin user.")
-            Log.objects.create(
-                message=f"Failed admin login attempt for username: {username}.",
-                log_type="warning"
-            )
+            log_user_activity(request.user, 'failed_login', 'Admin Login failed', status='failure')
 
     return render(request, "dashboard/admin_login.html")
 
@@ -1324,10 +1375,19 @@ def delete_user(request, user_id):
         
         user_to_delete.delete()
         messages.success(request, f"User {user_to_delete.username} has been deleted.")
-        return redirect('admin_dashboard')
+        if user_to_delete.role == 'farmer':
+            log_user_activity(request.user, 'deleted_farmer', f'Deleted farmer: {user_to_delete.username}', status='success')
+            return redirect('farmer_list')
+        elif user_to_delete.role == 'buyer':
+            log_user_activity(request.user, 'deleted_buyer', f'Deleted buyer: {user_to_delete.username}', status='success')
+            return redirect('buyer_list')
+
     else:
         messages.error(request, "Invalid request.")
-        return redirect('admin_dashboard')
+        if user_to_delete.role == 'farmer':
+            return redirect('farmer_list')
+        elif user_to_delete.role == 'buyer':
+            return redirect('buyer_list')
     
 @login_required
 def products(request):

@@ -1,0 +1,84 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Page Title -->
+<div class="pagetitle">
+  <h1>User Activity Logs</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      <li class="breadcrumb-item active"><a href="#">Activity Logs</a></li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title -->
+
+<div class="col-12">
+  <div class="card top-selling overflow-auto">
+    <div class="card-body pb-0">
+      <h5 class="card-title">User Activities <span>| {{ filter_title }}</span></h5>
+
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">User</th>
+            <th scope="col"><a href="?sort=action">Action</a></th>
+            <th scope="col">Description</th>
+            <th scope="col">Product</th>
+            <th scope="col">Additional Info</th>
+            <th scope="col"><a href="?sort=timestamp">Date</a></th>
+            <th scope="col"><a href="?sort=timestamp">Time</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for log in user_activity_logs %}
+          <tr>
+            <td>{{ log.user.username }}</td>
+            <td>{{ log.action|capfirst }}</td>
+            <td>{{ log.description|default:"-" }}</td>
+            <td>
+              {% if log.product %}
+                {{ log.product.name }}
+              {% else %}
+                N/A
+              {% endif %}
+            </td>
+            <td>
+              {% if log.additional_data %}
+              <ul style="padding-left: 15px;">
+                {% for key, value in log.additional_data.items %}
+                <li><strong>{{ key|capfirst }}:</strong> {{ value }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              N/A
+              {% endif %}
+            </td>
+            <td>{{ log.timestamp|date:"Y-m-d" }}</td>
+            <td>{{ log.timestamp|date:"H:i:s" }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="7" class="text-center">No user activities found.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+</main>
+<!-- Footer -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Agri Connect</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    Designed by <a href="#">Kaleb</a>
+  </div>
+</footer>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+{% endblock %}

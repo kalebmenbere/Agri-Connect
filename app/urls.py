@@ -24,7 +24,7 @@ urlpatterns = [
     path('paid/', views.paid, name='paid'),
     path('cart/paid_detail/<int:item_id>/', views.paid_detail, name='paid_detail'),
 
-   path('delete-user/<int:user_id>/', views.delete_user, name='delete_user'),
+    path('delete-user/<int:user_id>/', views.delete_user, name='delete_user'),
 
     path('dashboard/product/edit/<int:product_id>/', views.edit_product, name='edit_product'),
     path('dashboard/paid/edit/<int:paid_id>/', views.edit_paid, name='edit_paid'),
@@ -42,6 +42,12 @@ urlpatterns = [
     path("admin-dashboard/cart_list/", views.cart_list, name="cart_list"),
     path("admin-dashboard/paid_list/", views.paid_list, name='paid_list'),
 
+    path('logs/delete-all/<str:action>/', views.delete_all_activity_logs, name='delete_all_activity_logs'),
+
+
+    path('activity_log_filtered/<str:action>/', views.activity_log_filtered, name='activity_log_filtered'),
+    path('activity_log/<int:pk>/', views.activity_log_detail, name='activity_log_detail'),
+    path('activity_log/<int:log_id>/<str:action>/delete/', views.activity_log_delete, name='activity_log_delete'),
 
 
 

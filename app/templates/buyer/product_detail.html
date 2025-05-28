@@ -84,7 +84,7 @@
                             {% if user.role == 'buyer' %}
                             <form method="POST" action="{% url 'add_to_cart' %}">
                                 {% csrf_token %}
-                                <input type="hidden" name="product_id" value="{{ selected_product.id }}">
+                                <input type="hidden" name="product_id" value="{{ selected_product.product_id }}">
                                 <!-- Hidden field that should be updated by your JS when the user adjusts quantity -->
                                 <input type="hidden" name="quantity" id="form_quantity" value="100">
                                 <button type="submit" class="btn border border-secondary rounded-pill px-4 py-3 text-primary">

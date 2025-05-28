@@ -15,78 +15,120 @@
 <!-- End Page Title -->
 
 <!-- start Content ---------------------------------------------------------------------->
+<!-- Include SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <div class="container mt-5">
     <div class="card shadow-lg rounded-lg">
         <div class="card-header bg-primary text-white">
             <h2>Edit Product</h2>
         </div>
         <div class="card-body">
-            <form method="post" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" action="{% url 'edit_product' product.id %}" id="editProductForm">
                 {% csrf_token %}
-                
-                <!-- Product Name Selection -->
+
+                <!-- Product Name -->
                 <div class="mb-4">
                     <label for="product_name" class="form-label">Product Name</label>
-                    <select name="product_name" id="product_name" class="form-select">
+                    <select name="product_name" id="product_name" class="form-select" required>
                         {% for name in product_names %}
                             <option value="{{ name }}" {% if name == product.product_name %}selected{% endif %}>{{ name }}</option>
                         {% endfor %}
                     </select>
                 </div>
 
-                <!-- Quantity Input -->
+                <!-- Quantity -->
                 <div class="mb-4">
                     <label for="product_quantity" class="form-label">Quantity</label>
                     <input type="number" id="product_quantity" name="product_quantity" value="{{ product.product_quantity }}" class="form-control" required>
                 </div>
 
-                <!-- Price Input -->
+                <!-- Price -->
                 <div class="mb-4">
                     <label for="product_price" class="form-label">Price</label>
                     <input type="number" id="product_price" name="product_price" value="{{ product.product_price }}" class="form-control" required>
                 </div>
 
-                <!-- Category Input -->
+                <!-- Category -->
                 <div class="mb-4">
                     <label for="product_category" class="form-label">Category</label>
                     <input type="text" id="product_category" name="product_category" value="{{ product.product_category }}" class="form-control" required>
                 </div>
 
-                <!-- Farmer Selection -->
+                <!-- Farmer -->
                 <div class="mb-4">
                     <label for="farmer_id" class="form-label">Farmer</label>
                     <select name="farmer_id" id="farmer_id" class="form-select">
-                        <option value="">-- Select Farmer --</option>  <!-- Blank option -->
+                        <option value="">-- Select Farmer --</option>
                         {% for farmer in farmers %}
                             <option value="{{ farmer.id }}" {% if farmer.id == product.farmer.id %}selected{% endif %}>{{ farmer.username }}</option>
                         {% endfor %}
                     </select>
                 </div>
 
-                <!-- Product Image -->
+                <!-- Image -->
                 <div class="mb-4">
                     <label for="product_image" class="form-label">Product Image</label>
                     {% if product.product_image %}
                         <div class="mb-2">
-                            <img src="{{ product.product_image.url }}" alt="Image" class="img-fluid rounded" style="max-height: 120px;">
+                            <img src="{{ product.product_image.url }}" alt="Product Image" class="img-fluid rounded" style="max-height: 120px;">
                         </div>
                     {% endif %}
                     <input type="file" id="product_image" name="product_image" class="form-control">
                 </div>
-            </form>
+
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-success">Save Changes</button>
+                    <button type="button" class="btn btn-success" onclick="confirmSave()">Save Changes</button>
                     <a href="{% url 'products' %}" class="btn btn-secondary">Cancel</a>
-                    <form action="{% url 'delete_product' product.id %}" method="POST" style="display:inline;">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-danger">Delete Product</button>
-                    </form>
                 </div>
+            </form>
 
+            <!-- Delete Form -->
+            <form action="{% url 'delete_product' product.id %}" method="POST" id="deleteProductForm">
+                {% csrf_token %}
+                <div class="text-end mt-3">
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete Product</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+<script>
+function confirmSave() {
+    Swal.fire({
+        title: 'Save changes?',
+        text: "Do you want to update this product?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#28a745',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Yes, save it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById('editProductForm').submit();
+        }
+    });
+}
+
+function confirmDelete() {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "This will permanently delete the product!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById('deleteProductForm').submit();
+        }
+    });
+}
+</script>
+
 <!-- End Content ---------------------------------------------------------------------->
 
 {% endblock %}

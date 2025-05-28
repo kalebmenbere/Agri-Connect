@@ -25,12 +25,16 @@
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Total</th>
-                        <th scope="col">Category</th>
+                        {% if user.role == 'buyer' %}
                         <th scope="col">Farmer</th>
                         <th scope="col">Farmer Region</th>
+                        {% endif %}
+                        {% if user.role == 'farmer' %}
                         <th scope="col">Buyer</th>
                         <th scope="col">Buyer Region</th>
-                        <th scope="col">Orderd at</th>
+                        {% endif %} 
+                        <th scope="col">Ordered date</th>
+                        <th scope="col">Ordered Time</th>
                         {% if user.role == 'buyer' %}
                         <th scope="col">Payment</th>
                         {% elif user.role == 'farmer' %} 
@@ -60,23 +64,27 @@
                         <td>
                             <p class="mb-0 mt-4">{{ item.total_price }} $</p>
                         </td>
-                        <td>
-                            <p class="mb-0 mt-4">{{ item.order_category }}
-
-                            </p>
-                        </td>
+                        {% if user.role == 'buyer' %}
                         <td>
                             <p class="mb-0 mt-4">{{ item.farmer }}</p>
                         </td>
                         <td>
                             <p class="mb-0 mt-4">{{ item.farmer.region }}</p>
+
+                        {% endif %}
+                        {% if user.role == 'farmer' %}
                         <td>
                             <p class="mb-0 mt-4">{{ item.buyer }}</p>
                         </td>
                         <td>
                             <p class="mb-0 mt-4">{{ item.buyer.region }}</p>
+                        </td>
+                        {% endif %}
                         <td>
                             <p class="mb-0 mt-4">{{ item.ordered_at|date:"Y-m-d" }}</p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{ item.ordered_at|date:"H:i:s" }}</p>
                         </td>
                         {% if user.role == 'buyer' %}
                         <td class="text-center align-middle">
@@ -87,6 +95,10 @@
                             <a href="{% url 'payment_detail' item.id %}#payment_detail" class="btn btn-primary w-75 rounded-pill text-uppercase fw-semibold">View</a>
                         </td> 
                         {% endif %}             
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="10" class="text-center">No cart items found.</td>
                     </tr>
                     {% endfor %}
                 </tbody>

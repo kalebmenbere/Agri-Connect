@@ -84,15 +84,62 @@
                         {% endfor %}
                     </select>
                 </div>
-                <button type="submit" class="btn btn-success">Save Changes</button>
-            </form>
-                <div class="d-flex justify-content-between">
+                <!-- Save Button -->
+                <button type="button" class="btn btn-success" onclick="confirmSaveCart(this)">
+                    ✅ Save Changes
+                </button>
+                </form>
+                
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-between mt-3">
                     <a href="{% url 'cart_list' %}" class="btn btn-secondary">Cancel</a>
+                
                     <form action="{% url 'delete_cart' cart.id %}" method="POST" style="display:inline;">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-danger">Delete Cart</button>
+                        <button type="button" class="btn btn-danger" onclick="confirmDeleteCart(this)">
+                            🗑️ Delete Cart
+                        </button>
                     </form>
                 </div>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script>
+                  function confirmSaveCart(button) {
+                    Swal.fire({
+                      title: 'Save Changes?',
+                      text: "Are you sure you want to update the cart details?",
+                      icon: 'question',
+                      showCancelButton: true,
+                      confirmButtonColor: '#28a745',
+                      cancelButtonColor: '#6c757d',
+                      confirmButtonText: 'Yes, save',
+                      cancelButtonText: 'Cancel',
+                      reverseButtons: true
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        button.closest('form').submit();
+                      }
+                    });
+                  }
+                
+                  function confirmDeleteCart(button) {
+                    Swal.fire({
+                      title: 'Are you sure?',
+                      text: "This will permanently delete the cart.",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#d33',
+                      cancelButtonColor: '#6c757d',
+                      confirmButtonText: 'Yes, delete it!',
+                      cancelButtonText: 'Cancel',
+                      reverseButtons: true
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        button.closest('form').submit();
+                      }
+                    });
+                  }
+                </script>
+                
 
         </div>
     </div>

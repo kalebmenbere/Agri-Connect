@@ -75,7 +75,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     #"http://your-frontend-domain.com",  # Replace with your frontend domain
     "http://127.0.0.1:8000", #for local testing
-    "http://localhost:8000", #for local testing
+    "http://localhost:8000", #for local testing 
 ]
 
 ROOT_URLCONF = 'dj4e.urls'

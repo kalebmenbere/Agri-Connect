@@ -44,7 +44,7 @@ class CustomUser(AbstractUser):
 User = get_user_model()
 
 class Product(models.Model):
-    product_id = models.CharField(max_length=15, unique=True, editable=False)  # New field for custom product ID
+    product_id = models.CharField(max_length=255, unique=True, editable=False)  # New field for custom product ID
     product_name = models.CharField(max_length=200)
     product_quantity = models.DecimalField(max_digits=10, decimal_places=2)
     product_price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -63,7 +63,7 @@ class Product(models.Model):
         return f"Products {self.id} - {self.product_name}"
 
 class Cart(models.Model):
-    product_id = models.CharField(max_length=15, unique=True, editable=False) 
+    product_id = models.CharField(max_length=255, unique=False, editable=False, default="PRODUCT")  # New field for custom product ID
     order_name = models.CharField(max_length=200)
     order_quantity = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     order_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
@@ -73,7 +73,7 @@ class Cart(models.Model):
     transport_fee = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     created_at = models.DateTimeField()
-    ordered_at = models.DateTimeField()
+    ordered_at = models.DateTimeField(auto_now_add=True)
     farmer = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
         related_name='farmer_order', 
@@ -95,6 +95,7 @@ class Cart(models.Model):
 
 
 class Paid(models.Model):
+    product_id = models.CharField(max_length=255, unique=False, editable=False, default="PRODUCT")  # New field for custom product ID
     paid_product_name = models.CharField(max_length=200)
     paid_product_quantity = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     paid_product_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
@@ -134,6 +135,45 @@ class Paid(models.Model):
 
 
 
+# app/models.py
+
+from django.db import models
+from django.contrib.auth.models import User
+
+class UserActivityLog(models.Model):
+    ACTION_CHOICES = [
+        ('logged_in', 'Logged In'),
+        ('logged_out', 'Logged Out'),
+        ('registered', 'Registered'),
+        ('viewed_product', 'Viewed Product'),
+        ('ordered_product', 'Ordered Product'),
+        ('edited_profile', 'Edited Profile'),
+        ('searched', 'Searched'),
+        ('added_to_cart', 'Added to Cart'),
+        ('removed_from_cart', 'Removed from Cart'),
+        ('checked_out', 'Checked Out'),
+        ('updated_password', 'Updated Password'),
+        ('product_added', 'Product Added'),
+        ('failed_login', 'Failed Login'),
+        ('failed_checkout', 'Failed Checkout'),
+        ('failed_registration', 'Failed Registration'),
+        ('failed_password_update', 'Failed Password Update'),
+
+    ]
+
+    STATUS_CHOICES = [
+        ('success', 'Success'),
+        ('failure', 'Failure'),
+    ]
+
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, blank=True)
+    action = models.CharField(max_length=50, choices=ACTION_CHOICES)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='success')
+    description = models.TextField(blank=True, default="Description not provided")
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user} - {self.action} ({self.status}) @ {self.timestamp}"
 
 
 class Log(models.Model):

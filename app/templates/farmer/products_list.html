@@ -146,16 +146,33 @@
 
                     <div class="col-12">
                         <div class="pagination d-flex justify-content-center mt-5">
-                            <a href="#" class="rounded">&laquo;</a>
-                            <a href="#" class="active rounded">1</a>
-                            <a href="#" class="rounded">2</a>
-                            <a href="#" class="rounded">3</a>
-                            <a href="#" class="rounded">&raquo;</a>
+                            {% if page_obj.has_previous %}
+                                <a href="?page={{ page_obj.previous_page_number }}{% if search_query %}&q={{ search_query|urlencode }}{% endif %}{% if selected_category %}&category={{ selected_category|urlencode }}{% endif %}{% if sort_by %}&sort={{ sort_by }}{% endif %}" class="rounded">&laquo;</a>
+                            {% else %}
+                                <span class="rounded disabled">&laquo;</span>
+                            {% endif %}
+                    
+                            {% for num in page_obj.paginator.page_range %}
+                                {% if num == page_obj.number %}
+                                    <a href="?page={{ num }}{% if search_query %}&q={{ search_query|urlencode }}{% endif %}{% if selected_category %}&category={{ selected_category|urlencode }}{% endif %}{% if sort_by %}&sort={{ sort_by }}{% endif %}" class="active rounded">{{ num }}</a>
+                                {% else %}
+                                    <a href="?page={{ num }}{% if search_query %}&q={{ search_query|urlencode }}{% endif %}{% if selected_category %}&category={{ selected_category|urlencode }}{% endif %}{% if sort_by %}&sort={{ sort_by }}{% endif %}" class="rounded">{{ num }}</a>
+                                {% endif %}
+                            {% endfor %}
+                    
+                            {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}{% if search_query %}&q={{ search_query|urlencode }}{% endif %}{% if selected_category %}&category={{ selected_category|urlencode }}{% endif %}{% if sort_by %}&sort={{ sort_by }}{% endif %}" class="rounded">&raquo;</a>
+                            {% else %}
+                                <span class="rounded disabled">&raquo;</span>
+                            {% endif %}
                         </div>
                     </div>
+                    
+
+
                 </div>     
-                        </div>
-                    </div>
+                </div>
+                </div>
                 </div>
 </div>
 <!-- Fresh Product End-->

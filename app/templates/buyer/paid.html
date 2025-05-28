@@ -26,9 +26,12 @@
                         <th scope="col">Quantity</th>
                         <th scope="col">Total</th>
                         <th scope="col">Category</th>
+                        {% if user.role == 'buyer' %}
                         <th scope="col">Farmer</th>
+                        {% elif user.role == 'farmer' %}
                         <th scope="col">Buyer</th>
-                        <th scope="col">Transaction Number</th>
+                        {% endif %}
+                        <th scope="col" style="max-width: 150px; white-space: normal; word-wrap: break-word;">Transaction Number</th>
                         <th scope="col">
                         {% if user.role == 'buyer' %}
                         Payment Status
@@ -68,13 +71,16 @@
                         <td>
                             <p class="mb-0 mt-4">{{ item.paid_product_category }}</p>
                         </td>
+                        {% if user.role == 'buyer' %}
                         <td>
                             <p class="mb-0 mt-4">{{ item.farmer }}</p>
                         </td>
+                        {% elif user.role == 'farmer' %}
                         <td>
                             <p class="mb-0 mt-4">{{ item.buyer }}</p>
                         </td>
-                        <td>
+                        {% endif %}
+                        <td style="max-width: 150px; white-space: normal; word-wrap: break-word;">
                             <p class="mb-0 mt-4">{{ item.transaction_reference }}</p>
                         </td>
                         

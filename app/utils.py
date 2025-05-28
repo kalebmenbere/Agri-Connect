@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 import csv
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.conf import settings
+from .models import UserActivityLog
 
 def is_email_valid(email):
     csv_file_path = os.path.join(settings.BASE_DIR, 'app', 'data', 'emails.csv')
@@ -73,3 +74,13 @@ def send_activation_email(user, activation_link):
     plain_message = strip_tags(html_message)
     send_mail(subject, plain_message, 'atsewkaleb@gmail.com', [user.email], html_message=html_message)
 
+
+
+
+def log_user_activity(user, action, description="", status="success"):
+    UserActivityLog.objects.create(
+        user=user if user.is_authenticated else None,
+        action=action,
+        status=status,
+        description=description
+    )

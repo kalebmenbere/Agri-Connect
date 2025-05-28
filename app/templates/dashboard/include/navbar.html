@@ -248,12 +248,6 @@
       <hr class="dropdown-divider">
     </li>
     <li>
-      <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-        <i class="bi bi-question-circle"></i>
-        <span>Need Help?</span>
-      </a>
-    </li>
-    <li>
       <hr class="dropdown-divider">
     </li>
 
@@ -294,24 +288,24 @@
     </li><!-- End Dashboard Nav -->
 
 
-<!------------------------------------------------------------------------->
-  <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-people"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-              <a href="{% url 'farmer_list' %}">
-                  <i class="bi bi-person-check"></i><span>Farmers</span>
-              </a>
-          </li>
-          <li>
-              <a href="{% url 'buyer_list' %}">
-                  <i class="bi bi-person-badge"></i><span>Buyers</span>
-              </a>
-          </li>
-      </ul>
-  </li><!-- End User Nav -->
+<!-- Users Section -->
+<li class="nav-item">
+  <a class="nav-link collapsed" data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-people"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+  </a>
+  <ul id="users-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+      <li>
+          <a href="{% url 'farmer_list' %}">
+              <i class="bi bi-person-check"></i><span>Farmers</span>
+          </a>
+      </li>
+      <li>
+          <a href="{% url 'buyer_list' %}">
+              <i class="bi bi-person-badge"></i><span>Buyers</span>
+          </a>
+      </li>
+  </ul>
+</li><!-- End Users Nav -->
 
 
 <li class="nav-heading">Pages</li>
@@ -344,14 +338,38 @@
 
 
 
-
-<!------------------------------------------------------------------------->
+<!-- Activities Section -->
 <li class="nav-item">
-<a class="nav-link collapsed" href="pages-register.html">
-  <i class="bi bi-card-list"></i>
-  <span>Register</span>
-</a>
-</li><!-- End Register Page Nav -->
+  <a class="nav-link collapsed" data-bs-target="#activities-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-people"></i><span>Activities</span><i class="bi bi-chevron-down ms-auto"></i>
+  </a>
+  <ul id="activities-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+    <li><a href="{% url 'activity_log_filtered' 'product_added' %}"><i class="bi bi-plus-square"></i><span>Product Added</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'ordered_product' %}"><i class="bi bi-cart-check"></i><span>Ordered Product</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'removed_from_cart' %}"><i class="bi bi-cart-x"></i><span>Removed from Cart</span></a></li>
+    
+    <li><a href="{% url 'activity_log_filtered' 'added_to_cart' %}"><i class="bi bi-cart-plus"></i><span>Added to Cart</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'logged_in' %}"><i class="bi bi-box-arrow-in-right"></i><span>Logged In</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'logged_out' %}"><i class="bi bi-box-arrow-left"></i><span>Logged Out</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'registered' %}"><i class="bi bi-person-plus"></i><span>Registered</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'viewed_product' %}"><i class="bi bi-eye"></i><span>Viewed Product</span></a></li>
+
+    <li><a href="{% url 'activity_log_filtered' 'edited_profile' %}"><i class="bi bi-pencil-square"></i><span>Edited Profile</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'searched' %}"><i class="bi bi-search"></i><span>Searched</span></a></li>
+
+
+    <li><a href="{% url 'activity_log_filtered' 'checked_out' %}"><i class="bi bi-credit-card"></i><span>Checked Out</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'updated_password' %}"><i class="bi bi-key"></i><span>Updated Password</span></a></li>
+
+    <li><a href="{% url 'activity_log_filtered' 'failed_login' %}"><i class="bi bi-x-circle"></i><span>Failed Login</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'failed_checkout' %}"><i class="bi bi-x-circle"></i><span>Failed Checkout</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'failed_registration' %}"><i class="bi bi-x-circle"></i><span>Failed Registration</span></a></li>
+    <li><a href="{% url 'activity_log_filtered' 'failed_password_update' %}"><i class="bi bi-x-circle"></i><span>Failed Password Update</span></a></li>
+  </ul>
+  
+</li>
+
+
 
 <!------------------------------------------------------------------------->
 <li class="nav-item">

@@ -1,0 +1,136 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Page Title -->
+<div class="pagetitle">
+  <h1>User Activity Logs</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      <li class="breadcrumb-item active">Activity Logs</li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title -->
+
+<!-- Add SweetAlert2 (Only once in base template if not already) -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="col-12">
+  <div class="card top-selling overflow-auto">
+    <div class="card-body pb-0">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="card-title">User Activities <span>| {{ filter_title }}</span></h5>
+        <form id="delete-all-form" method="post" action="{% url 'delete_all_activity_logs' filter_title %}">
+          {% csrf_token %}
+          <button type="button" class="btn btn-danger btn-sm" onclick="confirmDeleteAll()">Delete All</button>
+        </form>
+      </div>
+
+      <table class="table table-hover table-borderless align-middle">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th><a href="?sort=action">Action</a></th>
+            <th>Description</th>
+            <th><a href="?sort=timestamp">Date</a></th>
+            <th><a href="?sort=timestamp">Time</a></th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for log in user_activity_logs %}
+          <tr class="clickable-row" style="cursor: pointer;" data-href="{% url 'activity_log_detail' log.id %}">
+            <td>{{ log.user.username }}</td>
+            <td>{{ log.get_action_display }}</td>
+            <td>{{ log.description|default:"N/A" }}</td>
+            <td>{{ log.timestamp|date:"Y-m-d" }}</td>
+            <td>{{ log.timestamp|time:"H:i:s" }}</td>
+            <td>
+              <form id="delete-log-form-{{ log.id }}" method="post" action="{% url 'activity_log_delete' log.id log.action %}">
+                {% csrf_token %}
+                <button type="button" class="btn btn-sm btn-danger" onclick="confirmDeleteLog('{{ log.id }}')">Delete</button>
+              </form>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="6" class="text-center">No user activities found.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- JS Functions -->
+<script>
+  function confirmDeleteLog(logId) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This log will be permanently deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#6c757d',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        document.getElementById('delete-log-form-' + logId).submit();
+      }
+    });
+  }
+
+  function confirmDeleteAll() {
+    Swal.fire({
+      title: 'Delete All Logs?',
+      text: "This will permanently delete all activity logs for '{{ filter_title }}'!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#6c757d',
+      confirmButtonText: 'Yes, delete all!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        document.getElementById('delete-all-form').submit();
+      }
+    });
+  }
+</script>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const rows = document.querySelectorAll('.clickable-row');
+
+        rows.forEach(row => {
+            row.addEventListener('click', function(e) {
+                // Prevent clicks on buttons inside the row (like Delete button) from triggering the row navigation
+                if (e.target.tagName !== 'BUTTON' && !e.target.closest('form')) {
+                    const url = this.getAttribute('data-href');
+                    window.location.href = url;
+                }
+            });
+        });
+    });
+</script>
+
+
+
+<!-- Footer -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Agri Connect</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    Designed by <a href="#">Kaleb</a>
+  </div>
+</footer>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+
+{% endblock %}

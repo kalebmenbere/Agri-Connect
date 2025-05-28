@@ -1,0 +1,38 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% block content %}
+
+<div class="pagetitle">
+  <h1>Activity Log Detail</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      <li class="breadcrumb-item active">Detail</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Details for Log ID {{ log.id }}</h5>
+    <ul>
+      <li><strong>User:</strong> {{ log.user.username }}</li>
+      <li><strong>Action:</strong> {{ log.get_action_display }}</li>
+      <li><strong>Description:</strong> {{ log.description }}</li>
+      <li><strong>Timestamp:</strong> {{ log.timestamp }}</li>
+      <li><strong>Product:</strong> {{ log.product.name|default:"N/A" }}</li>
+      <li><strong>Additional Info:</strong>
+        {% if log.additional_data %}
+          <ul>
+            {% for key, value in log.additional_data.items %}
+              <li><strong>{{ key|capfirst }}:</strong> {{ value }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          N/A
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
