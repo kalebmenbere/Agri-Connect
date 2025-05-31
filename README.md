@@ -31,6 +31,18 @@ Farmer or buyer login
 
 https://github.com/user-attachments/assets/56d0fe14-78ad-42a9-aa1c-9386d64a3361
 
+Forget Password
 
+https://github.com/user-attachments/assets/566d9a8d-4d5c-4797-a4e6-c4fe053f28e4
+
+![reset password email](https://github.com/user-attachments/assets/8851d92d-86a0-4d32-b161-5521f16cc953)
+
+
+![reset password email opened](https://github.com/user-attachments/assets/c1268da2-c903-4b3c-9691-bed573ed14a9)
+
+
+
+
+https://github.com/user-attachments/assets/b283a057-4707-477a-830e-7f74ba564701
 
 
