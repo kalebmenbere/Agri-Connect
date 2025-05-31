@@ -25,8 +25,12 @@ After clicking the activation link wiat for admin approval.
 Then theadmin approve the farmer or buyer to access the website
 
 
-
 https://github.com/user-attachments/assets/710197f9-55d7-4538-9a39-579a40be112b
+
+Farmer or buyer login
+
+https://github.com/user-attachments/assets/56d0fe14-78ad-42a9-aa1c-9386d64a3361
+
 
 
 
