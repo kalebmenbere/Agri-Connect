@@ -35,5 +35,12 @@ Farmer adds product
 
 https://github.com/user-attachments/assets/37992423-c6f7-44a0-b48d-5098e4efe4b5
 
+Buyer orders/add to cart if not paid it goes back to product list
+
+https://github.com/user-attachments/assets/72335707-15fa-4db4-9b26-034e691e6438
+
+Buyer Paying what cost the product with transport fee
+
+https://github.com/user-attachments/assets/83964fa9-fd08-4536-b18a-ca994841fb97
 
 
