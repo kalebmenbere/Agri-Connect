@@ -2,7 +2,14 @@ from django import forms
 from .models import  Product
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
+from .models import Contact
 
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'message']
+
+        
 class UserRegistrationForm(UserCreationForm):
     email = forms.EmailField(help_text='A valid email address, please.', required=True)
     is_agreed = forms.BooleanField(required=True, label="I agree to the Terms of Service and Privacy Policy")

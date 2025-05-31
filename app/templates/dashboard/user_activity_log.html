@@ -22,16 +22,11 @@
     <div class="card-body pb-0">
       <div class="d-flex justify-content-between align-items-center mb-2">
         <h5 class="card-title">User Activities <span>| {{ filter_title }}</span></h5>
-        <form id="delete-all-form" method="post" action="{% url 'delete_all_activity_logs' filter_title %}">
-          {% csrf_token %}
-          <button type="button" class="btn btn-danger btn-sm" onclick="confirmDeleteAll()">Delete All</button>
-        </form>
       </div>
 
       <table class="table table-hover table-borderless align-middle">
         <thead>
           <tr>
-            <th>User</th>
             <th><a href="?sort=action">Action</a></th>
             <th>Description</th>
             <th><a href="?sort=timestamp">Date</a></th>
@@ -42,7 +37,6 @@
         <tbody>
           {% for log in user_activity_logs %}
           <tr class="clickable-row" style="cursor: pointer;" data-href="{% url 'activity_log_detail' log.id %}">
-            <td>{{ log.user.username }}</td>
             <td>{{ log.get_action_display }}</td>
             <td>{{ log.description|default:"N/A" }}</td>
             <td>{{ log.timestamp|date:"Y-m-d" }}</td>
@@ -83,21 +77,6 @@
     });
   }
 
-  function confirmDeleteAll() {
-    Swal.fire({
-      title: 'Delete All Logs?',
-      text: "This will permanently delete all activity logs for '{{ filter_title }}'!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#6c757d',
-      confirmButtonText: 'Yes, delete all!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        document.getElementById('delete-all-form').submit();
-      }
-    });
-  }
 </script>
 
 

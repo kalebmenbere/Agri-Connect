@@ -12,8 +12,8 @@ from app.utils import log_user_activity
 from .tokens import account_activation_token
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Product, Cart, Paid, Log
-from .forms import UserRegistrationForm, ProductForm
+from .models import Contact, Product, Cart, Paid, Log
+from .forms import ContactForm, UserRegistrationForm, ProductForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.db.models import Count, Q
 from decimal import Decimal
@@ -42,11 +42,39 @@ def home_view(request):
     else:
         return render(request, 'home.html') 
 
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your message has been sent successfully!')
+            return redirect('contact')  # Adjust to your URL name
+    else:
+        form = ContactForm()
+    return render(request, 'home.html', {'form': form})   
+def admin_contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your message has been sent successfully!')
+            return redirect('contact')
+    else:
+        form = ContactForm()
 
+    # Fetch all messages to display
+    contact_messages = Contact.objects.all().order_by('-created_at')
+
+    return render(request, 'dashboard/contact.html', {
+        'form': form,
+        'contact_messages': contact_messages,
+    })
 #-----------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------
 #Reset Password -------------------------------------------------------------------------------------------------------------------------
-
+def policy(request):
+    logout(request)  
+    return render(request, 'policy/policy.html')
 
 def password_reset_request(request):
     if request.method == "POST":
@@ -219,9 +247,9 @@ def custom_logout(request):
         
         if user.is_superuser:  # Check if the user is a superuser (admin)
             logout(request)
-            log_user_activity(request.user, 'logged_out', 'User logged out')
+            log_user_activity(request.user, 'logged_out', f'User {request.user} logged out')
             return redirect("admin_login")
-        log_user_activity(request.user.first_name, 'logged_out', 'User logged out')
+        log_user_activity(request.user, 'logged_out', f'User {request.user} logged out')
 
     return redirect("login")
 
@@ -253,11 +281,11 @@ def custom_login(request):
             else:
                 messages.error(request, "Invalid username or password.")
                 # Login Failed
-                log_user_activity(request.user, 'failed_login', 'Login failed due to incorrect credentials', status='failure')
+                log_user_activity(request.user, 'failed_login',  f'User {request.user} Login failed due to incorrect credentials', status='failure')
         else:
             for error in form.errors.values():
                 # Login Failed
-                log_user_activity(request.user, 'failed_login', f"Invalid login form submission. Errors: {error}", status='failure')
+                log_user_activity(request.user, 'failed_login', f'User {request.user}Invalid login form submission. Errors: {error}', status='failure')
                 messages.error(request, error)
     else:
         form = AuthenticationForm()
@@ -319,9 +347,10 @@ def online(request):
                     created_at=item.created_at,
                     farmer=item.farmer
                 )
-
+            log_user_activity(request.user, 'removed_from_cart', f"User {request.user}Expired cart item processed: {item.order_name} (ID: {item.product_id})", status='success')  
             # Delete the expired cart item after update/create
             item.delete()
+
 
 
 @login_required
@@ -594,7 +623,7 @@ from .models import Product, Log
 
 ors_client = openrouteservice.Client(key='5b3ce3597851110001cf6248672144f6a5714e8988cc68cf90382422')
 
-
+#OpenRouteService (ORS) API call to know the distance between two coordinates
 
 def get_coords(region, zone):
     return LOCATION_COORDINATES.get((region, zone))
@@ -796,11 +825,12 @@ def add_to_cart(request):
 
         messages.success(request, f"Product added to cart with transport fee of {transport_fee}!")
         # Added to Cart
-        log_user_activity(cart.buyer.first_name, 'added_to_cart', f'Added {cart.order_name} + {cart.order_category} + {cart.order_quantity} kg + {cart.total_price} ETB + {cart.distance_km} km + {cart.transport_fee} ETB + {cart.ordered_at} + {cart.farmer.username} + {cart.buyer.username}')
+        log_user_activity(request.user, 'added_to_cart', f'Added {cart.order_name} + {cart.order_category} + {cart.order_quantity} kg + {cart.total_price} ETB + {cart.distance_km} km + {cart.transport_fee} ETB + {cart.ordered_at} + {cart.farmer.username} + {cart.buyer.username}')
 
         return redirect('cart')
     else:
         messages.error(request, "Invalid request.")
+        log_user_activity(request.user, 'failed_checkout', 'Failed to add product to cart: Invalid request', status='failure')
         return redirect('product_list')
 
 
@@ -911,7 +941,7 @@ def chapa_callback(request, item_id):
 
                     # Use the created paid_item directly for logging
                     log_user_activity(
-                        paid_item.buyer.first_name,
+                        request.user,
                         'ordered_product',
                         f'Ordered product: {paid_item.paid_product_name} + {paid_item.paid_product_category} + {paid_item.paid_product_quantity} kg + {paid_item.total_price} ETB + {paid_item.distance_km} km + {paid_item.transport_fee} ETB + {paid_item.paid_at} + {paid_item.transaction_reference} + {paid_item.farmer.username} + {paid_item.buyer.username}'
                     )
@@ -963,7 +993,7 @@ def chapa_callback(request, item_id):
         return response
 
 def chapa_return(request):
-    return redirect('paid') 
+    return redirect('cart') 
 
 
 @login_required
@@ -1031,7 +1061,7 @@ def delete_all_activity_logs(request, action):
         messages.error(request, "Invalid request.")
     return redirect('activity_log_filtered', action=action)
 
-    
+
 
 from django.contrib.auth import authenticate, login
 
@@ -1376,10 +1406,8 @@ def delete_user(request, user_id):
         user_to_delete.delete()
         messages.success(request, f"User {user_to_delete.username} has been deleted.")
         if user_to_delete.role == 'farmer':
-            log_user_activity(request.user, 'deleted_farmer', f'Deleted farmer: {user_to_delete.username}', status='success')
             return redirect('farmer_list')
         elif user_to_delete.role == 'buyer':
-            log_user_activity(request.user, 'deleted_buyer', f'Deleted buyer: {user_to_delete.username}', status='success')
             return redirect('buyer_list')
 
     else:

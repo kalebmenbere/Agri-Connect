@@ -1,0 +1,68 @@
+{% extends 'dashboard/include/navbar.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Start Page Title -->
+<div class="pagetitle">
+  <h1>Contact Messages</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      <li class="breadcrumb-item active">Messages</li>
+    </ol>
+  </nav>
+</div>
+<!-- End Page Title -->
+
+<div class="col-12">
+  <div class="card top-selling overflow-auto">
+    <div class="card-body pb-0">
+      <h5 class="card-title">Messages List <span class="text-muted">| All Messages</span></h5>
+
+      <div class="table-responsive">
+        <table class="table table-borderless table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Message</th>
+              <th scope="col">Received At</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for msg in contact_messages %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{ msg.name }}</td>
+              <td>{{ msg.email }}</td>
+              <td style="max-width: 400px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="{{ msg.message }}">{{ msg.message }}</td>
+              <td>{{ msg.created_at|date:"Y-m-d H:i:s" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="6" class="text-center text-muted">No contact messages found.</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ======= Footer ================================================================================= -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Agri Connect</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    Designed by <a href="#">Kaleb</a>
+  </div>
+</footer>
+<!-- End Footer ===================================================================================== -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+{% endblock %}

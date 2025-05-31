@@ -147,12 +147,9 @@ class UserActivityLog(models.Model):
         ('registered', 'Registered'),
         ('viewed_product', 'Viewed Product'),
         ('ordered_product', 'Ordered Product'),
-        ('edited_profile', 'Edited Profile'),
-        ('searched', 'Searched'),
         ('added_to_cart', 'Added to Cart'),
         ('removed_from_cart', 'Removed from Cart'),
         ('checked_out', 'Checked Out'),
-        ('updated_password', 'Updated Password'),
         ('product_added', 'Product Added'),
         ('failed_login', 'Failed Login'),
         ('failed_checkout', 'Failed Checkout'),
@@ -174,6 +171,19 @@ class UserActivityLog(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.action} ({self.status}) @ {self.timestamp}"
+
+
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
 
 
 class Log(models.Model):
