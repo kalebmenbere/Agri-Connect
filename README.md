@@ -43,4 +43,8 @@ Buyer Paying what cost the product with transport fee
 
 https://github.com/user-attachments/assets/83964fa9-fd08-4536-b18a-ca994841fb97
 
+Farmer viewing the ordered and paid prooduct
+
+https://github.com/user-attachments/assets/f3a5f356-6c22-4316-a58f-f15adf8199e1
+
 
