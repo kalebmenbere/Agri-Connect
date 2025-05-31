@@ -13,7 +13,8 @@ Account Registration as Farmer or Buyer Not Email Registered
 https://github.com/user-attachments/assets/f241a897-7be5-49ba-95c5-a2952e3b6a24
 
 
-Email Verification by the Farmer or buyer after clicking the activation link wiat for admin approval
+Email sent to up on registration of the Farmer or buyer.
+After clicking the activation link wiat for admin approval.
 
 ![email not opened](https://github.com/user-attachments/assets/29b9b9c3-cd6b-4889-987f-6f2c7c65ed5d)
 
