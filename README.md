@@ -47,4 +47,8 @@ Farmer viewing the ordered and paid prooduct
 
 https://github.com/user-attachments/assets/f3a5f356-6c22-4316-a58f-f15adf8199e1
 
+Chapa dashboard
+
+![payment in the chapa](https://github.com/user-attachments/assets/f6ac55d5-293f-455f-b3f5-a133b700da00)
+
 
