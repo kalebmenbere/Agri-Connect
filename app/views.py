@@ -347,7 +347,7 @@ def online(request):
                     created_at=item.created_at,
                     farmer=item.farmer
                 )
-            log_user_activity(request.user, 'removed_from_cart', f"User {request.user}Expired cart item processed: {item.order_name} (ID: {item.product_id})", status='success')  
+            log_user_activity(request.user, 'removed_from_cart', f"User {request.user}Expired cart item processed: {product.product_name}, {product.product_quantity}, {product.product_price} {item.order_name} (ID: {item.product_id})", status='success')  
             # Delete the expired cart item after update/create
             item.delete()
 
@@ -992,7 +992,7 @@ def chapa_callback(request, item_id):
         return response
 
 def chapa_return(request):
-    return redirect('home') 
+    return redirect('product_list') 
 
 
 @login_required
