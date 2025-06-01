@@ -1,6 +1,8 @@
 {% extends 'dashboard/include/navbar.html' %}
+{% load static %}
 {% block content %}
 
+<!-- Page Title -->
 <div class="pagetitle">
   <h1>Activity Log Detail</h1>
   <nav>
@@ -10,6 +12,9 @@
     </ol>
   </nav>
 </div>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <div class="card">
   <div class="card-body">
@@ -32,7 +37,38 @@
         {% endif %}
       </li>
     </ul>
+
+    <!-- Buttons -->
+    <div class="mt-4 d-flex gap-2">
+      <!-- Go Back -->
+      <a href="{% url 'activity_log_filtered' log.action %}" class="btn btn-secondary">← Back to Logs</a>
+
+      <!-- Delete -->
+      <form id="delete-log-form-{{ log.id }}" method="post" action="{% url 'activity_log_delete' log_id=log.id action=log.action %}">
+        {% csrf_token %}
+        <button type="button" class="btn btn-danger" onclick="confirmDeleteLog('{{ log.id }}')">Delete</button>
+      </form>
+    </div>
   </div>
 </div>
+
+<!-- Delete Confirmation Script -->
+<script>
+  function confirmDeleteLog(logId) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This log will be permanently deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#6c757d',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        document.getElementById('delete-log-form-' + logId).submit();
+      }
+    });
+  }
+</script>
 
 {% endblock %}

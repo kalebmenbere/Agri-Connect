@@ -30,17 +30,22 @@ ALLOWED_HOSTS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_FROM = 'atsewkaleb@gmail.com'
-EMAIL_HOST_USER = 'atsewkaleb@gmail.com'
-EMAIL_HOST_PASSWORD = 'jhlmtlutsqrecquk'
-EMAIL_USE_TLS = True
+EMAIL_PORT = 465
+DEFAULT_FROM_EMAIL = 'kalebmenbere@gmail.com'
+EMAIL_HOST_USER = 'kalebmenbere@gmail.com'
+EMAIL_HOST_PASSWORD = 'xoyyyngdxxyjbvlw'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
 SITE_ID = 1
 
 PASSWORD_RESET_TIMEOUT = 14400
+#wtac rxaa ejug osgo new  587
 
+# jhlmtlutsqrecquk-----old
 
-
+#NEW Agri----   xoyy yngd xxyj bvlw
+# kalebmenbere@gmail.com
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 # Application definition

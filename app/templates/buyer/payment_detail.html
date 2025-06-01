@@ -137,73 +137,73 @@
 
 <!-- Payment Processing Script -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('payment-form');
-    const payButton = document.getElementById('pay-button');
-    const buttonText = payButton.querySelector('.button-text');
-    const spinner = payButton.querySelector('.spinner-border');
-    const successMessage = document.getElementById('success-message');
-    const errorMessage = document.getElementById('error-message');
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('payment-form');
+        const payButton = document.getElementById('pay-button');
+        const buttonText = payButton.querySelector('.button-text');
+        const spinner = payButton.querySelector('.spinner-border');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
 
-
-    const price = parseFloat(document.getElementById('order_price').textContent);
-    const quantity = parseFloat(document.getElementById('order_quantity').textContent);
+    
+        const price = parseFloat(document.getElementById('order_price').textContent);
+        const quantity = parseFloat(document.getElementById('order_quantity').textContent);
     const total = (price * quantity).toFixed(2);
     document.getElementById('total_price_calc').textContent = total;
-
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            // Show loading state
-            buttonText.textContent = 'Processing...';
-            spinner.classList.remove('d-none');
-            payButton.disabled = true;
-            errorMessage.classList.add('d-none');
-        });
-    }
-
+    
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                // Show loading state
+                buttonText.textContent = 'Processing...';
+                spinner.classList.remove('d-none');
+                payButton.disabled = true;
+                errorMessage.classList.add('d-none');
+            });
+        }
+    
     // Function to check payment status
-    function checkPaymentStatus(txRef) {
-        const callbackUrl = `/cart/chapa_callback/{{ item.id }}/?trx_ref=${txRef}`;
-        
-        $.ajax({
-            url: callbackUrl,
-            method: 'GET',
-            success: function(response) {
-                if (response.status === 'success') {
-                    successMessage.classList.remove('d-none');
-                    errorMessage.classList.add('d-none');
-                    buttonText.textContent = 'Payment Successful';
-                    spinner.classList.add('d-none');
-                    
+        function checkPaymentStatus(txRef) {
+            const callbackUrl = `/cart/chapa_callback/{{ item.id }}/?trx_ref=${txRef}`;
+            
+            $.ajax({
+                url: callbackUrl,
+                method: 'GET',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        successMessage.classList.remove('d-none');
+                        errorMessage.classList.add('d-none');
+                        buttonText.textContent = 'Payment Successful';
+                        spinner.classList.add('d-none');
+                        
                     // Redirect to the paid page
-                    setTimeout(() => {
-                        window.location.href = response.redirect_url;
-                    }, 2000);
-                } else {
-                    throw new Error(response.error || 'Payment verification failed');
+                        setTimeout(() => {
+                            window.location.href = response.redirect_url;
+                        }, 2000);
+                    } else {
+                        throw new Error(response.error || 'Payment verification failed');
+                    }
+                },
+                error: function(xhr) {
+                    const error = xhr.responseJSON?.error || 'Payment verification failed';
+                    buttonText.textContent = 'Pay Now';
+                    spinner.classList.add('d-none');
+                    payButton.disabled = false;
+                    errorMessage.textContent = error;
+                    errorMessage.classList.remove('d-none');
+                    successMessage.classList.add('d-none');
                 }
-            },
-            error: function(xhr) {
-                const error = xhr.responseJSON?.error || 'Payment verification failed';
-                buttonText.textContent = 'Pay Now';
-                spinner.classList.add('d-none');
-                payButton.disabled = false;
-                errorMessage.textContent = error;
-                errorMessage.classList.remove('d-none');
-                successMessage.classList.add('d-none');
+            });
+        }
+    
+    // Listen for the payment response from Chapa
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.tx_ref) {
+                checkPaymentStatus(event.data.tx_ref);
             }
         });
-    }
-
-    // Listen for the payment response from Chapa
-    window.addEventListener('message', function(event) {
-        if (event.data && event.data.tx_ref) {
-            checkPaymentStatus(event.data.tx_ref);
-        }
     });
-});
-</script>
-
+    </script>
+    
 <!-- Single Product End -->
 
 <!-- Copyright Start -->

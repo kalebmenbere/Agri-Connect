@@ -27,33 +27,35 @@
             <form method="POST" enctype="multipart/form-data" action="{% url 'edit_product' product.id %}" id="editProductForm">
                 {% csrf_token %}
 
-                <!-- Product Name -->
-                <div class="mb-4">
-                    <label for="product_name" class="form-label">Product Name</label>
-                    <select name="product_name" id="product_name" class="form-select" required>
-                        {% for name in product_names %}
-                            <option value="{{ name }}" {% if name == product.product_name %}selected{% endif %}>{{ name }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+            <!-- Category -->
+            <div class="mb-4">
+                <label for="product_category" class="form-label">Category</label>
+                <select name="product_category" id="product_category" class="form-select" required>
+                    <option value="">-- Select Category --</option>
+                </select>
+            </div>
+
+            <!-- Product Name -->
+            <div class="mb-4">
+                <label for="product_name" class="form-label">Product Name</label>
+                <select name="product_name" id="product_name" class="form-select" required>
+                    <option value="">-- Select Product --</option>
+                </select>
+            </div>
 
                 <!-- Quantity -->
                 <div class="mb-4">
                     <label for="product_quantity" class="form-label">Quantity</label>
-                    <input type="number" id="product_quantity" name="product_quantity" value="{{ product.product_quantity }}" class="form-control" required>
+                    <input type="number" id="product_quantity" name="product_quantity" value="{{ product.product_quantity }}" required min="100" class="form-control" required>
                 </div>
 
                 <!-- Price -->
                 <div class="mb-4">
                     <label for="product_price" class="form-label">Price</label>
-                    <input type="number" id="product_price" name="product_price" value="{{ product.product_price }}" class="form-control" required>
+                    <input type="number" id="product_price" name="product_price" value="{{ product.product_price }}" required min="0.5" class="form-control" required>
                 </div>
 
-                <!-- Category -->
-                <div class="mb-4">
-                    <label for="product_category" class="form-label">Category</label>
-                    <input type="text" id="product_category" name="product_category" value="{{ product.product_category }}" class="form-control" required>
-                </div>
+
 
                 <!-- Farmer -->
                 <div class="mb-4">
@@ -79,7 +81,7 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-between">
-                    <button type="button" class="btn btn-success" onclick="confirmSave()">Save Changes</button>
+                    <button type="button" class="btn btn-success" onclick="confirmSave()">✅ Save Changes</button>
                     <a href="{% url 'products' %}" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
@@ -88,7 +90,7 @@
             <form action="{% url 'delete_product' product.id %}" method="POST" id="deleteProductForm">
                 {% csrf_token %}
                 <div class="text-end mt-3">
-                    <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete Product</button>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete()">🗑️ Delete Product</button>
                 </div>
             </form>
         </div>
@@ -96,7 +98,19 @@
 </div>
 
 <script>
-function confirmSave() {
+    function confirmSave() {
+    const quantity = parseFloat(document.getElementById('product_quantity').value);
+    const price = parseFloat(document.getElementById('product_price').value);
+
+    if (quantity < 100) {
+        Swal.fire('Invalid quantity', 'Quantity must be at least 100.', 'error');
+        return;
+    }
+    if (price < 0.5) {
+        Swal.fire('Invalid price', 'Price must be at least 0.5 Birr.', 'error');
+        return;
+    }
+
     Swal.fire({
         title: 'Save changes?',
         text: "Do you want to update this product?",
@@ -111,6 +125,7 @@ function confirmSave() {
         }
     });
 }
+
 
 function confirmDelete() {
     Swal.fire({
@@ -128,7 +143,110 @@ function confirmDelete() {
     });
 }
 </script>
-
+<script>
+    const productChoices = {
+      'Fruits': {
+        'Apple': 'Apple',
+        'Banana': 'Banana',
+        'Mango': 'Mango',
+        'Orange': 'Orange'
+      },
+      'Vegetables': {
+        'Tomato': 'Tomato',
+        'Cabbage': 'Cabbage',
+        'Carrot': 'Carrot',
+        'Pepper': 'Pepper'
+      },
+      'Grains & Cereals': {
+        'Maize': 'Maize',
+        'Wheat': 'Wheat',
+        'Barley': 'Barley',
+        'Rice': 'Rice'
+      },
+      'Legumes & Pulses': {
+        'Beans': 'Beans',
+        'Chickpeas': 'Chickpeas',
+        'Lentils': 'Lentils',
+        'Peas': 'Peas'
+      },
+      'Root & Tuber Crops': {
+        'Potato': 'Potato',
+        'Sweet Potato': 'Sweet Potato',
+        'Yam': 'Yam',
+        'Cassava': 'Cassava'
+      }
+    };
+    
+    const categorySelect = document.getElementById('product_category');
+    const productSelect = document.getElementById('product_name');
+    
+    function populateCategories(currentCategory) {
+      categorySelect.innerHTML = ''; // clear options
+    
+      // Add currentCategory as first option, selected
+      if (currentCategory) {
+        const firstOption = document.createElement('option');
+        firstOption.value = currentCategory;
+        firstOption.textContent = currentCategory;
+        firstOption.selected = true;
+        categorySelect.appendChild(firstOption);
+      }
+    
+      // Add other categories except the current one
+      Object.keys(productChoices).forEach(category => {
+        if (category !== currentCategory) {
+          const option = document.createElement('option');
+          option.value = category;
+          option.textContent = category;
+          categorySelect.appendChild(option);
+        }
+      });
+    }
+    
+    function populateProducts(category, currentProduct) {
+      productSelect.innerHTML = ''; // clear options
+    
+      if (!category || !productChoices[category]) {
+        productSelect.innerHTML = '<option value="">-- Select Product --</option>';
+        return;
+      }
+    
+      const products = Object.keys(productChoices[category]);
+    
+      // Add currentProduct as first option, selected
+      if (currentProduct && products.includes(currentProduct)) {
+        const firstOption = document.createElement('option');
+        firstOption.value = currentProduct;
+        firstOption.textContent = currentProduct;
+        firstOption.selected = true;
+        productSelect.appendChild(firstOption);
+      }
+    
+      // Add other products except the current one
+      products.forEach(product => {
+        if (product !== currentProduct) {
+          const option = document.createElement('option');
+          option.value = product;
+          option.textContent = product;
+          productSelect.appendChild(option);
+        }
+      });
+    }
+    
+    categorySelect.addEventListener('change', () => {
+      // When category changes, repopulate products and no preselection
+      populateProducts(categorySelect.value, null);
+    });
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      const currentCategory = "{{ product.product_category|escapejs }}";
+      const currentProduct = "{{ product.product_name|escapejs }}";
+    
+      populateCategories(currentCategory);
+      populateProducts(currentCategory, currentProduct);
+    });
+    </script>
+    
 <!-- End Content ---------------------------------------------------------------------->
 
 {% endblock %}

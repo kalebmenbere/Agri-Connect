@@ -81,7 +81,7 @@
                         {% if user.is_authenticated %}
                         
                         <li class="nav-item">
-                            <span class="me-3 text-green">Hello,<span class="me-3" style="color: orange; font-weight: bold;"> {{ user.first_name }}</span></span>
+                            <span class="me-3 text-green">Hello<span class="me-3" style="color: orange; font-weight: bold;"> {{ user.first_name }}, </span>{{ user.role}} </span>
                             <a href="{% url 'logout' %}" class="btn btn-success me-2">Log out</a>
                         </li>                        
                         {% else %}

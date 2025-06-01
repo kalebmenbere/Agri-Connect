@@ -212,7 +212,7 @@ def register(request):
             activateEmail(request, user, form.cleaned_data.get('email'))
 
             # Registration Success
-            log_user_activity(request.user, 'registered', 'New user registered')
+            log_user_activity(request.user, 'registered', f'New user registered')
 
 
             return redirect('login')
@@ -247,9 +247,9 @@ def custom_logout(request):
         
         if user.is_superuser:  # Check if the user is a superuser (admin)
             logout(request)
-            log_user_activity(request.user, 'logged_out', f'User {request.user} logged out')
+            log_user_activity(request.user, 'logged_out', f'User { user } logged out')
             return redirect("admin_login")
-        log_user_activity(request.user, 'logged_out', f'User {request.user} logged out')
+        log_user_activity(request.user, 'logged_out', f'User { user }  logged out')
 
     return redirect("login")
 
@@ -555,7 +555,6 @@ LOCATION_COORDINATES = {
     ("Oromia", "Bishoftu"): (38.98, 8.75),
     ("Oromia", "Nekemte"): (36.55, 9.08),
     ("Oromia", "Asella"): (39.12, 7.95),
-    ("Oromia", "Hossana"): (37.85, 7.55),
     ("Oromia", "Woliso"): (37.97, 8.53),
     ("Oromia", "Agaro"): (36.58, 7.85),
     ("Oromia", "Bale Robe"): (40.00, 7.13),
@@ -993,7 +992,7 @@ def chapa_callback(request, item_id):
         return response
 
 def chapa_return(request):
-    return redirect('cart') 
+    return redirect('home') 
 
 
 @login_required
@@ -1079,7 +1078,6 @@ def admin_login(request):
 
         if user is not None and user.is_staff:  # Only allow staff users
             login(request, user)
-            log_user_activity(request.user, 'logged_in', 'Admin logged in successfully')
             return redirect('admin_dashboard')
         else:
             messages.error(request, "Invalid credentials or not an admin user.")
@@ -1096,15 +1094,19 @@ def admin_dashboard(request):
     paid_count = Paid.objects.count()
     this_month = now().month
     this_year = now().year
-    product_count_month = Product.objects.filter(created_at__month=this_month, created_at__year=this_year).count()
-    cart_count_month = Cart.objects.filter(created_at__month=this_month, created_at__year=this_year).count()
     today = now().date()
-    product_count_day = Product.objects.filter(created_at__date=today).count()
     cart_count_day = Cart.objects.filter(created_at__date=today).count()
     time_24_hours_ago = now() - timedelta(hours=24)
     product_count_24_hours = Product.objects.filter(created_at__gte=time_24_hours_ago).count()
     cart_count_24_hours = Cart.objects.filter(created_at__gte=time_24_hours_ago).count()
-    total_product_value = Product.objects.annotate(total_value=ExpressionWrapper(F('product_quantity') * F('product_price'), output_field=DecimalField())).aggregate(total_value_sum=Sum('total_value'))['total_value_sum'] or 0
+    total_product_value = Product.objects.annotate(
+    total_value=ExpressionWrapper(
+        F('product_quantity') * F('product_price'),
+        output_field=DecimalField()
+    )
+    ).aggregate(
+        total_value_sum=Sum('total_value')
+    )['total_value_sum'] or 0
     total_cart_value = Cart.objects.aggregate(cart_total_value_sum=Sum(F('order_quantity') * F('order_price')))['cart_total_value_sum'] or 0
     total_paid_value = Paid.objects.aggregate(total_paid_sum=Sum('total_price'))['total_paid_sum'] or 0
     #total_paid_value = Paid.objects.filter(payment_status='pending').aggregate(total_paid_sum=Sum('total_price'))['total_paid_sum'] or 0
@@ -1135,9 +1137,6 @@ def admin_dashboard(request):
         'paid_count': paid_count,
         'total_transport_fee': total_transport_fee,
         'total_product_cost': total_product_cost,
-        'product_count_month': product_count_month,
-        'cart_count_month': cart_count_month,
-        'product_count_day': product_count_day,
         'cart_count_day': cart_count_day,
         'product_count_24_hours': product_count_24_hours,
         'cart_count_24_hours': cart_count_24_hours,
@@ -1165,6 +1164,7 @@ def admin_dashboard(request):
 def edit_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     product_names = Product.objects.values_list('product_name', flat=True).distinct()
+    product_categorys = Product.objects.values_list('product_category', flat=True).distinct()
     farmers = CustomUser.objects.filter(role='farmer') 
 
     if request.method == 'POST':
@@ -1190,8 +1190,10 @@ def edit_product(request, product_id):
     return render(request, 'dashboard/edit_product.html', {
         'product': product,
         'product_names': product_names,
+        'product_categorys': product_categorys,
         'farmers': farmers,
     })
+
 @login_required
 def delete_product(request, product_id):
     # Get the product by ID, or return a 404 if not found

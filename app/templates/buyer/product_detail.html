@@ -57,7 +57,7 @@
                             </h5>
                             {%endif%}
                             <!-- CSS (can be placed in your stylesheet or inside a <style> tag) -->
-                            <style>
+                <style>
                             /* Custom styling for the input */
                             .custom-input {
                                 width: 50%;
@@ -79,7 +79,7 @@
                                 -webkit-appearance: inner-spin-button;
                                 opacity: 1;
                             }
-                            </style>
+                </style>
                         
                             {% if user.role == 'buyer' %}
                             <form method="POST" action="{% url 'add_to_cart' %}">
@@ -94,10 +94,11 @@
                             {% endif %}
                             
                             <script>
-                                document.addEventListener('DOMContentLoaded', function() {
+                                document.addEventListener('DOMContentLoaded', function () {
                                     const pricePerKg = parseFloat("{{ selected_product.product_price }}") || 0;
-                                    const maxQuantity = parseInt("{{ selected_product.product_quantity }}", 10) || 1000;
+                                    const maxAvailableQty = parseInt("{{ selected_product.product_quantity }}", 10) || 1000;
                                     const transportFee = parseFloat("{{ transport_fee }}") || 0;
+                                    const maxTotalPrice = 100000; // Cap
                             
                                     const quantityInput = document.getElementById('quantity');
                                     const totalPriceSpan = document.querySelector('#total_price span');
@@ -105,11 +106,19 @@
                             
                                     function updateTotalPrice() {
                                         let qty = parseInt(quantityInput.value, 10);
-                            
                                         if (isNaN(qty)) qty = 100;
+                            
+                                        // Round to nearest 100
                                         qty = Math.floor(qty / 100) * 100;
                                         if (qty < 100) qty = 100;
-                                        else if (qty > maxQuantity) qty = maxQuantity - (maxQuantity % 100);
+                            
+                                        // Calculate max quantity allowed under 100,000 cap
+                                        const maxQtyByCap = Math.floor((maxTotalPrice - transportFee) / pricePerKg / 100) * 100;
+                            
+                                        // Final maximum allowed quantity
+                                        const finalMaxQty = Math.min(maxQtyByCap, maxAvailableQty);
+                            
+                                        if (qty > finalMaxQty) qty = finalMaxQty;
                             
                                         quantityInput.value = qty;
                                         formQuantity.value = qty;
@@ -126,6 +135,7 @@
                                     updateTotalPrice();
                                 });
                             </script>
+                            
                             
                                                               
                            {% else %}

@@ -26,12 +26,13 @@
                     <tr>
                         <th scope="col">Preview</th>
                         <th scope="col"><a href="?sort=product_name">Product Name</a></th>
+                        <th scope="col"><a href="">Product ID</a></th>
                         <th scope="col"><a href="?sort=product_quantity">Quantity</a></th>
                         <th scope="col"><a href="?sort=product_price">Price</a></th>
                         <th scope="col"><a href="?sort=product_category">Category</a></th>
                         <th scope="col"><a href="?sort=farmer__username">Farmer</a></th>
-                        <th scope="col"><a href="?sort=region">Region</a></th>
-                        <th scope="col"><a href="?sort=zone">City</a></th>
+                        <th scope="col"><a href="#">Region</a></th>
+                        <th scope="col"><a href="#">City</a></th>
                         <th scope="col"><a href="?sort=created_at">Created At</a></th>
                         <th scope="col">Edit</a></th>
                     </tr>
@@ -47,6 +48,7 @@
                             {% endif %}
                         </th>
                         <td><a href="{% url 'product_detail' product.id %}" class="text-primary fw-bold">{{ product.product_name }}</a></td>
+                        <td style="max-width: 90px;">{{ product.product_id }}</td>
                         <td>{{ product.product_quantity }}</td>
                         <td>${{ product.product_price }}</td>
                         <td>{{ product.product_category }}</td>

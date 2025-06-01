@@ -25,6 +25,7 @@
                     <tr>
                         <th scope="col">Preview</th>
                         <th scope="col"><a href="?sort=order_name">Order Name</a></th>
+                        <th scope="col"><a href="">Order ID</a></th>
                         <th scope="col"><a href="?sort=order_quantity">Quantity</a></th>
                         <th scope="col"><a href="?sort=order_price">Price</a></th>
                         <th scope="col"><a href="?sort=total_price">Total Price</a></th>
@@ -53,6 +54,7 @@
                             {% endif %}
                         </th>
                         <td>{{ cart.order_name }}</td>
+                        <td>{{ cart.product_id }}</td>
                         <td>{{ cart.order_quantity }}</td>
                         <td>${{ cart.order_price }}</td>
                         <td>${{ cart.total_price }}</td>
