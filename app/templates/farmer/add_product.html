@@ -50,13 +50,13 @@
                         <div class="mb-3">
                             <div class="input-group">
                                 <input type="number" step="100" name="product_quantity" class="form-control border-0 py-3" 
-                                       placeholder="Quantity" required min="100" oninput="validateQuantity(this)">
+                                       placeholder="Quantity" required min="100" max="10000" oninput="validateQuantity(this)">
                                 <span class="input-group-text">kg</span>
                             </div>
                             <small class="text-muted">Quantity must be greater than 100 kg and in multiples of 100.</small>
                         </div>
                         
-                        <script>
+                <script>
                         function validateQuantity(input) {
                             let value = parseInt(input.value, 10);
                             
@@ -67,7 +67,7 @@
                                 input.value = Math.round(value / 100) * 100; // Rounds to nearest 100
                             }
                         }
-                        </script>
+                    </script>
                         <!-- Price in Birr per KG -->
                         <div class="mb-3" >
                             <div class="input-group">

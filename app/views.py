@@ -645,69 +645,47 @@ def get_distance_km(start_coords, end_coords):
 
 def calculate_transport_fee(distance_km):
     if 1 <= distance_km <= 10:
-        return 3000
+        return 300
     elif 10 < distance_km <= 50:
-        return 5000
+        return 500
     elif 50 < distance_km <= 100:
-        return 8000
+        return 800
     elif 100 < distance_km <= 200:
-        return 15000
+        return 1500
     elif 200 < distance_km <= 300:
-        return 20000
-    elif 300 < distance_km <= 400:
-        return 25000
+        return 2000
     elif 400 < distance_km <= 500:
-        return 30000
+        return 3000
     elif 500 < distance_km <= 600:
-        return 35000
+        return 3500
     elif 600 < distance_km <= 700:
-        return 40000
+        return 4000
     elif 700 < distance_km <= 800:
-        return 45000
+        return 4500
     elif 300 < distance_km <= 400:
-        return 25000
+        return 2500
     elif 400 < distance_km <= 500:
-        return 30000
+        return 3000
     elif 500 < distance_km <= 600:
-        return 35000
+        return 3500
     elif 600 < distance_km <= 700:
-        return 40000
+        return 4000
     elif 700 < distance_km <= 800:
-        return 45000
-    elif 300 < distance_km <= 400:
-        return 25000
-    elif 400 < distance_km <= 500:
-        return 30000
-    elif 500 < distance_km <= 600:
-        return 35000
-    elif 600 < distance_km <= 700:
-        return 40000
-    elif 700 < distance_km <= 800:
-        return 45000
-    elif 300 < distance_km <= 400:
-        return 25000
-    elif 400 < distance_km <= 500:
-        return 30000
-    elif 500 < distance_km <= 600:
-        return 35000
-    elif 600 < distance_km <= 700:
-        return 40000
-    elif 700 < distance_km <= 800:
-        return 45000
+        return 4500
     elif 800 < distance_km <= 900:
-        return 50000
+        return 5000
     elif 900 < distance_km <= 1000:
-        return 55000
+        return 5500
     elif 1000 < distance_km <= 1500:
-        return 65000
+        return 6500
     elif 1500 < distance_km <= 2000:
-        return 75000
+        return 7500
     elif 2000 < distance_km <= 2500:
-        return 85000
+        return 8500
     elif 2500 < distance_km <= 3000:
-        return 95000
+        return 9500
     else:
-        return 100000
+        return 10000
 
 
 @login_required
